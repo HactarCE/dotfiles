@@ -1,0 +1,497 @@
+# i3 config file (v4)
+#
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+
+
+
+# OTHER THINGS I SHOULD HAVE KEYBINDS FOR
+# Open:
+#  - file manager
+# ssh
+
+
+
+################################################################################
+###   MISCELLANEOUS
+#region ########################################################################
+
+set $mod Mod4
+set $alt Mod1
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+#workspace_layout stacking
+
+# do not update this without also updating ~/Scripts/i3/utils.py
+# set $dmenu_settings -i -fn 'Roboto-11' -sb '#26a' -nb '#000'
+# set $dmenu_settings -i -fn 'Roboto-11' -sb '#0070da' -nb '#000'
+# set $dmenu_settings -i -fn 'xos4 Terminus-13' -sb '#0070da' -nb '#000' -b
+# set $dmenu_settings -i -fn 'Terminus-11' -sb '#0070da' -nb '#000'
+# set $dmenu_settings -i -fn 'Ubuntu Mono-14' -sb '#0070da' -nb '#000'
+# set $dmenu_settings -i -fn 'Monaco-12' -sb '#0070da' -nb '#000'
+
+# set $round_volume pamixer --set-volume $(pamixer --get-volume)
+set $round_volume :
+
+hide_edge_borders both
+for_window [class="^.*"] border normal 1
+bindsym $mod+0 border normal 0
+bindsym $mod+1 border normal 1
+bindsym $mod+2 border normal 2
+bindsym $mod+3 border normal 3
+bindsym $mod+4 border normal 4
+bindsym $mod+shift+0 border pixel 0
+bindsym $mod+shift+1 border pixel 1
+bindsym $mod+shift+2 border pixel 2
+bindsym $mod+shift+3 border pixel 3
+bindsym $mod+shift+4 border pixel 4
+# gaps inner 5
+# gaps outer 5
+
+# Font
+#region ########################
+# font pango:DejaVu Sans 10
+# probably change this at some point?
+# font pango:Liberation Sans 10
+# font pango:Droid Sans 9
+font pango:Roboto Medium 9
+#endregion
+
+
+# Programs
+#region ########################
+set $basic_editor mousepad
+set $polybar $HOME/.config/polybar/launch.py
+set $control-pianobar $HOME/.config/pianobar/control-pianobar.sh
+#endregion
+
+
+# Color Scheme
+#region ########################
+# set $bright #2266aa
+# set $darker #113355
+set $bright #0070da
+set $darker #003575
+#endregion
+
+
+# External programs
+#region ########################
+
+# Background (exec)
+exec --no-startup-id dbus-launch compton
+exec --no-startup-id dropbox
+exec --no-startup-id numlockx
+exec --no-startup-id pulseaudio
+exec --no-startup-id redshift-gtk
+exec --no-startup-id libinput-gestures-setup start
+exec --no-startup-id $HOME/Scripts/fix-usbs-loop.sh
+exec --no-startup-id $HOME/Scripts/i3/local_exec.sh
+
+# Background (exec_always)
+exec_always --no-startup-id $polybar
+exec_always --no-startup-id nitrogen --restore
+
+# Normal programs
+# exec --no-startup-id steam -silent
+exec discord
+exec $BROWSER
+
+#endregion
+
+#endregion
+
+
+
+################################################################################
+###   WORKSPACES/WINDOWS
+#region ########################################################################
+
+set $workspace1 "Primary"
+set $workspace2 "Secondary"
+
+# assign [class="Steam"] Steam
+# assign [class="Atom"] $workspace3
+# assign [class="discord"] Discord
+
+# Bind workspaces to the right monitors
+#region ########################
+workspace $workspace1 output HDMI1
+workspace $workspace2 output HDMI1
+#endregion
+
+
+# Rules for window classes
+#region ########################
+for_window [class="Pavucontrol"] floating enable
+for_window [class="Nm-connection-editor"] floating enable
+for_window [class="Gucharmap"] floating enable
+for_window [class="SpeedCrunch"] floating enable
+for_window [class="SpeedCrunch"] sticky enable
+bindsym Num_Lock exec --no-startup-id $HOME/Scripts/i3/calc.py
+# bindsym Escape [con_id=__focused__ class="SpeedCrunch"] kill
+for_window [title="bmenu"] floating enable
+for_window [window_role="float"] floating enable
+for_window [window_role="float"] border pixel 2
+#endregion
+
+
+#endregion
+
+
+
+################################################################################
+###   KEYBINDS
+#region ########################################################################
+
+set $mod Mod4
+
+bindsym --release Num_Lock exec numlockx
+
+## i3 MANAGEMENT
+#region ########################
+
+bindsym $mod+shift+q kill
+bindsym --release button2 kill
+
+# Reload the configuration file
+# bindsym $mod+shift+r reload
+# bindsym $mod+shift+r exec --no-startup-id notify-send "$(i3-msg reload)"
+# syntax error
+bindsym $mod+shift+r exec --no-startup-id $HOME/Scripts/i3/reload-i3.sh
+
+bindsym $mod+t exec --no-startup-id $HOME/Scripts/fix-audio.sh; exec --no-startup-id $HOME/Scripts/fix-usbs.sh
+
+# Restart i3 in place (preserves your layout/session; can be used to upgrade i3)
+# bindsym $mod+shift+r restart
+
+# Exit i3 (logs you out of your X session)
+# bindsym $mod+shift+e exec "i3-nagbar -t warning -m 'Exit i3?' -b 'EXIT' 'i3-msg exit'"
+
+#endregion
+
+
+## SCRIPTS AND PROGRAMS
+# TODO clean this up
+#region ########################
+bindsym $mod+Return       exec i3-sensible-terminal
+bindsym $mod+shift+Return exec i3-sensible-terminal -r float
+
+bindsym $mod+space        exec --no-startup-id i3-dmenu-desktop --dmenu='eval dmenu -p Run: "$DMENU_SETTINGS"'
+bindsym $mod+ctrl+space   exec --no-startup-id eval dmenu_run -p Run: $DMENU_SETTINGS
+
+bindsym $mod+ctrl+u       exec --no-startup-id $HOME/Scripts/i3/reorder_workspace.py left
+bindsym $mod+ctrl+o       exec --no-startup-id $HOME/Scripts/i3/reorder_workspace.py right
+bindsym $mod+p            exec --no-startup-id $HOME/Scripts/i3/rename_workspace.py hide-num
+bindsym $mod+shift+p      exec --no-startup-id $HOME/Scripts/i3/rename_workspace.py all
+
+bindsym $mod+z            exec --no-startup-id morc_menu
+# bindsym $mod+b            exec terminal -e bmenu
+bindsym $mod+b            exec $BROWSER
+bindsym $mod+$alt+b       exec $BROWSER
+bindsym $mod+$alt+m       exec $basic_editor
+bindsym $mod+$alt+Return  exec gucharmap
+
+bindsym $mod+BackSpace    exec --no-startup-id $HOME/Scripts/i3/system.py
+bindsym $mod+Menu         exec --no-startup-id $HOME/Scripts/i3/system.py
+bindsym $mod+shift+Menu   exec --no-startup-id $HOME/Scripts/i3/i3exit.sh lock
+
+bindsym $mod+shift+v      exec pavucontrol
+
+bindsym $mod+m            exec --no-startup-id $HOME/Scripts/i3/switch_to_workspace.py
+bindsym $mod+shift+m      exec --no-startup-id $HOME/Scripts/i3/switch_to_workspace.py move
+bindsym $mod+n            exec --no-startup-id $HOME/Scripts/i3/switch_to_workspace.py new
+bindsym $mod+shift+n      exec --no-startup-id $HOME/Scripts/i3/switch_to_workspace.py move new
+bindsym $mod+Escape       exec --no-startup-id $HOME/Scripts/i3/switch_to_workspace.py - ' '
+
+bindsym Print             exec --no-startup-id shot
+
+# 66 = Caps_Lock, regardless of layout
+exec --no-startup-id xmodmap -e "clear lock" # TODO this isn't enough
+bindcode $alt+66          exec --no-startup-id (setxkbmap -query | grep -q "colemak") && setxkbmap us || setxkbmap -variant colemak
+bindsym $alt+space        exec --no-startup-id (setxkbmap -query | grep -q "colemak") && setxkbmap us || setxkbmap -variant colemak
+bindcode Shift+66         exec --no-startup-id xdotool key Caps_Lock
+#endregion
+
+
+## WINDOW
+#region ########################
+
+#region Change focus
+bindsym $mod+i focus up
+bindsym $mod+k focus down
+bindsym $mod+j focus left
+bindsym $mod+l focus right
+bindsym $mod+Up focus up
+bindsym $mod+Down focus down
+bindsym $mod+Left focus left
+bindsym $mod+Right focus right
+#endregion
+
+#region Move focused window
+bindsym $mod+shift+i move up
+bindsym $mod+shift+k move down
+bindsym $mod+shift+j move left
+bindsym $mod+shift+l move right
+bindsym $mod+shift+Up move up
+bindsym $mod+shift+Down move down
+bindsym $mod+shift+Left move left
+bindsym $mod+shift+Right move right
+#endregion
+
+# Toggle fullscreen
+bindsym $mod+f fullscreen toggle
+
+# Toggle tiling / floating
+bindsym $mod+shift+slash floating toggle
+
+# Change focus between tiling / floating windows
+bindsym $mod+slash focus mode_toggle
+
+#endregion
+
+
+## WORKSPACES / MONITORS
+#region ########################
+
+#region Scratchpad
+bindsym $mod+backslash scratchpad show
+bindsym $mod+shift+backslash move to scratchpad
+#endregion
+
+#region Switch to workspace
+# bindsym $mod+1 workspace $workspace1
+# bindsym $mod+2 workspace $workspace2
+# bindsym $mod+3 workspace $workspace3
+# bindsym $mod+5 workspace $workspace5
+# bindsym $mod+6 workspace $workspace6
+# bindsym $mod+7 workspace $workspace7
+# bindsym $mod+4 workspace $workspace4
+# bindsym $mod+8 workspace $workspace8
+# bindsym $mod+9 workspace $workspace9
+# bindsym $mod+0 workspace $workspace10
+bindsym $mod+u workspace prev_on_output
+bindsym $mod+$alt+x workspace prev_on_output
+bindsym $mod+o workspace next_on_output
+bindsym $mod+$alt+c workspace next_on_output
+bindsym $mod+y workspace back_and_forth
+#endregion
+
+#region Move container to workspace
+# bindsym $mod+shift+1 move container to workspace $workspace1
+# bindsym $mod+shift+2 move container to workspace $workspace2
+# bindsym $mod+shift+3 move container to workspace $workspace3
+# bindsym $mod+shift+4 move container to workspace $workspace4
+# bindsym $mod+shift+5 move container to workspace $workspace5
+# bindsym $mod+shift+6 move container to workspace $workspace6
+# bindsym $mod+shift+7 move container to workspace $workspace7
+# bindsym $mod+shift+8 move container to workspace $workspace8
+# bindsym $mod+shift+9 move container to workspace $workspace9
+# bindsym $mod+shift+0 move container to workspace $workspace10
+bindsym $mod+shift+u move container to workspace prev_on_output
+bindsym $mod+shift+o move container to workspace next_on_output
+bindsym $mod+shift+y move container to workspace back_and_forth
+#endregion
+
+#region Switch to monitor
+bindsym $mod+bracketleft focus output left
+bindsym $mod+bracketright focus output right
+bindsym $mod+comma focus output left
+bindsym $mod+period focus output right
+bindsym $mod+x focus output left
+bindsym $mod+c focus output right
+#endregion
+
+#region Move container to monitor
+bindsym $mod+shift+bracketleft move container to output left
+bindsym $mod+shift+bracketright move container to output right
+bindsym $mod+shift+comma move container to output left
+bindsym $mod+shift+period move container to output right
+bindsym $mod+shift+x move container to output left
+bindsym $mod+shift+c move container to output right
+#endregion
+
+#region Move workspace to monitor
+bindsym $mod+minus move workspace to output left
+bindsym $mod+equal move workspace to output right
+#endregion
+
+#endregion
+
+
+## CONTAINER
+#region ########################
+
+# Change layout
+bindsym $mod+h split h
+bindsym $mod+v split v
+
+# Change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout splith
+bindsym $mod+d layout splitv
+
+# Focus the parent container
+bindsym $mod+semicolon focus parent
+
+# Focus the child container
+bindsym $mod+apostrophe focus child
+
+#endregion
+
+
+## MISCELLANEOUS
+#region ########################
+
+# bindsym $mod+shift+b bar mode toggle
+# bindsym $mod+grave bar mode toggle
+
+#region Pulse Audio controls
+# bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse set Master 5%+ && pkill -RTMIN+10 i3blocks # increase sound volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 5 && $round_volume # increase sound volume
+bindsym $mod+$alt+i exec --no-startup-id pamixer -i 5 && $round_volume # increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 5 && $round_volume # decrease sound volume
+bindsym $mod+$alt+k exec --no-startup-id pamixer -d 5 && $round_volume # decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pamixer -t # mute sound
+bindsym $mod+$alt+j exec --no-startup-id pamixer -t # mute sound
+#endregion
+
+#region Sreen brightness controls
+# bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 20 # increase screen brightness
+# bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 20 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id $HOME/Scripts/i3/backlight.py + # increase screen brightness
+bindsym XF86MonBrightnessDown exec --no-startup-id $HOME/Scripts/i3/backlight.py - # decrease screen brightness
+#endregion
+
+#region Touchpad controls
+bindsym XF86TouchpadToggle exec --no-startup-id /some/path/toggletouchpad.sh # toggle touchpad
+#endregion
+
+#region Media player controls
+bindsym XF86AudioPlay           exec --no-startup-id $control-pianobar p
+# bindsym XF86AudioPause          exec --no-startup-id $control-pianobar p
+bindsym XF86AudioNext           exec --no-startup-id $control-pianobar next
+bindsym XF86AudioPrev           exec --no-startup-id $control-pianobar history
+bindsym XF86AudioStop           exec --no-startup-id $control-pianobar quit
+bindsym ctrl+XF86AudioNext      exec --no-startup-id $control-pianobar nextstation
+bindsym ctrl+XF86AudioPrev      exec --no-startup-id $control-pianobar previousstation
+
+bindsym $mod+$alt+p             exec --no-startup-id $control-pianobar p
+bindsym $mod+$alt+n             exec --no-startup-id $control-pianobar next
+bindsym $mod+$alt+l             exec --no-startup-id $control-pianobar love
+bindsym $mod+$alt+minus         exec --no-startup-id $control-pianobar ban
+bindsym $mod+$alt+h             exec --no-startup-id $control-pianobar history
+bindsym $mod+$alt+e             exec --no-startup-id $control-pianobar explain
+
+# bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+# bindsym XF86AudioPause exec --no-startup-id playerctl play-pause
+# bindsym XF86AudioNext exec --no-startup-id playerctl next
+# bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+#endregion
+
+#endregion
+
+#endregion
+
+
+
+################################################################################
+###   MODES
+#region ########################################################################
+
+
+## RESIZE MODE
+#region ########################
+
+set $mode_resize resize / reload
+bindsym $mod+r mode $mode_resize
+
+mode "$mode_resize" {
+
+        bindsym $mod+Return restart
+        bindsym $mod+p exec --no-startup-id $polybar; mode "default"
+        # bindsym $mod+m # TODO reload music config (or maybe do this with polybar?)
+
+        bindsym j resize grow left 10 px or 10 ppt
+        bindsym k resize grow down 10 px or 10 ppt
+        bindsym i resize grow up 10 px or 10 ppt
+        bindsym l resize grow right 10 px or 10 ppt
+
+        bindsym shift+J resize shrink left 10 px or 10 ppt
+        bindsym shift+K resize shrink down 10 px or 10 ppt
+        bindsym shift+I resize shrink up 10 px or 10 ppt
+        bindsym shift+L resize shrink right 10 px or 10 ppt
+
+        bindsym ctrl+j resize grow left 1 px or 1 ppt
+        bindsym ctrl+k resize grow down 1 px or 1 ppt
+        bindsym ctrl+i resize grow up 1 px or 1 ppt
+        bindsym ctrl+l resize grow right 1 px or 1 ppt
+
+        bindsym ctrl+shift+J resize shrink left 1 px or 1 ppt
+        bindsym ctrl+shift+K resize shrink down 1 px or 1 ppt
+        bindsym ctrl+shift+I resize shrink up 1 px or 1 ppt
+        bindsym ctrl+shift+L resize shrink right 1 px or 1 ppt
+
+        bindsym $mod+r mode "default"
+        bindsym $mod+semicolon mode "default"
+        bindsym $mod+apostrophe mode "default"
+        bindsym semicolon mode "default"
+        bindsym apostrophe mode "default"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+
+}
+
+#endregion
+
+#endregion
+
+
+
+################################################################################
+###   BAR
+#region ########################################################################
+
+# bar {
+#         # font pango:Monaco 12
+#         # font pango:Ubuntu Mono 12
+#         # font pango:Roboto Mono 10
+#         font pango:Terminus Regular 11
+#         # font -misc-fixed-medium-r-normal--14-130-75-75-C-70-iso10646-1
+#         # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+#         # font pango:RobotoMono Nerd Font Mono 10
+#         status_command i3blocks -c ~/.config/i3/i3blocks.conf
+#         position bottom
+#         tray_output primary
+#         strip_workspace_numbers yes
+#         colors {
+#           # colorclass        border      background  text
+#           focused_workspace   $bright     $bright     #ffffff
+#           active_workspace    $darker     $darker     #dddddd
+#           inactive_workspace  #222222     #222222     #888888
+#           urgent_workspace    #880000     #880000     #ffffff
+#           binding_mode        #880000     #880000     #ffffff
+#         }
+# }
+
+#endregion
+
+
+
+################################################################################
+###   COLORS
+#region ########################################################################
+
+# class                 border  backgr. text    indicator child_border
+client.focused          $bright $bright #ffffff $bright   $bright
+client.focused_inactive $darker $darker #ffffff $darker   $darker
+# client.focused_inactive #222222 #222222 #ffffff #222222   #222222
+client.unfocused        #222222 #222222 #888888 #222222   #222222
+client.urgent           #ff3300 #ff3300 #ffffff #ff3300   #ff3300
+client.placeholder      #111111 #111111 #ffffff #111111   #111111
+
+client.background       #ffffff
+
+#endregion

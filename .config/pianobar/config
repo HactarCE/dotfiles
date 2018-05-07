@@ -1,0 +1,11 @@
+# User
+user = ajfarkas12@gmail.com
+password_command = gpg -d ~/.pandora_password.gpg
+
+# Misc
+audio_quality = high
+# event_command = ~/.config/pianobar/event_command.py
+# event_command = ~/.config/pianobar/pianobar-notify.sh
+ban_icon =  
+love_icon =  
+tired_icon =  鈴
