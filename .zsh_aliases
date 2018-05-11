@@ -1,0 +1,63 @@
+# LS
+alias l='ls -lAh'
+alias la='ls -lah'
+alias lg='l | grep'
+
+
+# SAFETY
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
+
+
+# PYTHON
+alias py2='python2'
+alias py3='python3'
+alias py='python'
+
+alias supy2='sudo python2'
+alias supy3='sudo python3'
+alias supy='sudo python'
+
+alias pi2='sudo -H pip2 install'
+alias pi3='sudo -H pip3 install'
+alias pi='sudo -H pip install'
+
+
+# YAOURT
+alias y='yaourt'
+alias yaourt-clean='yaourt -Rs $(yaourt -Qtdq)'
+alias ys='yaourt -S'
+alias ysi='yaourt -Si'
+alias yss='yaourt -Ss'
+alias ysu='yaourt -Syu'
+alias ysua='yaourt -Su --aur'
+alias yq='yaourt -Q'
+alias yqi='yaourt -Qi'
+alias yqs='yaourt -Qs'
+alias yr='yaourt -R'
+
+
+# SYSTEMCTL
+alias sc='systemctl'
+alias sce='systemctl enable'
+alias scen'systemctl --now enable'
+alias scd='systemctl disable'
+alias scdn='systemctl --now disable'
+alias scr='systemctl reload'
+
+
+# MISC
+cdl () { cd $(dirname $(readlink -f "$@")); }
+
+
+# SHORT ALIASES
+alias a='atom'
+alias a.='atom .'
+alias c='cd'
+alias m='mousepad'
+alias n='nano'
+alias q='exit'
+alias cx='chmod +x'
+alias c-x='chmod -x'
+alias jj='java -jar'
