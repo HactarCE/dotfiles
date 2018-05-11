@@ -34,19 +34,23 @@ floating_modifier $mod
 # set $round_volume pamixer --set-volume $(pamixer --get-volume)
 set $round_volume :
 
-hide_edge_borders both
-for_window [class="^.*"] border normal 1
-bindsym $mod+0 border normal 0
-bindsym $mod+1 border normal 1
-bindsym $mod+2 border normal 2
-bindsym $mod+3 border normal 3
-bindsym $mod+4 border normal 4
-bindsym $mod+shift+0 border pixel 0
-bindsym $mod+shift+1 border pixel 1
-bindsym $mod+shift+2 border pixel 2
-bindsym $mod+shift+3 border pixel 3
-bindsym $mod+shift+4 border pixel 4
-# gaps inner 5
+# hide_edge_borders both
+hide_edge_borders smart
+# for_window [class="^.*"] border pixel 1
+default_border pixel 1
+default_floating_border pixel 0
+# TODO handle manually floated windows
+bindsym $mod+0 border pixel 0
+bindsym $mod+1 border pixel 1
+bindsym $mod+2 border pixel 2
+bindsym $mod+3 border pixel 3
+bindsym $mod+4 border pixel 4
+bindsym $mod+shift+0 border normal 0
+bindsym $mod+shift+1 border normal 1
+bindsym $mod+shift+2 border normal 2
+bindsym $mod+shift+3 border normal 3
+bindsym $mod+shift+4 border normal 4
+# gaps inner 20
 # gaps outer 5
 
 # Font
@@ -133,7 +137,7 @@ bindsym Num_Lock exec --no-startup-id $HOME/Scripts/i3/calc.py
 # bindsym Escape [con_id=__focused__ class="SpeedCrunch"] kill
 for_window [title="bmenu"] floating enable
 for_window [window_role="float"] floating enable
-for_window [window_role="float"] border pixel 2
+# for_window [window_role="float"] border pixel 2
 #endregion
 
 
@@ -164,7 +168,7 @@ bindsym $mod+shift+r exec --no-startup-id $HOME/Scripts/i3/reload-i3.sh
 bindsym $mod+t exec --no-startup-id $HOME/Scripts/fix-audio.sh; exec --no-startup-id $HOME/Scripts/fix-usbs.sh
 
 # Restart i3 in place (preserves your layout/session; can be used to upgrade i3)
-# bindsym $mod+shift+r restart
+# bindsym $mod+shift+r restart; exec --no-startup-id pkill compton && dbus-launch compton
 
 # Exit i3 (logs you out of your X session)
 # bindsym $mod+shift+e exec "i3-nagbar -t warning -m 'Exit i3?' -b 'EXIT' 'i3-msg exit'"
@@ -178,8 +182,8 @@ bindsym $mod+t exec --no-startup-id $HOME/Scripts/fix-audio.sh; exec --no-startu
 bindsym $mod+Return       exec i3-sensible-terminal
 bindsym $mod+shift+Return exec i3-sensible-terminal -r float
 
-bindsym $mod+space        exec --no-startup-id i3-dmenu-desktop --dmenu='eval dmenu -p Run: "$DMENU_SETTINGS"'
-bindsym $mod+ctrl+space   exec --no-startup-id eval dmenu_run -p Run: $DMENU_SETTINGS
+bindsym $mod+space        exec --no-startup-id i3-dmenu-desktop --dmenu='eval dmenu -p Run $DMENU_SETTINGS'
+bindsym $mod+ctrl+space   exec --no-startup-id eval dmenu_run -p Run $DMENU_SETTINGS
 
 bindsym $mod+ctrl+u       exec --no-startup-id $HOME/Scripts/i3/reorder_workspace.py left
 bindsym $mod+ctrl+o       exec --no-startup-id $HOME/Scripts/i3/reorder_workspace.py right
@@ -413,6 +417,7 @@ mode "$mode_resize" {
         bindsym $mod+Return restart
         bindsym $mod+p exec --no-startup-id $polybar; mode "default"
         # bindsym $mod+m # TODO reload music config (or maybe do this with polybar?)
+        bindsym $mod+c exec --no-startup-id pkill compton && compton; mode "default"
 
         bindsym j resize grow left 10 px or 10 ppt
         bindsym k resize grow down 10 px or 10 ppt
