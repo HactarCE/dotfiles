@@ -6,8 +6,13 @@ alias lg='l | grep'
 
 # SAFETY
 alias cp='cp -i'
+alias sucp='sudo cp -i'
 alias mv='mv -i'
-alias rm='rm -i'
+alias sumv='sudo mv -i'
+alias rmm='rm -i'
+alias rm='safe-rm'
+alias surmm='sudo rm -i'
+alias surm='sudo safe-rm'
 
 
 # PYTHON
