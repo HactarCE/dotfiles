@@ -505,7 +505,7 @@ adapter = ADP1
 format-charging = %{A1:xfce4-power-manager-settings:}<ramp-capacity>  <label-charging>%{A}
 format-charging-underline = ${colors.underline-green}
 format-charging-overline = ${colors.overline-green}
-label-charging = %percentage:3%%
+label-charging = %percentage:2%%
 
 format-discharging = %{A1:xfce4-power-manager-settings:}<ramp-capacity> <label-discharging>%{A}
 format-charging-foreground = ${colors.foreground}
