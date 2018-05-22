@@ -54,6 +54,9 @@ alias scr='systemctl reload'
 
 # MISC
 cdl () { cd $(dirname $(readlink -f "$@")); }
+alias elite-hax='hollywood'
+alias shit='fuck'
+alias oops='fuck'
 
 
 # SHORT ALIASES
