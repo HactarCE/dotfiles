@@ -433,7 +433,7 @@ bindcode $mod+$-r mode $mode_resize
 
 mode "$mode_resize" {
 
-        bindsym $mod+Return mode "default"; restart
+        bindsym $mod+Return mode "default"; exec --no-startup-id $polybar; restart
         bindcode $mod+$-p exec --no-startup-id $polybar; mode "default"
         # bindcode $mod+$-m # TODO reload music config (or maybe do this with polybar?)
         bindcode $mod+$-c exec --no-startup-id $restart_compton; mode "default"
