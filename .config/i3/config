@@ -121,7 +121,7 @@ set $scripts                $HOME/Scripts
 #region ########################
 set $basic_editor           mousepad
 set $compton                dbus-launch compton
-set $restart_compton        pkill compton && $compton
+set $kill_compton           pkill compton
 set $polybar                $HOME/.config/polybar/launch.py
 set $control_pianobar       $HOME/.config/pianobar/control-pianobar.sh
 set $file_manager           pcmanfm
@@ -436,7 +436,7 @@ mode "$mode_resize" {
         bindsym $mod+Return mode "default"; exec --no-startup-id $polybar; restart
         bindcode $mod+$-p exec --no-startup-id $polybar; mode "default"
         # bindcode $mod+$-m # TODO reload music config (or maybe do this with polybar?)
-        bindcode $mod+$-c exec --no-startup-id $restart_compton; mode "default"
+        bindcode $mod+$-c exec --no-startup-id $kill_compton || $compton; mode "default"
 
         bindcode $-j resize grow left 10 px or 10 ppt
         bindcode $-k resize grow down 10 px or 10 ppt

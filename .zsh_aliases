@@ -54,15 +54,18 @@ alias scr='systemctl reload'
 
 # MISC
 cdl () { cd $(dirname $(readlink -f "$@")); }
+alias duh='du -h'
 alias elite-hax='hollywood'
-alias lolcow='cowsay | lolcat'
+alias grepi='grep -i'
+alias lolcow='cowsay | lolcat -t'
+alias lol='lolcat -t'
 
 
 # SHORT ALIASES
 alias a='atom'
 alias a.='atom .'
-alias e='emacsclient'
-alias e.='emacsclient .'
+alias e='emacsclient -a ""'
+alias e.='emacsclient -a "" .'
 alias c='cd'
 alias m='mousepad'
 alias n='nano'
