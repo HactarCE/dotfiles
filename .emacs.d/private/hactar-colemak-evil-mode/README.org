@@ -1,0 +1,32 @@
+;;; funcs.el --- Hactar-Colemak Layer keybindings file for Spacemacs
+;; Copyright (c) 2018 HactarCE
+;;
+;; Author: HactarCE
+;; URL: https://github.com/HactarCE/hactar-colemak-evil-mode
+;;
+;; This file is not part of GNU Emacs.
+;;
+;;; License: The Unlicense
+
+;; basically straight-up copied from here:
+;; https://github.com/wbolster/evil-colemak-basics/blob/master/evil-colemak-basics.el
+
+(defvar hactar-colemak-evil-mode-map
+  (let ((map (make-sparse-keymap)))
+
+    (evil-define-key* '(normal motion visual) map "e" #'evil-next-line)
+    (evil-define-key* '(normal motion visual) map "u" #'evil-previous-line)
+    (evil-define-key* '(normal motion visual) map "i" #'evil-forward-char)
+    (evil-define-key* '(normal motion visual) map "n" #'evil-backward-char)
+    (evil-define-key* '(normal motion visual) map "S-e" (dotimes (i 100) #'evil-next-line))
+    (evil-define-key* '(normal motion visual) map "S-u" #'evil-previous-line)
+    (evil-define-key* '(normal motion visual) map "S-i" #'evil-forward-char)
+    (evil-define-key* '(normal motion visual) map "S-n" #'evil-backward-char)
+
+    map))
+
+;;;###autoload
+(define-minor-mode hactar-colemak-evil-mode
+  :lighter " unei")
+
+(provide 'hactar-colemak-evil-mode)
