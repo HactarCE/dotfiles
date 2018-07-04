@@ -248,6 +248,7 @@ bindcode $mod+shift+$-n    exec --no-startup-id $HOME/Scripts/i3/switch_to_works
 bindsym $mod+Escape       exec --no-startup-id $HOME/Scripts/i3/switch_to_workspace.py - ' '
 
 bindsym Print             exec --no-startup-id shot
+bindsym shift+Print       exec --no-startup-id shot-full
 
 # 66 = Caps_Lock, regardless of layout
 exec --no-startup-id xmodmap -e "clear lock" # TODO this isn't enough
