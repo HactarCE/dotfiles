@@ -30,7 +30,10 @@
 ;;; Code:
 
 (defconst hactar-colemak-evil-mode-packages
-  '(evil)
+  '(
+    evil
+    ;; (minimap :location elpa)
+    )
   "The list of Lisp packages required by the hactar-colemak layer.
 
 Each entry is either:
