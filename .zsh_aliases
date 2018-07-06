@@ -53,8 +53,10 @@ alias scr='systemctl reload'
 
 
 # MISC
+# todo: does this cdl actually work?
 cdl () { cd $(dirname $(readlink -f "$@")); }
-alias duh='du -h'
+alias df='df -h' # human-readable sizes
+alias du='du -h'
 alias elite-hax='hollywood'
 alias grepi='grep -i'
 alias lolcow='cowsay | lolcat -t'
