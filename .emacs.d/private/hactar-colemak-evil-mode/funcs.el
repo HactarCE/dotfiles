@@ -96,10 +96,10 @@
     (kbd "f e") #'evil-avy-goto-line-below
     (kbd "f r") #'evil-avy-goto-char ; "Find chaR"
     (kbd "f s") #'evil-avy-goto-char-timer ; "Find charS"
-    (kbd "f w") #'evil-avy-goto-word-or-subword-1 "Find Word"
+    (kbd "f w") #'evil-avy-goto-word-or-subword-1 ; "Find Word"
 
     ;; "d" prefix
-    (kbd "d l") (kbd "x x V V u")
+    (kbd "d l") (kbd "c c V")
 
     ;; prefixed movement
     (kbd "o n") #'evil-beginning-of-line
