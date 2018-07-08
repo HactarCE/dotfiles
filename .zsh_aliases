@@ -62,15 +62,17 @@ alias grepi='grep -i'
 alias lolcow='cowsay | lolcat -t'
 alias lol='lolcat -t'
 
+# EMACS
+alias e='emacsclient -a ""'
+alias e.='e .'
+alias ec='e -c'
+alias ec.='ec .'
+alias ecn='ec -n'
+alias ecn.='ecn .'
 
 # SHORT ALIASES
 alias a='atom'
 alias a.='atom .'
-alias e='emacsclient -a ""'
-alias e.='emacsclient -a "" .'
-alias ec='emacsclient -a "" -c'
-alias ec.='emacsclient -a "" -c .'
-# TODO create emacs section
 alias c='cd'
 alias m='mousepad'
 alias n='nano'
