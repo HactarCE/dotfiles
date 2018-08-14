@@ -1,0 +1,8 @@
+[core]
+	editor = nano
+	askPass = /home/andy/Scripts/ask-git-password.sh
+[user]
+	name = HactarCE
+	email = 6060305+HactarCE@users.noreply.github.com
+[credential "https://github.com"]
+	username = HactarCE
