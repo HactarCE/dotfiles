@@ -63,12 +63,17 @@ alias lolcow='cowsay | lolcat -t'
 alias lol='lolcat -t'
 
 # EMACS
-alias e='emacsclient -a ""'
+alias e='emacsclient -c -a ""'
 alias e.='e .'
-alias ec='e -c'
-alias ec.='ec .'
-alias ecn='ec -n'
-alias ecn.='ecn .'
+alias en='e -n'
+alias en.='en .'
+# alias e='emacsclient -n -a ""'
+# alias e.='e .'
+# alias ec='e -c'
+# alias ec.='ec .'
+# alias ecn='ec -n'
+# # alias ecn.='ecn .'
+# # alias ecnq='ecn; q'
 
 # SHORT ALIASES
 alias a='atom'
