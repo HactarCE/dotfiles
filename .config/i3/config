@@ -99,6 +99,8 @@ font pango:Roboto Medium 9
 
 floating_modifier $mod
 
+focus_wrapping no
+
 # workspace_layout stacking
 
 # Borders/gaps
@@ -221,6 +223,8 @@ bindsym $mod+shift+Return exec i3-sensible-terminal -r float
 
 bindsym $mod+space        exec --no-startup-id i3-dmenu-desktop --dmenu='eval dmenu -p Run $DMENU_SETTINGS'
 bindsym $mod+ctrl+space   exec --no-startup-id eval dmenu_run -p Run $DMENU_SETTINGS
+
+bindcode --release $mod+$-q    exec --no-startup-id xkill
 
 bindcode $mod+ctrl+$-u     exec --no-startup-id $HOME/Scripts/i3/reorder_workspace.py left
 bindcode $mod+ctrl+$-o     exec --no-startup-id $HOME/Scripts/i3/reorder_workspace.py right
