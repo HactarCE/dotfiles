@@ -391,7 +391,7 @@ format-prefix = " "
 format-underline = ${colors.underline-purple}
 format-overline = ${colors.overline-purple}
 
-date = %Y-%m-%d
+date = %a %Y-%m-%d
 date-alt = ${self.date}
 
 label = %date%
