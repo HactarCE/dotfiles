@@ -99,5 +99,3 @@ POWERLEVEL9K_DIR_PATH_SEPARATOR=" $(print_icon "LEFT_SUBSEGMENT_SEPARATOR") "
 if [ -f ~/.zsh_aliases ]; then
     . ~/.zsh_aliases
 fi
-
-eval $(thefuck --alias)
