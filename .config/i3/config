@@ -147,10 +147,10 @@ exec --no-startup-id redshift-gtk
 exec --no-startup-id libinput-gestures-setup start
 exec --no-startup-id $HOME/Scripts/fix-usbs-loop.sh
 exec --no-startup-id $HOME/Scripts/i3/local_exec.sh
-exec --no-startup-id $polybar
 
 # Background (exec_always)
 exec_always --no-startup-id nitrogen --restore
+exec_always --no-startup-id $polybar
 
 # Normal programs
 # exec --no-startup-id steam -silent
@@ -438,7 +438,7 @@ bindcode $mod+$-r mode $mode_resize
 
 mode "$mode_resize" {
 
-        bindsym $mod+Return mode "default"; exec --no-startup-id $polybar; restart
+        bindsym $mod+Return mode "default"; restart
         bindcode $mod+$-p exec --no-startup-id $polybar; mode "default"
         # bindcode $mod+$-m # TODO reload music config (or maybe do this with polybar?)
         bindcode $mod+$-c exec --no-startup-id $kill_compton || $compton; mode "default"
