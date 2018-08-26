@@ -1,8 +1,9 @@
 export DEFAULT_USER="andy"
 export TERM="xterm-256color"
 export ZSH=/home/andy/.oh-my-zsh
+export LANG="en_US.UTF-8"
 
-ZSH_THEME="powerlevel9k/powerlevel9k"
+#ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_MODE="nerdfont-complete"
 
 POWERLEVEL9K_FOLDER_ICON=""
@@ -47,6 +48,7 @@ plugins=(k tig gitfast colored-man colorize command-not-found cp dirhistory auto
 
 source $ZSH/oh-my-zsh.sh
 source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
+source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
 FAST_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 FAST_HIGHLIGHT_STYLES[cursor]='bold'
@@ -76,22 +78,6 @@ function _my_clear() {
 }
 zle -N _my_clear
 bindkey '^l' _my_clear
-
-
-# Ctrl-O opens zsh at the current location, and on exit, cd into ranger's last location.
-ranger-cd() {
-	tempfile=$(mktemp)
-	ranger --choosedir="$tempfile" "${@:-$(pwd)}" < $TTY
-	test -f "$tempfile" &&
-	if [ "$(cat -- "$tempfile")" != "$(echo -n `pwd`)" ]; then
-	cd -- "$(cat "$tempfile")"
-	fi
-	rm -f -- "$tempfile"
-	# hacky way of transferring over previous command and updating the screen
-	VISUAL=true zle edit-command-line
-}
-zle -N ranger-cd
-bindkey '^o' ranger-cd
 
 POWERLEVEL9K_HOME_SUB_ICON="$(print_icon "HOME_ICON")"
 POWERLEVEL9K_DIR_PATH_SEPARATOR=" $(print_icon "LEFT_SUBSEGMENT_SEPARATOR") "
