@@ -257,13 +257,13 @@ label = %output%
 type = internal/backlight
 card = intel_backlight
 
-enable-scroll = true # todo doesn't work
-scroll-up = ~/Scripts/i3/backlight.py +
-scroll-down = ~/Scrpits/i3/backlight.py -
+#enable-scroll = true # todo doesn't work
+#scroll-up = ~/Scripts/i3/backlight.py +
+#scroll-down = ~/Scrpits/i3/backlight.py -
 label = %percentage:3%%
 
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground}
+format = "%{A4:~/Scripts/i3/backlight.py +:}%{A5:~/Scripts/i3/backlight.py -:} <label>%{A}%{A}"
+format-foreground = ${colors.foreground}
 format-underline = ${colors.underline-cyan}
 format-overline = ${colors.overline-cyan}
 
