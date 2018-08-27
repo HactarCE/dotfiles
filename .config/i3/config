@@ -224,6 +224,7 @@ bindsym $mod+shift+Return exec i3-sensible-terminal -r float
 bindsym $mod+space        exec --no-startup-id i3-dmenu-desktop --dmenu='eval dmenu -p Run $DMENU_SETTINGS'
 bindsym $mod+ctrl+space   exec --no-startup-id eval dmenu_run -p Run $DMENU_SETTINGS
 
+# TODO also activates when releasing $mod+shift+$-q if shift is released first
 bindcode --release $mod+$-q    exec --no-startup-id pkill xkill || xkill
 
 bindcode $mod+ctrl+$-u     exec --no-startup-id $HOME/Scripts/i3/reorder_workspace.py left
