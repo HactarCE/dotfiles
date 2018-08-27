@@ -1,3 +1,6 @@
+disable r
+
+
 # LS
 alias l='ls -lAh'
 alias la='ls -lah'
