@@ -102,7 +102,7 @@ fixed-center = true
 # modules-left = mpd
 modules-left = pianobar
 modules-center = volume
-modules-right = xbacklight battery memory cpu wlan date time
+modules-right = backlight battery memory cpu wlan date time
 # modules-right = memory cpu date time
 # separator = " "
 # separator = " "
@@ -249,6 +249,23 @@ interval = 0.2
 
 format = ﱘ   <label>
 label = %output%
+
+#endregion
+
+[module/backlight]
+#region ###################################################
+type = internal/backlight
+card = intel_backlight
+
+enable-scroll = true # todo doesn't work
+scroll-up = ~/Scripts/i3/backlight.py +
+scroll-down = ~/Scrpits/i3/backlight.py -
+label = %percentage:3%%
+
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground}
+format-underline = ${colors.underline-cyan}
+format-overline = ${colors.overline-cyan}
 
 #endregion
 
