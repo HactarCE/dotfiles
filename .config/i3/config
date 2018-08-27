@@ -141,7 +141,9 @@ set $darker #003575
 # Background (exec)
 exec --no-startup-id $compton
 exec --no-startup-id dropbox
+exec --no-startup-id emacs --daemon
 exec --no-startup-id numlockx
+exec --no-startup-id pcmanfm -d
 exec --no-startup-id pulseaudio
 exec --no-startup-id redshift-gtk
 exec --no-startup-id libinput-gestures-setup start
@@ -224,8 +226,7 @@ bindsym $mod+shift+Return exec i3-sensible-terminal -r float
 bindsym $mod+space        exec --no-startup-id i3-dmenu-desktop --dmenu='eval dmenu -p Run $DMENU_SETTINGS'
 bindsym $mod+ctrl+space   exec --no-startup-id eval dmenu_run -p Run $DMENU_SETTINGS
 
-# TODO also activates when releasing $mod+shift+$-q if shift is released first
-bindcode --release $mod+$-q    exec --no-startup-id pkill xkill || xkill
+bindcode --release $mod+ctrl+$-q    exec --no-startup-id pkill xkill || xkill
 
 bindcode $mod+ctrl+$-u     exec --no-startup-id $HOME/Scripts/i3/reorder_workspace.py left
 bindcode $mod+ctrl+$-o     exec --no-startup-id $HOME/Scripts/i3/reorder_workspace.py right
