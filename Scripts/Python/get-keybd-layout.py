@@ -8,4 +8,4 @@ if 'variant:' in s1:
 	s2 = re.search(r'variant:\s+([^\n]+)', s1).group(1)
 	print(s2.title())
 else:
-	print('Qwerty')
+	print('Qwerty ')

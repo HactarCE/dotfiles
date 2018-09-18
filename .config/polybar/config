@@ -10,14 +10,14 @@
 
 border = #000
 background = #111
-background-active = #0070da
-background-inactive = #003575
-background-urgent = #f30
-background-alert = #fc0
-
 foreground = #ddd
-foreground-dim = #999
-foreground-dark = #000
+
+active = #0070da
+alert = #fc0
+dark = #000
+dim = #999
+inactive = #003575
+urgent = #f30
 
 white = #ccc
 red = #c00
@@ -45,7 +45,7 @@ workspace = 4
 [bar/base]
 #region ###################################################
 monitor  = ${env:MONITOR:HDMI-0}
-height = 24
+height = 22
 padding = 2
 fixed-center = false
 
@@ -58,22 +58,13 @@ foreground = ${colors.foreground}
 module-margin-left = 1
 module-margin-right = 2
 
-# font-0 = Iosevka:pixelsize=12;3
-# font-0 = Schumacher Clean:pixelsize=14;2
-# font-0 = Misc Tamsyn:pixelsize=16;2
-
 font-0 = xos4 Terminus:pixelsize=12;2
 font-1 = Roboto Mono Nerd Font:pixelsize=11;2
-# font-0 = xos4 Terminus:pixelsize=14;2
-# font-1 = Roboto Mono Nerd Font:pixelsize=11;3
 
 cursor-click = pointer
 cursor-scroll = ns-resize
 
 border-color = ${colors.border}
-
-# wm-restack = i3
-# override-redirect = true
 
 #endregion
 
@@ -83,18 +74,11 @@ inherit = bar/base
 
 bottom = false
 
-padding-left = 1
-
 fixed-center = true
 
-# modules-left = mpd
 modules-left = pianobar
 modules-center = volume
-modules-right = backlight battery memory cpu wlan date time
-# modules-right = memory cpu date time
-# separator = " "
-# separator = " "
-# separator = " "
+modules-right = backlight battery memory cpu wlan date time eth
 
 height = 22
 border-bottom-size = 2
@@ -114,7 +98,8 @@ padding-left = 0
 
 modules-left = i3
 # ; modules-right = filesystem xbacklight volume xkeyboard memory cpu wlan eth battery temperature date powermenu
-modules-right = xkeyboard
+# modules-right = xkeyboard
+modules-right = capslock keylayout temperature
 # separator = │
 
 tray-position = ${env:TRAY_POS:}
@@ -134,108 +119,73 @@ tray-padding = 2
 # MODULES
 #region #######################################################################
 
-[module/xkeyboard]
+[module/capslock]
 #region ###################################################
 type = internal/xkeyboard
 blacklist-0 = num lock
 blacklist-1 = scroll lock
 
-# TODO probably separate label-indicator and label-layout
-format = <label-indicator> %{A:~/Scripts/switch-keybd-layout.sh:} <label-layout>%{A}
-# format = <label-indicator>
-# fomat =  <label-layout>
-
-label-layout = %name%
-
 label-indicator-padding = 2
 label-indicator-margin = 1
-label-indicator-background = ${colors.background-alert}
-label-indicator-foreground = ${colors.foreground-dark}
+label-indicator-background = ${colors.alert}
+label-indicator-foreground = ${colors.dark}
 
-# format-underline = ${colors.white}
+format = %{A:xdotool key Caps_Lock:}<label-indicator>%{A}
 
 #endregion
 
 [module/keylayout]
 #region ###################################################
 type = custom/script
-exec = ~/Scripts/Python/get-keybd-layout.py
+exec = ~/Scripts/Polybar/get-keyboard-variant.sh
+interval = 0.2
 
-# TODO events!
-
-format-prefix = " "
-format = <label>
-
-interval = 01
+format = %{A:~/Scripts/switch-keybd-layout.sh:} <label>%{A}
+format-underline = ${colors.white}
+format-overline = ${colors.white}
 
 #endregion
 
 [module/i3]
 #region ###################################################
 type = internal/i3
-format = <label-state> <label-mode>
 index-sort = true
+pin-workspaces = true
+strip-wsnumbers = true
 wrapping-scroll = false
 
-; Only show workspaces on the same output as the bar
-pin-workspaces = true
-
-strip-wsnumbers = true
-
-label-mode-margin = 2
-label-mode-padding = 2
-label-mode-foreground = ${colors.foreground-dark}
-label-mode-background = ${colors.background-alert}
-
-; focused = Active workspace on focused monitor
 label-focused = %name%
-label-focused-background = ${colors.background-active}
+label-focused-background = ${colors.active}
 label-focused-padding = ${padding.workspace}
 
-; unfocused = Inactive workspace on any monitor
 label-unfocused = %name%
 label-unfocused-padding = ${padding.workspace}
 
-; visible = Active workspace on unfocused monitor
 label-visible = %name%
-label-visible-background = ${colors.background-inactive}
+label-visible-background = ${colors.inactive}
 label-visible-padding = ${padding.workspace}
 
-; urgent = Workspace with urgency hint set
 label-urgent = %name%
-label-urgent-background = ${colors.background-urgent}
+label-urgent-background = ${colors.urgent}
 label-urgent-padding = ${padding.workspace}
 
-#endregion
+label-mode-margin = 2
+label-mode-padding = 2
+label-mode-foreground = ${colors.dark}
+label-mode-background = ${colors.alert}
 
-# [module/mpd]
-# #region ###################################################
-#
-# type = internal/mpd
-# format-online-prefix = "ﱘ   "
-# # format-offline = no music
-# format-online = <label-song>   <icon-prev> <icon-stop> <toggle> <icon-next>
-#
-# icon-prev = 玲
-# icon-stop = 栗
-# icon-play = 契
-# icon-pause = 
-# icon-next = 怜
-#
-# label-song-maxlen = 25
-# label-song-ellipsis = true
-#
-# #endregion
+format = <label-state> <label-mode>
+
+#endregion
 
 [module/pianobar]
 #region ###################################################
 type = custom/script
-
 exec = ~/.config/pianobar/getstatus.sh
 tail = true
 
-format = %{A:~/.config/pianobar/control.sh toggle:}ﱘ%{A}  <label>
 label = %output%
+format = %{A:~/.config/pianobar/control.sh toggle:}ﱘ%{A}  <label>
 
 #endregion
 
@@ -244,13 +194,8 @@ label = %output%
 type = internal/backlight
 card = intel_backlight
 
-#enable-scroll = true # todo doesn't work
-#scroll-up = ~/Scripts/i3/backlight.py +
-#scroll-down = ~/Scrpits/i3/backlight.py -
 label = %percentage:3%%
-
-format = "%{A4:~/Scripts/i3/backlight.py +:}%{A5:~/Scripts/i3/backlight.py -:} <label>%{A}%{A}"
-format-foreground = ${colors.foreground}
+format = %{A4:~/Scripts/i3/backlight.py +:}%{A5:~/Scripts/i3/backlight.py -:} <label>%{A}%{A}
 format-underline = ${colors.cyan}
 format-overline = ${colors.cyan}
 
@@ -261,21 +206,8 @@ format-overline = ${colors.cyan}
 type = internal/xbacklight
 enable-scroll = false
 
-format = <label>
-
-# format-prefix = "BKLGHT "
-# format-prefix = " "
-# format-prefix = " "
-# format-prefix-foreground = ${colors.foreground-dim}
 label = %percentage:3%%
-
-# ramp-0 = 
-# ramp-1 = 
-# ramp-2 = 
-# ramp-3 = 
-
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground}
+format = %{A4:~/Scripts/i3/backlight.py +:}%{A5:~/Scripts/i3/backlight.py -: <label>%{A}%{A}
 format-underline = ${colors.cyan}
 format-overline = ${colors.cyan}
 
@@ -283,41 +215,13 @@ format-overline = ${colors.cyan}
 
 [module/cpu]
 #region ###################################################
-
 type = internal/cpu
 interval = 2
-; format-prefix = " "
-# format-prefix = "CPU "
-format-prefix = " "
-# format-prefix-foreground = ${colors.foreground-dim}
-format-prefix-foreground = ${colors.foreground}
-# format-underline = #f90000
+
+label = %percentage:3%%
+format= %{A:gnome-system-monitor:} <label>%{A}
 format-underline = ${colors.orange}
 format-overline = ${colors.orange}
-label = %percentage:3%%
-# label = %percentage%%
-
-# ; Available tags:
-# ;   <label> (default)
-# ;   <bar-load>
-# ;   <ramp-load>
-# ;   <ramp-coreload>
-# format = <label> <ramp-coreload>
-#
-# ; Available tokens:
-# ;   %percentage% (default) - total cpu load
-# ;   %percentage-cores% - load percentage for each core
-# ;   %percentage-core[1-9]% - load percentage for specific core
-# label = CPU
-#
-# ramp-coreload-0 = ▁
-# ramp-coreload-1 = ▂
-# ramp-coreload-2 = ▃
-# ramp-coreload-3 = ▄
-# ramp-coreload-4 = ▅
-# ramp-coreload-5 = ▆
-# ramp-coreload-6 = ▇
-# ramp-coreload-7 = █
 
 #endregion
 
@@ -325,97 +229,85 @@ label = %percentage:3%%
 #region ###################################################
 type = internal/memory
 interval = 2
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground}
+
+label = %percentage_used:3%%
+format = %{A:gnome-system-monitor} <label>%{A}
 format-underline = ${colors.yellow}
 format-overline = ${colors.yellow}
-label = %percentage_used:3%%
-# label = %percentage_used:3%% │ 李 %percentage_swap_used:3%%
-# label = %gb_free% | 李 %gb_swap_free% free
 
 #endregion
 
 [module/wlan]
 #region ###################################################
-
 type = internal/network
-# run `ip a' to get the interface name
+# Run `ip a' to get the interface name.
+# TODO may need different interface for different computers
+# use env var when launching?
 interface = wlp3s0
 interval = 3.0
-left-click = nm-connection-editor
 
-# format-connected = <ramp-signal> <label-connected>
-format-connected = %{A1:nm-connection-editor:}<label-connected>%{A}
-# format-connected-underline = #9f78e1
+label-connected = %essid%
+# TODO wifi-menu ?
+format-connected = %{A1:nm-connection-editor:}直 <label-connected>%{A}
 format-connected-underline = ${colors.magenta}
 format-connected-overline = ${colors.magenta}
-label-connected = 直 %essid%
 
-# format-disconnected =
-format-disconnected = %{A1:nm-connection-editor:}<label-disconnected>%{A}
-;format-disconnected-underline = ${self.format-connected-underline}
-# label-disconnected = NO WIFI
-# label-disconnected-foreground = ${colors.background-alert}
-label-disconnected = 睊 NO WIFI
-label-disconnected-foreground = ${colors.background-urgent}
+label-disconnected = NO WIFI
+format-disconnected = %{A1:nm-connection-editor:}睊 <label-disconnected>%{A}
+format-disconnected-foreground = ${colors.urgent}
+format-disconnected-underline = ${self.format-connected-underline}
+format-disconnected-overline = ${self.format-connected-underline}
 
-# ramp-signal-0 = 
-# ramp-signal-1 = 
-# ramp-signal-2 = 
-# ramp-signal-3 = 
-# ramp-signal-4 = 
-# ramp-signal-foreground = ${colors.foreground-dim}
+#endregion
 
-# [module/eth]
-# type = internal/network
-# interface = eno1
-# interval = 3.0
-#
-# format-connected-underline = #55aa55
-# format-connected-prefix = " "
-# format-connected-prefix-foreground = ${colors.foreground-dim}
-# label-connected = %local_ip%
-#
-# format-disconnected =
-# ;format-disconnected = <label-disconnected>
-# ;format-disconnected-underline = ${self.format-connected-underline}
-# ;label-disconnected = %ifname% disconnected
-# ;label-disconnected-foreground = ${colors.foreground-dim}
+[module/eth]
+#region ###################################################
+type = internal/network
+# Run `ip a' to get the interface name.
+# TODO may need different interface for different computers
+# use env var when launching?
+interface = enp3s0
+interval = 3.0
+
+label-connected = %local_ip%
+format-connected =  <label-connected>
+format-connected-underline = ${colors.green}
+format-connected-overline = ${colors.green}
+
+label-disconnected = NO ETHERNET
+format-disconnected =  <label-disconnected>
+format-disconnected-foreground = ${colors.urgent}
+format-disconnected-underline = ${colors.red}
+format-disconnected-overline = ${colors.red}
 
 #endregion
 
 [module/date]
 #region ###################################################
 type = internal/date
-interval = 1
-
-# TODO disable click entirely
-
-format-prefix = " "
-format-underline = ${colors.purple}
-format-overline = ${colors.purple}
+interval = 2
 
 date = %a %Y-%m-%d
-date-alt = ${self.date}
 
 label = %date%
+# TODO popup calendar
+format =  <label>
+format-underline = ${colors.purple}
+format-overline = ${colors.purple}
 
 #endregion
 
 [module/time]
 #region ###################################################
 type = internal/date
-interval = 1
+interval = 2
 
-format-prefix = " "
-format-underline = ${colors.blue}
-format-overline = ${colors.blue}
-
-# time = %I:%M %p
 time = %l:%M %p
-time-alt = %H:%M:%S
 
 label = %time%
+format =  <label>
+format-underline = ${colors.blue}
+format-overline = ${colors.blue}
 
 #endregion
 
@@ -427,76 +319,50 @@ type = internal/pulseaudio
 
 click-right = exec pavucontrol &
 
-format-volume = <ramp-volume> <bar-volume> <label-volume>
-label-volume = %percentage:3%%
-
-format-muted-foreground = ${colors.foreground-dim}
-# format-muted-underline = ${colors.foreground-dim}
-label-muted = "ﱝ   all sound muted"
-
-# master-soundcard = default
-# speaker-soundcard = default
-# headphone-soundcard = default
-
 master-mixer = Master
 
-# speaker-mixer = Speaker
-# headphone-mixer = Headphone
-
-# headphone-id = 4
-
-# TODO make this work somehow
-# mapped = true
-
-# ew using spaces to center things
-# but I want the bar to be in the middle
-ramp-volume-0 = "   奄"
-ramp-volume-1 = "   奔"
-ramp-volume-2 = "   墳"
-
-# ramp-headphones-0 = "  奄"
-# ramp-headphones-1 = "  奔"
-# ramp-headphones-2 = "  墳"
+ramp-volume-0 = 奄
+ramp-volume-1 = 奔
+ramp-volume-2 = 墳
 
 bar-volume-width = 21
-# bar-volume-fill-foreground = ${colors.foreground}
-# bar-volume-fill-foreground = ${colors.background-active}
 
-# Not sure why I can't set a default color and then only specify #13-20
-# probably a bug?
-bar-volume-foreground-0 = ${colors.background-active}
-bar-volume-foreground-1 = ${colors.background-active}
-bar-volume-foreground-2 = ${colors.background-active}
-bar-volume-foreground-3 = ${colors.background-active}
-bar-volume-foreground-4 = ${colors.background-active}
-bar-volume-foreground-5 = ${colors.background-active}
-bar-volume-foreground-6 = ${colors.background-active}
-bar-volume-foreground-7 = ${colors.background-active}
-bar-volume-foreground-8 = ${colors.background-active}
-bar-volume-foreground-9 = ${colors.background-active}
-bar-volume-foreground-10 = ${colors.background-active}
-bar-volume-foreground-11 = ${colors.background-active}
-bar-volume-foreground-12 = ${colors.background-active}
+bar-volume-foreground-0 = ${colors.active}
+bar-volume-foreground-1 = ${colors.active}
+bar-volume-foreground-2 = ${colors.active}
+bar-volume-foreground-3 = ${colors.active}
+bar-volume-foreground-4 = ${colors.active}
+bar-volume-foreground-5 = ${colors.active}
+bar-volume-foreground-6 = ${colors.active}
+bar-volume-foreground-7 = ${colors.active}
+bar-volume-foreground-8 = ${colors.active}
+bar-volume-foreground-9 = ${colors.active}
+bar-volume-foreground-10 = ${colors.active}
+bar-volume-foreground-11 = ${colors.active}
+bar-volume-foreground-12 = ${colors.active}
 
-bar-volume-foreground-13 = ${colors.background-alert}
-bar-volume-foreground-14 = ${colors.background-alert}
-bar-volume-foreground-15 = ${colors.background-alert}
-bar-volume-foreground-16 = ${colors.background-alert}
+bar-volume-foreground-13 = ${colors.alert}
+bar-volume-foreground-14 = ${colors.alert}
+bar-volume-foreground-15 = ${colors.alert}
+bar-volume-foreground-16 = ${colors.alert}
 
-bar-volume-foreground-17 = ${colors.background-urgent}
-bar-volume-foreground-18 = ${colors.background-urgent}
-bar-volume-foreground-19 = ${colors.background-urgent}
-bar-volume-foreground-20 = ${colors.background-urgent}
+bar-volume-foreground-17 = ${colors.urgent}
+bar-volume-foreground-18 = ${colors.urgent}
+bar-volume-foreground-19 = ${colors.urgent}
+bar-volume-foreground-20 = ${colors.urgent}
 
 bar-volume-gradient = false
 bar-volume-indicator = |
-# bar-volume-indicator = │
-# bar-volume-indicator = ┼
 bar-volume-fill = ─
 bar-volume-empty = ─
 
-bar-volume-empty-foreground = ${colors.foreground-dim}
-# bar-volume-empty-foreground = ${colors.background-inactive}
+bar-volume-empty-foreground = ${colors.inactive}
+
+label-volume = %percentage:3%%
+format-volume = <ramp-volume> <bar-volume> <label-volume>
+
+label-muted = "ﱝ  ALL SOUND MUTED"
+format-muted-foreground = ${colors.dim}
 
 #endregion
 
@@ -505,22 +371,6 @@ bar-volume-empty-foreground = ${colors.foreground-dim}
 type = internal/battery
 battery = BAT1
 adapter = ADP1
-# full-at = 98
-
-format-charging = %{A1:xfce4-power-manager-settings:}<ramp-capacity>  <label-charging>%{A}
-format-charging-underline = ${colors.green}
-format-charging-overline = ${colors.green}
-label-charging = %percentage:2%%
-
-format-discharging = %{A1:xfce4-power-manager-settings:}<ramp-capacity> <label-discharging>%{A}
-format-charging-foreground = ${colors.foreground}
-format-discharging-underline = ${self.format-charging-underline}
-format-discharging-overline = ${self.format-charging-overline}
-label-discharging = %percentage:3%%
-
-format-urgent-foreground = ${colors.background-urgent}
-format-urgent-underline = ${colors.background-urgent}
-format-urgent-overline = ${colors.background-urgent}
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
@@ -528,11 +378,22 @@ ramp-capacity-2 = 
 ramp-capacity-3 = 
 ramp-capacity-4 = 
 
-# animation-charging-0 = 
-# animation-charging-1 = 
-# animation-charging-2 = 
-# animation-charging-foreground = ${colors.foreground-dim}
-# animation-charging-framerate = 750
+# TODO also show %time% and %consumption%
+# TODO test this
+label-charging = %percentage:2%% +%consumption:2% W (%time%)
+format-charging = %{A1:xfce4-power-manager-settings:}<ramp-capacity>  <label-charging>%{A}
+format-charging-underline = ${colors.green}
+format-charging-overline = ${colors.green}
+
+label-discharging = %percentage:3%% -%consumption:2% W (%time%)
+format-discharging = %{A1:xfce4-power-manager-settings:}<ramp-capacity> <label-discharging>%{A}
+format-charging-foreground = ${colors.foreground}
+format-discharging-underline = ${self.format-charging-underline}
+format-discharging-overline = ${self.format-charging-overline}
+
+format-urgent-foreground = ${colors.urgent}
+format-urgent-underline = ${colors.urgent}
+format-urgent-overline = ${colors.urgent}
 
 #endregion
 
@@ -542,55 +403,22 @@ type = internal/temperature
 thermal-zone = 0
 warn-temperature = 60
 
-format-prefix = "TMP "
-format-prefix-foreground = ${colors.foreground-dim}
-# format-underline = #f50a4d
+label = %temperature-c%
+format = <ramp> <label>
 format-underline = ${colors.white}
 format-overline = ${colors.white}
-format-warn = <label-warn>
+
+label-warn = %temperature-c%
+format-warn = <ramp> <label-warn>
+format-warn-foreground = ${colors.urgent}
 format-warn-underline = ${self.format-underline}
 format-warn-overline = ${self.format-overline}
 
-label = %temperature%
-label-warn = %temperature%
-label-warn-foreground = ${colors.secondary}
-
-# ramp-0 = 
-# ramp-1 = 
-# ramp-2 = 
-# ramp-foreground = ${colors.foreground-dim}
-
-#endregion
-
-[module/powermenu]
-#region ###################################################
-type = custom/menu
-
-expand-right = true
-
-format-spacing = 1
-
-label-open = 
-label-open-foreground = ${colors.secondary}
-label-close =  cancel
-label-close-foreground = ${colors.secondary}
-label-separator = |
-label-separator-foreground = ${colors.foreground-dim}
-
-menu-0-0 = reboot
-menu-0-0-exec = menu-open-1
-menu-0-1 = power off
-menu-0-1-exec = menu-open-2
-
-menu-1-0 = cancel
-menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
-menu-1-1-exec = sudo reboot
-
-menu-2-0 = power off
-menu-2-0-exec = sudo poweroff
-menu-2-1 = cancel
-menu-2-1-exec = menu-open-0
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+ramp-4 = 
 
 #endregion
 
