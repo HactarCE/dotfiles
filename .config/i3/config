@@ -136,18 +136,19 @@ set $bright #0070da
 set $darker #003575
 #endregion
 
-# Startup (TODO - move to some file called by .xprofile)
+# Startup (TODO - move to some file called by .xprofile or .profile)
 #region ########################
 
 # Background (exec)
 exec --no-startup-id $compton
 exec --no-startup-id dropbox
 exec --no-startup-id emacs --daemon
+exec --no-startup-id libinput-gestures-setup start
 exec --no-startup-id numlockx
 exec --no-startup-id pcmanfm -d
 exec --no-startup-id $pulseaudio
 exec --no-startup-id redshift-gtk
-exec --no-startup-id libinput-gestures-setup start
+exec --no-startup-id udiskie
 exec --no-startup-id $HOME/Scripts/fix-usbs-loop.sh
 exec --no-startup-id $HOME/Scripts/i3/local_exec.sh
 
@@ -224,8 +225,10 @@ bindcode $mod+$-t exec --no-startup-id $HOME/Scripts/fix-audio.sh; exec --no-sta
 bindsym $mod+Return       exec i3-sensible-terminal
 bindsym $mod+shift+Return exec i3-sensible-terminal -r float
 
-bindsym $mod+space        exec --no-startup-id i3-dmenu-desktop --dmenu='eval dmenu -p Run $DMENU_SETTINGS'
-bindsym $mod+ctrl+space   exec --no-startup-id eval dmenu_run -p Run $DMENU_SETTINGS
+# bindsym $mod+space        exec --no-startup-id i3-dmenu-desktop --dmenu='eval dmenu -p Run $DMENU_SETTINGS'
+# bindsym $mod+ctrl+space   exec --no-startup-id eval dmenu_run -p Run $DMENU_SETTINGS
+bindsym $mod+space        exec --no-startup-id rofi -show drun
+bindsym $mod+ctrl+space   exec --no-startup-id rofi -show run
 
 bindcode --release $mod+ctrl+$-q    exec --no-startup-id pkill xkill || xkill
 
@@ -380,7 +383,6 @@ bindsym $mod+apostrophe focus child
 # bindsym $mod+grave bar mode toggle
 
 #region Pulse Audio controls
-# bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse set Master 5%+ && pkill -RTMIN+10 i3blocks # increase sound volume
 bindsym XF86AudioRaiseVolume    exec --no-startup-id pamixer -i 5 # increase sound volume
 bindcode $mod+$alt+$-i             exec --no-startup-id pamixer -i 5 # increase sound volume
 bindsym XF86AudioLowerVolume    exec --no-startup-id pamixer -d 5 # decrease sound volume
@@ -435,7 +437,8 @@ bindsym $mod+$alt+minus         exec --no-startup-id $control_pianobar ban
 #region ########################
 
 set $mode_resize resize / reload
-bindcode $mod+$-r mode $mode_resize
+bindcode $mod+ctrl+$-r mode $mode_resize
+bindcode $mod+$-r exec --no-startup-id rofi -show
 
 mode "$mode_resize" {
 

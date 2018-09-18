@@ -290,8 +290,8 @@ interval = 2
 date = %a %Y-%m-%d
 
 label = %date%
-# TODO popup calendar
-format =  <label>
+# TODO better popup calendar
+format = %{A1:gsimplecal:} <label>%{A}
 format-underline = ${colors.purple}
 format-overline = ${colors.purple}
 

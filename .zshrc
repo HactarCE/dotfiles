@@ -43,7 +43,7 @@ HYPHEN_INSENSITIVE="true"
 COMPLETION_WAITING_DOTS="false"
 # /!\ do not use with zsh-autosuggestions
 
-plugins=(k tig gitfast colored-man colorize command-not-found cp dirhistory autojump zsh-completions fast-syntax-highlighting zsh-autosuggestions)
+plugins=(k tig gitfast colored-man-pages colorize command-not-found cp dirhistory autojump zsh-completions fast-syntax-highlighting zsh-autosuggestions)
 # /!\ zsh-syntax-highlighting and then zsh-autosuggestions must be at the end
 
 source $ZSH/oh-my-zsh.sh

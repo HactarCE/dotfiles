@@ -36,3 +36,6 @@ export WINEPREFIX="$HOME/.wine"
 
 # xmodmap -e "keycode 23 = Control_L NoSymbol Control_L"
 # xcape -e "Super_L=Escape"
+
+# TODO
+xfce4-power-manager &

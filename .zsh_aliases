@@ -39,8 +39,11 @@ alias grepi='grep -i'
 alias lolcow='cowsay | lolcat -t'
 alias lol='lolcat -t'
 alias sys='systemctl'
+alias susys='sudo systemctl'
+alias suno='sudo nano'
 
-# EMACS
+
+# SHORT
 alias a='atom'
 alias a.='atom .'
 alias c='cd'
@@ -48,6 +51,8 @@ alias cx='chmod +x'
 alias c-x='chmod -x'
 alias e='emacsclient -cna ""'
 alias e.='e .'
+# alias se='sudo emacsclient -cna ""'
+# alias se.='se .'
 alias jj='java -jar'
 alias m='mousepad'
 alias n='nano'
