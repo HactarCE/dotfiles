@@ -17,28 +17,28 @@ toggle
 EOF
             ;;
         play)
-            echo P > "$PIANOBAR_FIFO_FILE"
+            echo -n P > "$PIANOBAR_FIFO_FILE"
             ;;
         pause)
-            echo S > "$PIANOBAR_FIFO_FILE"
+            echo -n S > "$PIANOBAR_FIFO_FILE"
             ;;
         playpause|toggleplaypause)
-            echo ' ' > "$PIANOBAR_FIFO_FILE"
+            echo -n ' ' > "$PIANOBAR_FIFO_FILE"
             ;;
         skip)
-            echo n > "$PIANOBAR_FIFO_FILE"
+            echo -n n > "$PIANOBAR_FIFO_FILE"
             ;;
         quit)
-            echo q > "$PIANOBAR_FIFO_FILE"
+            echo -n q > "$PIANOBAR_FIFO_FILE"
             ;;
         love)
-            echo + > "$PIANOBAR_FIFO_FILE"
+            echo -n + > "$PIANOBAR_FIFO_FILE"
             ;;
         ban)
-            echo - > "$PIANOBAR_FIFO_FILE"
+            echo -n - > "$PIANOBAR_FIFO_FILE"
             ;;
         shelf)
-            echo t > "$PIANOBAR_FIFO_FILE"
+            echo -n t > "$PIANOBAR_FIFO_FILE"
             ;;
         *)
             echo "Allowed commands: toggle, play, pause, playpause, toggleplaypause, skip, quit, love, ban, shelf"

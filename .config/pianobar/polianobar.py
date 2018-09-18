@@ -22,6 +22,8 @@ EVENTCMD_FIFO_FILE = '~/.config/pianobar/eventcmd_fifo'
 
 CONTROL_SH = '~/.config/pianobar/control.sh'
 
+MAX_SONG_NAME_LENGTH = 60
+
 # If you've changed any of Pianobar's keybinds, update them in control.sh.
 
 def get_status():
@@ -37,7 +39,7 @@ def get_status():
         s += f'{timePlayed//60:02}:{timePlayed%60:02} '
         progress = int(timePlayed / timeTotal * barLength)
         s += f'%{{F#99}}'
-        s += '█' * progress
+        s += '▒' * progress
         if info['buffering']:
             s += f'%{{F#333333}}'
         else:
@@ -50,7 +52,7 @@ def get_status():
         s += button('鈴', control_action('shelf')) + ' '
         s += button('﨓晴'[info['rating'] == '1'], control_action('love')) + '  '
         # Title/album/artist
-        s += format_songname(True, True)
+        s += format_songname(True, True, MAX_SONG_NAME_LENGTH)
         return s
     return format_stationname()
 
@@ -94,12 +96,23 @@ def control_action(arg):
 
 # This method is only used in the configuration section -- feel free to modify
 # or remove it.
-def format_songname(show_artist=False, show_album=False):
-    s = f'%{{F#66cc66}}{info["title"]}%{{F-}}'
+def format_songname(show_artist=False, show_album=False, max_length=None):
+    title, artist, album = info['title'], info['artist'], info['album']
+    if max_length:
+        if show_artist:
+            if len(f"{title} by {artist} on {album}") > max_length:
+                show_album = False
+            if len(f"{title} by {artist}") > max_length:
+                show_artist = False
+        elif len(f"{title} on {album}") > max_length:
+            show_album = False
+        if len(title) > max_length:
+            title = title[:max_length-3] + '...'
+    s = f'%{{F#66cc66}}{title}%{{F-}}'
     if show_artist:
-        s += f' by %{{F#00ccff}}{info["artist"]}%{{F-}}'
+        s += f' by %{{F#00ccff}}{artist}%{{F-}}'
     if show_album:
-        s += f' on %{{F#cccc00}}{info["album"]}%{{F-}}'
+        s += f' on %{{F#cccc00}}{album}%{{F-}}'
     return s
 
 # This method is only used in the configuration section -- feel free to modify
@@ -260,6 +273,7 @@ time_pattern = re.compile(r'#\s+-(\d+:\d+)/(\d+:\d+)')
 
 last_line = ''
 while pianobar.poll() is None:
+    time.sleep(0.2)
     #region transient_text
     if transient_text:
         set_status(transient_text)

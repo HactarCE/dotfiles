@@ -4,6 +4,7 @@ password_command = gpg -qd ~/.pandora_password.gpg
 
 # Misc
 audio_quality = high
+fifo =
 event_command = ~/.config/pianobar/eventcmd.py
 format_nowplaying_song = [32m%t[0m by [34m%a[0m on [33m%l[0m %r%@%s
 ban_icon = [31m[0m
