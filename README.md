@@ -32,8 +32,6 @@ I am currently running i3 on Manjaro Linux.
 ## To-do
 
 ### General
-* pianobar controller (with Polybar integration)
-* custom time provider for Polybar with dynamic icon
 * Atom/vim/spacemacs keybinds
   - Also [here](https://github.com/HactarCE/alt-vim-keys)
 * Better keybinds for caps lock and keyboard layout switching
@@ -47,6 +45,5 @@ I am currently running i3 on Manjaro Linux.
 * i3
 * i3lock-fancier
 * Polybar
-* Pianobar
 * Termite
 * most files in ~/Scripts

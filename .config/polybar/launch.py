@@ -13,7 +13,7 @@ def sh(cmd, *args, **kwargs):
     return sh_no_block(cmd, *args, stdout=subprocess.PIPE, **kwargs).communicate()[0]
 
 # Terminate already running bar instances
-sh('killall -q polybar')
+sh('killall -qs 9 polybar')
 
 # Wait until the processes have been shut down
 while sh('pgrep -u {} -x polybar'.format(os.getuid())):

@@ -125,7 +125,8 @@ set $basic_editor           mousepad
 set $compton                dbus-launch compton
 set $kill_compton           pkill compton
 set $polybar                $HOME/.config/polybar/launch.py
-set $control_pianobar       $HOME/.config/pianobar/control-pianobar.sh
+set $pulseaudio				pulseaudio -k; pulseaudio --start
+set $control_pianobar       $HOME/.config/pianobar/control.sh
 set $file_manager           pcmanfm
 #endregion
 
@@ -144,7 +145,7 @@ exec --no-startup-id dropbox
 exec --no-startup-id emacs --daemon
 exec --no-startup-id numlockx
 exec --no-startup-id pcmanfm -d
-exec --no-startup-id pulseaudio
+exec --no-startup-id $pulseaudio
 exec --no-startup-id redshift-gtk
 exec --no-startup-id libinput-gestures-setup start
 exec --no-startup-id $HOME/Scripts/fix-usbs-loop.sh
@@ -400,23 +401,21 @@ bindsym XF86TouchpadToggle exec --no-startup-id /some/path/toggletouchpad.sh # t
 #endregion
 
 #region Media player controls
-bindsym XF86AudioPlay           exec --no-startup-id $control_pianobar p
-# bindsym XF86AudioPause          exec --no-startup-id $control_pianobar p
-bindsym XF86AudioNext           exec --no-startup-id $control_pianobar next
-bindsym XF86AudioPrev           exec --no-startup-id $control_pianobar history
+bindsym XF86AudioPlay           exec --no-startup-id $control_pianobar toggleplaypause
+bindsym XF86AudioNext           exec --no-startup-id $control_pianobar skip
+# bindsym XF86AudioPrev           exec --no-startup-id $control_pianobar history
 bindsym XF86AudioStop           exec --no-startup-id $control_pianobar quit
-bindsym ctrl+XF86AudioNext      exec --no-startup-id $control_pianobar nextstation
-bindsym ctrl+XF86AudioPrev      exec --no-startup-id $control_pianobar previousstation
+# bindsym ctrl+XF86AudioNext      exec --no-startup-id $control_pianobar nextstation
+# bindsym ctrl+XF86AudioPrev      exec --no-startup-id $control_pianobar previousstation
 
-bindcode $mod+$alt+$-p             exec --no-startup-id $control_pianobar p
+bindcode $mod+$alt+$-p             exec --no-startup-id $control_pianobar playpause
 bindcode $mod+$alt+$-n             exec --no-startup-id $control_pianobar next
 bindcode $mod+$alt+$-l             exec --no-startup-id $control_pianobar love
 bindsym $mod+$alt+minus         exec --no-startup-id $control_pianobar ban
-bindcode $mod+$alt+$-h             exec --no-startup-id $control_pianobar history
-bindcode $mod+$alt+$-e             exec --no-startup-id $control_pianobar explain
+# bindcode $mod+$alt+$-h             exec --no-startup-id $control_pianobar history
+# bindcode $mod+$alt+$-e             exec --no-startup-id $control_pianobar explain
 
 # bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
-# bindsym XF86AudioPause exec --no-startup-id playerctl play-pause
 # bindsym XF86AudioNext exec --no-startup-id playerctl next
 # bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 #endregion

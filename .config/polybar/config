@@ -19,29 +19,17 @@ foreground = #ddd
 foreground-dim = #999
 foreground-dark = #000
 
-underline-white = #ccc
-underline-red = #c00
-underline-yellow = #fc0
-underline-green = #0c0
-underline-cyan = #0cc
-# underline-blue = #00c
-underline-blue = #36c
-underline-magenta = #c0c
+white = #ccc
+red = #c00
+yellow = #fc0
+green = #0c0
+cyan = #0cc
+# blue = #00c
+blue = #36c
+magenta = #c0c
 
-underline-orange = #f60
-underline-purple = #90c
-
-overline-white = #ccc
-overline-red = #c00
-overline-yellow = #fc0
-overline-green = #0c0
-overline-cyan = #0cc
-# overline-blue = #00c
-overline-blue = #36c
-overline-magenta = #c0c
-
-overline-orange = #f60
-overline-purple = #90c
+orange = #f60
+purple = #90c
 
 #endregion
 
@@ -164,7 +152,7 @@ label-indicator-margin = 1
 label-indicator-background = ${colors.background-alert}
 label-indicator-foreground = ${colors.foreground-dark}
 
-# format-underline = ${colors.underline-white}
+# format-underline = ${colors.white}
 
 #endregion
 
@@ -243,11 +231,10 @@ label-urgent-padding = ${padding.workspace}
 #region ###################################################
 type = custom/script
 
-exec = echo "%{A:notify-send wassup:}$(cat ~/.config/pianobar/nowplaying) $(tail -c 15 ~/.config/pianobar/log)%{A}"
-# exec = cat ~/.config/pianobar/nowplaying
-interval = 0.2
+exec = ~/.config/pianobar/getstatus.sh
+tail = true
 
-format = ﱘ   <label>
+format = %{A:~/.config/pianobar/control.sh toggle:}ﱘ%{A}  <label>
 label = %output%
 
 #endregion
@@ -264,8 +251,8 @@ label = %percentage:3%%
 
 format = "%{A4:~/Scripts/i3/backlight.py +:}%{A5:~/Scripts/i3/backlight.py -:} <label>%{A}%{A}"
 format-foreground = ${colors.foreground}
-format-underline = ${colors.underline-cyan}
-format-overline = ${colors.overline-cyan}
+format-underline = ${colors.cyan}
+format-overline = ${colors.cyan}
 
 #endregion
 
@@ -289,8 +276,8 @@ label = %percentage:3%%
 
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground}
-format-underline = ${colors.underline-cyan}
-format-overline = ${colors.overline-cyan}
+format-underline = ${colors.cyan}
+format-overline = ${colors.cyan}
 
 #endregion
 
@@ -305,8 +292,8 @@ format-prefix = " "
 # format-prefix-foreground = ${colors.foreground-dim}
 format-prefix-foreground = ${colors.foreground}
 # format-underline = #f90000
-format-underline = ${colors.underline-orange}
-format-overline = ${colors.overline-orange}
+format-underline = ${colors.orange}
+format-overline = ${colors.orange}
 label = %percentage:3%%
 # label = %percentage%%
 
@@ -340,8 +327,8 @@ type = internal/memory
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground}
-format-underline = ${colors.underline-yellow}
-format-overline = ${colors.overline-yellow}
+format-underline = ${colors.yellow}
+format-overline = ${colors.yellow}
 label = %percentage_used:3%%
 # label = %percentage_used:3%% │ 李 %percentage_swap_used:3%%
 # label = %gb_free% | 李 %gb_swap_free% free
@@ -360,8 +347,8 @@ left-click = nm-connection-editor
 # format-connected = <ramp-signal> <label-connected>
 format-connected = %{A1:nm-connection-editor:}<label-connected>%{A}
 # format-connected-underline = #9f78e1
-format-connected-underline = ${colors.underline-magenta}
-format-connected-overline = ${colors.overline-magenta}
+format-connected-underline = ${colors.magenta}
+format-connected-overline = ${colors.magenta}
 label-connected = 直 %essid%
 
 # format-disconnected =
@@ -405,8 +392,8 @@ interval = 1
 # TODO disable click entirely
 
 format-prefix = " "
-format-underline = ${colors.underline-purple}
-format-overline = ${colors.overline-purple}
+format-underline = ${colors.purple}
+format-overline = ${colors.purple}
 
 date = %a %Y-%m-%d
 date-alt = ${self.date}
@@ -421,8 +408,8 @@ type = internal/date
 interval = 1
 
 format-prefix = " "
-format-underline = ${colors.underline-blue}
-format-overline = ${colors.overline-blue}
+format-underline = ${colors.blue}
+format-overline = ${colors.blue}
 
 # time = %I:%M %p
 time = %l:%M %p
@@ -437,7 +424,8 @@ label = %time%
 # type = internal/volume
 # type = internal/alsa
 type = internal/pulseaudio
-enable-scroll = false
+
+click-right = exec pavucontrol &
 
 format-volume = <ramp-volume> <bar-volume> <label-volume>
 label-volume = %percentage:3%%
@@ -520,8 +508,8 @@ adapter = ADP1
 # full-at = 98
 
 format-charging = %{A1:xfce4-power-manager-settings:}<ramp-capacity>  <label-charging>%{A}
-format-charging-underline = ${colors.underline-green}
-format-charging-overline = ${colors.overline-green}
+format-charging-underline = ${colors.green}
+format-charging-overline = ${colors.green}
 label-charging = %percentage:2%%
 
 format-discharging = %{A1:xfce4-power-manager-settings:}<ramp-capacity> <label-discharging>%{A}
@@ -557,8 +545,8 @@ warn-temperature = 60
 format-prefix = "TMP "
 format-prefix-foreground = ${colors.foreground-dim}
 # format-underline = #f50a4d
-format-underline = ${colors.underline-white}
-format-overline = ${colors.overline-white}
+format-underline = ${colors.white}
+format-overline = ${colors.white}
 format-warn = <label-warn>
 format-warn-underline = ${self.format-underline}
 format-warn-overline = ${self.format-overline}

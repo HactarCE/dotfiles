@@ -1,11 +1,13 @@
 # User
 user = ajfarkas12@gmail.com
-password_command = gpg -d ~/.pandora_password.gpg
+password_command = gpg -qd ~/.pandora_password.gpg
 
 # Misc
 audio_quality = high
-# event_command = ~/.config/pianobar/event_command.py
-# event_command = ~/.config/pianobar/pianobar-notify.sh
-ban_icon =  
-love_icon =  
-tired_icon =  鈴
+event_command = ~/.config/pianobar/eventcmd.py
+format_nowplaying_song = [32m%t[0m by [34m%a[0m on [33m%l[0m %r%@%s
+ban_icon = [31m[0m
+love_icon = [31m[0m
+tired_icon = [33m鈴[0m
+format_nowplaying_station = Station [35m%n[0m
+format_list_song = %i) [32m%t[0m by [34m%a[0m [31m%r[0m [36m(%d)[0m%@%s
