@@ -9,7 +9,7 @@
 #region ###################################################
 
 border = #000
-background = #111
+background = #000
 foreground = #ddd
 
 active = #0070da
@@ -24,9 +24,12 @@ red = #c00
 yellow = #fc0
 green = #0c0
 cyan = #0cc
-# blue = #00c
-blue = #36c
+blue = #00c
 magenta = #c0c
+
+dark-yellow = #990
+bright-blue = #06c
+brighter-blue = #09f
 
 orange = #f60
 purple = #90c
@@ -45,7 +48,7 @@ workspace = 4
 [bar/base]
 #region ###################################################
 monitor  = ${env:MONITOR:HDMI-0}
-height = 22
+height = 20
 padding = 2
 fixed-center = false
 
@@ -58,8 +61,10 @@ foreground = ${colors.foreground}
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = xos4 Terminus:pixelsize=12;2
-font-1 = Roboto Mono Nerd Font:pixelsize=11;2
+# font-0 = Iosevka SS04:antialias=false:pixelsize=9;2;
+font-0 = xos4 Terminus:pixelsize=12;1
+font-1 = Roboto Mono Nerd Font:pixelsize=11;1
+font-2 = xos4 Terminus:pixelsize=15;1
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -77,10 +82,11 @@ bottom = false
 fixed-center = true
 
 modules-left = pianobar
-modules-center = volume
-modules-right = backlight battery memory cpu wlan date time eth
+# modules-center = volume
+# modules-right = backlight battery memory cpu wlan date time eth
+# modules-right = volume backlight redshift date time
+modules-right = volume bluetooth backlight date time
 
-height = 22
 border-bottom-size = 2
 
 #endregion
@@ -91,7 +97,6 @@ inherit = bar/base
 
 bottom = true
 
-height = 22
 border-top-size = 2
 
 padding-left = 0
@@ -99,7 +104,8 @@ padding-left = 0
 modules-left = i3
 # ; modules-right = filesystem xbacklight volume xkeyboard memory cpu wlan eth battery temperature date powermenu
 # modules-right = xkeyboard
-modules-right = capslock keylayout temperature
+# modules-right = capslock keylayout temperature
+modules-right = capslock keylayout compton wlan wlan-ip eth-ip temperature cpu memory battery
 # separator = │
 
 tray-position = ${env:TRAY_POS:}
@@ -141,8 +147,8 @@ exec = ~/Scripts/Polybar/get-keyboard-variant.sh
 interval = 0.2
 
 format = %{A:~/Scripts/switch-keybd-layout.sh:} <label>%{A}
-format-underline = ${colors.white}
-format-overline = ${colors.white}
+# format-underline = ${colors.white}
+# format-overline = ${colors.white}
 
 #endregion
 
@@ -196,8 +202,8 @@ card = intel_backlight
 
 label = %percentage:3%%
 format = %{A4:~/Scripts/i3/backlight.py +:}%{A5:~/Scripts/i3/backlight.py -:} <label>%{A}%{A}
-format-underline = ${colors.cyan}
-format-overline = ${colors.cyan}
+format-underline = ${colors.dark-yellow}
+format-overline = ${colors.dark-yellow}
 
 #endregion
 
@@ -208,8 +214,8 @@ enable-scroll = false
 
 label = %percentage:3%%
 format = %{A4:~/Scripts/i3/backlight.py +:}%{A5:~/Scripts/i3/backlight.py -: <label>%{A}%{A}
-format-underline = ${colors.cyan}
-format-overline = ${colors.cyan}
+format-underline = ${colors.dark-yellow}
+format-overline = ${colors.dark-yellow}
 
 #endregion
 
@@ -219,9 +225,9 @@ type = internal/cpu
 interval = 2
 
 label = %percentage:3%%
-format= %{A:gnome-system-monitor:} <label>%{A}
-format-underline = ${colors.orange}
-format-overline = ${colors.orange}
+format= %{A:gnome-system-monitor -r:} <label>%{A}
+format-underline = ${colors.yellow}
+format-overline = ${colors.yellow}
 
 #endregion
 
@@ -230,12 +236,10 @@ format-overline = ${colors.orange}
 type = internal/memory
 interval = 2
 
-label = %percentage_used:3%%
-format = %{A:gnome-system-monitor} <label>%{A}
-format-underline = ${colors.yellow}
-format-overline = ${colors.yellow}
-
-#endregion
+label = %percentage_used:3%% %{T3}/%{T-} %percentage_swap_used:3%%
+format = %{A:gnome-system-monitor -r:} <label>%{A}
+format-underline = ${colors.green}
+format-overline = ${colors.green}
 
 [module/wlan]
 #region ###################################################
@@ -249,8 +253,8 @@ interval = 3.0
 label-connected = %essid%
 # TODO wifi-menu ?
 format-connected = %{A1:nm-connection-editor:}直 <label-connected>%{A}
-format-connected-underline = ${colors.magenta}
-format-connected-overline = ${colors.magenta}
+format-connected-underline = ${colors.purple}
+format-connected-overline = ${colors.purple}
 
 label-disconnected = NO WIFI
 format-disconnected = %{A1:nm-connection-editor:}睊 <label-disconnected>%{A}
@@ -260,25 +264,49 @@ format-disconnected-overline = ${self.format-connected-underline}
 
 #endregion
 
-[module/eth]
+[module/wlan-ip]
 #region ###################################################
 type = internal/network
 # Run `ip a' to get the interface name.
 # TODO may need different interface for different computers
 # use env var when launching?
-interface = enp3s0
+interface = wlp3s0
 interval = 3.0
 
-label-connected = %local_ip%
-format-connected =  <label-connected>
-format-connected-underline = ${colors.green}
-format-connected-overline = ${colors.green}
+label-connected =  %local_ip%
+# TODO wifi-menu ?
+format-connected = <label-connected>
+format-connected-underline = ${colors.magenta}
+format-connected-overline = ${colors.magenta}
 
-label-disconnected = NO ETHERNET
-format-disconnected =  <label-disconnected>
-format-disconnected-foreground = ${colors.urgent}
-format-disconnected-underline = ${colors.red}
-format-disconnected-overline = ${colors.red}
+# label-disconnected = NO WIFI
+# format-disconnected = <label-disconnected>
+# format-disconnected-foreground = ${colors.urgent}
+# format-disconnected-underline = ${self.format-connected-underline}
+# format-disconnected-overline = ${self.format-connected-underline}
+
+#endregion
+
+[module/eth-ip]
+#region ###################################################
+type = internal/network
+# Run `ip a' to get the interface name.
+# TODO may need different interface for different computers
+# use env var when launching?
+# (enp3s0 on Hactar; enp4s0f1 on Eddie)
+interface = enp4s0f1
+interval = 3.0
+
+label-connected =  %local_ip%
+format-connected = <label-connected>
+format-connected-underline = ${colors.light-blue}
+format-connected-overline = ${colors.light-blue}
+
+# label-disconnected = NO ETHERNET
+# format-disconnected =  <label-disconnected>
+# format-disconnected-foreground = ${colors.urgent}
+# format-disconnected-underline = ${colors.red}
+# format-disconnected-overline = ${colors.red}
 
 #endregion
 
@@ -306,8 +334,8 @@ time = %l:%M %p
 
 label = %time%
 format =  <label>
-format-underline = ${colors.blue}
-format-overline = ${colors.blue}
+format-underline = ${colors.bright-blue}
+format-overline = ${colors.bright-blue}
 
 #endregion
 
@@ -360,9 +388,15 @@ bar-volume-empty-foreground = ${colors.inactive}
 
 label-volume = %percentage:3%%
 format-volume = <ramp-volume> <bar-volume> <label-volume>
+# format-volume-underline = ${colors.bright-blue}
+# format-volume-overline = ${colors.bright-blue}
 
+# label-muted = "ﱝ            ALL SOUND MUTED"
 label-muted = "ﱝ  ALL SOUND MUTED"
+# label-muted = "ﱝ ────────────────────── --%"
 format-muted-foreground = ${colors.dim}
+# format-muted-underline = ${colors.dim}
+# format-muted-overline = ${colors.dim}
 
 #endregion
 
@@ -378,14 +412,16 @@ ramp-capacity-2 = 
 ramp-capacity-3 = 
 ramp-capacity-4 = 
 
+time-format = %kh%Mm
+
 # TODO also show %time% and %consumption%
 # TODO test this
-label-charging = %percentage:2%% +%consumption:2% W (%time%)
+label-charging = %percentage:2%%  勤 %consumption:2%W  祥 %time%
 format-charging = %{A1:xfce4-power-manager-settings:}<ramp-capacity>  <label-charging>%{A}
-format-charging-underline = ${colors.green}
-format-charging-overline = ${colors.green}
+format-charging-underline = ${colors.cyan}
+format-charging-overline = ${colors.cyan}
 
-label-discharging = %percentage:3%% -%consumption:2% W (%time%)
+label-discharging = %percentage:3%%  免 %consumption:2%W  祥 %time%
 format-discharging = %{A1:xfce4-power-manager-settings:}<ramp-capacity> <label-discharging>%{A}
 format-charging-foreground = ${colors.foreground}
 format-discharging-underline = ${self.format-charging-underline}
@@ -401,12 +437,11 @@ format-urgent-overline = ${colors.urgent}
 #region ###################################################
 type = internal/temperature
 thermal-zone = 0
-warn-temperature = 60
 
 label = %temperature-c%
 format = <ramp> <label>
-format-underline = ${colors.white}
-format-overline = ${colors.white}
+format-underline = ${colors.orange}
+format-overline = ${colors.orange}
 
 label-warn = %temperature-c%
 format-warn = <ramp> <label-warn>
@@ -419,6 +454,98 @@ ramp-1 = 
 ramp-2 = 
 ramp-3 = 
 ramp-4 = 
+
+#endregion
+
+[module/pulse-bluetooth]
+#region ###################################################
+type = custom/script
+exec = ~/Scripts/Polybar/pulse-bluetooth.sh
+interval = 1
+
+label = %output%
+format = <label>
+# format-foreground = ${colors.brighter-blue}
+# format-underline = ${colors.blue}
+# format-overline = ${colors.blue}
+
+#endregion
+
+[module/bluetooth]
+#region ###################################################
+type = custom/script
+exec = ~/Scripts/Polybar/bluetooth.sh
+interval = 1
+
+click-left = blueman-manager
+click-right = ~/Scripts/Polybar/bluetooth.sh --toggle
+
+label = %output%
+format = <label>
+# format-foreground = ${colors.brighter-blue}
+# format-underline = ${colors.blue}
+# format-overline = ${colors.blue}
+
+#endregion
+
+[module/dropbox]
+#region ###################################################
+type = custom/script
+exec = ~/Scripts/Polybar/get-dropbox-status.py
+interval = 1
+
+click-left = xdg-open ~/Dropbox
+click-right = i3-sensible-terminal -d ~/Dropbox
+
+label = %output%
+format =   <label>
+format-underline = ${colors.blue}
+format-overline = ${colors.blue}
+
+#endregion
+
+[module/compton]
+#region ###################################################
+type = custom/script
+exec = ~/Scripts/Polybar/compton.sh
+interval = 1
+
+click-left = ~/Scripts/Polybar/compton.sh --toggle
+
+label = %output%
+format = Compton <label>
+# format-underline = ${colors.white}
+# format-overline = ${colors.white}
+
+#endregion
+
+[module/bbswitch]
+#region ###################################################
+type = custom/script
+exec = ~/Scripts/Polybar/bbswitch.sh
+interval = 5
+
+click-left = ~/Scripts/Polybar/bbswitch.sh --toggle
+
+label = %output%
+format =   <label>
+format-underline = ${colors.white}
+format-overline = ${colors.white}
+
+#endregion
+
+[module/redshift]
+#region ###################################################
+type = custom/script
+exec = ~/Scripts/Polybar/redshift.sh
+interval = 5
+
+click-left = ~/Scripts/Polybar/bbswitch.sh --toggle
+
+label = %output%
+format =   <label>
+format-underline = ${colors.white}
+format-overline = ${colors.white}
 
 #endregion
 

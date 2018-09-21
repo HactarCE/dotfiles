@@ -13,14 +13,14 @@ def sh(cmd, *args, **kwargs):
     return sh_no_block(cmd, *args, stdout=subprocess.PIPE, **kwargs).communicate()[0]
 
 # Terminate already running bar instances
-sh('killall -qs 9 polybar')
+sh('killall -q polybar')
 
 # Wait until the processes have been shut down
 while sh('pgrep -u {} -x polybar'.format(os.getuid())):
     sleep(0.2)
 
 # Launch bars
-print(sh('printenv', env={'evtest': 'potato', 'test1': 'test2'}).decode('ascii'))
+print(sh('printenv', env={}).decode('ascii'))
 try:
     xrandr = [line.decode('ascii').split() for line in sh('xrandr').splitlines()]
     for line in xrandr:

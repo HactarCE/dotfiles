@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/bin/sh
 
 # while true; do
     if setxkbmap -query | grep 'variant:' >/dev/null; then
