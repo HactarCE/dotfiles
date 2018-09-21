@@ -139,7 +139,7 @@ values."
                                :size 14
                                :weight normal
                                :width normal
-                               :powerline-scale 1.2)
+                               :powerline-scale 1.3)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The key used for Emacs commands (M-x) (after pressing on the leader key).
@@ -353,6 +353,10 @@ you should place your code here."
   (add-hook 'prog-mode-hook 'highlight-indent-guides-mode)
   (setq highlight-indent-guides-method 'character)
   (setq highlight-indent-guides-delay 0)
+  (add-hook 'python-mode-hook
+            (setq indent-tabs-mode t)
+            (setq tab-width 4)
+  )
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
