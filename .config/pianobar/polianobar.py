@@ -22,7 +22,7 @@ EVENTCMD_FIFO_FILE = '~/.config/pianobar/eventcmd_fifo'
 
 CONTROL_SH = '~/.config/pianobar/control.sh'
 
-MAX_SONG_NAME_LENGTH = 60
+MAX_SONG_NAME_LENGTH = 150
 
 # If you've changed any of Pianobar's keybinds, update them in control.sh.
 
@@ -43,7 +43,7 @@ def get_status():
         if info['buffering']:
             s += f'%{{F#333333}}'
         else:
-            s += f'%{{F#ffffff}}█%{{F#555555}}'
+            s += f'%{{F#cccccc}}%{{T3}}█%{{T-}}%{{F#555555}}'
         s += '▒' * (barLength - progress - (not info['buffering']))
         s += f'%{{F-}} '
         s += f'{timeTotal//60:02}:{timeTotal%60:02}  '
@@ -273,7 +273,7 @@ time_pattern = re.compile(r'#\s+-(\d+:\d+)/(\d+:\d+)')
 
 last_line = ''
 while pianobar.poll() is None:
-    time.sleep(0.2)
+    time.sleep(0.1)
     #region transient_text
     if transient_text:
         set_status(transient_text)
@@ -298,23 +298,33 @@ while pianobar.poll() is None:
                             new_info[key] = value
                         handle_eventcmd(lines[0], new_info)
         except TimeoutError:
-            print('Timeout error searching for endof:', repr(eventcmd_buffer))
+            print("Timeout error searching for endof:", repr(eventcmd_buffer))
     #endregion
     #region stdin
-    stdin_buffer = read_stdin() + read_fifo(pianobar_fifo)
-    if stdin_buffer:
-        pianobar.stdin.write(stdin_buffer.encode('UTF-8'))
-        pianobar.stdin.flush()
-        for char in stdin_buffer:
-            handle_stdin(char)
+    stdin_buffer = ''
+    try:
+        with timeout(seconds=1):
+            stdin_buffer = read_stdin() + read_fifo(pianobar_fifo)
+            if stdin_buffer:
+                pianobar.stdin.write(stdin_buffer.encode('UTF-8'))
+                pianobar.stdin.flush()
+                for char in stdin_buffer:
+                    handle_stdin(char)
+    except TimeoutError:
+        print("Timeout error while handling input:", repr(stdin_buffer))
     #endregion
     #region stdout
-    stdout_buffer = read_pianobar_stdout()
-    if stdout_buffer:
-        sys.stdout.write(stdout_buffer)
-        sys.stdout.flush()
-        last_line = (last_line + stdout_buffer).split('\x1b[2K')[-1]
-        m = time_pattern.match(last_line)
-        if m:
-            handle_time_update(*m.groups())
+    stdout_buffer = ''
+    try:
+        with timeout(seconds=1):
+            stdout_buffer = read_pianobar_stdout()
+            if stdout_buffer:
+                sys.stdout.write(stdout_buffer)
+                sys.stdout.flush()
+                last_line = (last_line + stdout_buffer).split('\x1b[2K')[-1]
+                m = time_pattern.match(last_line)
+                if m:
+                    handle_time_update(*m.groups())
+    except TimeoutError:
+        print("Timeout error while handling output:", repr(stdout_buffer))
     #endregion

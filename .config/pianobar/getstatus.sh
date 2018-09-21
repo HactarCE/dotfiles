@@ -11,6 +11,7 @@ while true; do
     done
     echo "$OFFLINE_MSG"
     while [ ! -f "$STATUS_FILE" ]; do
-        inotifywait -qqt 2 -e create "$(dirname $STATUS_FILE)"
+        sleep 2
+        # inotifywait -qqt 2 -e create "$(dirname $STATUS_FILE)"
     done
 done
