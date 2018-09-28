@@ -358,14 +358,18 @@ bindsym $mod+equal move workspace to output right
 #region ########################
 
 # Change layout
-bindcode $mod+$-h split h
-bindcode $mod+$-v split v
+# bindcode $mod+$-h split h
+# bindcode $mod+$-v split v
 
 # Change container layout (stacked, tabbed, toggle split)
 bindcode $mod+$-s layout stacking
 bindcode $mod+$-w layout tabbed
 bindcode $mod+$-e layout splith
 bindcode $mod+$-d layout splitv
+bindcode $mod+shift+$-s split v; layout stacking
+bindcode $mod+shift+$-w split h; layout tabbed
+bindcode $mod+shift+$-e split h
+bindcode $mod+shift+$-d split v
 
 # Focus the parent container
 bindcode $mod+$semicolon focus parent
