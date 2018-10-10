@@ -1,0 +1,88 @@
+﻿<MonoDevelopProperties version="2.0">
+  <Property key="CodeIssues.System.String[].Microsoft.CodeAnalysis.VisualBasic.Diagnostics.VisualBasicUnboundIdentifiersDiagnosticAnalyzer.IDE1007.severity" value="Error" />
+  <Property key="FontProperties" />
+  <Property key="OnTheFlyFormatting" value="True" />
+  <Property key="CodeIssues.System.String[].Microsoft.CodeAnalysis.Diagnostics.CSharp.CSharpCompilerDiagnosticAnalyzer.CS1501.enabled" value="True" />
+  <Property key="CodeIssues.System.String[].Microsoft.CodeAnalysis.VisualBasic.RemoveUnnecessaryImports.VisualBasicRemoveUnnecessaryImportsDiagnosticAnalyzer.RemoveUnnecessaryImportsFixable.severity" value="Hidden" />
+  <Property key="CodeIssues.System.String[].Microsoft.CodeAnalysis.Diagnostics.CSharp.CSharpCompilerDiagnosticAnalyzer.CS0103.severity" value="Error" />
+  <Property key="Monodevelop.TaskListTokens" value="FIXME:2;TODO:1;HACK:1;UNDONE:0" />
+  <Property key="CodeIssues.System.String[].Microsoft.CodeAnalysis.CSharp.Diagnostics.AddBraces.CSharpAddBracesDiagnosticAnalyzer.IDE0011.enabled" value="True" />
+  <Property key="SharpDevelop.Workbench.WorkbenchMemento">
+    <Property key="windowState" value="Maximized" />
+    <Property key="fullscreen" value="False" />
+    <Property key="bounds" value="50, 50, 1820, 930" />
+  </Property>
+  <Property key="SmartSemicolonPlacement" value="False" />
+  <Property key="CodeIssues.System.String[].Microsoft.CodeAnalysis.VisualBasic.RemoveUnnecessaryImports.VisualBasicRemoveUnnecessaryImportsDiagnosticAnalyzer.IDE0005.severity" value="Hidden" />
+  <Property key="Monodevelop.CommentTasksColumns" value="TRUE;TRUE;TRUE;TRUE" />
+  <Property key="MonoDevelop.Ide.AddinUpdater.CheckForUpdates" value="True" />
+  <Property key="CompletionCharacters.Razor.CompleteOnSpace" value="True" />
+  <Property key="CodeIssues.System.String[].Microsoft.CodeAnalysis.Diagnostics.CSharp.CSharpCompilerDiagnosticAnalyzer.CS1026.enabled" value="True" />
+  <Property key="CodeIssues.System.String[].Microsoft.CodeAnalysis.Diagnostics.CSharp.CSharpCompilerDiagnosticAnalyzer.CS0117.severity" value="Error" />
+  <Property key="MonoDevelop.Core.LastRunVersion" value="7.5" />
+  <Property key="PackageManagementSettings">
+    <Property key="CheckUpdatedPackagesOnOpeningSolution" value="True" />
+    <Property key="AutomaticPackageRestoreOnOpeningSolution" value="True" />
+  </Property>
+  <Property key="CodeIssues.System.String[].Microsoft.CodeAnalysis.VisualBasic.AddAccessibilityModifiers.VisualBasicAddAccessibilityModifiersDiagnosticAnalyzer.IDE0040.enabled" value="True" />
+  <Property key="CodeIssues.System.String[].Microsoft.CodeAnalysis.VisualBasic.AddAccessibilityModifiers.VisualBasicAddAccessibilityModifiersDiagnosticAnalyzer.IDE0040.severity" value="Hidden" />
+  <Property key="AutoSetPatternCasing" value="False" />
+  <Property key="CodeIssues.System.String[].Microsoft.CodeAnalysis.Diagnostics.CSharp.CSharpCompilerDiagnosticAnalyzer.CS0168.severity" value="Warning" />
+  <Property key="MonoDevelop.Ide.AddinUpdater.LastCheck" value="10/10/2018 19:12:22" />
+  <Property key="CodeIssues.System.String[].Microsoft.CodeAnalysis.Diagnostics.CSharp.CSharpCompilerDiagnosticAnalyzer.CS0117.enabled" value="True" />
+  <Property key="CodeIssues.System.String[].Microsoft.CodeAnalysis.VisualBasic.RemoveUnnecessaryImports.VisualBasicRemoveUnnecessaryImportsDiagnosticAnalyzer.RemoveUnnecessaryImportsFixable.enabled" value="True" />
+  <Property key="MonoDevelop.Ide.AddinUpdater.UpdateSpanValue" value="1" />
+  <Property key="CompletionCharacters.Html.CompleteOnSpace" value="True" />
+  <Property key="MonoDevelop.GtkCore.ShowNonContainerWarning" value="True" />
+  <Property key="CodeIssues.System.String[].Microsoft.CodeAnalysis.Diagnostics.CSharp.CSharpCompilerDiagnosticAnalyzer.CS8124.enabled" value="True" />
+  <Property key="CompletionCharacters.Razor.CompleteOnChars" value="{}[]().,:;+-*/%&amp;|^!~=&lt;&gt;?@#'&quot;\" />
+  <Property key="CompletionCharacters.C#.CompleteOnSpace" value="True" />
+  <Property key="CompletionCharacters.Xml.CompleteOnChars" value="{}[]().,:;+-*/%&amp;|^!~=&lt;&gt;?@#'&quot;\" />
+  <Property key="AutoFormatDocumentOnSave" value="True" />
+  <Property key="MonoDevelop.Core.Gui.CurrentWorkbenchLayout" value="Solution" />
+  <Property key="CodeIssues.System.String[].Microsoft.CodeAnalysis.Diagnostics.CSharp.CSharpCompilerDiagnosticAnalyzer.CS1525.severity" value="Error" />
+  <Property key="FavoriteRecentFiles" />
+  <Property key="CodeIssues.System.String[].Microsoft.CodeAnalysis.Diagnostics.CSharp.CSharpCompilerDiagnosticAnalyzer.CS1525.enabled" value="True" />
+  <Property key="CompletionCharacters.Other.CompleteOnChars" value="{}[]().,:;+-*/%&amp;|^!~=&lt;&gt;?@#'&quot;\" />
+  <Property key="CodeIssues.System.String[].Microsoft.CodeAnalysis.Diagnostics.CSharp.CSharpCompilerDiagnosticAnalyzer.CS1519.enabled" value="True" />
+  <Property key="CodeIssues.System.String[].Microsoft.CodeAnalysis.VisualBasic.RemoveUnnecessaryImports.VisualBasicRemoveUnnecessaryImportsDiagnosticAnalyzer.IDE0005.enabled" value="True" />
+  <Property key="MonoDevelop.Ide.ExtensibleTreeView.Zoom.MonoDevelop.UnitTesting.TestPad" value="1" />
+  <Property key="CodeIssues.System.String[].Microsoft.CodeAnalysis.VisualBasic.Diagnostics.VisualBasicUnboundIdentifiersDiagnosticAnalyzer.IDE1007.enabled" value="True" />
+  <Property key="CodeIssues.System.String[].Microsoft.CodeAnalysis.Diagnostics.CSharp.CSharpCompilerDiagnosticAnalyzer.CS8025.enabled" value="True" />
+  <Property key="CodeIssues.System.String[].Microsoft.CodeAnalysis.Diagnostics.CSharp.CSharpCompilerDiagnosticAnalyzer.CS1002.severity" value="Error" />
+  <Property key="CodeIssues.System.String[].Microsoft.CodeAnalysis.Diagnostics.CSharp.CSharpCompilerDiagnosticAnalyzer.CS0168.enabled" value="True" />
+  <Property key="CompletionCharacters.Xml.CompleteOnSpace" value="True" />
+  <Property key="CodeIssues.System.String[].Microsoft.CodeAnalysis.Diagnostics.CSharp.CSharpCompilerDiagnosticAnalyzer.CS1022.severity" value="Error" />
+  <Property key="MonoDevelop.Ide.AddinUpdater.UpdateSpanUnit" value="Day" />
+  <Property key="CodeIssues.System.String[].Microsoft.CodeAnalysis.Diagnostics.CSharp.CSharpCompilerDiagnosticAnalyzer.CS1501.severity" value="Error" />
+  <Property key="MonoDevelop.Core.LastRunRevision" value="5" />
+  <Property key="MonoDevelop.Ide.ExtensibleTreeView.Zoom.ProjectPad" value="1" />
+  <Property key="CodeIssues.System.String[].Microsoft.CodeAnalysis.Diagnostics.CSharp.CSharpCompilerDiagnosticAnalyzer.CS0165.severity" value="Error" />
+  <Property key="CodeIssues.System.String[].Microsoft.CodeAnalysis.Diagnostics.CSharp.CSharpCompilerDiagnosticAnalyzer.CS1002.enabled" value="True" />
+  <Property key="CodeIssues.System.String[].Microsoft.CodeAnalysis.Diagnostics.CSharp.CSharpCompilerDiagnosticAnalyzer.CS1022.enabled" value="True" />
+  <Property key="XmlEditor.AddIn.Options">
+    <Property key="AutoInsertFragment" value="True" />
+    <Property key="ShowSchemaAnnotation" value="False" />
+    <Property key="AutoCompleteElements" value="False" />
+  </Property>
+  <Property key="CodeIssues.System.String[].Microsoft.CodeAnalysis.Diagnostics.CSharp.CSharpCompilerDiagnosticAnalyzer.CS8025.severity" value="Error" />
+  <Property key="CompletionCharacters.Html.CompleteOnChars" value="{}[]().,:;+-*/%&amp;|^!~=&lt;&gt;?@#'&quot;\" />
+  <Property key="CompletionCharacters.Other.CompleteOnSpace" value="True" />
+  <Property key="CodeIssues.System.String[].Microsoft.CodeAnalysis.Diagnostics.CSharp.CSharpCompilerDiagnosticAnalyzer.CS1519.severity" value="Error" />
+  <Property key="WelcomePage.UpdateFromInternet" value="True" />
+  <Property key="CodeIssues.System.String[].Microsoft.CodeAnalysis.CSharp.Diagnostics.AddBraces.CSharpAddBracesDiagnosticAnalyzer.IDE0011.severity" value="Hidden" />
+  <Property key="MonoDevelop.Core.FirstRun" value="False" />
+  <Property key="MonoDevelop.Ide.AddinUpdater.UpdateLevel" value="Stable" />
+  <Property key="CompletionCharacters.C#.CompleteOnChars" value="{}[]().,:;+-*/%&amp;|^!~=&lt;&gt;?@#'&quot;\" />
+  <Property key="CodeIssues.System.String[].Microsoft.CodeAnalysis.Diagnostics.CSharp.CSharpCompilerDiagnosticAnalyzer.CS0165.enabled" value="True" />
+  <Property key="ToolboxIsInCompactMode" value="False" />
+  <Property key="CodeIssues.System.String[].Microsoft.CodeAnalysis.Diagnostics.CSharp.CSharpCompilerDiagnosticAnalyzer.CS1026.severity" value="Error" />
+  <Property key="CodeIssues.System.String[].Microsoft.CodeAnalysis.Diagnostics.CSharp.CSharpCompilerDiagnosticAnalyzer.CS0103.enabled" value="True" />
+  <Property key="/MonoDevelop/Ide/GlobalOptionsDialog-lastPanel" value="" />
+  <Property key="Monodevelop.ErrorListColumns" value="TRUE;TRUE;TRUE;TRUE;TRUE;TRUE;TRUE;TRUE" />
+  <Property key="MonoDevelop.Projects.GlobalPolicyMimeTypes" value="" />
+  <Property key="MonoDevelop.TextEditor.Document.Document.DefaultDocumentAggregatorProperties" />
+  <Property key="Monodevelop.TaskList.ActiveView" value="MonoDevelop.Ide.Tasks.CommentTasksView" />
+  <Property key="ScrollBar.Mode" value="Overview" />
+  <Property key="CodeIssues.System.String[].Microsoft.CodeAnalysis.Diagnostics.CSharp.CSharpCompilerDiagnosticAnalyzer.CS8124.severity" value="Error" />
+</MonoDevelopProperties>
