@@ -1,0 +1,12 @@
+win (goto) [with icons]
+wksp (goto, rename, move to)
+run
+drun
+ssh
+term
+fldr (fm, term) [use enter vs. shift-enter? what about floating?]
+edit
+exit [suspend/shutdown/reboot/etc.]
+restart/toggle [i3, polybar, compton, bluetooth, pulseaudio, maybe dropbox/redshift]
+
+combi has run, drun, ssh, fldr-fm, fldr-term, and edit

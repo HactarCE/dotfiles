@@ -68,18 +68,16 @@ listview {
   padding: 5px;
   spacing: 2px;
   dynamic: true;
-  scrollbar: false;
+  scrollbar: true;
 }
 
-/* scrollbar {
-  background-color: @black;
+scrollbar {
+  /* background-color: @black; */
   handle-color: #0070da;
-  handle-width: 15px;
-  handle-radius: 4px;
-  border-radius: 4px;
-  padding: 5px;
+  handle-width: 2px;
+  padding: 0px;
   margin: 0px 0px 0px 5px;
-} */
+}
 
 element {
   padding: 3px 15px;
