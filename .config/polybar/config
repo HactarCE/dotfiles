@@ -293,19 +293,20 @@ type = internal/network
 # TODO may need different interface for different computers
 # use env var when launching?
 # (enp3s0 on Hactar; enp4s0f1 on Eddie)
-interface = enp4s0f1
+interface = enp3s0
 interval = 3.0
 
 label-connected =  %local_ip%
 format-connected = <label-connected>
 format-connected-underline = ${colors.bright-blue}
-format-connected-overline = ${colors.light-blue}
+format-connected-overline = ${colors.bright-blue}
 
-# label-disconnected = NO ETHERNET
-# format-disconnected =  <label-disconnected>
-# format-disconnected-foreground = ${colors.urgent}
-# format-disconnected-underline = ${colors.red}
-# format-disconnected-overline = ${colors.red}
+# TODO leave format-disconnected blank if wlan exists
+label-disconnected = NO ETHERNET
+format-disconnected =  <label-disconnected>
+format-disconnected-foreground = ${colors.urgent}
+format-disconnected-underline = ${colors.red}
+format-disconnected-overline = ${colors.red}
 
 #endregion
 
