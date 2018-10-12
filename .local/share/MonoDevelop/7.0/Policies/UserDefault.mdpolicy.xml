@@ -17,7 +17,6 @@
       <NewLinesForBracesInObjectCollectionArrayInitializers>False</NewLinesForBracesInObjectCollectionArrayInitializers>
       <NewLinesForBracesInLambdaExpressionBody>False</NewLinesForBracesInLambdaExpressionBody>
       <NewLineForElse>False</NewLineForElse>
-      <SpaceWithinOtherParentheses>True</SpaceWithinOtherParentheses>
       <SpaceAfterCast>True</SpaceAfterCast>
     </CSharpFormattingPolicy>
     <TextStylePolicy inheritsSet="null" scope="text/x-fsharp" />

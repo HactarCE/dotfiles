@@ -180,9 +180,7 @@ for_window [class="Pavucontrol"]                floating enable
 for_window [class="Nm-connection-editor"]       floating enable
 for_window [class="Gucharmap"]                  floating enable
 for_window [class="SpeedCrunch"]                floating enable
-# TODO give bmenu a floating role when running it
-for_window [title="bmenu"]                      floating enable
-for_window [title="bmenu"]                      border pixel 0
+for_window [class="SpeedCrunch"]                resize set 400 800
 for_window [window_role="float"]                floating enable
 # for_window [window_role="float"]                border pixel 2
 

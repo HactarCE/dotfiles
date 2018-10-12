@@ -104,7 +104,7 @@ modules-left = i3
 # ; modules-right = filesystem xbacklight volume xkeyboard memory cpu wlan eth battery temperature date powermenu
 # modules-right = xkeyboard
 # modules-right = capslock keylayout temperature
-modules-right = capslock keylayout compton dropbox wlan wlan-ip eth-ip temperature cpu memory battery
+modules-right = capslock keylayout bbswitch compton dropbox wlan wlan-ip eth-ip temperature cpu memory battery
 # separator = │
 
 tray-position = ${env:TRAY_POS:}
@@ -251,12 +251,12 @@ interval = 3.0
 
 label-connected = %essid%
 # TODO wifi-menu ?
-format-connected = %{A1:nm-connection-editor:}直 <label-connected>%{A}
+format-connected = %{A1:termite -e "sudo wifi-menu" -r float:}直 <label-connected>%{A}
 format-connected-underline = ${colors.purple}
 format-connected-overline = ${colors.purple}
 
 label-disconnected = NO WIFI
-format-disconnected = %{A1:nm-connection-editor:}睊 <label-disconnected>%{A}
+format-disconnected = %{A1:termite -e "sudo wifi-menu" -r float:}睊 <label-disconnected>%{A}
 format-disconnected-foreground = ${colors.urgent}
 format-disconnected-underline = ${self.format-connected-underline}
 format-disconnected-overline = ${self.format-connected-underline}
@@ -298,7 +298,7 @@ interval = 3.0
 
 label-connected =  %local_ip%
 format-connected = <label-connected>
-format-connected-underline = ${colors.light-blue}
+format-connected-underline = ${colors.bright-blue}
 format-connected-overline = ${colors.light-blue}
 
 # label-disconnected = NO ETHERNET
@@ -527,9 +527,9 @@ interval = 5
 click-left = ~/Scripts/Polybar/bbswitch.sh --toggle
 
 label = %output%
-format =   <label>
-format-underline = ${colors.white}
-format-overline = ${colors.white}
+format =  <label>
+# format-underline = ${colors.white}
+# format-overline = ${colors.white}
 
 #endregion
 

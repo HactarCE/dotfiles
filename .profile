@@ -15,7 +15,7 @@ export EDITOR=nano
 export SHELL=/bin/zsh
 export TERMINAL=termite
 
-export DMENU_SETTINGS='-i -h 22 -fn "xos4 Terminus-14" -nb "#000" -nf "#fff" -sb "#0070da" -sf "#fff" -dim 0.4'
+export DMENU_SETTINGS='-i -h 20 -fn "xos4 Terminus-12" -nb "#000" -nf "#fff" -sb "#0070da" -sf "#fff" -dim 0.4'
 
 # NVIDIA cache
 export __GL_SHADER_DISK_CACHE_PATH="$HOME/.cache/nv/GLCache"

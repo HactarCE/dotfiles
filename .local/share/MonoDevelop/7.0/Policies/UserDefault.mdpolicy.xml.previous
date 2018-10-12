@@ -1,4 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Policies>
-  <PolicySet name="User Default" id="UserDefault" />
+  <PolicySet name="User Default" id="UserDefault">
+    <TextStylePolicy inheritsSet="Default" inheritsScope="text/plain" scope="text/plain" />
+    <TextStylePolicy inheritsSet="Default" inheritsScope="text/x-csharp" scope="text/x-csharp">
+      <FileWidth>80</FileWidth>
+      <TabsToSpaces>True</TabsToSpaces>
+    </TextStylePolicy>
+    <CSharpFormattingPolicy inheritsSet="Default" inheritsScope="text/x-csharp" scope="text/x-csharp">
+      <NewLinesForBracesInTypes>False</NewLinesForBracesInTypes>
+      <NewLinesForBracesInMethods>False</NewLinesForBracesInMethods>
+      <NewLinesForBracesInProperties>False</NewLinesForBracesInProperties>
+      <NewLinesForBracesInAccessors>False</NewLinesForBracesInAccessors>
+      <NewLinesForBracesInAnonymousMethods>False</NewLinesForBracesInAnonymousMethods>
+      <NewLinesForBracesInControlBlocks>False</NewLinesForBracesInControlBlocks>
+      <NewLinesForBracesInAnonymousTypes>False</NewLinesForBracesInAnonymousTypes>
+      <NewLinesForBracesInObjectCollectionArrayInitializers>False</NewLinesForBracesInObjectCollectionArrayInitializers>
+      <NewLinesForBracesInLambdaExpressionBody>False</NewLinesForBracesInLambdaExpressionBody>
+      <NewLineForElse>False</NewLineForElse>
+      <SpaceAfterCast>True</SpaceAfterCast>
+    </CSharpFormattingPolicy>
+    <TextStylePolicy inheritsSet="null" scope="text/x-fsharp" />
+    <FSharpFormattingPolicy inheritsSet="Default" inheritsScope="text/x-fsharp" scope="text/x-fsharp" />
+  </PolicySet>
 </Policies>
