@@ -41,6 +41,7 @@ alias lol='lolcat -t'
 alias sys='systemctl'
 alias susys='sudo systemctl'
 alias suno='sudo nano'
+alias sutee='sudo tee'
 
 
 # SHORT
