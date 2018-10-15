@@ -3,9 +3,9 @@
 case "$1" in
     --toggle)
         if grep -q ON /proc/acpi/bbswitch; then
-            tee /proc/acpi/bbswitch <<< OFF
+            tee /proc/acpi/bbswitch <<<OFF
         else
-            tee /proc/acpi/bbswitch <<< ON
+            tee /proc/acpi/bbswitch <<<ON
         fi
         ;;
     *)
