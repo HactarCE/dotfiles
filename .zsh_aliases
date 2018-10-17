@@ -42,6 +42,7 @@ alias sys='systemctl'
 alias susys='sudo systemctl'
 alias suno='sudo nano'
 alias sutee='sudo tee'
+alias diff='colordiff'
 
 
 # SHORT
@@ -57,4 +58,5 @@ alias e.='e .'
 alias jj='java -jar'
 alias m='mousepad'
 alias n='nano'
+alias vn='viewnior'
 alias q='exit'
