@@ -4,7 +4,7 @@
 	"caret_extra_top": 2,
 	"caret_extra_width": 1,
 	"caret_style": "smooth",
-	"color_scheme": "Packages/Color Scheme - Default/Monokai.sublime-color-scheme",
+	"color_scheme": "Packages/Color Scheme - Default/Mariana.sublime-color-scheme",
 	"highlight_line": false,
 	"ignored_packages":
 	[
@@ -15,5 +15,6 @@
 	"indent_guide_options":
 	[
 		"draw_normal"
-	]
+	],
+	"theme": "Default.sublime-theme"
 }
