@@ -1,13 +1,64 @@
 [
-	// { "keys": ["escape"], "command": "set_setting", "args": {"setting": "command_mode", "value": true} },
-	{ "keys": ["f"], "command": "set_setting", "args": {"setting": "command_mode", "value": false}, "context":
-		[
-			{ "key": "setting.command_mode", "operand": true }
-		]
+	// { "keys": ["escape"], "command": "set_setting", "args": {"setting": "edit_state", "value": "normal"}, "context":
+	// 	[
+	// 		{ "key": "edit_state", "operand": "insert" }
+	// 	]
+	// },
+	{ "keys": ["alt+up"], "command": "select_lines", "args": {"forward": false} },
+	{ "keys": ["alt+down"], "command": "select_lines", "args": {"forward": true} },
+	{ "keys": ["ctrl+e"], "command": "single_selection", "context":
+		[{ "key": "num_selections", "operator": "not_equal", "operand": 1 }]
 	},
-	{ "keys": ["g"], "command": "move", "args": {"by": "characters", "forward": false}, "context":
-		[
-			{ "key": "setting.command_mode", "operand": true }
-		]
-	}
+	// { "keys": ["ctrl+e"], "command": "clear_fields", "context":
+	// 	[{ "key": "has_next_field", "operator": "equal", "operand": true }]
+	// },
+	// { "keys": ["ctrl+e"], "command": "clear_fields", "context":
+	// 	[{ "key": "has_prev_field", "operator": "equal", "operand": true }]
+	// },
+	// { "keys": ["ctrl+e"], "command": "hide_panel", "args": {"cancel": true}, "context":
+	// 	[{ "key": "panel_visible", "operator": "equal", "operand": true }]
+	// },
+	{ "keys": ["ctrl+e"], "command": "hide_overlay", "context":
+		[{ "key": "overlay_visible", "operator": "equal", "operand": true }]
+	},
+	{ "keys": ["ctrl+e"], "command": "hide_popup", "context":
+		[{ "key": "popup_visible", "operator": "equal", "operand": true }]
+	},
+	{ "keys": ["ctrl+e"], "command": "hide_auto_complete", "context":
+		[{ "key": "auto_complete_visible", "operator": "equal", "operand": true }]
+	},
+	{ "keys": ["ctrl+e"], "command": "set_setting", "args": {"setting": "edit_state", "value": "normal"}, "context":
+		[{ "key": "edit_state", "operand": "insert, select" }]
+	},
+	{ "keys": ["t"], "command": "set_setting", "args": {"setting": "edit_state", "value": "insert"}, "context":
+		[{ "key": "edit_state", "operand": "motion" }]
+	},
+	{ "keys": ["h"], "command": "set_setting", "args": {"setting": "edit_state", "value": "select"}, "context":
+		[{ "key": "edit_state", "operand": "normal" }]
+	},
+	{ "keys": ["h"], "command": "invert_selection", "context":
+		[{ "key": "edit_state", "operand": "select" }]
+	},
+	{ "keys": ["n"], "command": "extendable_motion", "args": {"command": "move", "by": "characters", "forward": false}, "context":
+		[{ "key": "edit_state", "operand": "motion" }]
+	},
+	{ "keys": ["i"], "command": "extendable_motion", "args": {"command": "move", "by": "characters", "forward": true}, "context":
+		[{ "key": "edit_state", "operand": "motion" }]
+	},
+	{ "keys": ["u"], "command": "extendable_motion", "args": {"command": "move", "by": "lines", "forward": false}, "context":
+		[{ "key": "edit_state", "operand": "motion" }]
+	},
+	{ "keys": ["e"], "command": "extendable_motion", "args": {"command": "move", "by": "lines", "forward": true}, "context":
+		[{ "key": "edit_state", "operand": "motion" }]
+	},
+	{ "keys": ["l"], "command": "extendable_motion", "args": {"command": "move_to", "to": "bol"}, "context":
+		[{ "key": "edit_state", "operand": "motion" }]
+	},
+	{ "keys": ["y"], "command": "extendable_motion", "args": {"command": "move_to", "to": "eol"}, "context":
+		[{ "key": "edit_state", "operand": "motion" }]
+	},
+	{ "keys": ["ctrl+pagedown"], "command": "next_view_in_stack" },
+	{ "keys": ["ctrl+pageup"], "command": "prev_view_in_stack" },
+	{ "keys": ["ctrl+tab"], "command": "next_view" },
+	{ "keys": ["ctrl+shift+tab"], "command": "prev_view" },
 ]

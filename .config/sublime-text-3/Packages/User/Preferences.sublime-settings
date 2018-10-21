@@ -1,11 +1,17 @@
 {
 	"always_show_minimap_viewport": true,
-	"caret_extra_bottom": 2,
-	"caret_extra_top": 2,
+	"bold_folder_labels": true,
+	"caret_extra_bottom": 1,
+	"caret_extra_top": 1,
 	"caret_extra_width": 1,
 	"caret_style": "smooth",
-	"color_scheme": "Packages/Color Scheme - Default/Mariana.sublime-color-scheme",
-	"highlight_line": false,
+	"close_windows_when_empty": true,
+	"color_scheme": "Packages/Behave Color Scheme/Behave.tmTheme",
+	"fade_fold_buttons": false,
+	"font_face": "Iosevka SS04",
+	"font_size": 13,
+	"highlight_line": true,
+	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
 		"Six",
@@ -14,7 +20,13 @@
 	],
 	"indent_guide_options":
 	[
-		"draw_normal"
+		"draw_normal",
+		"draw_active"
 	],
+	"line_padding_bottom": 0,
+	"line_padding_top": 0,
+	"show_encoding": true,
+	"show_line_endings": true,
+	"show_tab_close_buttons": false,
 	"theme": "Default.sublime-theme"
 }

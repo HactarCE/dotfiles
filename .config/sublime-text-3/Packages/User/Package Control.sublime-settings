@@ -1,0 +1,17 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Behave Color Scheme",
+		"i3 wm",
+		"KeybindingHelper",
+		"MultiEditUtils",
+		"Package Control",
+		"PackageResourceViewer",
+		"PowerCursors",
+		"rainbow_csv"
+	]
+}
