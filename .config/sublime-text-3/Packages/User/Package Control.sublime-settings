@@ -5,6 +5,7 @@
 	],
 	"installed_packages":
 	[
+		"ASCII Decorator",
 		"Behave Color Scheme",
 		"i3 wm",
 		"KeybindingHelper",

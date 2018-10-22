@@ -1,11 +1,32 @@
 [
-	// { "keys": ["escape"], "command": "set_setting", "args": {"setting": "edit_state", "value": "normal"}, "context":
-	// 	[
-	// 		{ "key": "edit_state", "operand": "insert" }
-	// 	]
-	// },
+
+/*
+	##     ## ####  ######   ######  ######## ##       ##          ###    ##    ## ########  #######  ##     ##  ######
+	###   ###  ##  ##    ## ##    ## ##       ##       ##         ## ##   ###   ## ##       ##     ## ##     ## ##    ##
+	#### ####  ##  ##       ##       ##       ##       ##        ##   ##  ####  ## ##       ##     ## ##     ## ##
+	## ### ##  ##   ######  ##       ######   ##       ##       ##     ## ## ## ## ######   ##     ## ##     ##  ######
+	##     ##  ##        ## ##       ##       ##       ##       ######### ##  #### ##       ##     ## ##     ##       ##
+	##     ##  ##  ##    ## ##    ## ##       ##       ##       ##     ## ##   ### ##       ##     ## ##     ## ##    ##
+	##     ## ####  ######   ######  ######## ######## ######## ##     ## ##    ## ########  #######   #######   ######
+*/
+
+
 	{ "keys": ["alt+up"], "command": "select_lines", "args": {"forward": false} },
 	{ "keys": ["alt+down"], "command": "select_lines", "args": {"forward": true} },
+
+
+
+/*
+	 ######  ########    ###    ######## ########     ######  ##     ##    ###    ##    ##  ######   ########
+	##    ##    ##      ## ##      ##    ##          ##    ## ##     ##   ## ##   ###   ## ##    ##  ##
+	##          ##     ##   ##     ##    ##          ##       ##     ##  ##   ##  ####  ## ##        ##
+	 ######     ##    ##     ##    ##    ######      ##       ######### ##     ## ## ## ## ##   #### ######
+	      ##    ##    #########    ##    ##          ##       ##     ## ######### ##  #### ##    ##  ##
+	##    ##    ##    ##     ##    ##    ##          ##    ## ##     ## ##     ## ##   ### ##    ##  ##
+	 ######     ##    ##     ##    ##    ########     ######  ##     ## ##     ## ##    ##  ######   ########
+*/
+
+
 	{ "keys": ["ctrl+e"], "command": "single_selection", "context":
 		[{ "key": "num_selections", "operator": "not_equal", "operand": 1 }]
 	},
@@ -17,6 +38,11 @@
 	// },
 	// { "keys": ["ctrl+e"], "command": "hide_panel", "args": {"cancel": true}, "context":
 	// 	[{ "key": "panel_visible", "operator": "equal", "operand": true }]
+	// },
+	// { "keys": ["escape"], "command": "set_setting", "args": {"setting": "edit_state", "value": "normal"}, "context":
+	// 	[
+	// 		{ "key": "edit_state", "operand": "insert" }
+	// 	]
 	// },
 	{ "keys": ["ctrl+e"], "command": "hide_overlay", "context":
 		[{ "key": "overlay_visible", "operator": "equal", "operand": true }]
@@ -33,12 +59,15 @@
 	{ "keys": ["t"], "command": "set_setting", "args": {"setting": "edit_state", "value": "insert"}, "context":
 		[{ "key": "edit_state", "operand": "motion" }]
 	},
-	{ "keys": ["h"], "command": "set_setting", "args": {"setting": "edit_state", "value": "select"}, "context":
+	{ "keys": ["s"], "command": "set_setting", "args": {"setting": "edit_state", "value": "select"}, "context":
 		[{ "key": "edit_state", "operand": "normal" }]
 	},
-	{ "keys": ["h"], "command": "invert_selection", "context":
-		[{ "key": "edit_state", "operand": "select" }]
-	},
+
+
+
+// Movement
+
+
 	{ "keys": ["n"], "command": "extendable_motion", "args": {"command": "move", "by": "characters", "forward": false}, "context":
 		[{ "key": "edit_state", "operand": "motion" }]
 	},
