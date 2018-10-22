@@ -13,7 +13,8 @@ alias sucp='sudo cp -i'
 alias mv='mv -i'
 alias sumv='sudo mv -i'
 alias rmm='rm -i'
-alias rm='safe-rm'
+alias rm='echo Use either the alias del="trash", the full path "/bin/rm", or the alias rmm="rm -i".'
+alias del='trash'
 alias surmm='sudo rm -i'
 alias surm='sudo safe-rm'
 
@@ -33,11 +34,15 @@ alias pi='pip install --user'
 
 
 # MISC
+alias aud='audacity'
 alias df='df -h' # human-readable sizes
 alias du='du -h'
+alias dus='du -s'
 alias grepi='grep -i'
+alias libr='libreoffice'
 alias lolcow='cowsay | lolcat -t'
 alias lol='lolcat -t'
+alias open='xdg-open'
 alias sys='systemctl'
 alias susys='sudo systemctl'
 alias suno='sudo nano'
