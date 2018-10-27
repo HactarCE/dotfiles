@@ -2,44 +2,42 @@
 
 These are my dotfiles. Use them however you see fit.
 
-I am currently running i3 on Manjaro Linux.
+I am currently running i3wm on Arch Linux.
 
 ## Software used
 
-* Atom
-* Mousepad
+* ALSA/PulseAudio
+* Compton
+* Discord
+* Dropbox
+* Dunst
 * GIMP
 * Kdenlive
-* Dropbox
 * libinput-gestures
-* Redshift
-* Discord
-* Dunst
-* Eog
 * Nitrogen
-* PCManFM
-* Ranger
 * Open Broadcaster Software
-* Polybar
-* ALSA/PulseAudio
+* PCManFM
 * Pianobar
-* SpeedCrunch
-* Termite
-* Zeal
-* Compton
+* Polybar
+* Polybar
 * Redshift
+* SpeedCrunch
+* Sublime Text 3
+* Termite
+* Viewnior
+* Zeal
 
 ## To-do
 
+TODO
+
 ### General
-* Atom/vim/spacemacs keybinds
-  - Also [here](https://github.com/HactarCE/alt-vim-keys)
+* ST3 modal editing keybinds
 * Better keybinds for caps lock and keyboard layout switching
   - Maybe also run a `notify-send` when the layout changes?
 * Configure Dunst and add files
-* Sort and add links to "Software used" list
-* eog alternates?
-* Figure out what I'm doing with xfce4 (add more config files?)
+* Add links to "Software used" list
+* Add more config files for XFCE4 stuff
 
 ### Needs cleanup
 * i3
@@ -47,3 +45,4 @@ I am currently running i3 on Manjaro Linux.
 * Polybar
 * Termite
 * most files in ~/Scripts
+* ST3 plugins
