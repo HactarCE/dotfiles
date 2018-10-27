@@ -9,9 +9,10 @@
 
 export PATH=$PATH":$HOME/.local/bin"
 
-export BROWSER=$HOME/.local/bin/viva
-export EDITOR=nano
+export BROWSER=/usr/bin/vivaldi-stable
+# export EDITOR=nano
 # export EDITOR=vim
+export EDITOR="subl -nw"
 export SHELL=/bin/zsh
 export TERMINAL=termite
 
