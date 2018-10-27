@@ -1,3 +1,5 @@
 {
-	"color_scheme": "Packages/Behave Color Scheme/Behave.tmTheme"
+	"color_scheme": "Packages/Behave Color Scheme/Behave.tmTheme",
+    "line_numbers": true,
+    // "draw_centered": false,
 }
