@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+{ "keys": [${1:"key"}], "command": "${2:command}"${3:, "args": {${4:"arg1": "value1"}\}}${5:, "context":
+	[${6:{ "key": "key", "operand": "operand" \}}]
+}},
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>key</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.json</scope>
+</snippet>

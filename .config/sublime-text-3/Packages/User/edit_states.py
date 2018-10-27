@@ -50,7 +50,11 @@ SELECTION_STATE = 'select'
 directory = os.path.join(os.path.dirname(__file__), COLOR_SCHEME_OVERRIDE_DIRECTORY)
 
 
-if not os.path.isdir(directory):
+if os.path.isdir(directory):
+	for filename in os.listdir(directory):
+		file = os.path.join(directory, filename)
+		os.remove(file)
+else:
 	os.makedirs(directory)
 
 
@@ -58,7 +62,6 @@ def nonblank_selection(view):
 	return any(not r.empty() for r in view.sel())
 
 def on_state_change(view, force=False):
-	print('whoa there')
 	settings = view.settings()
 	# Don't do anything if it's a widget
 	if settings.get('is_widget'):
@@ -67,6 +70,8 @@ def on_state_change(view, force=False):
 	# Don't do anything if we haven't changed state (and the "force" flag isn't specified)
 	new_state = settings.get('edit_state', DEFAULT_STATE)
 	old_state = settings.get('last_edit_state')
+	if (not force) and settings.get('last_edit_state', None) == settings.get('edit_state', DEFAULT_STATE):
+		return
 	if new_state == 'normal' and nonblank_selection(view):
 		if old_state == SELECTION_STATE:
 			pts = [sel.b for sel in view.sel()]
@@ -75,19 +80,13 @@ def on_state_change(view, force=False):
 				view.sel().add(sublime.Region(pt, pt))
 		else:
 			set_state(view, SELECTION_STATE)
-	elif new_state == 'insert' and settings.get('last_edit_state', None) == 'select' and nonblank_selection(view):
+	elif new_state == 'insert' and nonblank_selection(view):
 		view.run_command('right_delete')
-	if (not force) and settings.get('last_edit_state', None) == settings.get('edit_state', DEFAULT_STATE):
-		return
 	remove_state_watcher(view)
 	settings.set('last_edit_state', new_state)
 	settings.set('command_mode', new_state not in INSERT_STATES)
 	color_scheme_filename = os.path.splitext(os.path.split(settings.get('color_scheme'))[1])[0] + '.sublime-color-scheme'
 	theme_file = os.path.join(directory, color_scheme_filename)
-	for filename in os.listdir(directory):
-		file = os.path.join(directory, filename)
-		if not (os.path.isfile(theme_file) and os.path.samefile(file, theme_file)):
-			os.remove(file)
 	with open(theme_file, 'w') as f:
 		if 'caret_color' in STATE_SETTINGS[new_state]:
 			f.write(COLOR_SCHEME_OVERRIDE_TEMPLATE.format(STATE_SETTINGS[new_state]['caret_color']))
@@ -107,27 +106,29 @@ def set_state(view, new_state):
 def reset_state(view):
 	set_state(view, DEFAULT_STATE)
 
-def add_state_watcher(view):
-	view.settings().add_on_change('edit_state_watcher', lambda: on_state_change(view))
+def add_state_watcher(view, name='edit_state_watcher', handler=None):
+	view.settings().add_on_change(name, handler or (lambda: on_state_change(view)))
 
-def remove_state_watcher(view):
-	view.settings().clear_on_change('edit_state_watcher')
+def remove_state_watcher(view, name='edit_state_watcher'):
+	view.settings().clear_on_change(name)
 
 
 class EditStateListener(sublime_plugin.EventListener):
-	# def on_new(self, view):
-	# 	print('new!')
-	# 	set_state(settings, DEFAULT_STATE)
-	# def on_clone(self, view):
-	# 	set_state(view.settings(), DEFAULT_STATE)
 	def on_activated(self, view):
 		on_state_change(view, force=True)
 	def on_deactivated(self, view):
 		remove_state_watcher(view)
 	def on_selection_modified(self, view):
-		if (view.settings().get('edit_state') not in (SELECTION_STATE,) + INSERT_STATES
-				and nonblank_selection(view)):
-			set_state(view, 'select')
+		state = view.settings().get('edit_state')
+		if state not in INSERT_STATES:
+			if nonblank_selection(view):
+				if state != SELECTION_STATE:
+					# print('to sel')
+					set_state(view, SELECTION_STATE)
+			else:
+				if state == SELECTION_STATE:
+					# print('to norm')
+					set_state(view, 'normal')
 	def on_query_context(self, view, key, operator, operand, match_all):
 		if key == 'edit_state':
 			get = view.settings().get
@@ -144,6 +145,64 @@ class EditStateListener(sublime_plugin.EventListener):
 class ExtendableMotionCommand(sublime_plugin.TextCommand):
 	def run(self, edit, **args):
 		args['extend'] = self.view.settings().get('edit_state') == SELECTION_STATE
+		# remove_state_watcher(self.view)
+		# print('rem')
 		self.view.run_command(args.pop('command'), args)
+		# if args['extend'] and not nonblank_selection(self.view):
+		# 	print('change')
+		# 	remove_state_watcher(self.view)
+		# 	def handler():
+		# 		print('fake handle! ha!')
+		# 		remove_state_watcher(self.view, 'zz_edit_state_watcher')
+		# 		add_state_watcher(self.view)
+		# 	add_state_watcher(self.view, 'zz_edit_state_watcher', handler)
+		# set_state(self.view, SELECTION_STATE)
+		# print('add')
+		# add_state_watcher(self.view)
+	def is_visible(self, args):
+		return False
+
+
+class LinewiseCommand(sublime_plugin.TextCommand):
+	def run(self, edit, **args):
+		self.view.run_command('expand_selection', {'to': 'line'})
+		self.view.run_command(args.pop('command'), args)
+	def is_visible(self, args):
+		return False
+
+
+class ModalInsertLineCommand(sublime_plugin.TextCommand):
+	def run(self, edit, place='here', insert='false'):
+		old_regions = [r for r in self.view.sel()]
+		# for r in self.view.sel():
+		# 	self.view.
+		self.view.add_regions('_caret_temp', self.view.sel(), flags=sublime.HIDDEN)
+		below = place == 'below'
+		above = place == 'above'
+		here = place not in ('below', 'above')
+		insert = insert == 'true'
+		if here:
+			self.view.run_command('expand_selection', {'to': 'line'})
+			above = True
+		if above:
+			self.view.run_command('move_to', {'to': 'hardbol'})
+		if below:
+			self.view.run_command('move_to', {'to': 'hardeol'})
+		self.view.run_command('insert', {'characters': '\n'})
+		if place == 'above':
+			self.view.run_command('move', {'by': 'lines', 'forward': False})
+		self.view.run_command('reindent')
+		# else:
+		# 	# self.
+		# 	self.view.run_command('')
+		if insert:
+			# if not forward:
+			set_state(self.view, 'insert')
+		else:
+			self.view.sel().clear()
+			for r in self.view.get_regions('_caret_temp'):
+				self.view.sel().add(r)
+				print('adding old')
+		self.view.erase_regions('_caret_temp')
 	def is_visible(self, args):
 		return False

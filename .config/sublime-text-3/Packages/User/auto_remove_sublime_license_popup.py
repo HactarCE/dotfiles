@@ -13,10 +13,8 @@ sublimeMainWindowTitle = " - Sublime Text (UNREGISTERED)"
 
 class LicenseWindowKiller(sublime_plugin.EventListener):
 
-    active = True
-
     def seek_n_close(self):
-        sublimePid = int(cl("""wmctrl -lp | grep "%s" | awk '{print $3}'""" % sublimeMainWindowTitle).decode())
+        sublimePid = int(cl("""wmctrl -lp | grep "%s" | awk '{print $3}' | head -1""" % sublimeMainWindowTitle).decode())
         if sublimePid:
             sublimeMainWindowId = cl("""wmctrl -lp | grep "%s" | awk '{print $1}'""" % sublimeMainWindowTitle).decode()
             sublimeSecondWindowId = cl("""wmctrl -lp | grep %s | awk '{ids[$1]++}{for (id in ids){if (id != "%s"){printf id}}}'""" % (sublimePid, sublimeMainWindowId)).decode()
@@ -33,5 +31,5 @@ class LicenseWindowKiller(sublime_plugin.EventListener):
             sleep(.2)
             counter -= 1
             if counter < 0:
-                self.active = False
+                return
             self.active = not self.seek_n_close()

@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+{ "keys": [${1:"key"}], "command": "${3:command}", ${4:"args": {${5:"arg1": "value1"}\}, }"context":
+	[{ "key": "edit_state", "operand": "${2:normal}" }]
+},
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>mokey</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.json</scope>
+</snippet>

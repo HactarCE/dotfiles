@@ -5,10 +5,17 @@
 	],
 	"installed_packages":
 	[
+		"AceJump",
 		"ASCII Decorator",
 		"Behave Color Scheme",
+		"Chain of Command",
 		"i3 wm",
 		"KeybindingHelper",
+		"LiveReload",
+		"MarkdownEditing",
+		"MarkdownLivePreview",
+		"MarkdownPreview",
+		"MarkdownTOC",
 		"MultiEditUtils",
 		"Package Control",
 		"PackageResourceViewer",
