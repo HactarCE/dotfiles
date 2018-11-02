@@ -124,8 +124,9 @@ set $scripts                $HOME/Scripts
 set $basic_editor           mousepad
 set $compton                dbus-launch compton
 set $kill_compton           pkill compton
+set $dunst                  pkill dunst; dunst
 set $polybar                $HOME/.config/polybar/launch.py
-set $pulseaudio				pulseaudio -k; pulseaudio --start
+set $pulseaudio	            pulseaudio -k; pulseaudio --start
 set $control_pianobar       $HOME/.config/pianobar/control.sh
 set $file_manager           pcmanfm
 #endregion
@@ -142,7 +143,8 @@ set $darker #003575
 # Background (exec)
 exec --no-startup-id $compton
 exec --no-startup-id dropbox
-exec --no-startup-id emacs --daemon
+# exec --no-startup-id emacs --daemon
+exec --no-startup-id $dunst
 exec --no-startup-id libinput-gestures-setup start
 exec --no-startup-id numlockx
 exec --no-startup-id pcmanfm -d
