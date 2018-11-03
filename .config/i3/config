@@ -442,8 +442,9 @@ bindsym $mod+$alt+minus         exec --no-startup-id $control_pianobar ban
 #region ########################
 
 set $mode_resize resize / reload
-bindcode $mod+ctrl+$-r mode $mode_resize
-bindcode $mod+$-r exec --no-startup-id rofi -show
+bindcode $mod+$-r mode $mode_resize
+#bindcode $mod+ctrl+$-r mode $mode_resize
+#bindcode $mod+$-r exec --no-startup-id rofi -show
 
 mode "$mode_resize" {
 
