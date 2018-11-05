@@ -1,0 +1,17 @@
+{
+    "completions":
+    [
+        { "trigger": "^a", "contents": "â" },
+        { "trigger": ":e", "contents": "ë" },
+        { "trigger": ":o", "contents": "ö" },
+        { "trigger": ":u", "contents": "ü" },
+
+        { "trigger": ",c", "contents": "ç" },
+        { "trigger": "^c", "contents": "č" },
+        { "trigger": ",d", "contents": "ḑ" },
+        { "trigger": "^n", "contents": "ň" },
+        { "trigger": ",t", "contents": "ţ" },
+        { "trigger": ".z", "contents": "ż" },
+        { "trigger": "^z", "contents": "ž" },
+    ]
+}
