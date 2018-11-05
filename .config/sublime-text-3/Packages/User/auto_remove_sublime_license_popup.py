@@ -26,10 +26,10 @@ class LicenseWindowKiller(sublime_plugin.EventListener):
         return False
 
     def on_pre_save_async(self, *args):
-        counter = 25
-        while self.active:
+        counter = 5
+        loop = True
+        while counter > 0:
             sleep(.2)
             counter -= 1
-            if counter < 0:
-                return
-            self.active = not self.seek_n_close()
+            if self.seek_n_close():
+                counter = 0

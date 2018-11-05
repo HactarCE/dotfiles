@@ -7,11 +7,13 @@
 	[
 		"A File Icon",
 		"AceJump",
+		"Alignment",
 		"ASCII Decorator",
 		"Behave Color Scheme",
 		"Case Conversion",
 		"Chain of Command",
 		"Delete Current File",
+		"Enhanced Clojure",
 		"Git",
 		"GitGutter",
 		"Github Tools",
@@ -29,7 +31,13 @@
 		"MultiEditUtils",
 		"Package Control",
 		"PackageResourceViewer",
+		"Parinfer",
+		"PEG.js",
 		"PowerCursors",
-		"rainbow_csv"
+		"rainbow_csv",
+		"Rainbowth",
+		"SingleTrailingNewLine",
+		"TrailingSpaces",
+		"Wrap Plus"
 	]
 }

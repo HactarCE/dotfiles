@@ -1,0 +1,15 @@
+{
+    "languages": ["lisp", "scheme", "clojure", "clojurescript", "hylang", "js", "sass", "scss", "json"],
+    "palettes":
+    {
+        "default": ["red", "orange", "yellow", "green", "blue", "indigo", "violet"],
+        "Behave": ["#FF3333", "#FF8800", "#CCCC00", "#00CC00", "#00CCCC", "#3366FF", "#CC00FF"]
+    },
+    "disable_inside_string": true,
+    "custom_signs":
+    {
+        "enabled": false,
+        "prefix": "({[",
+        "suffix": ")}]"
+    }
+}

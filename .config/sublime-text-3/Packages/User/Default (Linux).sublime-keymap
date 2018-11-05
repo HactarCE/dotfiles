@@ -23,6 +23,7 @@
 	{ "keys": ["ctrl+tab"], "command": "next_view" },
 	{ "keys": ["ctrl+shift+tab"], "command": "prev_view" },
 	{ "keys": ["ctrl+shift+v"], "command": "paste_from_history" },
+	{ "keys": ["ctrl+space"], "command": "show_command_palette" },
 
 
 
@@ -72,7 +73,7 @@
 	{ "keys": ["t"], "command": "set_setting", "args": {"setting": "edit_state", "value": "insert"}, "context":
 		[{ "key": "edit_state", "operand": "motion" }]
 	},
-	{ "keys": ["T"], "command": "linewise", "args": {"full_line": false, "command": "set_setting", "setting": "edit_state", "value": "insert"}, "context":
+	{ "keys": ["T"], "command": "modal_insert_line", "args": {"insert": true}, "context":
 		[{ "key": "edit_state", "operand": "motion" }]
 	},
 	{ "keys": ["s"], "command": "set_setting", "args": {"setting": "edit_state", "value": "select"}, "context":
@@ -170,4 +171,46 @@
 	{ "keys": ["y"], "command": "extendable_motion", "args": {"command": "move_to", "to": "eol"}, "context":
 		[{ "key": "edit_state", "operand": "motion" }]
 	},
+	{ "keys": ["N"], "command": "extendable_motion", "args": {"command": "move", "by": "words", "forward": false}, "context":
+		[{ "key": "edit_state", "operand": "motion" }]
+	},
+	{ "keys": ["I"], "command": "extendable_motion", "args": {"command": "move", "by": "word_ends", "forward": true}, "context":
+		[{ "key": "edit_state", "operand": "motion" }]
+	},
+	{ "keys": ["U"], "command": "scroll_lines", "args": {"amount": 10}, "context":
+		[{ "key": "edit_state", "operand": "motion" }]
+	},
+	{ "keys": ["E"], "command": "scroll_lines", "args": {"amount": -10}, "context":
+		[{ "key": "edit_state", "operand": "motion" }]
+	},
+	{ "keys": ["L"], "command": "extendable_motion", "args": {"command": "move", "by": "subwords", "forward": false}, "context":
+		[{ "key": "edit_state", "operand": "motion" }]
+	},
+	{ "keys": ["Y"], "command": "extendable_motion", "args": {"command": "move", "by": "subword_ends", "forward": true}, "context":
+		[{ "key": "edit_state", "operand": "motion" }]
+	},
+
+
+
+
+
+
+/*
+	 ######  ######## ##       ########  ######  ######## ####  #######  ##    ##
+	##    ## ##       ##       ##       ##    ##    ##     ##  ##     ## ###   ##
+	##       ##       ##       ##       ##          ##     ##  ##     ## ####  ##
+	 ######  ######   ##       ######   ##          ##     ##  ##     ## ## ## ##
+	      ## ##       ##       ##       ##          ##     ##  ##     ## ##  ####
+	##    ## ##       ##       ##       ##    ##    ##     ##  ##     ## ##   ###
+	 ######  ######## ######## ########  ######     ##    ####  #######  ##    ##
+*/
+
+
+
+	// { "keys": ["a", "w"], "command": "", "args": {"arg1": "value1"}, "context":
+	// 	[{ "key": "edit_state", "operand": "motion" }]
+	// },
+
+
+
 ]

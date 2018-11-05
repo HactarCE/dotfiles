@@ -1,0 +1,13 @@
+{
+    "word_separators": "./\\()\"':,.;<>~!@#$%^&*|+=[]{}`~?",
+	"extensions":
+	[
+		"boot",
+		"cljs",
+		"cljs.edn",
+		"cljc"
+	],
+    // "tab_size": 1,
+    "translate_tabs_to_spaces": true,
+    "detect_indentation": false
+}

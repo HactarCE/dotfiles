@@ -145,20 +145,7 @@ class EditStateListener(sublime_plugin.EventListener):
 class ExtendableMotionCommand(sublime_plugin.TextCommand):
 	def run(self, edit, **args):
 		args['extend'] = self.view.settings().get('edit_state') == SELECTION_STATE
-		# remove_state_watcher(self.view)
-		# print('rem')
 		self.view.run_command(args.pop('command'), args)
-		# if args['extend'] and not nonblank_selection(self.view):
-		# 	print('change')
-		# 	remove_state_watcher(self.view)
-		# 	def handler():
-		# 		print('fake handle! ha!')
-		# 		remove_state_watcher(self.view, 'zz_edit_state_watcher')
-		# 		add_state_watcher(self.view)
-		# 	add_state_watcher(self.view, 'zz_edit_state_watcher', handler)
-		# set_state(self.view, SELECTION_STATE)
-		# print('add')
-		# add_state_watcher(self.view)
 	def is_visible(self, args):
 		return False
 
@@ -172,37 +159,31 @@ class LinewiseCommand(sublime_plugin.TextCommand):
 
 
 class ModalInsertLineCommand(sublime_plugin.TextCommand):
-	def run(self, edit, place='here', insert='false'):
+	def run(self, edit, place='here', insert=False):
 		old_regions = [r for r in self.view.sel()]
-		# for r in self.view.sel():
-		# 	self.view.
 		self.view.add_regions('_caret_temp', self.view.sel(), flags=sublime.HIDDEN)
 		below = place == 'below'
 		above = place == 'above'
 		here = place not in ('below', 'above')
-		insert = insert == 'true'
+		print(place)
 		if here:
-			self.view.run_command('expand_selection', {'to': 'line'})
+			self.view.run_command('run_macro_file', {'file': 'res://Packages/Default/Delete Line.sublime-macro'})
 			above = True
 		if above:
 			self.view.run_command('move_to', {'to': 'hardbol'})
 		if below:
 			self.view.run_command('move_to', {'to': 'hardeol'})
 		self.view.run_command('insert', {'characters': '\n'})
-		if place == 'above':
+		if above:
 			self.view.run_command('move', {'by': 'lines', 'forward': False})
-		self.view.run_command('reindent')
-		# else:
-		# 	# self.
-		# 	self.view.run_command('')
+		self.view.run_command('reindent', {'single-line': True, 'force_indent': False})
 		if insert:
-			# if not forward:
 			set_state(self.view, 'insert')
 		else:
 			self.view.sel().clear()
 			for r in self.view.get_regions('_caret_temp'):
 				self.view.sel().add(r)
-				print('adding old')
+			# TODO adding line below while at EoL causes cursor to move to new line
 		self.view.erase_regions('_caret_temp')
 	def is_visible(self, args):
 		return False

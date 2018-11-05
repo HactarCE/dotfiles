@@ -1,5 +1,15 @@
 {
+    "variables": {
+        "bg": "#1D2021",
+        "off-bg": "#1D2121"
+    },
     "globals": {
-        "background": "#1D2021",
-    }
+        "background": "var(bg)",
+    },
+    "rules": [
+        {
+            "scope": "rainbowth0, rainbowth1, rainbowth2, rainbowth3, rainbowth4, rainbowth5, rainbowth6",
+            "background": "var(off-bg)"
+        },
+    ]
 }
