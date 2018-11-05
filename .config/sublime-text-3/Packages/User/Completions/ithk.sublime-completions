@@ -6,6 +6,18 @@
         { "trigger": ":o", "contents": "ö" },
         { "trigger": ":u", "contents": "ü" },
 
+        { "trigger": "/a", "contents": "á" },
+        { "trigger": "/e", "contents": "é" },
+        { "trigger": "/i", "contents": "í" },
+        { "trigger": "/o", "contents": "ó" },
+        { "trigger": "/u", "contents": "ú" },
+
+        { "trigger": "\\a", "contents": "à" },
+        { "trigger": "\\e", "contents": "è" },
+        { "trigger": "\\i", "contents": "ì" },
+        { "trigger": "\\o", "contents": "ò" },
+        { "trigger": "\\u", "contents": "ù" },
+
         { "trigger": ",c", "contents": "ç" },
         { "trigger": "^c", "contents": "č" },
         { "trigger": ",d", "contents": "ḑ" },
@@ -13,5 +25,30 @@
         { "trigger": ",t", "contents": "ţ" },
         { "trigger": ".z", "contents": "ż" },
         { "trigger": "^z", "contents": "ž" },
+
+        { "trigger": "^A", "contents": "Â" },
+        { "trigger": ":E", "contents": "Ë" },
+        { "trigger": ":O", "contents": "Ö" },
+        { "trigger": ":U", "contents": "Ü" },
+
+        { "trigger": "/A", "contents": "Á" },
+        { "trigger": "/E", "contents": "É" },
+        { "trigger": "/I", "contents": "Í" },
+        { "trigger": "/O", "contents": "Ó" },
+        { "trigger": "/U", "contents": "Ú" },
+
+        { "trigger": "\\A", "contents": "À" },
+        { "trigger": "\\E", "contents": "È" },
+        { "trigger": "\\I", "contents": "Ì" },
+        { "trigger": "\\O", "contents": "Ò" },
+        { "trigger": "\\U", "contents": "Ù" },
+
+        { "trigger": ",C", "contents": "Ç" },
+        { "trigger": "^C", "contents": "Č" },
+        { "trigger": ",D", "contents": "Ḑ" },
+        { "trigger": "^N", "contents": "Ň" },
+        { "trigger": ",T", "contents": "Ţ" },
+        { "trigger": ".Z", "contents": "Ż" },
+        { "trigger": "^Z", "contents": "Ž" },
     ]
 }
