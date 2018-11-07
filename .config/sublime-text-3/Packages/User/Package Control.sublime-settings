@@ -38,6 +38,7 @@
 		"Rainbowth",
 		"SingleTrailingNewLine",
 		"TrailingSpaces",
-		"Wrap Plus"
+		"Wrap Plus",
+		"ZSH"
 	]
 }
