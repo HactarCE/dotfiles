@@ -39,6 +39,7 @@
 		"SingleTrailingNewLine",
 		"TrailingSpaces",
 		"Wrap Plus",
-		"ZSH"
+		"ZSH",
+		"ScopeAlways"
 	]
 }
