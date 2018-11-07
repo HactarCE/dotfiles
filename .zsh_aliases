@@ -2,8 +2,8 @@ disable r
 
 
 # LS
-alias l='ls -lAh'
-alias la='ls -lah'
+alias l='ls -lAh --group-directories-first'
+alias la='ls -lah --group-directories-first'
 alias lg='l | grep -i'
 
 
