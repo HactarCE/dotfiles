@@ -36,10 +36,13 @@
 		"PowerCursors",
 		"rainbow_csv",
 		"Rainbowth",
+		"ScopeAlways",
 		"SingleTrailingNewLine",
+		"SublimeLinter",
+		"SublimeLinter-annotations",
 		"TrailingSpaces",
+		"WordCount",
 		"Wrap Plus",
-		"ZSH",
-		"ScopeAlways"
+		"ZSH"
 	]
 }
