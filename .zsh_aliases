@@ -2,8 +2,10 @@ disable r
 
 
 # LS
-alias l='ls -lAh --group-directories-first'
-alias la='ls -lah --group-directories-first'
+alias ls='ls --color=tty --group-directories-first'
+alias ll='ls -lh'
+alias l='ll -A'
+alias la='ll -a'
 alias lg='l | grep -i'
 
 
