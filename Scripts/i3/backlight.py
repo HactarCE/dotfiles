@@ -1,6 +1,6 @@
 #!/bin/env python3
 
-SETTINGS = [0.5, 1, 2.5, 5, 10, 15, 20, 30, 50, 75, 100]
+SETTINGS = [0.5, 1, 2, 3, 5, 10, 15, 20, 30, 50, 75, 100]
 
 from subprocess import call, check_output
 from time import sleep
