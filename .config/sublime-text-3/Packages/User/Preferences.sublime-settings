@@ -7,9 +7,10 @@
 	"caret_style": "smooth",
 	"close_windows_when_empty": true,
 	"color_scheme": "Packages/Behave Color Scheme/Behave.tmTheme",
+	"draw_white_space": "selection",
 	"fade_fold_buttons": false,
-	"font_face": "Iosevka SS04",
-	"font_size": 11,
+	"font_face": "Iosevka",
+	"font_size": 10,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"hot_exit": false,
@@ -28,6 +29,10 @@
 	"line_padding_bottom": 0,
 	"line_padding_top": 0,
 	"remember_open_files": false,
+	"rulers":
+	[
+		80
+	],
 	"show_encoding": true,
 	"show_line_endings": true,
 	"show_tab_close_buttons": false,

@@ -94,6 +94,9 @@ def on_state_change(view, force=False):
 			f.write('{}')
 	for k, v in STATE_SETTINGS[new_state].items():
 		settings.set(k, v)
+	# view.add_regions('edit_state_cursor', [r for r in view.sel()] + [sublime.Region(1, 1)], 'edit-state.' + new_state, '', sublime.DRAW_EMPTY)
+	# print('edit-state.' + new_state)
+	# view.get_regions('edit_state_cursor')
 	add_state_watcher(view)
 	view.set_status('edit_state', new_state.upper())
 

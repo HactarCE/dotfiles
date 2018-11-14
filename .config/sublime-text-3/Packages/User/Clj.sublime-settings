@@ -8,6 +8,12 @@
 		"cljc"
 	],
     // "tab_size": 1,
+    // "draw_indent_guides": true,
+    "indent_guide_options":
+    [
+        "draw_normal",
+        "draw_active"
+    ],
     "translate_tabs_to_spaces": true,
-    "detect_indentation": false
+    "detect_indentation": false,
 }
