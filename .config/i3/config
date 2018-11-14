@@ -190,6 +190,9 @@ for_window [window_role="float"]                floating enable
 # Sticky windows
 for_window [class="SpeedCrunch"]                sticky enable
 
+# Scratchpad windows
+for_window [window_role="pianobar"]             move to scratchpad
+
 # TODO move to keybinds
 bindsym Num_Lock exec --no-startup-id $HOME/Scripts/i3/calc.py
 # bindsym Escape [con_id=__focused__ class="SpeedCrunch"] kill
