@@ -74,7 +74,7 @@
   <Property key="CodeIssues.System.String[].Microsoft.CodeAnalysis.Diagnostics.CSharp.CSharpCompilerDiagnosticAnalyzer.CS1061.enabled" value="True" />
   <Property key="CodeIssues.System.String[].Microsoft.CodeAnalysis.Diagnostics.CSharp.CSharpCompilerDiagnosticAnalyzer.CS0037.severity" value="Error" />
   <Property key="CodeIssues.System.String[].Microsoft.CodeAnalysis.Diagnostics.CSharp.CSharpCompilerDiagnosticAnalyzer.CS1520.severity" value="Error" />
-  <Property key="MonoDevelop.Ide.AddinUpdater.LastCheck" value="10/11/2018 16:57:29" />
+  <Property key="MonoDevelop.Ide.AddinUpdater.LastCheck" value="11/09/2018 17:53:04" />
   <Property key="CodeIssues.System.String[].Microsoft.CodeAnalysis.Diagnostics.CSharp.CSharpCompilerDiagnosticAnalyzer.CS0117.enabled" value="True" />
   <Property key="CodeIssues.System.String[].Microsoft.CodeAnalysis.Diagnostics.CSharp.CSharpCompilerDiagnosticAnalyzer.CS0246.enabled" value="True" />
   <Property key="CodeIssues.System.String[].Microsoft.CodeAnalysis.Diagnostics.CSharp.CSharpCompilerDiagnosticAnalyzer.CS0266.enabled" value="True" />
@@ -93,7 +93,7 @@
   <Property key="CodeIssues.System.String[].Microsoft.CodeAnalysis.Diagnostics.CSharp.CSharpCompilerDiagnosticAnalyzer.CS0161.enabled" value="True" />
   <Property key="CodeIssues.System.String[].Microsoft.CodeAnalysis.Diagnostics.CSharp.CSharpCompilerDiagnosticAnalyzer.CS0642.enabled" value="True" />
   <Property key="CompletionCharacters.C#.CompleteOnSpace" value="True" />
-  <Property key="MonoDevelop.FindReplaceDialogs.FindHistory" value="local&#xA;y_delta&#xA;x_delta&#xA;walkFrame" />
+  <Property key="MonoDevelop.FindReplaceDialogs.FindHistory" value="half3&#xA;float4&#xA;half&#xA;float&#xA;float'&#xA;d&#xA;dfl&#xA;local&#xA;y_delta&#xA;x_delta&#xA;walkFrame" />
   <Property key="CodeIssues.System.String[].Microsoft.CodeAnalysis.Diagnostics.CSharp.CSharpCompilerDiagnosticAnalyzer.CS1513.enabled" value="True" />
   <Property key="CodeIssues.System.String[].Microsoft.CodeAnalysis.Diagnostics.CSharp.CSharpCompilerDiagnosticAnalyzer.CS1503.enabled" value="True" />
   <Property key="CompletionCharacters.Xml.CompleteOnChars" value="{}[]().,:;+-*/%&amp;|^!~=&lt;&gt;?@#'&quot;\" />
