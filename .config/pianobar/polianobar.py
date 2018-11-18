@@ -37,6 +37,7 @@ def get_status():
         barLength = 30
         timePlayed, timeTotal = info['timePlayed'], info['timeTotal']
         s += f'{timePlayed//60:02}:{timePlayed%60:02} '
+        s += f'%{{A1:{control_action("playpause")}:}}'
         progress = int(timePlayed / timeTotal * barLength)
         s += f'%{{F#99}}'
         s += '▒' * progress
@@ -45,8 +46,9 @@ def get_status():
         else:
             s += f'%{{F#cccccc}}%{{T3}}█%{{T-}}%{{F#555555}}'
         s += '▒' * (barLength - progress - (not info['buffering']))
-        s += f'%{{F-}} '
-        s += f'{timeTotal//60:02}:{timeTotal%60:02}  '
+        s += f'%{{F-}}'
+        s += f'%{{A}}'
+        s += f' {timeTotal//60:02}:{timeTotal%60:02}  '
         # Love/ban/shelf buttons
         s += button('﨑塚'[info['rating'] == '2'], control_action('ban')) + ' '
         s += button('鈴', control_action('shelf')) + ' '
