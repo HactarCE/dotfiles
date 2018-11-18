@@ -251,6 +251,7 @@ bindcode $mod+$alt+$-f     exec $file_manager
 
 bindsym $mod+BackSpace    exec --no-startup-id $HOME/Scripts/i3/system.py
 bindsym $mod+Menu         exec --no-startup-id $HOME/Scripts/i3/system.py
+bindsym XF86PowerOff      exec --no-startup-id $HOME/Scripts/i3/system.py
 bindsym $mod+shift+Menu   exec --no-startup-id $HOME/Scripts/i3/i3exit.sh lock
 
 bindcode $mod+shift+$-v    exec pavucontrol
