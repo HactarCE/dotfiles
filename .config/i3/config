@@ -124,9 +124,9 @@ set $scripts                $HOME/Scripts
 set $basic_editor           mousepad
 set $compton                dbus-launch compton
 set $kill_compton           pkill compton
-set $dunst                  $HOME/Scripts/i3/restart_dunst.sh
+set $dunst                  $HOME/Scripts/i3/restart-dunst.sh
 set $polybar                $HOME/.config/polybar/launch.py
-set $pulseaudio             $HOME/Scripts/i3/restart_pulseaudio.sh
+set $pulseaudio             $HOME/Scripts/i3/restart-pulseaudio.sh
 set $control_pianobar       $HOME/.config/pianobar/control.sh
 set $file_manager           pcmanfm
 #endregion
