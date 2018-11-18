@@ -35,3 +35,5 @@ export WINEPREFIX="$HOME/.wine"
 
 # xmodmap -e "keycode 23 = Control_L NoSymbol Control_L"
 # xcape -e "Super_L=Escape"
+
+autorandr -c
