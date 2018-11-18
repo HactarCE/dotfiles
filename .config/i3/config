@@ -157,7 +157,7 @@ exec --no-startup-id $HOME/Scripts/i3/login-exec.sh
 
 # Background (exec_always)
 exec_always --no-startup-id nitrogen --restore
-exec_always --no-startup-id $polybar
+exec_always --no-startup-id sleep 1; $polybar
 
 # Normal programs
 # exec --no-startup-id steam -silent
