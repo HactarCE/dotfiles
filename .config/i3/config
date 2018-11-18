@@ -153,7 +153,7 @@ exec --no-startup-id redshift-gtk
 exec --no-startup-id steam -silent
 exec --no-startup-id udiskie
 exec --no-startup-id $HOME/Scripts/fix-usbs-loop.sh
-exec --no-startup-id $HOME/Scripts/i3/startup.sh
+exec --no-startup-id $HOME/Scripts/i3/login-exec.sh
 
 # Background (exec_always)
 exec_always --no-startup-id nitrogen --restore

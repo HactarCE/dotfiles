@@ -1,4 +1,0 @@
-#!/bin/sh
-
-ckb-next -b &
-~/Scripts/screen-layout.sh
