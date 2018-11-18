@@ -179,9 +179,12 @@ exec $BROWSER
 #region ########################
 
 # Floating windows
-for_window [class="Pavucontrol"]                floating enable
-for_window [class="Nm-connection-editor"]       floating enable
+for_window [class="Gnome-power-statistics"]     floating enable
 for_window [class="Gucharmap"]                  floating enable
+for_window [class="kronometer"]                 floating enable
+for_window [class="kronometer"]                 resize set 650 200
+for_window [class="Nm-connection-editor"]       floating enable
+for_window [class="Pavucontrol"]                floating enable
 for_window [class="SpeedCrunch"]                floating enable
 for_window [class="SpeedCrunch"]                resize set 400 800
 for_window [window_role="float"]                floating enable
