@@ -124,9 +124,9 @@ set $scripts                $HOME/Scripts
 set $basic_editor           mousepad
 set $compton                dbus-launch compton
 set $kill_compton           pkill compton
-set $dunst                  pkill dunst; dunst
+set $dunst                  $HOME/Scripts/i3/restart_dunst.sh
 set $polybar                $HOME/.config/polybar/launch.py
-set $pulseaudio	            pulseaudio -k; pulseaudio --start
+set $pulseaudio             $HOME/Scripts/i3/restart_pulseaudio.sh
 set $control_pianobar       $HOME/.config/pianobar/control.sh
 set $file_manager           pcmanfm
 #endregion
@@ -345,7 +345,7 @@ bindcode $mod+$-c focus output right
 bindsym $mod+shift+bracketleft move container to output left
 bindsym $mod+shift+bracketright move container to output right
 bindsym $mod+shift+comma move container to output left
-bindcode $mod+shift+$-period move container to output right
+bindsym $mod+shift+period move container to output right
 bindcode $mod+shift+$-x move container to output left
 bindcode $mod+shift+$-c move container to output right
 #endregion
@@ -452,8 +452,8 @@ bindcode $mod+$-r mode $mode_resize
 mode "$mode_resize" {
 
         bindsym $mod+Return mode "default"; restart
+        bindcode $mod+$-a exec --no-startup-id $pulseaudio; mode "default"
         bindcode $mod+$-p exec --no-startup-id $polybar; mode "default"
-        # bindcode $mod+$-m # TODO reload music config (or maybe do this with polybar?)
         bindcode $mod+$-c exec --no-startup-id $kill_compton || $compton; mode "default"
 
         bindcode $-j resize grow left 10 px or 10 ppt
