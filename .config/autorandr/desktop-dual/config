@@ -5,13 +5,11 @@ off
 output DP-1
 off
 output HDMI-0
-gamma 2.273:1.0:0.5
 mode 1920x1080
 pos 1440x0
 primary
 rate 60.00
 output DVI-I-1
-gamma 2.273:1.0:0.5
 mode 1440x900
 pos 0x200
 rate 59.89

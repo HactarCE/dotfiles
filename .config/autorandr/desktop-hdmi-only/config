@@ -7,7 +7,6 @@ off
 output DP-1
 off
 output HDMI-0
-gamma 2.273:1.0:0.5
 mode 1920x1080
 pos 0x0
 primary
