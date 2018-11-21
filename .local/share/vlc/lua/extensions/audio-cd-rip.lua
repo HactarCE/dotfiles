@@ -1,6 +1,6 @@
 profiles={
-	{"Audio CD -> mp3", " :cdda-track=? :sout=#transcode{vcodec=none,acodec=mp3,ab=128,channels=2,samplerate=44100}:file{mux=mp3,dst=\"H:\\Track ?.mp3\"}"},
-	{"Audio CD -> wav", " :cdda-track=? :sout=#transcode{vcodec=none,acodec=s16l,ab=128,channels=2,samplerate=44100}:file{mux=wav,dst=\"H:\\Track ?.wav\"}"},
+	{"Audio CD -> mp3", " :cdda-track=? :sout=#transcode{vcodec=none,acodec=mp3,ab=128,channels=2,samplerate=44100}:file{mux=mp3,dst=\"/home/andy/Music/Track ?.mp3\"}"},
+	{"Audio CD -> wav", " :cdda-track=? :sout=#transcode{vcodec=none,acodec=s16l,ab=128,channels=2,samplerate=44100}:file{mux=wav,dst=\"/home/andy/Music/Track ?.wav\"}"},
 }
 
 -----
@@ -37,7 +37,7 @@ function create_dialog()
 	d:add_label(string.rep("&nbsp;",50),5,1,1,1)
 	----
 	d:add_label("Source MRL: ",1,1,1,1)
-	ti_mrl = d:add_text_input("cdda:///E:/",2,1,1,1)
+	ti_mrl = d:add_text_input("cdda:///dev/sr0",2,1,1,1)
 	d:add_label("(Media > Open Disc... > Audio CD)",3,1,2,1)
 
 	d:add_label("Tracks: ",1,2,1,1)
