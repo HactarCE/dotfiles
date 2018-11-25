@@ -1,6 +1,7 @@
 {
 	"extensions":
 	[
-		"ruel"
+		"ruel",
+		".zsh_aliases"
 	]
 }
