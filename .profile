@@ -9,7 +9,7 @@
 
 export PATH=$PATH":$HOME/.local/bin"
 
-export BROWSER=/usr/bin/vivaldi-stable
+export BROWSER=/usr/bin/google-chrome-stable
 export EDITOR="subl -nw"
 export SHELL=/bin/zsh
 export TERMINAL=termite
