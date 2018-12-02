@@ -134,8 +134,8 @@ set $file_manager           pcmanfm
 
 # Color Scheme
 #region ########################
-set $bright #0070da
-set $darker #003575
+set $bright #3366CC
+set $darker #003366
 #endregion
 
 # Startup (TODO - move to some file called by .xprofile or .profile)

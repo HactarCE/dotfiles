@@ -12,11 +12,11 @@ border = #000
 background = #000
 foreground = #ddd
 
-active = #0070da
+active = #36c
 alert = #fc0
 dark = #000
 dim = #999
-inactive = #003575
+inactive = #036
 urgent = #f30
 
 white = #ccc
