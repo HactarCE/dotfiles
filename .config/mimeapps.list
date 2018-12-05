@@ -1,17 +1,19 @@
 [Added Associations]
-image/svg+xml=inkscape.desktop;viewnior.desktop;
 image/bmp=viewnior.desktop;
 image/gif=viewnior.desktop;
 image/jpeg=viewnior.desktop;
 image/png=viewnior.desktop;
-text/plain=sublime_text.desktop;
+image/svg+xml=inkscape.desktop;viewnior.desktop;
 text/html=google-chrome.desktop;
+text/plain=sublime_text.desktop;
 
 [Default Applications]
-image/svg+xml=viewnior.desktop
 image/bmp=viewnior.desktop
 image/gif=viewnior.desktop
 image/jpeg=viewnior.desktop
 image/png=viewnior.desktop
-text/plain=sublime_text.desktop
+image/svg+xml=viewnior.desktop
 text/html=google-chrome.desktop
+text/plain=sublime_text.desktop
+x-scheme-handler/http=google-chrome.desktop
+x-scheme-handler/https=google-chrome.desktop
