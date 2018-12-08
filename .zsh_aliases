@@ -38,19 +38,20 @@ alias pi='pip install --user'
 # MISC
 alias aud='audacity'
 alias df='df -h' # human-readable sizes
+alias diff='colordiff'
 alias du='du -h'
 alias dus='du -s'
 alias grepi='grep -i'
 alias libr='libreoffice'
-alias lolcow='cowsay | lolcat -t'
 alias lol='lolcat -t'
+alias lolcow='cowsay | lol'
 alias open='xdg-open'
 alias pg='ps aux | grep -i'
-alias sys='systemctl'
-alias susys='sudo systemctl'
 alias suno='sudo nano'
+alias susys='sudo systemctl'
 alias sutee='sudo tee'
-alias diff='colordiff'
+alias sys='systemctl'
+alias xpgc='xprop | grep WM_CLASS'
 
 
 # SHORT
