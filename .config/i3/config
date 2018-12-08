@@ -96,7 +96,9 @@ set $-m 58
 ###   MISCELLANEOUS
 #region ######################################################################'#
 
-font pango:Roboto Medium 8
+#font pango:Roboto Medium 8
+#font pango:Cantarell Bold 9
+font pango:Verdana Bold 9
 
 floating_modifier $mod
 
