@@ -184,6 +184,9 @@ for_window [class="Blueman-manager"]            floating enable
 for_window [class="Blueman-manager"]            resize set 720 480
 for_window [class="Blueman-manager"]            move position center
 for_window [class="Gnome-power-statistics"]     floating enable
+for_window [class="Gnome-system-monitor"]       floating enable
+for_window [class="Gnome-system-monitor"]       resize set 1080 720
+for_window [class="Gnome-system-monitor"]       move position center
 for_window [class="Gucharmap"]                  floating enable
 for_window [class="kronometer"]                 floating enable
 for_window [class="kronometer"]                 resize set 350 200
@@ -246,6 +249,9 @@ bindcode $mod+$-t exec --no-startup-id $HOME/Scripts/fix-audio.sh; exec --no-sta
 #region ########################
 bindsym $mod+Return       exec i3-sensible-terminal
 bindsym $mod+shift+Return exec i3-sensible-terminal -r float
+
+bindsym ctrl+$alt+Delete  exec gnome-system-monitor -r
+bindsym ctrl+shift+Escape exec gnome-system-monitor -p
 
 # bindsym $mod+space        exec --no-startup-id i3-dmenu-desktop --dmenu='eval dmenu -p Run $DMENU_SETTINGS'
 # bindsym $mod+ctrl+space   exec --no-startup-id eval dmenu_run -p Run $DMENU_SETTINGS
