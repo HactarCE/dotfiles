@@ -8,3 +8,4 @@ __pycache__/
 *.merged-ca-bundle
 *.user-ca-bundle
 *.cache
+.CursorColor

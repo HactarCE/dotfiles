@@ -25,13 +25,13 @@
 	{ "keys": ["ctrl+shift+v"], "command": "paste_from_history" },
 	{ "keys": ["ctrl+space"], "command": "show_command_palette" },
 	{ "keys": ["ctrl+k", "ctrl+m"], "command": "toggle_menu" },
-	{ "keys": ["shift+enter"], "command": "chain", "args": {
-		"commands": [
-			["insert", {"characters": "\n"}],
-			["move_to", {"to": "hardbol"}],
-			["move", {"by": "characters", "forward": false}],
-		]
-	} },
+	// { "keys": ["shift+enter"], "command": "chain", "args": {
+	// 	"commands": [
+	// 		["insert", {"characters": "\n"}],
+	// 		["move_to", {"to": "hardbol"}],
+	// 		["move", {"by": "characters", "forward": false}],
+	// 	]
+	// } },
 
 
 
