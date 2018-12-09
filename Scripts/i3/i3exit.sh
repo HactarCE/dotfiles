@@ -1,23 +1,17 @@
 #!/bin/sh
-# Date    : 21/07/2017
-# Version : v2.0.1
-
-lock() {
-    i3lock
-}
 
 case "$1" in
     lock)
-        lock
+        light-locker-command -l
         ;;
     logout)
         i3-msg exit
         ;;
     suspend)
-        lock && systemctl suspend
+        systemctl suspend
         ;;
     hibernate)
-        lock && systemctl hibernate
+        systemctl hibernate
         ;;
     reboot)
         systemctl reboot
