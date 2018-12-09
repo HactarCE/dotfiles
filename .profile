@@ -26,6 +26,9 @@ export ANTIGEN_COMPDUMPFILE="$HOME/.cache/zcompdump"
 export WINEARCH=win64
 export WINEPREFIX="$HOME/.wine"
 
+# GTK Theme
+export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
+
 # # Hold CapsLock for Control, or tap for Escape
 # # Hold Tab for Super, or tap for Tab
 # xmodmap -e "keycode 23 = Super_L"
