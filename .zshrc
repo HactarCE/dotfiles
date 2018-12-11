@@ -50,6 +50,11 @@ source $ZSH/oh-my-zsh.sh
 source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
+# The defaults for these are practically unreadable, so set them to be the same as normal directories
+# TODO: doesn't work in tab completion
+LS_COLORS="${LS_COLORS:s/ow=34;42/ow=01;34}"
+LS_COLORS="${LS_COLORS:s/tw=37;44/tw=01;34}"
+
 FAST_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 FAST_HIGHLIGHT_STYLES[cursor]='bold'
 
