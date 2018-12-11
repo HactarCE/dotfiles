@@ -11,10 +11,13 @@ script_dir = os.path.dirname(os.path.realpath(__file__))
 
 i3 = i3ipc.Connection()
 
-def dmenu(items, prompt=None):
-    command = ['dmenu', *shellsplit(os.getenv('DMENU_SETTINGS'))]
+def dmenu(items, prompt=None, **kwargs):
+    command = ['rofi', '-dmenu']
     if prompt is not None:
         command += ['-p', prompt]
+    for k, v in kwargs.items():
+        print(k, v)
+        command += ['-' + k, v]
     if isinstance(items, list):
         items = '\n'.join(items)
     if isinstance(items, str):
