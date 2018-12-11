@@ -1,70 +1,64 @@
 /* -*- mode: css; -*- */
 
 * {
-  black:      #000000;
-  red:        #eb6e67;
-  green:      #99ff99;
-  yellow:     #f8c456;
-  /* #0070da  */
-  blue:       #3399ff;
-  magenta:    #d886f3;
-  cyan:       #6cdcf7;
-  emphasis:   #004B91;
-  text:       #ffffff;
-  text-alt:   #cccccc;
-  fg:         #abb2bf;
-  bg:         #282c34;
+
+  white:        #fff;
+  white-dim:    #ccc;
+  red:          #c00;
+  yellow:       #fc0;
+  green:        #0c0;
+  cyan:         #0cc;
+  blue:         #00c;
+  magenta:      #0cc;
+
+  blue-dim:     #36c;
+  blue-bright:  #39f;
+  blue-med:     #248;
+
+  green-dim:    #0c0;
+  green-bright: #0f0;
+
+  text-dim:     @white-dim;
+  text-bright:  @white;
+
+  bg-dim:       #000c;
 
   spacing: 0;
   background-color: transparent;
 
-  font: "Roboto Mono Nerd Font Medium 12";
-  /* font: "xos4 Terminus 14"; */
-  /* font: "Iosevka SS04 14"; */
-  /* font: "Monoid NF 11"; */
-  /* font: "Ubuntu Mono 14"; */
-  text-color: @text;
-}
-
-window {
-  transparency: "real";
-  fullscreen: true;
-  background-color: #00000099;
-}
-
-mainbox {
-  padding: 10% 30%;
+  font: "Roboto Mono Bold 14";
+  text-color: @text-bright;
 }
 
 inputbar {
-  border-color: #0070da;
-  border: 1px;
-  border-radius: 4px;
-  background-color: #00000099;
+  border-color: @blue-dim;
+  border: 2px;
+  border-radius: 8px;
+  background-color: @bg-dim;
   padding: 5px 15px;
   margin: 0px 0px 20px 0px;
   children: [prompt, textbox-prompt-colon, entry, case-indicator];
 }
 
 prompt {
-  text-color: @blue;
+  text-color: @blue-bright;
 }
 
 textbox-prompt-colon {
   expand: false;
   str: ":";
-  text-color: @text-alt;
+  text-color: @blue-bright;
 }
 
 entry {
-  margin: 0px 10px;
+  margin: 0px 0.5em;
 }
 
 listview {
-  border-color: #0070da;
-  border: 1px;
-  border-radius: 4px;
-  background-color: #00000099;
+  border-color: @blue-dim;
+  border: 2px;
+  border-radius: 8px;
+  background-color: @bg-dim;
   padding: 5px;
   spacing: 2px;
   dynamic: true;
@@ -72,8 +66,7 @@ listview {
 }
 
 scrollbar {
-  /* background-color: @black; */
-  handle-color: #0070da;
+  handle-color: @blue-dim;
   handle-width: 2px;
   padding: 0px;
   margin: 0px 0px 0px 5px;
@@ -81,42 +74,38 @@ scrollbar {
 
 element {
   padding: 3px 15px;
-  text-color: @text-alt;
-  highlight: bold #66cc66;
-  border-radius: 2px;
+  text-color: @text-dim;
+  border-radius: 4px;
 }
 
 element selected {
-  background-color: @emphasis;
-  highlight: bold #66ff66;
-  text-color: @text;
+  background-color: @blue-med;
+  text-color: @text-bright;
 }
 
 element urgent, element selected urgent {
   text-color: @red;
 }
 
-/* element active, element selected active {
-  text-color: @cyan;
-} */
-
 message {
+  transparency: "real";
+  fullscreen: true;
   padding: 10px 20px;
-  border-radius: 3px;
-  background-color: @emphasis;
-  border: 0px;
-  border-color: @cyan;
+  border-radius: 8px;
+  background-color: @bg-dim;
+  border: 2px;
+  border-color: @blue-dim;
 }
 
 button selected {
   padding: 5px;
   border-radius: 3px;
-  background-color: @emphasis;
+  background-color: @blue-med;
 }
 
 sidebar {
   border-radius: 4px;
-  background-color: #00000099;
+  background-color: @bg-dim;
   padding: 5px;
   margin: 10px 0px 0px 0px;
 }

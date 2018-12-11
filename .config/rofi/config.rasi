@@ -1,6 +1,6 @@
 configuration {
 	modi: "combi";
-  theme: "theme";
+    theme: "theme";
 /*	width: 50;*/
 /*	lines: 15;*/
 /*	columns: 1;*/
