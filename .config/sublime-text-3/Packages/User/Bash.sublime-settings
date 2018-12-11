@@ -2,6 +2,7 @@
 	"extensions":
 	[
 		"ruel",
-		".zsh_aliases"
+		".zsh_aliases",
+		".zshrc"
 	]
 }
