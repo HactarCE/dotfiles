@@ -180,6 +180,9 @@ exec $BROWSER
 #region ########################
 
 # Floating windows
+for_window [class="Bitwarden"]                  floating enable
+for_window [class="Bitwarden"]                  resize set 1080 720
+for_window [class="Bitwarden"]                  move position center
 for_window [class="Blueman-manager"]            floating enable
 for_window [class="Blueman-manager"]            resize set 720 480
 for_window [class="Blueman-manager"]            move position center
