@@ -57,6 +57,7 @@ alias susys='sudo systemctl'
 alias sutee='sudo tee'
 alias sys='systemctl'
 alias xpgc='xprop | grep WM_CLASS'
+alias words='rlwrap words'
 
 
 # SHORT
