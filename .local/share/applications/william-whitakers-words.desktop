@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Encoding=UTF-8
+Name=William Whitaker's WORDS
+Content=A Latin-English-Latin intelligent dictionary and Latin text analyser
+Exec=$TERMINAL -e "rlwrap words" -r float -t "William Whitaker's WORDS"
+Terminal=false
+Categories=Dictionary;Languages;
