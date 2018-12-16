@@ -179,6 +179,9 @@ exec $BROWSER
 # Window Rules
 #region ########################
 
+# No focus windows
+no_focus [class="discord"]
+
 # Floating windows
 for_window [class="Bitwarden"]                  floating enable
 for_window [class="Bitwarden"]                  resize set 1080 720
