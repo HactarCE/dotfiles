@@ -51,6 +51,7 @@ monitor  = ${env:MONITOR:HDMI-0}
 height = 18
 padding = 2
 fixed-center = false
+enable-ipc = true
 
 overline-size = 0
 underline-size = 1
