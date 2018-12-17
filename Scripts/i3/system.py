@@ -7,6 +7,6 @@ i3exit = os.path.join(utils.script_dir, 'i3exit.sh')
 
 menu = ['lock', 'logout', 'suspend', 'hibernate', 'reboot', 'shutdown']
 
-choice = utils.dmenu(menu, prompt='i3exit')
+choice = utils.dmenu(menu, prompt='i3exit', l=str(len(menu)))
 if choice:
     utils.i3_exec_nsi(i3exit + ' ' + choice)
