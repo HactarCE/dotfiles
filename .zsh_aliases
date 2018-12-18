@@ -36,6 +36,16 @@ alias pi3='pip3 install --user'
 alias pi='pip install --user'
 
 
+# "Prog-here" scripts
+alias pro='~/Scripts/i3/Layout-Scripts/prog-here.sh'
+alias proch='~/Scripts/i3/Layout-Scripts/prog-here-challenges.sh'
+alias procl='~/Scripts/i3/Layout-Scripts/prog-here-clojure.sh'
+alias progo='~/Scripts/i3/Layout-Scripts/prog-here-golly.sh'
+alias propy='~/Scripts/i3/Layout-Scripts/prog-here-python.sh'
+alias proay='~/Scripts/i3/Layout-Scripts/prog-here-yay.sh'
+alias proya='~/Scripts/i3/Layout-Scripts/prog-here-yay.sh'
+
+
 # MISC
 alias aud='audacity'
 alias df='df -h' # human-readable sizes
