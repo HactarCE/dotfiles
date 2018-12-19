@@ -42,6 +42,7 @@
 		"SingleTrailingNewLine",
 		"SublimeLinter",
 		"SublimeLinter-annotations",
+		"SyntaxFold",
 		"TrailingSpaces",
 		"WordCount",
 		"Wrap Plus",
