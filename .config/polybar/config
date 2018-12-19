@@ -8,7 +8,7 @@
 [colors]
 #region ###################################################
 
-border = #000
+border = #0000
 background = #000
 foreground = #ddd
 
@@ -48,13 +48,15 @@ workspace = 4
 [bar/base]
 #region ###################################################
 monitor  = ${env:MONITOR:HDMI-0}
-height = 18
+height = 30
+radius = 10
 padding = 2
+border-size = 15
 fixed-center = false
 enable-ipc = true
 
 overline-size = 0
-underline-size = 1
+underline-size = 4
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -87,7 +89,7 @@ modules-left = pianobar
 # modules-right = volume backlight redshift date time
 modules-right = volume bluetooth backlight date time
 
-border-bottom-size = 2
+border-bottom-size = 0
 
 #endregion
 
@@ -97,19 +99,19 @@ inherit = bar/base
 
 bottom = true
 
-border-top-size = 2
+border-top-size = 0
 
-padding-left = 0
+padding-left = 2
 
 modules-left = i3
 # ; modules-right = filesystem xbacklight volume xkeyboard memory cpu wlan eth battery temperature date powermenu
 # modules-right = xkeyboard
 # modules-right = capslock keylayout temperature
 modules-right = capslock keylayout bbswitch compton dropbox wlan wlan-ip eth-ip temperature cpu memory battery
-# separator = │
+; # separator = │
 
-tray-position = ${env:TRAY_POS:}
-tray-padding = 2
+; tray-position = ${env:TRAY_POS:}
+tray-padding = 5
 
 # scroll-up = i3wm-wsnext
 # scroll-down = i3wm-wsprev

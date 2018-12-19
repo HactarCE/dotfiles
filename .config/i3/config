@@ -112,8 +112,8 @@ focus_wrapping no
 hide_edge_borders smart
 default_border pixel 1
 default_floating_border pixel 1
-# gaps inner 20
-# gaps outer 5
+gaps inner 10
+gaps outer 5
 #endregion
 
 # Directories
@@ -268,8 +268,7 @@ bindcode $mod+ctrl+$-o     exec --no-startup-id $HOME/Scripts/i3/reorder_workspa
 bindcode $mod+$-p          exec --no-startup-id $HOME/Scripts/i3/rename_workspace.py hide-num
 bindcode $mod+shift+$-p    exec --no-startup-id $HOME/Scripts/i3/rename_workspace.py all
 
-bindcode $mod+$-z          exec --no-startup-id morc_menu
-# bindcode $mod+$-b           exec terminal -e bmenu
+bindcode $mod+$-a          exec --no-startup-id $HOME/Scripts/i3/simplify_tree.py notify
 bindcode $mod+$-b          exec $BROWSER
 bindcode $mod+$alt+$-b     exec $BROWSER
 bindcode $mod+$alt+$-m     exec $basic_editor

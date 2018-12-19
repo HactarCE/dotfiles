@@ -24,4 +24,4 @@ print(destination)
 
 if destination:
     utils.i3.command(f'{"move container to" if "move" in utils.args else ""} workspace "{destination}"')
-    import reorganize_workspaces
+    import renumber_workspaces

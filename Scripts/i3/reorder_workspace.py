@@ -2,7 +2,7 @@
 
 import utils
 
-import reorganize_workspaces
+import renumber_workspaces
 
 workspaces = utils.get_workspaces_on_output(utils.get_focused_output())
 from pprint import pprint as pp

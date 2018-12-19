@@ -2,7 +2,7 @@
 
 import utils
 
-import reorganize_workspaces
+import renumber_workspaces
 
 focused_workspace = utils.get_focused_workspace()
 
