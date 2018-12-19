@@ -3,7 +3,7 @@
     <group size="300" prefSize="300" defaultHorSize="300" defaultVerSize="250" type="Tabbed" currentTabPage="0">
       <item size="0" prefSize="0" defaultHorSize="300" defaultVerSize="250" id="MonoDevelop.Ide.Gui.Pads.HelpTree" visible="False" status="Dockable" />
       <item size="0" prefSize="0" defaultHorSize="300" defaultVerSize="250" id="ClassPad" visible="False" status="AutoHide" autoHidePosition="Left" autoHideSize="200" />
-      <item size="-1" prefSize="-1" defaultHorSize="300" defaultVerSize="250" id="ProjectPad" visible="True" status="Dockable" />
+      <item size="0" prefSize="0" defaultHorSize="300" defaultVerSize="250" id="ProjectPad" visible="True" status="Dockable" />
       <item size="300" prefSize="300" defaultHorSize="300" defaultVerSize="250" id="__left" visible="False" status="Dockable" />
     </group>
     <group size="1591" prefSize="1591" defaultHorSize="300" defaultVerSize="250" type="Vertical">
