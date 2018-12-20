@@ -51,6 +51,7 @@ alias proya='~/Scripts/i3/Layout-Scripts/prog-here-yay.sh'
 alias aud='audacity'
 alias df='df -h' # human-readable sizes
 alias diff='colordiff'
+alias wdiff="wdiff -n -w $'\033[30;41m' -x $'\033[0m' -y $'\033[30;42m' -z $'\033[0m'"
 alias du='du -h'
 alias dud='du -d'
 alias dus='du -s'
