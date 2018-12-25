@@ -1,4 +1,4 @@
-#!/bin/env python3
+#!/usr/bin/env python3
 
 CALC_COMMAND = 'exec speedcrunch'
 CALC_CLASS = 'SpeedCrunch' # the second one from xprop WM_CLASS
