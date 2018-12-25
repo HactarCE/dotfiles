@@ -57,7 +57,7 @@ def get_win_prop(prop_name, id=None):
     if not id:
         id = int(check_output(['xdotool', 'getactivewindow']))
     stdout = check_output(['xprop', prop_name.upper(), '-id', str(id)]).decode('UTF-8')
-    output = stdout.partition(' = ')[-1].partition(',')[0].strip()
+    output = stdout.partition(' = ')[-1].partition(',')[-1].strip()
     if not output:
         raise Exception('Unable to acquire window property ' + prop_name,
                         'Could not handle this output:\n' + output)
