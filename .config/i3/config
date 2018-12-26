@@ -212,6 +212,20 @@ for_window [class="SpeedCrunch"]                move right 700
 for_window [window_role="float"]                floating enable
 # for_window [window_role="float"]                border pixel 2
 
+# Steam windows
+# https://github.com/z3ntu/dotfiles/blob/master/i3/.config/i3/config
+# https://github.com/ValveSoftware/steam-for-linux/issues/1040
+for_window [class="^Steam$" title="^Friends$"] floating enable
+for_window [class="^Steam$" title="Steam - News"] floating enable
+for_window [class="^Steam$" title=".* - Chat"] floating enable
+for_window [class="^Steam$" title="^Settings$"] floating enable
+for_window [class="^Steam$" title=".* - event started"] floating enable
+for_window [class="^Steam$" title=".* CD key"] floating enable
+for_window [class="^Steam$" title="^Steam - Self Updater$"] floating enable
+for_window [class="^Steam$" title="^Screenshot Uploader$"] floating enable
+for_window [class="^Steam$" title="^Steam Guard - Computer Authorization Required$"] floating enable
+for_window [title="^Steam Keyboard$"] floating enable
+
 # Sticky windows
 for_window [class="SpeedCrunch"]                sticky enable
 
@@ -237,8 +251,8 @@ bindsym --release Num_Lock exec numlockx
 ## i3 MANAGEMENT
 #region ########################
 
-bindcode $mod+shift+$-q kill
-bindsym --release button2 kill
+bindcode $mod+shift+$-q exec --no-startup-id $HOME/Scripts/i3/kill.sh
+bindsym --release button2 exec --no-startup-id $HOME/Scripts/i3/kill.sh
 
 # Reload the configuration file
 bindcode $mod+shift+$-r exec --no-startup-id $HOME/Scripts/i3/reload-i3.sh
