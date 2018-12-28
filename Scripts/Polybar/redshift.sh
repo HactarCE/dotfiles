@@ -2,14 +2,14 @@
 
 case "$1" in
     --toggle)
-        if [ "$(pgrep -x compton)" ]; then
-            pkill -x compton
+        if [ "$(pgrep -x redshift)" ]; then
+            pkill -x redshift
         else
-            compton -b
+            i3 'exec redshift'
         fi
         ;;
     *)
-        if [ "$(pgrep -x compton)" ]; then
+        if [ "$(pgrep -x redshift)" ]; then
             echo ""
         else
             echo ""
