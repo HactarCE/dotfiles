@@ -560,11 +560,7 @@ format =  <label>
 
 [settings]
 #region ###################################################
-screenchange-reload = true
-compositing-background = xor
-;compositing-background = screen
-compositing-foreground = source
-;compositing-border = over
+;screenchange-reload = true
 #endregion
 
 [global/wm]
