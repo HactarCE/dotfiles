@@ -24,6 +24,7 @@ alias sudel='sudo trash'
 # YADM
 alias y='yadm'
 alias ya='yadm add'
+alias yai='yadm add -i'
 alias yco='yadm checkout'
 alias yc='yadm commit -v'
 alias ycm='yadm commit -vm'
