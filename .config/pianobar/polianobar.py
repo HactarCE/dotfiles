@@ -28,16 +28,17 @@ MAX_SONG_NAME_LENGTH = 150
 
 def get_status():
     if info['isPlaying']:
+        playpause_action = 'play' if info['isPlaying'] == 'pause' else 'pause'
         s = ''
         # Play/pause/skip/stop buttons
         s += button('栗', control_action('quit')) + ' '
-        s += button('契'[info['isPlaying'] == 'pause'], control_action('playpause')) + ' '
+        s += button('契'[info['isPlaying'] == 'pause'], control_action(playpause_action)) + ' '
         s += button('怜', control_action('skip')) + '  '
         # Bar
         barLength = 30
         timePlayed, timeTotal = info['timePlayed'], info['timeTotal']
         s += f'{timePlayed//60:02}:{timePlayed%60:02} '
-        s += f'%{{A1:{control_action("playpause")}:}}'
+        s += f'%{{A1:{control_action(playpause_action)}:}}'
         progress = int(timePlayed / timeTotal * barLength)
         s += f'%{{F#99}}'
         s += '▒' * progress
