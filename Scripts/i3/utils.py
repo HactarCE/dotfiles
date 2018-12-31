@@ -1,4 +1,4 @@
-from subprocess import check_output, CalledProcessError
+from subprocess import call, check_output, CalledProcessError
 from shlex import split as shellsplit, quote as shellquote
 import i3ipc
 import os
@@ -53,10 +53,10 @@ def get_workspaces_on_output(output):
 def parse_workspace_name(workspace_name):
     return re.match(r'^(\d*)(:?)(.+)$', workspace_name).groups()
 
-def get_win_prop(prop_name, id=None):
-    if not id:
-        id = int(check_output(['xdotool', 'getactivewindow']))
-    stdout = check_output(['xprop', prop_name.upper(), '-id', str(id)]).decode('UTF-8')
+def get_win_prop(prop_name, win_id=None):
+    if not win_id:
+        win_id = get_active_window_id()
+    stdout = check_output(['xprop', prop_name.upper(), '-id', str(win_id)]).decode('UTF-8')
     output = stdout.partition(' = ')[-1].partition(',')[-1].strip()
     if not output:
         raise Exception('Unable to acquire window property ' + prop_name,
@@ -66,3 +66,55 @@ def get_win_prop(prop_name, id=None):
     if output.isdigit():
         output = int(output)
     return output
+
+
+
+def xdotool(action):
+    return call(['xdotool'] + action)
+
+def get_active_window_id():
+    return check_output(['xdotool', 'getactivewindow']).strip()
+
+def get_xwininfo(win_id):
+    return check_output(['xwininfo', '-id', win_id]).decode('utf-8')
+
+def get_map_state(win_id):
+    """Returns either 'IsUnviewable', 'IsViewable', or 'IsUnMapped'"""
+    return re.search(r'\n  Map State: (\w+)\n', get_xwininfo(win_id)).group(1)
+
+
+
+def win_is_mapped(win_id):
+    return get_map_state(win_id).lower() != 'isunmapped'
+
+def win_is_visible(win_id):
+    return get_map_state(win_id).lower() == 'isviewable'
+
+def win_is_active(win_id):
+    return get_active_window_id() == win_id
+
+
+
+def win_close(win_id=None):
+    return xdotool(['windowclose', win_id or get_active_window_id()])
+
+def win_kill(win_id=None):
+    return xdotool(['windowkill', win_id or get_active_window_id()])
+
+def win_focus(win_id):
+    return xdotool(['windowfocus', '--sync', win_id])
+
+def win_map(win_id):
+    return xdotool(['windowmap', '--sync', win_id])
+
+def win_unmap(win_id):
+    return xdotool(['windowunmap', '--sync', win_id])
+
+def win_hacky_unfocus(win_id=None):
+    if win_id == None:
+        win_id = get_active_window_id()
+    win_activate(win_id)
+    win_unmap(win_id)
+    new_focus = get_active_window_id()
+    win_map(win_id)
+    xdotool(['windowactivate', new_focus], True)
