@@ -289,6 +289,9 @@ bindcode $mod+$alt+$-b     exec $BROWSER
 bindcode $mod+$alt+$-m     exec $basic_editor
 bindsym $mod+$alt+Return  exec gucharmap
 bindcode $mod+$alt+$-f     exec $file_manager
+bindcode $mod+$alt+$-e     exec $file_manager
+bindcode $mod+$alt+$-s     exec $EDITOR
+bindcode $mod+$alt+$-d     exec $EDITOR
 
 bindsym $mod+BackSpace    exec --no-startup-id $HOME/Scripts/i3/system.py
 bindsym $mod+Menu         exec --no-startup-id $HOME/Scripts/i3/system.py
