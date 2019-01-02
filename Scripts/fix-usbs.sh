@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # KEYBOARD
 xset r rate 200 35

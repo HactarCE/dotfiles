@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 btcontroller="$(bluetoothctl list | head -n1 | cut -d' ' -f2)"
 btstatus="$(bluetoothctl show $btcontroller | grep Powered | cut -d':' -f2 | cut -c2-)"

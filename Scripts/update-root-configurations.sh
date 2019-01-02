@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/bin/bash
 
 sudo rm -r /root/.config/autorandr
 sudo rm -r /root/.oh-my-zsh

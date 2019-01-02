@@ -11,6 +11,12 @@ DOUBLEPRESS_TIMEOUT = 0.25
 XDOTOOL_SEARCH_COMMAND = ['xdotool', 'search', '--class', CALC_CLASS]
 
 CLOSE_NOTIFY_COMMAND = 'notify-send -t 750'.split() + ["SpeedCrunch closed"]
+CLOSE_COMMAND = ['pkill', '-x', CALC_CLASS]
+def kill_calc(win_id):
+    call(CLOSE_COMMAND)
+    # utils.win_close(win_id)
+    call(CLOSE_NOTIFY_COMMAND)
+
 
 TEMPFILENAME = '.calc_doublepress'
 
@@ -52,13 +58,11 @@ with utils.MultiPressChecker(TEMPFILE) as multipress:
                         utils.win_unmap(win_id)
                     if multipress.wait(3):
                         # If triple-pressed when visible but inactive, close it
-                        utils.win_close(win_id)
-                        call(CLOSE_NOTIFY_COMMAND)
+                        kill_calc(win_id)
                 else:
                     # Window is active
                     # If pressed when active, unmap it
                     utils.win_unmap(win_id)
                     if multipress.wait(2):
                         # If double-pressed when active, close it
-                        utils.win_close(win_id)
-                        call(CLOSE_NOTIFY_COMMAND)
+                        kill_calc(win_id)

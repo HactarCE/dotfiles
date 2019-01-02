@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if [ -f /proc/acpi/bbswitch ]; then
 
