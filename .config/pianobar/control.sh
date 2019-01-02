@@ -4,7 +4,7 @@ STATUS_FILE="$HOME/.config/pianobar/status"
 PIANOBAR_FIFO_FILE="$HOME/.config/pianobar/ctl"
 EVENTCMD_FIFO_FILE="$HOME/.config/pianobar/eventcmd_fifo"
 
-if [ -f "$STATUS_FILE" ] && pkill -0 pianobar; then
+if [ -f "$STATUS_FILE" ] && pgrep -x pianobar; then
     case "$1" in
         toggle)
             cat > "$EVENTCMD_FIFO_FILE" <<EOF
