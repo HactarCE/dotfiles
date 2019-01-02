@@ -1,5 +1,8 @@
 {
 	"color_scheme": "Packages/Behave Color Scheme/Behave.tmTheme",
-    // "line_numbers": true,
-    // "draw_centered": false,
+	"extensions":
+	[
+		"md",
+		"mdown"
+	]
 }
