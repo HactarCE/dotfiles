@@ -56,10 +56,10 @@ alias pi='pip install --user'
 alias pro='~/Scripts/i3/Layout-Scripts/prog-here.sh'
 alias proch='~/Scripts/i3/Layout-Scripts/prog-here-challenges.sh'
 alias procl='~/Scripts/i3/Layout-Scripts/prog-here-clojure.sh'
+alias prodnd='~/Scripts/i3/Layout-Scripts/prog-here-dnd.sh'
 alias proi3='~/Scripts/i3/Layout-Scripts/prog-here-i3wm.sh'
 alias progo='~/Scripts/i3/Layout-Scripts/prog-here-golly.sh'
 alias propy='~/Scripts/i3/Layout-Scripts/prog-here-python.sh'
-alias proay='~/Scripts/i3/Layout-Scripts/prog-here-yay.sh'
 alias proya='~/Scripts/i3/Layout-Scripts/prog-here-yay.sh'
 
 
