@@ -5,7 +5,10 @@ disable r
 alias ls='ls --color=tty --group-directories-first'
 alias ll='ls -lhN'
 alias l='ll -A'
-alias la='ll -a'
+# alias la='ll -a'
+alias lst='ls -t'
+alias llt='ll -t'
+alias lt='l -t'
 alias lg='l | grep -i'
 
 
@@ -52,7 +55,7 @@ alias pi3='pip3 install --user'
 alias pi='pip install --user'
 
 
-# "Prog-here" scripts
+# "PROG-HERE" SCRIPTS
 alias pro='~/Scripts/i3/Layout-Scripts/prog-here.sh'
 alias proch='~/Scripts/i3/Layout-Scripts/prog-here-challenges.sh'
 alias procl='~/Scripts/i3/Layout-Scripts/prog-here-clojure.sh'
@@ -60,6 +63,7 @@ alias prodnd='~/Scripts/i3/Layout-Scripts/prog-here-dnd.sh'
 alias proi3='~/Scripts/i3/Layout-Scripts/prog-here-i3wm.sh'
 alias progo='~/Scripts/i3/Layout-Scripts/prog-here-golly.sh'
 alias propy='~/Scripts/i3/Layout-Scripts/prog-here-python.sh'
+alias proscr='cd ~/Scripts; propy'
 alias proya='~/Scripts/i3/Layout-Scripts/prog-here-yay.sh'
 
 
@@ -92,6 +96,7 @@ alias words='rlwrap words'
 alias a='atom'
 alias a.='atom .'
 alias c='cd'
+alias cl='clear; ll'
 alias cx='chmod +x'
 alias c-x='chmod -x'
 alias fm='pcmanfm'
@@ -103,3 +108,32 @@ alias n='nano'
 alias o='xdg-open'
 alias vn='viewnior'
 alias q='exit'
+alias yS='yay -S'
+alias yR='yay -R'
+alias yI='yay -Qi'
+alias z='exit'
+
+
+# CD LOCATIONS
+alias dr='cd ~/Dropbox'
+alias dl='cd ~/Downloads'
+alias ccon='cd ~/.config'
+alias cscr='cd ~/Scripts'
+alias cscri3='cd ~/Scripts/i3'
+alias cste='cd .local/share/Steam/steamapps/common || cd ~/.local/share/Steam/steamapps/common'
+alias csubl='cd ~/.config/sublime-text-3/Packages/User'
+
+
+# FILE EDITING
+alias sali='s ~/.zsh_aliases'
+alias saliz='sali; z'
+alias swip='s ~/Dropbox/wip.txt'
+alias swipz='swip; z'
+alias stod='s ~/Dropbox/todo.txt'
+alias stodz='stod; z'
+alias stodo='stod'
+alias stodoz='stodo; z'
+alias ssubl='s ~/.config/sublime-text-3/Packages/User'
+alias ssublz='ssubl; z'
+alias issue='s ~/Dropbox/issues.txt'
+alias issuez='issue; z'

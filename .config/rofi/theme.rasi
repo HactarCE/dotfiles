@@ -28,7 +28,7 @@
   spacing: 0;
   background-color: transparent;
 
-  font: "Sans 14";
+  /*font: "Sans 14";*/
   /*font: "Roboto Mono Bold 14";*/
   text-color: @text-bright;
 }
