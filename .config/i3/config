@@ -127,11 +127,11 @@ set $scripts                $HOME/Scripts
 #region ########################
 set $basic_editor           mousepad
 set $compton                dbus-launch compton
-set $kill_compton           pkill compton
-set $dunst                  $HOME/Scripts/i3/restart-dunst.sh
-set $polybar                $HOME/.config/polybar/launch.py
-set $pulseaudio             $HOME/Scripts/i3/restart-pulseaudio.sh
-set $control_pianobar       $HOME/.config/pianobar/control.sh
+set $kill_compton           pkill -x compton
+set $dunst                  $scripts/i3/restart-dunst.sh
+set $polybar                $config/polybar/launch.py
+set $pulseaudio             $scripts/i3/restart-pulseaudio.sh
+set $control_pianobar       $config/pianobar/control.sh
 set $file_manager           pcmanfm
 #endregion
 
@@ -155,8 +155,8 @@ exec --no-startup-id pcmanfm -d
 #exec --no-startup-id redshift-gtk
 exec --no-startup-id udiskie
 # TODO: check if udiskie actually works
-exec --no-startup-id $HOME/Scripts/fix-usbs-loop.sh
-exec --no-startup-id $HOME/Scripts/i3/login-exec.sh
+exec --no-startup-id $scripts/fix-usbs-loop.sh
+exec --no-startup-id $scripts/i3/login-exec.sh
 
 # Background (exec_always)
 exec_always --no-startup-id nitrogen --restore
@@ -184,6 +184,9 @@ exec $BROWSER
 no_focus [class="discord"]
 
 # Floating windows
+for_window [class="Arandr"]                     floating enable
+for_window [class="Arandr"]                     resize set 720 480
+for_window [class="Arandr"]                     move position center
 for_window [class="Bitwarden"]                  floating enable
 for_window [class="Bitwarden"]                  resize set 1080 720
 for_window [class="Bitwarden"]                  move position center
@@ -233,7 +236,7 @@ for_window [class="SpeedCrunch"]                sticky enable
 for_window [window_role="pianobar"]             move to scratchpad
 
 # TODO move to keybinds
-bindsym Num_Lock exec --no-startup-id $HOME/Scripts/i3/calc.py
+bindsym Num_Lock exec --no-startup-id $scripts/i3/calc.py
 # bindsym Escape [con_id=__focused__ class="SpeedCrunch"] kill
 
 #endregion
@@ -251,13 +254,13 @@ bindsym --release Num_Lock exec numlockx
 ## i3 MANAGEMENT
 #region ########################
 
-bindcode $mod+shift+$-q exec --no-startup-id $HOME/Scripts/i3/kill.sh
-bindsym --release button2 exec --no-startup-id $HOME/Scripts/i3/kill.sh
+bindcode $mod+shift+$-q exec --no-startup-id $scripts/i3/kill.sh
+bindsym --release button2 exec --no-startup-id $scripts/i3/kill.sh
 
 # Reload the configuration file
-bindcode $mod+shift+$-r exec --no-startup-id $HOME/Scripts/i3/reload-i3.sh
+bindcode $mod+shift+$-r exec --no-startup-id $scripts/i3/reload-i3.sh
 
-bindcode $mod+$-t exec --no-startup-id $HOME/Scripts/fix-audio.sh; exec --no-startup-id $HOME/Scripts/fix-usbs.sh
+bindcode $mod+$-t exec --no-startup-id $scripts/fix-audio.sh; exec --no-startup-id $scripts/fix-usbs.sh
 
 #endregion
 
@@ -276,14 +279,14 @@ bindsym ctrl+shift+Escape exec gnome-system-monitor -p
 bindsym $mod+space        exec --no-startup-id rofi -show drun
 bindsym $mod+ctrl+space   exec --no-startup-id rofi -show run
 
-bindcode --release $mod+ctrl+$-q    exec --no-startup-id pkill xkill || xkill
+bindcode --release $mod+ctrl+$-q    exec --no-startup-id pkill -x xkill || xkill
 
-bindcode $mod+ctrl+$-u     exec --no-startup-id $HOME/Scripts/i3/reorder_workspace.py left
-bindcode $mod+ctrl+$-o     exec --no-startup-id $HOME/Scripts/i3/reorder_workspace.py right
-bindcode $mod+$-p          exec --no-startup-id $HOME/Scripts/i3/rename_workspace.py hide-num
-bindcode $mod+shift+$-p    exec --no-startup-id $HOME/Scripts/i3/rename_workspace.py all
+bindcode $mod+ctrl+$-u     exec --no-startup-id $scripts/i3/reorder_workspace.py left
+bindcode $mod+ctrl+$-o     exec --no-startup-id $scripts/i3/reorder_workspace.py right
+bindcode $mod+$-p          exec --no-startup-id $scripts/i3/rename_workspace.py hide-num
+bindcode $mod+shift+$-p    exec --no-startup-id $scripts/i3/rename_workspace.py all
 
-bindcode $mod+$-a          exec --no-startup-id $HOME/Scripts/i3/simplify_tree.py notify
+bindcode $mod+$-a          exec --no-startup-id $scripts/i3/simplify_tree.py notify
 bindcode $mod+$-b          exec $BROWSER
 bindcode $mod+$alt+$-b     exec $BROWSER
 bindcode $mod+$alt+$-m     exec $basic_editor
@@ -293,27 +296,27 @@ bindcode $mod+$alt+$-e     exec $file_manager
 bindcode $mod+$alt+$-s     exec $EDITOR
 bindcode $mod+$alt+$-d     exec $EDITOR
 
-bindsym $mod+BackSpace    exec --no-startup-id $HOME/Scripts/i3/system.py
-bindsym $mod+Menu         exec --no-startup-id $HOME/Scripts/i3/system.py
-bindsym XF86PowerOff      exec --no-startup-id $HOME/Scripts/i3/system.py
-bindsym $mod+shift+Menu   exec --no-startup-id $HOME/Scripts/i3/i3exit.sh lock
+bindsym $mod+BackSpace    exec --no-startup-id $scripts/i3/system.py
+bindsym $mod+Menu         exec --no-startup-id $scripts/i3/system.py
+bindsym XF86PowerOff      exec --no-startup-id $scripts/i3/system.py
+bindsym $mod+shift+Menu   exec --no-startup-id $scripts/i3/i3exit.sh lock
 
 bindcode $mod+shift+$-v    exec pavucontrol
 
-bindcode $mod+$-m          exec --no-startup-id $HOME/Scripts/i3/switch_to_workspace.py
-bindcode $mod+shift+$-m    exec --no-startup-id $HOME/Scripts/i3/switch_to_workspace.py move
-bindcode $mod+$-n          exec --no-startup-id $HOME/Scripts/i3/switch_to_workspace.py new
-bindcode $mod+shift+$-n    exec --no-startup-id $HOME/Scripts/i3/switch_to_workspace.py move new
-bindsym $mod+Escape       exec --no-startup-id $HOME/Scripts/i3/switch_to_workspace.py - ' '
+bindcode $mod+$-m          exec --no-startup-id $scripts/i3/switch_to_workspace.py
+bindcode $mod+shift+$-m    exec --no-startup-id $scripts/i3/switch_to_workspace.py move
+bindcode $mod+$-n          exec --no-startup-id $scripts/i3/switch_to_workspace.py new
+bindcode $mod+shift+$-n    exec --no-startup-id $scripts/i3/switch_to_workspace.py move new
+bindsym $mod+Escape       exec --no-startup-id $scripts/i3/switch_to_workspace.py - ' '
 
 bindsym Print             exec --no-startup-id shot
 bindsym shift+Print       exec --no-startup-id shot-full
 
 # 66 = Caps_Lock, regardless of layout
 exec --no-startup-id xmodmap -e "clear lock" # TODO this isn't enough
-# bindcode $alt+66          exec --no-startup-id $HOME/Scripts/switch-keybd-layout.sh
-# bindsym $alt+grave        exec --no-startup-id $HOME/Scripts/switch-keybd-layout.sh
-bindsym $mod+grave        exec --no-startup-id $HOME/Scripts/switch-keybd-layout.sh
+# bindcode $alt+66          exec --no-startup-id $scripts/switch-keybd-layout.sh
+# bindsym $alt+grave        exec --no-startup-id $scripts/switch-keybd-layout.sh
+bindsym $mod+grave        exec --no-startup-id $scripts/switch-keybd-layout.sh
 # bindcode Shift+66         exec --no-startup-id xdotool key Caps_Lock
 #endregion
 
@@ -447,8 +450,8 @@ bindcode $mod+$alt+$-j             exec --no-startup-id pamixer -t # mute sound
 #region Sreen brightness controls
 # bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 20 # increase screen brightness
 # bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 20 # decrease screen brightness
-bindsym XF86MonBrightnessUp exec --no-startup-id $HOME/Scripts/i3/backlight.py + # increase screen brightness
-bindsym XF86MonBrightnessDown exec --no-startup-id $HOME/Scripts/i3/backlight.py - # decrease screen brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id $scripts/i3/backlight.py + # increase screen brightness
+bindsym XF86MonBrightnessDown exec --no-startup-id $scripts/i3/backlight.py - # decrease screen brightness
 #endregion
 
 #region Touchpad controls
@@ -500,7 +503,9 @@ mode "$mode_resize" {
         bindcode $mod+$-a exec --no-startup-id $pulseaudio; mode "default"
         bindcode $mod+$-p exec --no-startup-id $polybar; mode "default"
         bindcode $mod+$-c exec --no-startup-id $kill_compton || $compton; mode "default"
-        bindcode $mod+$-d exec --no-startup-id $dunst; mode "default"
+        bindcode $mod+$-d exec --no-startup-id $dunst
+        bindsym $mod+space exec --no-startup-id $scripts/Rofi/rofrestart.py; mode "default"
+        bindsym space exec --no-startup-id $scripts/Rofi/rofrestart.py; mode "default"
 
         bindcode $-j resize grow left 10 px or 10 ppt
         bindcode $-k resize grow down 10 px or 10 ppt
