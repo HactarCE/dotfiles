@@ -117,9 +117,10 @@ alias z='exit'
 # CD LOCATIONS
 alias dr='cd ~/Dropbox'
 alias dl='cd ~/Downloads'
-alias cste='cd .local/share/Steam/steamapps/common || cd ~/.local/share/Steam/steamapps/common'
+alias ccon='cd ~/.config'
 alias cscr='cd ~/Scripts'
 alias cscri3='cd ~/Scripts/i3'
+alias cste='cd .local/share/Steam/steamapps/common || cd ~/.local/share/Steam/steamapps/common'
 alias csubl='cd ~/.config/sublime-text-3/Packages/User'
 
 
