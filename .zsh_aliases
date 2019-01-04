@@ -1,6 +1,9 @@
 disable r
 
 
+alias subl='subl3'
+
+
 # LS
 alias ls='ls --color=tty --group-directories-first'
 alias ll='ls -lhN'
