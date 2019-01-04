@@ -72,6 +72,8 @@ alias proya='~/Scripts/i3/Layout-Scripts/prog-here-yay.sh'
 
 
 # MISC
+alias autorandr='autorandr --skip-options gamma'
+alias ara='autorandr'
 alias aud='audacity'
 alias df='df -h' # human-readable sizes
 alias diff='colordiff'
@@ -97,8 +99,6 @@ alias words='rlwrap words'
 
 
 # SHORT
-alias a='atom'
-alias a.='atom .'
 alias c='cd'
 alias cl='clear; ll'
 alias cx='chmod +x'
