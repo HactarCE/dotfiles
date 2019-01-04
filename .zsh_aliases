@@ -8,11 +8,12 @@ alias subl='subl3'
 alias ls='ls --color=tty --group-directories-first'
 alias ll='ls -lhN'
 alias l='ll -A'
-# alias la='ll -a'
-alias lst='ls -t'
-alias llt='ll -t'
-alias lt='l -t'
 alias lg='l | grep -i'
+alias llt='ll -t'
+alias lst='ls -t'
+alias lt='l -t'
+unalias la
+unalias lsa
 
 
 # SAFETY
@@ -111,10 +112,18 @@ alias n='nano'
 alias o='xdg-open'
 alias vn='viewnior'
 alias q='exit'
-alias yS='yay -S'
-alias yR='yay -R'
-alias yI='yay -Qi'
 alias z='exit'
+
+
+# YAY
+alias yS='yay -S'
+alias ySi='yay -Si'
+alias yR='yay -R'
+alias yQ='yay -Q'
+alias yQi='yay -Qi'
+alias yD='yay -D'
+alias yD-deps='yay -D --asdeps'
+alias yD-explicit='yay -D --asexplicit'
 
 
 # CD LOCATIONS
