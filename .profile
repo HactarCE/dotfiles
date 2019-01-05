@@ -10,7 +10,7 @@
 export PATH=$PATH":$HOME/.local/bin"
 
 export BROWSER=/usr/bin/google-chrome-stable
-export EDITOR="subl -nw"
+export EDITOR="subl3 -nw"
 export SHELL=/bin/zsh
 export TERMINAL=termite
 
@@ -26,6 +26,10 @@ export WINEPREFIX="$HOME/.wine"
 
 # GTK Theme
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
+
+# Keyboard settings for Wayland
+XKB_DEFAULT_VARIANT=colemak
+XKB_DEFAULT_OPTIONS=shift:both_capslock
 
 # # Hold CapsLock for Control, or tap for Escape
 # # Hold Tab for Super, or tap for Tab
