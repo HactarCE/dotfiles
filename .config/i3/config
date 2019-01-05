@@ -65,7 +65,7 @@ set $-m 58
 
 ###############################################################################
 ###   MISCELLANEOUS
-#region ######################################################################'#
+#region #######################################################################
 
 #font pango:Roboto Medium 8
 #font pango:Cantarell Bold 9
@@ -274,6 +274,7 @@ bindsym $mod+BackSpace    exec --no-startup-id $scripts/i3/system.py
 bindsym $mod+Menu         exec --no-startup-id $scripts/i3/system.py
 bindsym XF86PowerOff      exec --no-startup-id $scripts/i3/system.py
 bindsym $mod+shift+Menu   exec --no-startup-id $scripts/i3/i3exit.sh lock
+bindsym $mod+shift+ctrl+BackSpace exec --no-startup-id exit
 
 bindcode $mod+shift+$-v    exec pavucontrol
 
