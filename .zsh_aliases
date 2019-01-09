@@ -139,6 +139,15 @@ alias yD-deps='yay -D --asdeps'
 alias yD-explicit='yay -D --asexplicit'
 
 
+# DROPBOX-CLI
+alias dro='dropbox-cli'
+alias drofs='dropbox-cli filestatus'
+alias drols='dropbox-cli ls'
+alias drost='dropbox-cli status'
+alias drostart='dropbox-cli start'
+alias drostop='dropbox-cli stop'
+
+
 # CD LOCATIONS
 alias dr='cd ~/Dropbox'
 alias dl='cd ~/Downloads'
