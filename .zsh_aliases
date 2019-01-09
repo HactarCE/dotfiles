@@ -62,11 +62,13 @@ alias pi='pip install --user'
 
 # "PROG-HERE" SCRIPTS
 alias pro='~/Scripts/i3/Layout-Scripts/prog-here.sh'
+alias proawe='~/Scripts/i3/Layout-Scripts/prog-here-awesome.sh'
 alias proch='~/Scripts/i3/Layout-Scripts/prog-here-challenges.sh'
 alias procl='~/Scripts/i3/Layout-Scripts/prog-here-clojure.sh'
 alias prodnd='~/Scripts/i3/Layout-Scripts/prog-here-dnd.sh'
-alias proi3='~/Scripts/i3/Layout-Scripts/prog-here-i3wm.sh'
 alias progo='~/Scripts/i3/Layout-Scripts/prog-here-golly.sh'
+alias proi3='~/Scripts/i3/Layout-Scripts/prog-here-i3wm.sh'
+alias prolat='~/Scripts/i3/Layout-Scripts/prog-here-latin.sh'
 alias propy='~/Scripts/i3/Layout-Scripts/prog-here-python.sh'
 alias proscr='cd ~/Scripts; propy'
 alias proya='~/Scripts/i3/Layout-Scripts/prog-here-yay.sh'
@@ -76,6 +78,7 @@ alias proya='~/Scripts/i3/Layout-Scripts/prog-here-yay.sh'
 alias autorandr='autorandr --skip-options gamma'
 alias ara='autorandr'
 alias aud='audacity'
+alias awe='Xephyr :5 -resizeable & sleep 1; DISPLAY=:5 awesome'
 alias df='df -h' # human-readable sizes
 alias diff='colordiff'
 alias wdiff="wdiff -n -w $'\033[30;41m' -x $'\033[0m' -y $'\033[30;42m' -z $'\033[0m'"
