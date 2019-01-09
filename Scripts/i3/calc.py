@@ -37,32 +37,46 @@ with utils.MultiPressChecker(TEMPFILE) as multipress:
             # If not running, start the program on double-press
             # i3_exec is not portable to other WMs/DEs :(
             utils.i3_exec(CALC_COMMAND)
+            print('exec')
     else:
-        win_id = check_output(XDOTOOL_SEARCH_COMMAND).splitlines()[0]
+        win_ids = check_output(XDOTOOL_SEARCH_COMMAND).splitlines()
+        win_id = win_ids[-1]
+        if len(win_ids) > 1:
+            print('WARNING: Multiple SpeedCrunches found:', *(s.decode() for s in win_ids))
+            print('Using this one:', win_id.decode())
+        else:
+            print('Found SpeedCrunch:', win_id)
         # Window exists
         if not utils.win_is_mapped(win_id):
             # If not mapped, map it
             utils.win_map(win_id)
+            print('map')
         else:
             # Window is mapped
             if not utils.win_is_visible(win_id):
                 # If not visible, focus it
                 utils.win_focus(win_id)
+                print('focus')
             else:
                 # Window is visible
                 if not utils.win_is_active(win_id):
                     # If not active, focus it
                     utils.win_focus(win_id)
+                    print('focus')
                     if multipress.wait(2):
                         # If double-pressed when visible but inactive, unmap it
                         utils.win_unmap(win_id)
+                        print('unmap')
                     if multipress.wait(3):
                         # If triple-pressed when visible but inactive, close it
                         kill_calc(win_id)
+                        print('kill')
                 else:
                     # Window is active
                     # If pressed when active, unmap it
                     utils.win_unmap(win_id)
+                    print('unmap')
                     if multipress.wait(2):
                         # If double-pressed when active, close it
                         kill_calc(win_id)
+                        print('kill')
