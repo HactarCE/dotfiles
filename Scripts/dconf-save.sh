@@ -10,4 +10,10 @@ crudini --get --format=ini tmp-dump 'org/xfce/mousepad/preferences/view' >> mous
 echo >> mousepad
 crudini --get --format=ini tmp-dump 'org/xfce/mousepad/preferences/window' >> mousepad
 
+crudini --get --format=ini tmp-dump 'org/nemo/preferences' >> nemo
+echo >> nemo
+crudini --get --format=ini tmp-dump 'org/nemo/plugins' >> nemo
+echo >> nemo
+crudini --get --format=ini tmp-dump 'org/nemo/sidebar-panels/tree' >> nemo
+
 rm ~/.config/dconf/user.d/tmp-dump

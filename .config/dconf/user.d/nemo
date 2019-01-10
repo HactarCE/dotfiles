@@ -1,0 +1,23 @@
+[org/nemo/preferences]
+tooltips-on-desktop = false
+show-full-path-titles = false
+quick-renames-with-pause-in-between = true
+show-home-icon-toolbar = true
+show-new-folder-icon-toolbar = true
+start-with-dual-pane = true
+show-open-in-terminal-toolbar = true
+tooltips-in-icon-view = true
+default-folder-viewer = 'icon-view'
+date-format = 'iso'
+show-hidden-files = false
+tooltips-in-list-view = true
+show-computer-icon-toolbar = true
+show-reload-icon-toolbar = true
+click-double-parent-folder = true
+show-location-entry = false
+
+[org/nemo/plugins]
+disabled-actions = ['set-as-background.nemo_action', 'send-by-mail.nemo_action', 'add-desklets.nemo_action', 'new-launcher.nemo_action', 'change-background.nemo_action']
+
+[org/nemo/sidebar-panels/tree]
+show-only-directories = true
