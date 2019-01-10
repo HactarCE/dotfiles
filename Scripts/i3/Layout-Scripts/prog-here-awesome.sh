@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd ~/.config/awesome
+cd ~/.config/awesome || cd ~/Dropbox/Awesome-WM
 
 i3 "move container to workspace $(basename $(pwd)); workspace $(basename $(pwd)); layout tabbed; split v; layout stacked"
 xtoolwait subl3 -n . rc.lua
