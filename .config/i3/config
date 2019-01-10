@@ -65,6 +65,7 @@ set $-m 58
 #font pango:Roboto Medium 8
 #font pango:Cantarell Bold 9
 font pango:Verdana Bold 9
+#font pango:Roboto Medium 0
 
 floating_modifier $mod
 
@@ -98,7 +99,7 @@ set $dunst                  $HOME/Scripts/i3/restart-dunst.sh
 set $polybar                $HOME/.config/polybar/launch.py
 set $pulseaudio             $HOME/Scripts/i3/restart-pulseaudio.sh
 set $control_pianobar       $HOME/.config/pianobar/control.sh
-set $file_manager           pcmanfm
+set $file_manager           nemo
 #endregion
 
 # Color Scheme
@@ -116,7 +117,6 @@ exec --no-startup-id $compton
 #exec --no-startup-id $dunst
 #exec --no-startup-id libinput-gestures-setup start
 #exec --no-startup-id numlockx
-exec --no-startup-id pcmanfm -d
 #exec --no-startup-id sleep 5 && $pulseaudio
 #exec --no-startup-id redshift-gtk
 exec --no-startup-id udiskie
