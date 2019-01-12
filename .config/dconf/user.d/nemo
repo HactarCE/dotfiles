@@ -4,7 +4,7 @@ show-full-path-titles = false
 quick-renames-with-pause-in-between = true
 show-home-icon-toolbar = true
 show-new-folder-icon-toolbar = true
-start-with-dual-pane = true
+start-with-dual-pane = false
 show-open-in-terminal-toolbar = true
 tooltips-in-icon-view = true
 default-folder-viewer = 'icon-view'
@@ -13,7 +13,7 @@ show-hidden-files = false
 tooltips-in-list-view = true
 show-computer-icon-toolbar = true
 show-reload-icon-toolbar = true
-click-double-parent-folder = true
+click-double-parent-folder = false
 show-location-entry = false
 
 [org/nemo/plugins]
