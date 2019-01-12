@@ -5,7 +5,7 @@ image/jpeg=viewnior.desktop;
 image/png=viewnior.desktop;
 image/svg+xml=inkscape.desktop;viewnior.desktop;
 text/html=google-chrome.desktop;
-text/plain=sublime_text.desktop;
+text/plain=sublime_text_3.desktop;
 
 [Default Applications]
 image/bmp=viewnior.desktop
@@ -14,6 +14,6 @@ image/jpeg=viewnior.desktop
 image/png=viewnior.desktop
 image/svg+xml=viewnior.desktop
 text/html=google-chrome.desktop
-text/plain=sublime_text.desktop
+text/plain=sublime_text_3.desktop
 x-scheme-handler/http=google-chrome.desktop
 x-scheme-handler/https=google-chrome.desktop
