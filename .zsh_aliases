@@ -78,7 +78,7 @@ alias proya='~/Scripts/i3/Layout-Scripts/prog-here-yay.sh'
 alias autorandr='autorandr --skip-options gamma'
 alias ara='autorandr'
 alias aud='audacity'
-alias awe='Xephyr :5 -resizeable & sleep 1; DISPLAY=:5 awesome'
+alias awe='if awesome -k; then Xephyr :5 -resizeable & sleep 0.5; DISPLAY=:5 awesome; fi'
 alias df='df -h' # human-readable sizes
 alias diff='colordiff'
 alias wdiff="wdiff -n -w $'\033[30;41m' -x $'\033[0m' -y $'\033[30;42m' -z $'\033[0m'"
