@@ -79,6 +79,7 @@ alias autorandr='autorandr --skip-options gamma'
 alias ara='autorandr'
 alias aud='audacity'
 alias awe='if awesome -k; then Xephyr :5 -resizeable & sleep 0.5; DISPLAY=:5 awesome; fi'
+alias bat='upower -i /org/freedesktop/UPower/devices/battery_BAT1 | grep percentage'
 alias df='df -h' # human-readable sizes
 alias diff='colordiff'
 alias wdiff="wdiff -n -w $'\033[30;41m' -x $'\033[0m' -y $'\033[30;42m' -z $'\033[0m'"
