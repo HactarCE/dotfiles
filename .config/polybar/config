@@ -338,7 +338,7 @@ interval = 2
 time = %l:%M %p
 
 label = %time%
-format =  <label>
+format = %{A1:mousepad ~/Dropbox/Reference/schedules.md:} <label>%{A}
 format-underline = ${colors.bright-blue}
 format-overline = ${colors.bright-blue}
 
