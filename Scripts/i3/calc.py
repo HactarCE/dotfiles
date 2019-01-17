@@ -13,7 +13,8 @@ XDOTOOL_SEARCH_COMMAND = ['xdotool', 'search', '--class', CALC_CLASS]
 CLOSE_NOTIFY_COMMAND = 'notify-send -t 750'.split() + ["SpeedCrunch closed"]
 CLOSE_COMMAND = ['pkill', '-x', CALC_CLASS]
 def kill_calc(win_id):
-    call(CLOSE_COMMAND)
+    call(['xdotool', '-window', win_id, 'key', 'ctrl+q'])
+    # call(CLOSE_COMMAND)
     # utils.win_close(win_id)
     call(CLOSE_NOTIFY_COMMAND)
 
