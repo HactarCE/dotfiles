@@ -28,7 +28,7 @@
             "endMarker": "---endregion---"
         },
         {
-            "scope": "source.lua",
+            "scope": "source.lua, source.luae",
             "startMarker": "-- {{{",
             "endMarker": "-- }}}"
         }

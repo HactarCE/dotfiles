@@ -25,6 +25,7 @@
 		"INI",
 		"KeybindingHelper",
 		"LiveReload",
+		"LuaExtended",
 		"MarkdownEditing",
 		"MarkdownLivePreview",
 		"MarkdownPreview",
