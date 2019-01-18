@@ -20,6 +20,8 @@ PIANOBAR_FIFO_FILE = '~/.config/pianobar/ctl'
 # setting in eventcmd.py and control.sh.
 EVENTCMD_FIFO_FILE = '~/.config/pianobar/eventcmd_fifo'
 
+LYRICS_FILE = '~/.config/pianobar/lyrics'
+
 CONTROL_SH = '~/.config/pianobar/control.sh'
 
 MAX_SONG_NAME_LENGTH = 150
@@ -56,6 +58,9 @@ def get_status():
         s += button('﨓晴'[info['rating'] == '1'], control_action('love')) + '  '
         # Title/album/artist
         s += format_songname(True, True, MAX_SONG_NAME_LENGTH)
+        # Lyrics
+        if lyrics_text:
+            s += ' ' + button('%{F#cccccc}(lyrics)%{F-}', f'mousepad {LYRICS_FILE}')
         return s
     return format_stationname()
 
@@ -142,14 +147,22 @@ import termios
 import time
 import tty
 
+try:
+    import tswift
+    GET_LYRICS = True
+except:
+    GET_LYRICS = False
+
 STATUS_FILE = os.path.expanduser(STATUS_FILE)
 PIANOBAR_FIFO_FILE = os.path.expanduser(PIANOBAR_FIFO_FILE)
 EVENTCMD_FIFO_FILE = os.path.expanduser(EVENTCMD_FIFO_FILE)
+LYRICS_FILE = os.path.expanduser(LYRICS_FILE)
 CONTROL_SH = os.path.expanduser(CONTROL_SH)
 
 info = {'isPlaying': False, 'buffering': True}
 transient_text = None
 transient_time = None
+lyrics_text = None
 
 #region Setup
 
@@ -222,6 +235,9 @@ def read_fifo(fifo):
                 raise
     return s
 
+def remove_parens(s):
+    return re.sub(r'\([^)]*\)', '', s).strip()
+
 #endregion
 
 #region Update handlers
@@ -234,6 +250,7 @@ def update_status():
     set_status(get_status())
 
 def handle_eventcmd(type, new_info):
+    global lyrics_text
     info.update(new_info)
     info['timePlayed'] = int(info['songPlayed'])
     info['timeTotal'] = int(info['songDuration'])
@@ -241,6 +258,15 @@ def handle_eventcmd(type, new_info):
     if type == 'songstart':
         info['isPlaying'] = 'play'
         info['buffering'] = True
+        if GET_LYRICS:
+            try:
+                lyrics_text = tswift.Song(remove_parens(info['title']),
+                                          remove_parens(info['artist'])).lyrics
+            except:
+                lyrics_text = None
+        with open(LYRICS_FILE, 'w') as f:
+            if lyrics_text:
+                f.write(lyrics_text)
         update_status()
     elif type in ('songlove', 'songban', 'songshelf', 'stationfetchplaylist', 'userlogin'):
         transient_message(type)
