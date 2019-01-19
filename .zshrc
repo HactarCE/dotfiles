@@ -13,8 +13,6 @@ plugins=(k tig gitfast colored-man-pages colorize command-not-found cp dirhistor
 source $ZSH/oh-my-zsh.sh
 autoload -U promptinit; promptinit
 prompt pure
-PURE_GIT_UP_ARROW=""
-PURE_GIT_DOWN_ARROW=""
 PROMPT='%(?.%F{010}.%F{160})%B»»%f%b '
 
 # The defaults for these are practically unreadable, so set them to be the same as normal directories
