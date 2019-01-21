@@ -14,7 +14,7 @@ source $ZSH/oh-my-zsh.sh
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 autoload -U promptinit; promptinit
 prompt pure
-PROMPT='%(?.%F{010}.%F{160})%B»»%f%b '
+PROMPT='%(?.%F{010}.%F{160})%B»%f%b '
 
 # The defaults for these are practically unreadable, so set them to be the same as normal directories
 # TODO: doesn't work in tab completion
