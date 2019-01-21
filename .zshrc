@@ -11,7 +11,7 @@ plugins=(k tig gitfast colored-man-pages colorize command-not-found cp dirhistor
 # /!\ zsh-syntax-highlighting and then zsh-autosuggestions must be at the end
 
 source $ZSH/oh-my-zsh.sh
-source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+# source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 autoload -U promptinit; promptinit
 prompt pure
 PROMPT='%(?.%F{010}.%F{160})%B»%f%b '
