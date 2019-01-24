@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd "$HOME"
+
 sudo rm -r /root/.config/autorandr
 sudo rm -r /root/.oh-my-zsh
 sudo rm /root/.zsh_aliases
