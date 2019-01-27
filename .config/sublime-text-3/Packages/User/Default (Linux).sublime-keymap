@@ -197,6 +197,28 @@
 	{ "keys": ["Y"], "command": "extendable_motion", "args": {"command": "move", "by": "subword_ends", "forward": true}, "context":
 		[{ "key": "edit_state", "operand": "motion" }]
 	},
+	{ "keys": ["j"], "command": "headline_move", "args": {"same_level": false, "forward": false}, "context":
+		[{ "key": "edit_state", "operand": "motion" }]
+	},
+	{ "keys": ["k"], "command": "headline_move", "args": {"same_level": false, "forward": true}, "context":
+		[{ "key": "edit_state", "operand": "motion" }]
+	},
+	{ "keys": ["J"], "command": "headline_move", "args": {"same_level": true, "forward": false}, "context":
+		[{ "key": "edit_state", "operand": "motion" }]
+	},
+	{ "keys": ["K"], "command": "headline_move", "args": {"same_level": true, "forward": true}, "context":
+		[{ "key": "edit_state", "operand": "motion" }]
+	},
+	{ "keys": ["h"], "command": "smart_folding", "context":
+		[{ "key": "edit_state", "operand": "motion" }]
+	},
+	// { "keys": ["shift+enter"], "command": "chain", "args": {
+	// 	"commands": [
+	// 		["insert", {"characters": "\n"}],
+	// 		["move_to", {"to": "hardbol"}],
+	// 		["move", {"by": "characters", "forward": false}],
+	// 	]
+	// } },
 
 
 
