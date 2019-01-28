@@ -155,12 +155,12 @@ key_action=| Set Rule...
 # key_action=key+mods Synchronize Views
 # key_action=key+mods Tile Layers
 
-main_window=1440,40,1920,1020
+main_window=-1,-1,-1,-1
 maximize=0
-help_window=1440,40,1920,1020
+help_window=-1,-1,-1,-1
 help_font_size=10 (6..30)
 info_window=-1,-1,700,500
-rule_dialog=2236,401,500,200
+rule_dialog=-1,-1,500,200
 show_algo_help=0
 allow_undo=1
 allow_beep=0
@@ -313,7 +313,7 @@ file_dir=
 user_rules=/home/andy/.golly/Rules/
 download_dir=/home/andy/.golly/Downloads/
 
-text_editor=/usr/bin/subl
+text_editor=/usr/bin/subl3
 perl_lib=/usr/lib/perl5/core_perl/CORE/libperl.so
 python_lib=libpython2.7.so
 dir_width=171
