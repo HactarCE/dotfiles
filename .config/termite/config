@@ -4,7 +4,7 @@ font = xos4 Terminus 10
 
 [colors]
 foreground = #cccccc
-background = rgba(0, 0, 0, 0.8)
+background = rgba(0, 0, 0, 0.7)
 ; background = #000000
 
 [colors]
