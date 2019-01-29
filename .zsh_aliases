@@ -173,6 +173,8 @@ alias csubl='cd ~/.config/sublime-text-3/Packages/User'
 # FILE EDITING
 alias sali='s ~/.zsh_aliases'
 alias saliz='sali; z'
+alias sbwip='s ~/Dropbox/Big-WIP'
+alias sbwipz='sbwip; z'
 alias swip='s ~/Dropbox/wip.txt'
 alias swipz='swip; z'
 alias stod='s ~/Dropbox/todo.md'
