@@ -55,7 +55,8 @@ if os.path.isdir(directory):
 		file = os.path.join(directory, filename)
 		os.remove(file)
 else:
-	os.makedirs(directory)
+	os.symlink(r'/dev/shm/ST3-edit-states', directory)
+	os.makedirs(r'/dev/shm/ST3-edit-states')
 
 
 def nonblank_selection(view):
