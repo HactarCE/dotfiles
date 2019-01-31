@@ -3,55 +3,46 @@ font = xos4 Terminus 10
 # font = RobotoMono Nerd Font 10
 
 [colors]
-foreground = #cccccc
+# foreground = #cccccc
 background = rgba(0, 0, 0, 0.7)
-; background = #000000
+# background = #000000
 
 [colors]
-# Base16 3024
-# Author: Jan T. Sott (http://github.com/idleberg)
 
-foreground      = #a5a2a2
-foreground_bold = #d6d5d4
-cursor          = #d6d5d4
-; background      = #090300
+# special
+foreground      = #cccccc
+foreground_bold = #cccccc
+cursor          = #cccccc
+# background      = #000000
 
-# 16 color space
+# black
+color0  = #333333
+color8  = #ffffff
 
-# Black, Gray, Silver, White
-color0  = #070707
-color8  = #5c5855
-color7  = #a5a2a2
-color15 = #f7f7f7
+# red
+color1  = #cc2929
+color9  = #ff3333
 
-# Red
-color1  = #db2d20
-color9  = #db2d20
+# green
+color2  = #29cc29
+color10 = #33ff33
 
-# Green
-color2  = #01a252
-color10 = #01a252
+# yellow
+color3  = #cccc29
+color11 = #ffff33
 
-# Yellow
-color3  = #fded02
-color11 = #fded02
+# blue
+color4  = #2999cc
+color12 = #33bbff
 
-# Blue
-color4  = #01a0e4
-color12 = #01a0e4
+# magenta
+color5  = #cc29cc
+color13 = #ff33ff
 
-# Purple
-color5  = #a16a94
-color13 = #a16a94
+# cyan
+color6  = #29cccc
+color14 = #33ffff
 
-# Teal
-color6  = #b5e4f4
-color14 = #b5e4f4
-
-# Extra colors
-color16 = #e8bbd0
-color17 = #cdab53
-color18 = #3a3432
-color19 = #4a4543
-color20 = #807d7c
-color21 = #d6d5d4
+# white
+color7  = #666666
+color15 = #999999
