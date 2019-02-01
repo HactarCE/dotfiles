@@ -114,6 +114,7 @@ set $darker #003366
 # Background (exec)
 exec --no-startup-id $compton
 exec --no-startup-id nemo -n
+exec --no-startup-id onedrive -m
 exec --no-startup-id udiskie
 # TODO check if udiskie is actually necessary here
 exec --no-startup-id $scripts/fix-usbs-loop.sh
