@@ -1,20 +1,12 @@
 {
     "variables": {
         "bg": "#192125",
-        // "bg": "#263238",
         "off-bg": "#192124",
     },
     "globals": {
         "background": "var(bg)",
         "guide": "#FFFFFF33",
-        // "stack_guide": "#5C6064",
-        // "stack_guide": "#996666",
-        // "stack_guide": "#CAB8A37F",
         "stack_guide": "#FFFFFF66",
-        // "stack_guide": "#FFFFFF33",
-        // "active_guide": "#888888",
-        // "active_guide": "#FF9999",
-        // "active_guide": "#EC90767F",
         "active_guide": "#FFFFFF99",
     },
     "rules": [

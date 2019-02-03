@@ -3,7 +3,6 @@
     "palettes":
     {
         "default": ["red", "orange", "yellow", "green", "blue", "indigo", "violet"],
-        "Behave": ["#FF3333", "#FF8800", "#CCCC00", "#00CC00", "#00CCCC", "#3366FF", "#CC00FF"],
         "Material-Theme": ["#FF3333", "#FF8800", "#CCCC00", "#00CC00", "#00CCCC", "#3366FF", "#CC00FF"]
     },
     "disable_inside_string": true,
