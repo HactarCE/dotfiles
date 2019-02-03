@@ -17,3 +17,4 @@ text/html=google-chrome.desktop
 text/plain=sublime_text_3.desktop
 x-scheme-handler/http=google-chrome.desktop
 x-scheme-handler/https=google-chrome.desktop
+x-scheme-handler/mailto=google-chrome.desktop
