@@ -6,7 +6,7 @@
 	"caret_extra_width": 1,
 	"caret_style": "smooth",
 	"close_windows_when_empty": true,
-	"color_scheme": "Packages/Behave Color Scheme/Behave.tmTheme",
+	"color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
 	"draw_white_space": "selection",
 	"fade_fold_buttons": false,
 	"font_face": "Iosevka SS04",
@@ -28,6 +28,12 @@
 	],
 	"line_padding_bottom": 0,
 	"line_padding_top": 0,
+	"material_theme_accent_cyan": true,
+	"material_theme_bright_scrollbars": true,
+	"material_theme_compact_panel": true,
+	"material_theme_compact_sidebar": true,
+	"material_theme_contrast_mode": true,
+	"material_theme_tabs_separator": true,
 	"remember_open_files": false,
 	"rulers":
 	[
@@ -36,6 +42,6 @@
 	"show_encoding": true,
 	"show_line_endings": true,
 	"show_tab_close_buttons": false,
-	"theme": "gruvbox (Dark) (Hard).sublime-theme",
+	"theme": "Material-Theme.sublime-theme",
 	"translate_tabs_to_spaces": true
 }

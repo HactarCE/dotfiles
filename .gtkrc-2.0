@@ -2,7 +2,7 @@
 # Any customization should be done in ~/.gtkrc-2.0.mine instead.
 
 include "/home/andy/.gtkrc-2.0.mine"
-gtk-theme-name="Arc-Dark"
+gtk-theme-name="Adapta-Nokto-Eta"
 gtk-icon-theme-name="Arc"
 gtk-font-name="Sans Serif 10"
 gtk-cursor-theme-name="Vanilla-DMZ"
@@ -15,5 +15,5 @@ gtk-enable-event-sounds=1
 gtk-enable-input-feedback-sounds=1
 gtk-xft-antialias=1
 gtk-xft-hinting=1
-gtk-xft-hintstyle="hintslight"
+gtk-xft-hintstyle="hintmedium"
 gtk-xft-rgba="rgb"
