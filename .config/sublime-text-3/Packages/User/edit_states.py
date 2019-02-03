@@ -50,13 +50,10 @@ SELECTION_STATE = 'select'
 directory = os.path.join(os.path.dirname(__file__), COLOR_SCHEME_OVERRIDE_DIRECTORY)
 
 
-if os.path.isdir(directory):
-	for filename in os.listdir(directory):
-		file = os.path.join(directory, filename)
-		os.remove(file)
-else:
-	os.symlink(r'/dev/shm/ST3-edit-states', directory)
-	os.makedirs(r'/dev/shm/ST3-edit-states')
+try: os.makedirs(r'/dev/shm/ST3-edit-states')
+except: pass
+try: os.symlink(r'/dev/shm/ST3-edit-states', directory)
+except: pass
 
 
 def nonblank_selection(view):
