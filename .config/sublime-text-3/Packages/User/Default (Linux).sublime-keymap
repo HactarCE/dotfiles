@@ -31,7 +31,12 @@
 	// 		["move_to", {"to": "hardbol"}],
 	// 		["move", {"by": "characters", "forward": false}],
 	// 	]
-	// } },
+	// } }
+	{
+		"keys": ["f1"],
+		"command": "dired",
+		"args": { "immediate": true }
+	},
 
 
 
@@ -86,6 +91,9 @@
 	},
 	{ "keys": ["s"], "command": "set_setting", "args": {"setting": "edit_state", "value": "select"}, "context":
 		[{ "key": "edit_state", "operand": "normal" }]
+	},
+	{ "keys": ["m"], "command": "set_setting", "args": {"setting": "edit_state", "value": "normal"}, "context":
+		[{ "key": "edit_state", "operand": "select" }]
 	},
 	{ "keys": ["o", "u"], "command": "modal_insert_line", "args": {"place": "above"}, "context":
 		[{ "key": "edit_state", "operand": "motion" }]
@@ -142,6 +150,17 @@
 	},
 	{ "keys": ["V"], "command": "paste_from_history", "context":
 		[{ "key": "edit_state", "operand": "motion" }]
+	},
+	{ "keys": ["d"], "command": "unfold", "context":
+		[{ "key": "edit_state", "operand": "motion" }]
+	},
+	{ "keys": ["D"], "command": "fold", "context":
+		[{ "key": "edit_state", "operand": "motion" }]
+	},
+	{ "keys": ["h"], "command": "smart_folding", "context":
+		// TODO make this be normal folding, not "smart" folding
+		[{ "key": "edit_state", "operand": "motion" },
+		 { "key": "selector", "operand": "markup.heading.markdown" }]
 	},
 
 
@@ -207,10 +226,6 @@
 		[{ "key": "edit_state", "operand": "motion" }]
 	},
 	{ "keys": ["K"], "command": "headline_move", "args": {"same_level": true, "forward": true}, "context":
-		[{ "key": "edit_state", "operand": "motion" }]
-	},
-	{ "keys": ["h"], "command": "smart_folding", "context":
-		// TODO make this be normal folding, not "smart" folding
 		[{ "key": "edit_state", "operand": "motion" }]
 	},
 	// { "keys": ["shift+enter"], "command": "chain", "args": {

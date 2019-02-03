@@ -8,8 +8,8 @@
         "layer0.tint": [25, 33, 37],
     },
     {
-      "class": "minimap_control",
-      "settings": ["material_theme_accent_cyan"],
-      "viewport_color": [0, 141, 159, 60]
+        "class": "minimap_control",
+        "settings": ["material_theme_accent_cyan"],
+        "viewport_color": [0, 141, 159, 60]
     },
 ]
