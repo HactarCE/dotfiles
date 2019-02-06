@@ -1,1 +1,1 @@
-maim --noopengl | xclip -selection clipboard -t image/png
+maim -uo | xclip -selection clipboard -t image/png
