@@ -8,13 +8,14 @@ text/html=google-chrome.desktop;
 text/plain=sublime_text_3.desktop;
 
 [Default Applications]
+application/x-golly=golly.desktop;
 image/bmp=viewnior.desktop
 image/gif=viewnior.desktop
 image/jpeg=viewnior.desktop
 image/png=viewnior.desktop
 image/svg+xml=viewnior.desktop
 text/html=google-chrome.desktop
-text/plain=sublime_text_3.desktop
+text/plain=sublime_text_3.desktop;
 x-scheme-handler/http=google-chrome.desktop
 x-scheme-handler/https=google-chrome.desktop
 x-scheme-handler/mailto=google-chrome.desktop

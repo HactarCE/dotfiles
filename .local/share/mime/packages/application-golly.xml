@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+    <mime-type type="application/x-golly">
+        <comment>Golly pattern</comment>
+        <glob pattern="*.mc"/>
+        <glob pattern="*.mc.gz"/>
+        <glob pattern="*.rle"/>
+        <glob pattern="*.rle.gz"/>
+    </mime-type>
+</mime-info>
