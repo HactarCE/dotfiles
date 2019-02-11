@@ -14,5 +14,9 @@
             "scope": "rainbowth0, rainbowth1, rainbowth2, rainbowth3, rainbowth4, rainbowth5, rainbowth6",
             "background": "var(off-bg)",
         },
+        {
+            "scope": "comment",
+            "foreground": "#668899",
+        },
     ]
 }
