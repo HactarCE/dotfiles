@@ -103,6 +103,7 @@ alias sus='sudo -s'
 alias susys='sudo systemctl'
 alias sutee='sudo tee'
 alias sys='systemctl'
+alias t.='xtoolwait termite .'
 alias xpgc='xprop | grep WM_CLASS'
 alias words='rlwrap words'
 
