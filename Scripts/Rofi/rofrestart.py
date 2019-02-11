@@ -7,6 +7,7 @@ PROGRAMS = '''\
 compton
 dropbox
 dunst
+nemo
 pulseaudio
 redshift
 '''.splitlines()
