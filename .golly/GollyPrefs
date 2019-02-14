@@ -4,7 +4,7 @@
 prefs_version=4
 golly_version=3.2
 wx_version=wxWidgets 3.0.4
-opengl_version=4.6, glMaxTextureSize=16384
+opengl_version=3.0, glMaxTextureSize=16384
 platform=Linux
 debug_level=0
 
@@ -92,6 +92,7 @@ key_action=m+shift Cycle Paste Mode
 key_action=n+ctrl New Pattern
 key_action=o+ctrl Open Pattern...
 key_action=o+shift+ctrl Open Clipboard
+key_action=q Next Lower State
 key_action=q+ctrl Quit Golly
 key_action=r+ctrl Reset
 key_action=s Shrink and Fit
@@ -103,6 +104,7 @@ key_action=t+shift Show Timing
 key_action=u+ctrl Use Hashing
 key_action=v Paste
 key_action=v+ctrl Paste
+key_action=w Next Higher State
 key_action=x Flip Left-Right
 key_action=x+ctrl Cut Selection
 key_action=y Flip Top-Bottom
@@ -124,8 +126,6 @@ key_action=| Set Rule...
 # key_action=key+mods Hyperspeed
 # key_action=key+mods Move Layer...
 # key_action=key+mods Name Layer...
-# key_action=key+mods Next Higher State
-# key_action=key+mods Next Lower State
 # key_action=key+mods Paste to Selection
 # key_action=key+mods Play Timeline Backwards
 # key_action=key+mods Run Clipboard
@@ -287,7 +287,7 @@ ask_on_delete=1
 ask_on_quit=1
 warn_on_save=1
 
-show_icons=1
+show_icons=0
 smart_scale=0
 swap_colors=0
 opacity=50 (1..100)
