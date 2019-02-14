@@ -1,8 +1,11 @@
 #!/bin/env python3
 
+import time
+
 # DEPENDENCIES:
 # - xdotool
 # - xwininfo
+# - wmctrl
 
 CALC_CLASS = 'speedcrunch'
 CALC_COMMAND = 'exec speedcrunch'
@@ -11,11 +14,9 @@ DOUBLEPRESS_TIMEOUT = 0.25
 XDOTOOL_SEARCH_COMMAND = ['xdotool', 'search', '--class', CALC_CLASS]
 
 CLOSE_NOTIFY_COMMAND = 'notify-send -t 750'.split() + ["SpeedCrunch closed"]
-CLOSE_COMMAND = ['pkill', '-x', CALC_CLASS]
 def kill_calc(win_id):
-    call(['xdotool', '-window', win_id, 'key', 'ctrl+q'])
-    # call(CLOSE_COMMAND)
-    # utils.win_close(win_id)
+    utils.win_map(win_id) # can't kill a window when it's not visible for some reason?
+    call(['wmctrl', '-ic', win_id.decode()])
     call(CLOSE_NOTIFY_COMMAND)
 
 
