@@ -76,10 +76,11 @@ focus_wrapping no
 # Borders/gaps
 #region ########################
 # hide_edge_borders both
-hide_edge_borders smart
+# hide_edge_borders smart
+hide_edge_borders none
 new_window pixel
-default_border pixel 5
-default_floating_border pixel 5
+default_border pixel 2
+default_floating_border pixel 2
 gaps inner 10
 gaps outer 5
 #endregion
