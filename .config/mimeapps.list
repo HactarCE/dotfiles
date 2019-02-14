@@ -6,6 +6,7 @@ image/png=viewnior.desktop;
 image/svg+xml=inkscape.desktop;viewnior.desktop;
 text/html=google-chrome.desktop;
 text/plain=sublime_text_3.desktop;
+application/pdf=google-chrome.desktop;
 
 [Default Applications]
 application/x-golly=golly.desktop;
@@ -19,3 +20,6 @@ text/plain=sublime_text_3.desktop;
 x-scheme-handler/http=google-chrome.desktop
 x-scheme-handler/https=google-chrome.desktop
 x-scheme-handler/mailto=google-chrome.desktop
+x-scheme-handler/webcal=google-chrome.desktop
+application/pdf=google-chrome.desktop
+x-scheme-handler/parsec=parsec.desktop
