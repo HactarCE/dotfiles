@@ -79,8 +79,8 @@ focus_wrapping no
 # hide_edge_borders smart
 hide_edge_borders none
 new_window pixel
-default_border pixel 2
-default_floating_border pixel 2
+default_border pixel 1
+default_floating_border pixel 1
 gaps inner 10
 gaps outer 5
 #endregion
@@ -542,8 +542,8 @@ mode "$mode_resize" {
 #region #######################################################################
 
 # class                 border  backgr. text    indicator child_border
-client.focused          $bright $bright #ffffff $bright   $bright
-client.focused_inactive $darker $darker #ffffff $darker   $darker
+client.focused          $bright $bright #ffffff $bright   #bbbbbb
+client.focused_inactive $darker $darker #ffffff $darker   #333333
 # client.focused_inactive #222222 #222222 #ffffff #222222   #222222
 client.unfocused        #222222 #222222 #888888 #222222   #222222
 client.urgent           #ff3300 #ff3300 #ffffff #ff3300   #ff3300
