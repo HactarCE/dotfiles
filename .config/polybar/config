@@ -9,7 +9,7 @@
 #region ###################################################
 
 border = #0000
-background = #000
+background = #99000000
 foreground = #ddd
 
 active = #36c
