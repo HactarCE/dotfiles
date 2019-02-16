@@ -11,14 +11,16 @@ def get_number():
     else:
         return ''
 
+first_line = ' ' + output.splitlines()[0]
+
 if output.startswith('up to date'):
     print('')
 elif output.startswith(('indexing', 'syncing')):
-    print('מּ' + get_number())
+    print('מּ' + first_line)
 elif output.startswith('downloading'):
-    print('' + get_number())
+    print('' + first_line)
 elif output.startswith('uploading'):
-    print('' + get_number())
+    print('' + first_line)
 elif output.startswith("can't"):
     print('')
 else:
