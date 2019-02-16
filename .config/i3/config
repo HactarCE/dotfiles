@@ -77,7 +77,7 @@ focus_wrapping no
 #region ########################
 # hide_edge_borders both
 # hide_edge_borders smart
-hide_edge_borders none
+hide_edge_borders smart
 new_window pixel
 default_border pixel 1
 default_floating_border pixel 1
