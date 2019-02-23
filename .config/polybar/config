@@ -56,7 +56,7 @@ fixed-center = false
 enable-ipc = true
 
 overline-size = 0
-underline-size = 4
+underline-size = 3
 
 background = ${colors.background}
 foreground = ${colors.foreground}
