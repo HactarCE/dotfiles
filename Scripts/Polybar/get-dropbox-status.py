@@ -2,26 +2,21 @@
 
 from subprocess import check_output
 
-output = check_output(['dropbox-cli', 'status']).decode('UTF-8').lower()
+output = check_output(['dropbox-cli', 'status']).decode('UTF-8')
 
-def get_number():
-    s = ''.join(c for c in output if c in '0123456789')
-    if s:
-        return ' ' + s
-    else:
-        return ''
+output_starts_with = lambda s: output.lower().startswith(s)
 
 first_line = ' ' + output.splitlines()[0]
 
-if output.startswith('up to date'):
+if output_starts_with('up to date'):
     print('')
-elif output.startswith(('indexing', 'syncing')):
+elif output_starts_with(('indexing', 'syncing')):
     print('מּ' + first_line)
-elif output.startswith('downloading'):
+elif output_starts_with('downloading'):
     print('' + first_line)
-elif output.startswith('uploading'):
+elif output_starts_with('uploading'):
     print('' + first_line)
-elif output.startswith("can't"):
+elif output_starts_with("can't"):
     print('')
 else:
     print('')
