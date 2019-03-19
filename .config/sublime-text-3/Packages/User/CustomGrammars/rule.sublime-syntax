@@ -1,0 +1,134 @@
+%YAML 1.2
+---
+# See http://www.sublimetext.com/docs/3/syntax.html
+file_extensions: rule
+scope: source.rule
+name: Golly .rule file
+
+contexts:
+
+  #prototype:
+  #  - include: comments
+
+  main:
+    - include: headers
+
+  headers:
+    - match: ^@
+      scope: punctuation.definition.section.begin.rule
+      push:
+      - match: 'RULE\b'
+        scope: entity.name.label.rule
+        push: rule_section
+      - match: 'TABLE\b'
+        scope: entity.name.label.rule
+        push: table_section
+      - match: 'COLORS\b'
+        scope: entity.name.label.rule
+        push: colors_section
+      - match: 'ICONS\b'
+        scope: entity.name.label.rule
+        push: icons_section
+      - match: '[A-Z]+\b'
+        scope: entity.name.label.rule
+      - match: (?=^@)
+        pop: true
+
+  rule_section:
+    - match: (?=^@)
+      pop: true
+    - match: ^.*$
+      scope: comment.block.documentation.rule
+
+  table_section:
+    - match: (?=^@)
+      pop: true
+    - match: '#'
+      push: comments
+    - match: ^\w*(?:n_states)
+      scope: entity.other.attribute-name.rule
+      push:
+        - match: '[0-9]+'
+          scope: constant.numeric.integer.rule
+        - match: $
+          pop: true
+
+    - match: ^\w*(?:neighborhood)
+      scope: entity.other.attribute-name.rule
+      push:
+        - match: 'Moore|vonNeumann|oneDimensional|hexagonal'
+          scope: constant.language.rule
+        - match: $
+          pop: true
+
+    - match: ^\w*(?:symmetries)
+      scope: entity.other.attribute-name.rule
+      push:
+        - match: 'none|permute|rotate4|rotate4reflect|reflect|rotate8|rotate8reflect|rotate3|rotate6|rotate6reflect'
+          scope: constant.language.rule
+        - match: $
+          pop: true
+
+    - match: (?=^var)
+      push: variable_definition
+
+    - match: (?=\w*[A-Za-z0-9\-\_]+)
+      push: transition
+
+  variable_definition:
+    - match: ^var
+      scope: storage.type.rule
+    - match: ' [0-9]+'
+      scope: invalid.illegal.rule
+    - match: '[A-Za-z0-9\-\_]+'
+      scope: variable.other.constant.rule
+    - match: '='
+      scope: keyword.operator.assignment.rule
+    - match: '\{'
+      scope: punctuation.section.braces.begin
+      push:
+        - match: '\}'
+          scope: punctuation.section.braces.end
+          pop: true
+        - match: '[0-9]+'
+          scope: constant.numeric.integer.rule
+        - match: ','
+          scope: punctuation.separator.sequence.rule
+    - match: $
+      pop: true
+    - match: '#'
+      push: comments
+
+  transition:
+    - match: '[0-9]+'
+      scope: constant.numeric.integer.rule
+    - match: '[A-Za-z0-9\-\_]+'
+      scope: variable.other.constant.rule
+    - match: ',|:'
+      scope: punctuation.separator.rule
+    - match: $
+      pop: true
+    - match: '#'
+      push: comments
+
+  colors_section:
+    - match: (?=^@)
+      pop: true
+
+    - match: '(?=^([0-9]+\s*){4})'
+      push:
+        - match: '[0-9]+'
+          scope: constant.numeric.integer.rule
+        - match: \w+
+          push: comments
+        - match: ^
+          pop: true
+
+  icons_section:
+    - match: (?=^@)
+      pop: true
+
+  comments:
+    - meta_scope: comment.line.rule
+    - match: $
+      pop: true
