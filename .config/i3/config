@@ -261,6 +261,8 @@ bindcode $mod+$alt+$-f     exec $file_manager
 bindcode $mod+$alt+$-e     exec $file_manager
 bindcode $mod+$alt+$-s     exec $EDITOR
 bindcode $mod+$alt+$-d     exec $EDITOR
+bindcode $mod+$alt+$-g     exec gimp
+bindcode $mod+$alt+$-t     exec gimp
 
 bindsym $mod+BackSpace    exec --no-startup-id $scripts/i3/system.py
 bindsym $mod+Menu         exec --no-startup-id $scripts/i3/system.py
@@ -544,7 +546,6 @@ mode "$mode_resize" {
 # class                 border  backgr. text    indicator child_border
 client.focused          $bright $bright #ffffff $bbbbbb   #bbbbbb
 client.focused_inactive $darker $darker #ffffff $333333   #333333
-# client.focused_inactive #222222 #222222 #ffffff #222222   #222222
 client.unfocused        #222222 #222222 #888888 #222222   #222222
 client.urgent           #ff3300 #ff3300 #ffffff #ff3300   #ff3300
 client.placeholder      #111111 #111111 #ffffff #111111   #111111
