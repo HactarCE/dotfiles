@@ -127,6 +127,7 @@ alias o='xtoolwait xdg-open'
 alias tw='xtoolwait'
 alias vn='viewnior'
 alias q='exit'
+alias u='unp -U'
 alias z='exit'
 
 
