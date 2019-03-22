@@ -59,6 +59,10 @@ alias pi2='pip2 install --user'
 alias pi3='pip3 install --user'
 alias pi='pip install --user'
 
+alias pie2='pi2 -e'
+alias pie3='pi3 -e'
+alias pie='pi -e'
+
 
 # "PROG-HERE" SCRIPTS
 alias pro='~/Scripts/i3/Layout-Scripts/prog-here.sh'
