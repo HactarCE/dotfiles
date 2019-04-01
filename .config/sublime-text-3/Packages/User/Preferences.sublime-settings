@@ -16,9 +16,12 @@
 	],
 	"folder_exclude_patterns":
 	[
-		".svn",
+		".env*",
 		".git",
 		".hg",
+		".hypothesis",
+		".pytest_cache",
+		".svn",
 		"CVS"
 	],
 	"font_face": "Iosevka SS04",
