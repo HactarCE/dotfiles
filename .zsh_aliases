@@ -63,6 +63,8 @@ alias pie2='pi2 -e'
 alias pie3='pi3 -e'
 alias pie='pi -e'
 
+alias venv='python -m venv'
+
 
 # "PROG-HERE" SCRIPTS
 alias pro='~/Scripts/i3/Layout-Scripts/prog-here.sh'
@@ -97,6 +99,7 @@ alias grepi='grep -i'
 alias libr='libreoffice'
 alias lol='lolcat -t'
 alias lolcow='cowsay | lol'
+alias luaj='rlwrap luajit'
 alias nf='neofetch && read -s'
 alias open='xdg-open'
 alias pg='ps aux | grep -i'
