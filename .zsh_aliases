@@ -195,6 +195,13 @@ alias cste='cd .local/share/Steam/steamapps/common || cd ~/.local/share/Steam/st
 alias csubl='cd ~/.config/sublime-text-3/Packages/User'
 
 
+# AUTOJUMP
+alias a=j
+alias ac=jc
+alias ao=jo
+alias aco=jco
+
+
 # FILE EDITING
 alias issue='s ~/Dropbox/issues.txt'
 alias issuez='issue; z'
