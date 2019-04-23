@@ -162,6 +162,15 @@
 		[{ "key": "edit_state", "operand": "motion" },
 		 { "key": "selector", "operand": "markup.heading.markdown" }]
 	},
+	{ "keys": ["r", "s"], "command": "surround_selection", "context":
+		[{ "key": "edit_state", "operand": "motion" }]
+	},
+	{ "keys": ["r", "t"], "command": "surround_change", "context":
+		[{ "key": "edit_state", "operand": "motion" }]
+	},
+	{ "keys": ["r", "d"], "command": "surround_delete", "context":
+		[{ "key": "edit_state", "operand": "motion" }]
+	},
 
 
 

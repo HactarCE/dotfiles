@@ -121,13 +121,15 @@ alias c='cd'
 alias cl='clear; ll'
 alias cx='chmod +x'
 alias c-x='chmod -x'
-alias fm='nemo'
+alias fm='xtoolwait nemo'
 alias f='fm .'
 alias pa='pulseaudio'
 alias pak='pulseaudio -k'
 alias pad='pulseaudio -D'
 alias s='subl -n'
 alias s.='subl -n .'
+alias sp='s --project'
+alias sp.='s --project *.sublime-project'
 alias jj='java -jar'
 alias m='mousepad'
 alias n='nano'
@@ -191,6 +193,13 @@ alias cscr='cd ~/Scripts'
 alias cscri3='cd ~/Scripts/i3'
 alias cste='cd .local/share/Steam/steamapps/common || cd ~/.local/share/Steam/steamapps/common'
 alias csubl='cd ~/.config/sublime-text-3/Packages/User'
+
+
+# AUTOJUMP
+alias a=j
+alias ac=jc
+alias ao=jo
+alias aco=jco
 
 
 # FILE EDITING
