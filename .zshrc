@@ -15,6 +15,7 @@ source $ZSH/oh-my-zsh.sh
 autoload -U promptinit; promptinit
 prompt pure
 PROMPT='%(?.%F{02}.%F{01})%B»%f%b '
+[ $(whoami) = root ] && PROMPT="%F{red}#%f $PROMPT"
 
 # The defaults for these are practically unreadable, so set them to be the same as normal directories
 # TODO: doesn't work in tab completion

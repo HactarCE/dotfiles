@@ -8,8 +8,8 @@
 [colors]
 #region ###################################################
 
-border = #0000
-background = #bb000000
+border = #66000000
+background = #ff000000
 foreground = #ddd
 
 active = #36c
@@ -49,20 +49,22 @@ workspace = 4
 #region ###################################################
 monitor  = ${env:MONITOR:HDMI-0}
 height = 30
-radius = 10
-padding = 2
-border-size = 15
+radius = 0
+padding = 0
+border-size = 3
+border-left-size = 0
+border-right-size = 0
 fixed-center = false
 enable-ipc = true
 
-overline-size = 0
-underline-size = 3
+overline-size = 1
+underline-size = 1
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-module-margin-left = 1
-module-margin-right = 2
+module-margin-left = 0
+module-margin-right = 0
 
 font-0 = xos4 Terminus:pixelsize=12;2
 font-1 = Roboto Mono Nerd Font:pixelsize=11;2
@@ -71,13 +73,15 @@ font-2 = xos4 Terminus:pixelsize=15;2
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-border-color = ${colors.border}
+border-color = ${colors.dark}
 
 #endregion
 
 [bar/top]
 #region ###################################################
 inherit = bar/base
+
+underline-size = 0
 
 bottom = false
 
@@ -89,7 +93,7 @@ modules-left = pianobar
 # modules-right = volume backlight redshift date time
 modules-right = volume bluetooth backlight date time
 
-border-bottom-size = 0
+border-top-size = 0
 
 #endregion
 
@@ -97,9 +101,11 @@ border-bottom-size = 0
 #region ###################################################
 inherit = bar/base
 
+overline-size = 0
+
 bottom = true
 
-border-top-size = 0
+border-bottom-size = 0
 
 padding-left = 2
 
@@ -206,6 +212,7 @@ card = intel_backlight
 label = %percentage:3%%
 format = %{A4:~/Scripts/i3/backlight.py +:}%{A5:~/Scripts/i3/backlight.py -:} <label>%{A}%{A}
 format-underline = ${colors.dark-yellow}
+format-background = #330
 format-overline = ${colors.dark-yellow}
 
 #endregion
@@ -218,6 +225,7 @@ enable-scroll = false
 label = %percentage:3%%
 format = %{A4:~/Scripts/i3/backlight.py +:}%{A5:~/Scripts/i3/backlight.py -: <label>%{A}%{A}
 format-underline = ${colors.dark-yellow}
+format-background = #330
 format-overline = ${colors.dark-yellow}
 
 #endregion
@@ -230,6 +238,7 @@ interval = 2
 label = %percentage:3%%
 format= %{A:gnome-system-monitor -r:} <label>%{A}
 format-underline = ${colors.yellow}
+format-background = #440
 format-overline = ${colors.yellow}
 
 #endregion
@@ -243,6 +252,7 @@ interval = 2
 label = %percentage_used:3%% %{T3}+%{T-} %gb_swap_used:3%
 format = %{A:gnome-system-monitor -r:} <label>%{A}
 format-underline = ${colors.green}
+format-background = #040
 format-overline = ${colors.green}
 
 [module/wlan]
@@ -258,6 +268,7 @@ label-connected = %essid%
 # TODO wifi-menu ?
 format-connected = %{A1:termite -e "sudo wifi-menu" -r float:}直 <label-connected>%{A}
 format-connected-underline = ${colors.purple}
+format-connected-background = #304
 format-connected-overline = ${colors.purple}
 
 label-disconnected = NO WIFI
@@ -281,6 +292,7 @@ label-connected =  %local_ip%
 # TODO wifi-menu ?
 format-connected = <label-connected>
 format-connected-underline = ${colors.magenta}
+format-connected-background = #404
 format-connected-overline = ${colors.magenta}
 
 # label-disconnected = NO WIFI
@@ -326,6 +338,7 @@ label = %date%
 # TODO better popup calendar
 format = %{A1:gsimplecal:} <label>%{A}
 format-underline = ${colors.purple}
+format-background = #304
 format-overline = ${colors.purple}
 
 #endregion
@@ -340,6 +353,7 @@ time = %l:%M %p
 label = %time%
 format = %{A1:mousepad ~/Dropbox/Reference/schedules.md:} <label>%{A}
 format-underline = ${colors.bright-blue}
+format-background = #204
 format-overline = ${colors.bright-blue}
 
 #endregion
@@ -411,11 +425,27 @@ type = internal/battery
 battery = BAT1
 adapter = ADP1
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-5 = 
+ramp-capacity-6 = 
+ramp-capacity-7 = 
+ramp-capacity-8 = 
+ramp-capacity-9 = 
+
+; ramp-capacity-0 = 
+; ramp-capacity-1 = 
+; ramp-capacity-2 = 
+; ramp-capacity-3 = 
+; ramp-capacity-4 = 
+; ramp-capacity-0 = 
+; ramp-capacity-1 = 
+; ramp-capacity-2 = 
+; ramp-capacity-3 = 
+; ramp-capacity-4 = 
 
 time-format = %kh%Mm
 
@@ -424,12 +454,14 @@ time-format = %kh%Mm
 label-charging = %percentage:2%%  勤 %consumption:2%W  祥 %time%
 format-charging = %{A1:xfce4-power-manager-settings:}<ramp-capacity>  <label-charging>%{A}
 format-charging-underline = ${colors.cyan}
+format-charging-background = #044
 format-charging-overline = ${colors.cyan}
 
 label-discharging = %percentage:3%%  免 %consumption:2%W  祥 %time%
 format-discharging = %{A1:xfce4-power-manager-settings:}<ramp-capacity> <label-discharging>%{A}
 format-charging-foreground = ${colors.foreground}
 format-discharging-underline = ${self.format-charging-underline}
+format-discharging-background = #044
 format-discharging-overline = ${self.format-charging-overline}
 
 format-urgent-foreground = ${colors.urgent}
@@ -446,6 +478,7 @@ thermal-zone = 0
 label = %temperature-c%
 format = <ramp> <label>
 format-underline = ${colors.orange}
+format-background = #520
 format-overline = ${colors.orange}
 
 label-warn = %temperature-c%
@@ -560,6 +593,9 @@ format =  <label>
 
 [settings]
 #region ###################################################
+
+format-padding = 2
+
 ;screenchange-reload = true
 #endregion
 
