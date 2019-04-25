@@ -544,8 +544,8 @@ mode "$mode_resize" {
 #region #######################################################################
 
 # class                 border  backgr. text    indicator child_border
-client.focused          $bright $bright #ffffff $bbbbbb   #bbbbbb
-client.focused_inactive $darker $darker #ffffff $333333   #333333
+client.focused          $bright $bright #ffffff #bbbbbb   #bbbbbb
+client.focused_inactive $darker $darker #ffffff #333333   #333333
 client.unfocused        #222222 #222222 #888888 #222222   #222222
 client.urgent           #ff3300 #ff3300 #ffffff #ff3300   #ff3300
 client.placeholder      #111111 #111111 #ffffff #111111   #111111
