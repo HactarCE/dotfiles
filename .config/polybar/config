@@ -315,12 +315,14 @@ interval = 3.0
 
 label-connected =  %local_ip%
 format-connected = <label-connected>
+format-connected-background = #024
 format-connected-underline = ${colors.bright-blue}
 format-connected-overline = ${colors.bright-blue}
 
 # TODO leave format-disconnected blank if wlan exists
 label-disconnected = NO ETHERNET
 format-disconnected =  <label-disconnected>
+format-disconnected-background = #024
 format-disconnected-foreground = ${colors.urgent}
 format-disconnected-underline = ${colors.red}
 format-disconnected-overline = ${colors.red}
@@ -353,7 +355,7 @@ time = %l:%M %p
 label = %time%
 format = %{A1:mousepad ~/Dropbox/Reference/schedules.md:} <label>%{A}
 format-underline = ${colors.bright-blue}
-format-background = #204
+format-background = #024
 format-overline = ${colors.bright-blue}
 
 #endregion
