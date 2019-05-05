@@ -1,1 +1,1 @@
-gpg -d ~/.git_password.gpg
+bwpass github.com

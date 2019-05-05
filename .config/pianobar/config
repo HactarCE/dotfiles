@@ -1,6 +1,6 @@
 # User
 user = ajfarkas12@gmail.com
-password_command = gpg -qd ~/.pandora_password.gpg
+password_command = bwpass pandora.com
 
 # Misc
 audio_quality = high
