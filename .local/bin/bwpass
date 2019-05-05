@@ -1,0 +1,8 @@
+#!/usr/bin/bash
+
+# Pass a website name (e.g. 'pandora.com') as the first argument.
+# Password will be returned via stdout.
+
+password=$(zenity --password --title "Unlock Bitwarden vault")
+sessionkey=$(bw unlock $password --raw)
+bw get password $1 --session $sessionkey
