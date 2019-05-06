@@ -18,6 +18,7 @@ pulseaudio
 redshift
 steam
 OneDrive %% onedrive --monitor
+timidity %% timidity -iA
 '''.splitlines()
 
 
