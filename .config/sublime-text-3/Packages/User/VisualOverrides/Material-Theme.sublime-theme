@@ -1,10 +1,12 @@
 [
     {
         "class": "tabset_control",
+        // "layer0.tint": [17, 17, 17],
         "layer0.tint": [25, 33, 37],
     },
     {
         "class": "tab_control",
+        // "layer0.tint": [17, 17, 17],
         "layer0.tint": [25, 33, 37],
     },
     {

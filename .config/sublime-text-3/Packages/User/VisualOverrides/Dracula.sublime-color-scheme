@@ -1,9 +1,7 @@
 {
     "variables": {
-        "bg": "#000000",
-        "off-bg": "#131415",
-        // "bg": "#192125",
-        // "off-bg": "#192124",
+        "bg": "#192125",
+        "off-bg": "#192124",
     },
     "globals": {
         "background": "var(bg)",
@@ -16,9 +14,9 @@
             "scope": "rainbowth0, rainbowth1, rainbowth2, rainbowth3, rainbowth4, rainbowth5, rainbowth6",
             "background": "var(off-bg)",
         },
-        {
-            "scope": "comment",
-            "foreground": "#668899",
-        },
+        // {
+        //     "scope": "comment",
+        //     "foreground": "#668899",
+        // },
     ]
 }
