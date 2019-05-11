@@ -3,7 +3,7 @@
     "lint_mode": "save",
     "linters": {
         "flake8": {
-            "args": "--ignore=E128,E221,E501,W503,W504"
+            "args": "--ignore=E128,E221,E501,E741,W503,W504"
         }
     }
 }
