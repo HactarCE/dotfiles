@@ -1,6 +1,6 @@
 export DEFAULT_USER="andy"
 export TERM="xterm-256color"
-export ZSH=/home/${DEFAULT_USER}/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 export LANG="en_US.UTF-8"
 
 HYPHEN_INSENSITIVE="true"
