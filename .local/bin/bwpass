@@ -5,4 +5,4 @@
 
 password=$(zenity --password --title "Unlock Bitwarden vault")
 sessionkey=$(bw unlock $password --raw)
-bw get password $1 --session $sessionkey
+bw get password "$1" --session $sessionkey
