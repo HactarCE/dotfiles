@@ -1,7 +1,6 @@
+import os
 import sublime
 import sublime_plugin
-
-import os
 
 
 COLOR_SCHEME_OVERRIDE_DIRECTORY = '.CursorColor'
