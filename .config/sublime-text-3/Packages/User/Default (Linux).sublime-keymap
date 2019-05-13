@@ -278,6 +278,9 @@
 	{ "keys": ["f", "e"], "command": "avy_jump_line", "args": { "direction": "down" }, "context":
 		[{ "key": "edit_state", "operand": "motion" }]
 	},
+	// { "keys": ["f", "l"], "command": "avy_jump_line", "args": { "direction": "both" }, "context":
+	// 	[{ "key": "edit_state", "operand": "motion" }]
+	// },
 	// { "keys": ["f", "n"], "command": "avy_jump_line", "context":
 	// 	[{ "key": "edit_state", "operand": "motion" }]
 	// },

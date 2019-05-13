@@ -1,3 +1,4 @@
+from collections import defaultdict
 import math
 import sublime
 import sublime_plugin
@@ -27,7 +28,7 @@ def common_prefix(a, b):
     return a[:len(b)]
 
 
-def make_phantom(location, yes, maybe, no, *, inline):
+def make_phantom(location, yes, maybe, no, *, inline, include_body=False):
     # yes = letters typed already
     # maybe = letters that could be typed next
     # no = letters that can't be typed without backspacing
@@ -45,12 +46,33 @@ def make_phantom(location, yes, maybe, no, *, inline):
     if no:
         paragraphs += '<pre class="avy no">{}</pre>'.format(no)
     html = container_html.format(inner_class, paragraphs)
-    html = '<html><body>{}</body>{}</html>'.format(html, PHANTOM_STYLE)
+    if include_body:
+        html = '<html><body>{}</body>{}</html>'.format(html, PHANTOM_STYLE)
     layout = sublime.LAYOUT_INLINE if inline else sublime.LAYOUT_BELOW
     return sublime.Phantom(location, html, layout)
 
 
-def make_phantoms(jump_spots, typed, *, inline):
+def merge_phantoms_by_line(view, phantoms):
+    by_rowcol = defaultdict(lambda: {})
+    for phantom in phantoms:
+        row, col = view.rowcol(phantom.region.begin())
+        by_rowcol[row][col] = phantom.content
+    new_phantoms = []
+    for row, by_col in by_rowcol.items():
+        if len(by_col) <= 1:
+            new_phantoms += by_col.values()
+        else:
+            html = ''
+            for col, content in by_col.items():
+                # html += '<div style="position: relative; left: {}em">{}</div>'.format(col, content)
+                html += content
+            html = '<html><body>{}</body>{}</html>'.format(html, PHANTOM_STYLE)
+            print(html)
+            new_phantoms.append(sublime.Phantom(sublime.Region(view.text_point(row, 0)), content, sublime.LAYOUT_BLOCK))
+    return new_phantoms
+
+
+def make_phantoms(view, jump_spots, typed, *, inline):
     phantoms = []
     pad_length = max(map(len, jump_spots))
     for letters, location in jump_spots.items():
@@ -61,8 +83,13 @@ def make_phantoms(jump_spots, typed, *, inline):
             no = ''
         else:
             maybe, no = '', maybe
-        phantoms.append(make_phantom(location, yes, maybe, no, inline=inline))
-    return phantoms
+        phantoms.append(make_phantom(location, yes, maybe, no, inline=inline, include_body=inline))
+    if inline:
+        return phantoms
+    else:
+        # return merge_phantoms_by_line(view, phantoms)
+        ph = merge_phantoms_by_line(view, phantoms)
+        return ph
 
 
 avy_states = {}
@@ -139,6 +166,7 @@ class AvyState:
 
     def update(self):
         self.phantom_set.update(make_phantoms(
+            self.view,
             self.region_dict,
             self.typed,
             inline=self.inline,
@@ -217,7 +245,7 @@ class AvyJumpSubwordCommand(sublime_plugin.TextCommand):
             end = i = self.view.find_by_class(i, True, end_flags)
             if i <= total.end():
                 destinations.append(sublime.Region(begin, end))
-        AvyState(self.view, destinations, self.callback, inline=True)
+        AvyState(self.view, destinations, self.callback, inline=False)
 
     def callback(self, region):
         self.view.sel().clear()
