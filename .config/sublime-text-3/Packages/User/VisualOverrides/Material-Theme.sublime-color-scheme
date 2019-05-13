@@ -10,6 +10,7 @@
         "guide": "#FFFFFF33",
         "stack_guide": "#FFFFFF66",
         "active_guide": "#FFFFFF99",
+        "phantom_css": "",
     },
     "rules": [
         {

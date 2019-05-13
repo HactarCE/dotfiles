@@ -1,3 +1,4 @@
+from os import path
 import os
 import sublime
 import sublime_plugin
@@ -17,21 +18,12 @@ DEFAULT_STATE = 'normal'
 
 STATE_SETTINGS = {
     'normal': {
-        # 'caret_color': '#FF9933',
         'caret_color': '#FFCC00',
         'caret_style': 'solid',
-        # 'caret_extra_bottom': 0,
-        # 'caret_extra_top': 0,
-        # 'caret_extra_width': 3,
-        # 'wide_caret': False,
     },
     'insert': {
         'caret_color': '#33FF33',
         'caret_style': 'phase',
-        # 'caret_extra_bottom': 2,
-        # 'caret_extra_top': 2,
-        # 'caret_extra_width': 1,
-        # 'wide_caret': False,
     },
     'select': {
         'caret_color': '#00FFFF',
@@ -44,7 +36,7 @@ MOTION_STATES = ('normal', 'select')
 SELECTION_STATE = 'select'
 
 
-directory = os.path.join(os.path.dirname(__file__), COLOR_SCHEME_OVERRIDE_DIRECTORY)
+directory = path.join(path.dirname(__file__), COLOR_SCHEME_OVERRIDE_DIRECTORY)
 
 
 try:
@@ -57,7 +49,7 @@ except OSError:
     pass
 try:
     for file in os.listdir(directory):
-        os.remove(os.path.join(directory, file))
+        os.remove(path.join(directory, file))
 except OSError:
     pass
 
@@ -90,8 +82,8 @@ def on_state_change(view, force=False):
     remove_state_watcher(view)
     settings.set('last_edit_state', new_state)
     settings.set('command_mode', new_state not in INSERT_STATES)
-    color_scheme_filename = os.path.splitext(os.path.split(settings.get('color_scheme'))[1])[0] + '.sublime-color-scheme'
-    theme_file = os.path.join(directory, color_scheme_filename)
+    color_scheme_filename = path.splitext(path.split(settings.get('color_scheme'))[1])[0] + '.sublime-color-scheme'
+    theme_file = path.join(directory, color_scheme_filename)
     with open(theme_file, 'w') as f:
         if 'caret_color' in STATE_SETTINGS[new_state]:
             f.write(COLOR_SCHEME_OVERRIDE_TEMPLATE.format(STATE_SETTINGS[new_state]['caret_color']))
@@ -178,7 +170,6 @@ class LinewiseCommand(sublime_plugin.TextCommand):
 class ModalInsertLineCommand(sublime_plugin.TextCommand):
     def run(self, edit, place='here', insert=False):
         # TODO base current line on selection rather than cursor
-        old_regions = [r for r in self.view.sel()]
         self.view.add_regions('_caret_temp', self.view.sel(), flags=sublime.HIDDEN)
         below = place == 'below'
         above = place == 'above'

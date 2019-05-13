@@ -7,7 +7,7 @@ import sublime_plugin
 ST3_PID = os.getppid()
 
 
-def run(command):
+def cmd(command):
     return check_output(command.split()).decode().strip()
 
 
@@ -16,13 +16,13 @@ class LicensePopupKiller(sublime_plugin.EventListener):
 
     def try_kill_popup(self):
         try:
-            win_ids = map(int, run('xdotool search --pid {}'.format(ST3_PID)).splitlines())
+            win_ids = map(int, cmd('xdotool search --pid {}'.format(ST3_PID)).splitlines())
         except CalledProcessError:
             return False
         for win_id in win_ids:
-            title = run('xdotool getwindowname {}'.format(win_id))
+            title = cmd('xdotool getwindowname {}'.format(win_id))
             if not title:
-                run('xdotool windowclose {}'.format(win_id))
+                cmd('xdotool windowclose {}'.format(win_id))
 
     def on_pre_save_async(self, *args):
         for i in range(5):

@@ -268,4 +268,45 @@
 
 
 
+
+
+
+
+	{ "keys": ["g"], "command": "avy_jump_line", "context":
+		[{ "key": "edit_state", "operand": "motion" }]
+	},
+
+
+	// AVY GOTO LINE
+	{ "keys": ["a"], "command": "avy_feed_key", "args": { "key": "a" }, "context": [{ "key": "avy_active", "operand": "true" }] },
+	{ "keys": ["b"], "command": "avy_feed_key", "args": { "key": "b" }, "context": [{ "key": "avy_active", "operand": "true" }] },
+	{ "keys": ["c"], "command": "avy_feed_key", "args": { "key": "c" }, "context": [{ "key": "avy_active", "operand": "true" }] },
+	{ "keys": ["d"], "command": "avy_feed_key", "args": { "key": "d" }, "context": [{ "key": "avy_active", "operand": "true" }] },
+	{ "keys": ["e"], "command": "avy_feed_key", "args": { "key": "e" }, "context": [{ "key": "avy_active", "operand": "true" }] },
+	{ "keys": ["f"], "command": "avy_feed_key", "args": { "key": "f" }, "context": [{ "key": "avy_active", "operand": "true" }] },
+	{ "keys": ["g"], "command": "avy_feed_key", "args": { "key": "g" }, "context": [{ "key": "avy_active", "operand": "true" }] },
+	{ "keys": ["h"], "command": "avy_feed_key", "args": { "key": "h" }, "context": [{ "key": "avy_active", "operand": "true" }] },
+	{ "keys": ["i"], "command": "avy_feed_key", "args": { "key": "i" }, "context": [{ "key": "avy_active", "operand": "true" }] },
+	{ "keys": ["j"], "command": "avy_feed_key", "args": { "key": "j" }, "context": [{ "key": "avy_active", "operand": "true" }] },
+	{ "keys": ["k"], "command": "avy_feed_key", "args": { "key": "k" }, "context": [{ "key": "avy_active", "operand": "true" }] },
+	{ "keys": ["l"], "command": "avy_feed_key", "args": { "key": "l" }, "context": [{ "key": "avy_active", "operand": "true" }] },
+	{ "keys": ["m"], "command": "avy_feed_key", "args": { "key": "m" }, "context": [{ "key": "avy_active", "operand": "true" }] },
+	{ "keys": ["n"], "command": "avy_feed_key", "args": { "key": "n" }, "context": [{ "key": "avy_active", "operand": "true" }] },
+	{ "keys": ["o"], "command": "avy_feed_key", "args": { "key": "o" }, "context": [{ "key": "avy_active", "operand": "true" }] },
+	{ "keys": ["p"], "command": "avy_feed_key", "args": { "key": "p" }, "context": [{ "key": "avy_active", "operand": "true" }] },
+	{ "keys": ["q"], "command": "avy_feed_key", "args": { "key": "q" }, "context": [{ "key": "avy_active", "operand": "true" }] },
+	{ "keys": ["r"], "command": "avy_feed_key", "args": { "key": "r" }, "context": [{ "key": "avy_active", "operand": "true" }] },
+	{ "keys": ["s"], "command": "avy_feed_key", "args": { "key": "s" }, "context": [{ "key": "avy_active", "operand": "true" }] },
+	{ "keys": ["t"], "command": "avy_feed_key", "args": { "key": "t" }, "context": [{ "key": "avy_active", "operand": "true" }] },
+	{ "keys": ["u"], "command": "avy_feed_key", "args": { "key": "u" }, "context": [{ "key": "avy_active", "operand": "true" }] },
+	{ "keys": ["v"], "command": "avy_feed_key", "args": { "key": "v" }, "context": [{ "key": "avy_active", "operand": "true" }] },
+	{ "keys": ["w"], "command": "avy_feed_key", "args": { "key": "w" }, "context": [{ "key": "avy_active", "operand": "true" }] },
+	{ "keys": ["x"], "command": "avy_feed_key", "args": { "key": "x" }, "context": [{ "key": "avy_active", "operand": "true" }] },
+	{ "keys": ["y"], "command": "avy_feed_key", "args": { "key": "y" }, "context": [{ "key": "avy_active", "operand": "true" }] },
+	{ "keys": ["z"], "command": "avy_feed_key", "args": { "key": "z" }, "context": [{ "key": "avy_active", "operand": "true" }] },
+	{ "keys": ["backspace"], "command": "avy_backspace",                "context": [{ "key": "avy_active", "operand": "true" }] },
+	{ "keys": ["escape"],    "command": "avy_cancel",                   "context": [{ "key": "avy_active", "operand": "true" }] },
+
+
+
 ]
