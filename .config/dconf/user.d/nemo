@@ -1,19 +1,19 @@
 [org/nemo/preferences]
-tooltips-in-icon-view = true
-show-open-in-terminal-toolbar = true
-show-new-folder-icon-toolbar = true
-start-with-dual-pane = false
-date-format = 'iso'
-show-reload-icon-toolbar = true
 click-double-parent-folder = false
-show-hidden-files = false
-quick-renames-with-pause-in-between = true
-show-full-path-titles = false
-tooltips-in-list-view = true
-show-location-entry = false
-show-home-icon-toolbar = true
+date-format = 'iso'
 default-folder-viewer = 'icon-view'
+quick-renames-with-pause-in-between = true
 show-computer-icon-toolbar = true
+show-full-path-titles = false
+show-hidden-files = false
+show-home-icon-toolbar = true
+show-location-entry = false
+show-new-folder-icon-toolbar = true
+show-open-in-terminal-toolbar = true
+show-reload-icon-toolbar = true
+start-with-dual-pane = false
+tooltips-in-icon-view = true
+tooltips-in-list-view = true
 tooltips-on-desktop = false
 
 [org/nemo/plugins]
