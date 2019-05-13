@@ -3,8 +3,7 @@ import sublime
 import sublime_plugin
 
 
-# LABEL_LETTERS = 'arstdhneio'
-LABEL_LETTERS = 'abc'
+LABEL_LETTERS = 'arstdhneio'
 LABEL_BASE = len(LABEL_LETTERS)
 
 
@@ -103,6 +102,8 @@ class AvyState:
     """A class representing an Avy selection state."""
 
     def __init__(self, view, regions, callback, *, inline):
+        if not regions:
+            return
         self.view = view
         self.regions = regions
         self.labels = get_labels(len(regions), allow_empty=False)
@@ -178,11 +179,23 @@ class AvyCancel(sublime_plugin.TextCommand):
             avy.cancel()
 
 
+class AvyStateListener(sublime_plugin.EventListener):
+    def on_query_context(self, view, key, operator, operand, match_all):
+        if key == 'avy_active':
+            return view.id() in avy_states
+
+
 class AvyJumpLineCommand(sublime_plugin.TextCommand):
     """Jump to a nearby line."""
 
     def run(self, edit, direction='both'):
         destinations = self.view.lines(self.view.visible_region())
+        sel = self.view.sel()[0]
+        if direction == 'up':
+            destinations = [d for d in destinations if d.end() < sel.begin()]
+            destinations.reverse()
+        if direction == 'down':
+            destinations = [d for d in destinations if d.begin() > sel.end()]
         AvyState(self.view, destinations, self.callback, inline=True)
 
     def callback(self, region):
@@ -190,7 +203,22 @@ class AvyJumpLineCommand(sublime_plugin.TextCommand):
         self.view.sel().add(region)
 
 
-class AvyStateListener(sublime_plugin.EventListener):
-    def on_query_context(self, view, key, operator, operand, match_all):
-        if key == 'avy_active':
-            return view.id() in avy_states
+class AvyJumpSubwordCommand(sublime_plugin.TextCommand):
+    """Jump to a subword within the line."""
+
+    def run(self, edit):
+        destinations = []
+        total = self.view.line(self.view.sel()[0])
+        i = total.begin()
+        start_flags = sublime.CLASS_SUB_WORD_START + sublime.CLASS_WORD_START
+        end_flags = sublime.CLASS_SUB_WORD_END + sublime.CLASS_WORD_END
+        while i < total.end():
+            begin = i = self.view.find_by_class(i - 1, True, start_flags)
+            end = i = self.view.find_by_class(i, True, end_flags)
+            if i <= total.end():
+                destinations.append(sublime.Region(begin, end))
+        AvyState(self.view, destinations, self.callback, inline=True)
+
+    def callback(self, region):
+        self.view.sel().clear()
+        self.view.sel().add(region)

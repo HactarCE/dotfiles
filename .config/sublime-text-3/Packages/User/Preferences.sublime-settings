@@ -32,8 +32,6 @@
 	"hot_exit": false,
 	"ignored_packages":
 	[
-		"Markdown",
-		"Six",
 		"Vintage",
 		"Vintageous"
 	],

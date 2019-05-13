@@ -272,7 +272,16 @@
 
 
 
-	{ "keys": ["g"], "command": "avy_jump_line", "context":
+	{ "keys": ["f", "u"], "command": "avy_jump_line", "args": { "direction": "up" }, "context":
+		[{ "key": "edit_state", "operand": "motion" }]
+	},
+	{ "keys": ["f", "e"], "command": "avy_jump_line", "args": { "direction": "down" }, "context":
+		[{ "key": "edit_state", "operand": "motion" }]
+	},
+	// { "keys": ["f", "n"], "command": "avy_jump_line", "context":
+	// 	[{ "key": "edit_state", "operand": "motion" }]
+	// },
+	{ "keys": ["f", "w"], "command": "avy_jump_subword", "context":
 		[{ "key": "edit_state", "operand": "motion" }]
 	},
 
