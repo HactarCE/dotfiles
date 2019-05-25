@@ -52,8 +52,8 @@ function _my_clear() {
 }
 zle -N _my_clear
 bindkey '^l' _my_clear
-
 bindkey '^ ' autosuggest-accept
+bindkey -s '^x' '^l^p^j'
 
 if [ -f ~/.zsh_aliases ]; then
     . ~/.zsh_aliases
