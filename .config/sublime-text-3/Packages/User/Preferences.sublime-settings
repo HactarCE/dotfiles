@@ -56,6 +56,6 @@
 	"show_encoding": true,
 	"show_line_endings": true,
 	"show_tab_close_buttons": false,
-	"theme": "Agila.sublime-theme",
+	"theme": "Spaceblack.sublime-theme",
 	"translate_tabs_to_spaces": true
 }
