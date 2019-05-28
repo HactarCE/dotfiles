@@ -1,6 +1,7 @@
 // SublimeLinter Settings - User
 {
-    "lint_mode": "save",
+    "debug": true,
+    "lint_mode": "background", // change to "save" later
     "linters": {
         "flake8": {
             "args": "--ignore=E128,E221,E501,E741,W503,W504"
