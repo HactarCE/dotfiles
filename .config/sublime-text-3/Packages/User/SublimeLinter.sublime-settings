@@ -7,7 +7,7 @@
             "args": "--ignore=E128,E221,E501,E741,W503,W504"
         },
         "luacheck": {
-            "args": "--globals awesome"
+            "args": "--globals awesome mouse"
         }
     }
 }
