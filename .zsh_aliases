@@ -7,12 +7,13 @@ alias subl='subl3'
 # LS
 alias ls='ls --color=tty --group-directories-first'
 alias ll='ls -lhN'
-alias l='ll -A'
+alias la='ll -A'
+alias l='ll'
 alias lg='l | grep -i'
 alias llt='ll -t'
 alias lst='ls -t'
 alias lt='l -t'
-unalias la
+# unalias la
 unalias lsa
 
 
@@ -120,7 +121,6 @@ alias words='rlwrap words'
 
 # SHORT
 alias c='cd'
-alias cl='clear; ll'
 alias cx='chmod +x'
 alias c-x='chmod -x'
 alias fm='xtoolwait nemo'
@@ -185,6 +185,7 @@ alias drostop='dropbox-cli stop'
 
 
 # CD LOCATIONS
+alias cl='cd Links || cd ~/Links; cd -P ./'
 alias dr='cd ~/Dropbox'
 alias dl='cd ~/Downloads'
 alias cca='cd ~/Dropbox/Cellular-Automata'
