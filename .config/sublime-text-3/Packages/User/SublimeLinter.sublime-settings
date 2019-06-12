@@ -1,6 +1,5 @@
 // SublimeLinter Settings - User
 {
-    "debug": true,
     "lint_mode": "save",
     "linters": {
         "flake8": {

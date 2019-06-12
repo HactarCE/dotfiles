@@ -164,6 +164,9 @@ class AvyState:
         else:
             self.cancel()
 
+    def ensure_visible(self):
+        self.view.set_viewport_position((0, self.view.viewport_position()[1]), True)
+
     def update(self):
         self.phantom_set.update(make_phantoms(
             self.view,
@@ -171,6 +174,7 @@ class AvyState:
             self.typed,
             inline=self.inline,
         ))
+        sublime.set_timeout_async(self.ensure_visible, 0)
 
     def confirm(self):
         self.callback(self.region_dict[self.typed])
@@ -228,7 +232,8 @@ class AvyJumpLineCommand(sublime_plugin.TextCommand):
 
     def callback(self, region):
         self.view.sel().clear()
-        self.view.sel().add(region)
+        self.view.sel().add(sublime.Region(region.a))
+        # self.view.sel().add(region)
 
 
 class AvyJumpSubwordCommand(sublime_plugin.TextCommand):
