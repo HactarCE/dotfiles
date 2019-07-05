@@ -200,3 +200,9 @@ zle -N _zle_clear
 bindkey '^l' _zle_clear
 bindkey '^ ' autosuggest-accept
 bindkey -s '^x' '^l^p^j'
+
+# Bind shift+arrow to the same as arrow
+bindkey -s '^[[1;2A' '^[OA'
+bindkey -s '^[[1;2B' '^[OB'
+bindkey -s '^[[1;2C' '^[OC'
+bindkey -s '^[[1;2D' '^[OD'
