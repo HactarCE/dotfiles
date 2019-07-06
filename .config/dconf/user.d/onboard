@@ -7,9 +7,11 @@ system-theme-associations = {'HighContrast': 'HighContrast', 'HighContrastInvers
 system-theme-tracking-enabled = true
 theme = '/usr/share/onboard/themes/Droid.theme'
 use-system-defaults = false
+
 [org/onboard/keyboard]
 show-click-buttons = false
 sticky-key-behavior = {'all': 'dblclick'}
+
 [org/onboard/theme-settings]
 background-gradient = 0.0
 color-scheme = '/usr/share/onboard/themes/Granite.colors'
