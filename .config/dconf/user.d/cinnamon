@@ -1,0 +1,5 @@
+[org/cinnamon/desktop/applications/calculator]
+exec = 'speedcrunch'
+
+[org/cinnamon/desktop/applications/terminal]
+exec = 'termite'
