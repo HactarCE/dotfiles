@@ -84,9 +84,10 @@ alias proya='~/Scripts/i3/Layout-Scripts/prog-here-yay.sh'
 
 # MISC
 alias autorandr='autorandr --skip-options gamma'
+alias ali='alias' # M E T A
 alias ara='autorandr'
 alias aud='audacity'
-alias awe='if awesome -k; then Xephyr :5 -dpi 96 -screen 1440x900 & sleep 0.5; DISPLAY=:5 awesome --replace; fi'
+alias awe='if awesome -k; then Xephyr :5 -dpi 96 -screen 1440x900 > /dev/null 2>&1 & sleep 0.5; DISPLAY=:5 awesome --replace; fi'
 alias bat='upower -i /org/freedesktop/UPower/devices/battery_BAT1 | grep percentage'
 alias bbsw='~/Scripts/Polybar/bbswitch.sh'
 alias bbswt='sudo ~/Scripts/Polybar/bbswitch.sh --toggle'
@@ -120,7 +121,8 @@ alias words='rlwrap words'
 
 
 # SHORT
-alias c='cd -P'
+alias c='cd'
+alias cl='cd -P'
 alias cx='chmod +x'
 alias c-x='chmod -x'
 alias fm='xtoolwait nemo'
@@ -163,6 +165,7 @@ alias yQo='yay -Qo'
 alias yQs='yay -Qs'
 alias yQu='yay -Qu'
 alias yR='yay -R'
+alias yS-deps='yay -S --asdeps'
 alias yS='yay -S'
 alias ySc='yay -Sc'
 alias ySi='yay -Si'
@@ -185,7 +188,6 @@ alias drostop='dropbox-cli stop'
 
 
 # CD LOCATIONS
-alias cl='cd Links || cd ~/Links'
 alias dr='cd ~/Dropbox'
 alias dl='cd ~/Downloads'
 alias cca='cd ~/Dropbox/Cellular-Automata'
