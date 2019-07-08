@@ -22,4 +22,8 @@ crudini --get --format=ini tmp-dump 'org/onboard/keyboard' >> onboard
 echo >> onboard
 crudini --get --format=ini tmp-dump 'org/onboard/theme-settings' >> onboard
 
+crudini --get --format=ini tmp-dump 'org/cinnamon/desktop/applications/calculator' >> cinnamon
+echo >> cinnamon
+crudini --get --format=ini tmp-dump 'org/cinnamon/desktop/applications/terminal' >> cinnamon
+
 rm ~/.config/dconf/user.d/tmp-dump
