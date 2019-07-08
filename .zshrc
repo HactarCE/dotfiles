@@ -131,7 +131,7 @@ antigen bundle autojump
 antigen bundle dirhistory
 
 ### Miscellaneous
-antigen bundle colemak
+# antigen bundle colemak
 antigen bundle command-not-found
 antigen bundle gitignore
 antigen bundle zdharma/fast-syntax-highlighting
