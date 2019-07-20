@@ -28,7 +28,7 @@ for arg in args:
 clamp = lambda *args: sorted(args)[1]
 backlight = SETTINGS[clamp(0, i, len(SETTINGS) - 1)]
 
-call(['xbacklight', '-set', str(backlight), '-fps', '60'])
+call(['xbacklight', '-set', str(backlight), '-fps', '60', '-time', '100'])
 # for i in range(2): # because polybar updates too quickly
 sleep(0.02)
 call(['xbacklight', '-set', str(backlight)])
