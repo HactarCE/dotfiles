@@ -4,7 +4,7 @@
 prefs_version=4
 golly_version=3.2
 wx_version=wxWidgets 3.0.4
-opengl_version=3.0, glMaxTextureSize=16384
+opengl_version=4.6, glMaxTextureSize=16384
 platform=Linux
 debug_level=0
 
@@ -63,6 +63,7 @@ key_action=] Zoom In
 key_action=]+ctrl Zoom In
 key_action=_ Slower
 key_action=_+shift Slower
+key_action=` Run Script...
 key_action=a Select All
 key_action=a+ctrl Select All
 key_action=b Invert Colors
@@ -129,7 +130,6 @@ key_action=| Set Rule...
 # key_action=key+mods Paste to Selection
 # key_action=key+mods Play Timeline Backwards
 # key_action=key+mods Run Clipboard
-# key_action=key+mods Run Script...
 # key_action=key+mods Save Extended RLE
 # key_action=key+mods Save Overlay...
 # key_action=key+mods Scroll NE
@@ -229,7 +229,7 @@ colors=
 
 algorithm=RuleLoader
 max_mem=2048
-base_step=8
+base_step=2
 status_rgb=243,225,255
 from_rgb=255,0,0
 to_rgb=255,255,0
@@ -260,19 +260,19 @@ named_rule=Nobili32|Nobili32
 named_rule=Hutton32|Hutton32
 
 show_tips=1
-show_tool=1
+show_tool=0
 show_layer=1
 show_edit=1
 show_states=1
 show_status=1
 show_exact=0
-show_scrollbars=1
-show_timeline=1
+show_scrollbars=0
+show_timeline=0
 grid_lines=1
 overlay=1
 min_grid_mag=2 (2..5)
-bold_spacing=10 (2..1000)
-show_bold_lines=1
+bold_spacing=4 (2..1000)
+show_bold_lines=0
 math_coords=0
 cell_borders=1
 
@@ -307,7 +307,7 @@ save_xrle=1
 
 open_save_dir=/home/andy/Dropbox/Cellular-Automata/
 overlay_dir=/home/andy/.golly/
-run_dir=Scripts/
+run_dir=/home/andy/.golly/Scripts/
 choose_dir=
 file_dir=
 user_rules=/home/andy/.golly/Rules/
