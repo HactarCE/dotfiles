@@ -14,3 +14,5 @@ sudo [ -d /root/.antigen ] || sudo git clone https://github.com/zsh-users/antige
 
 sudo sed -i "s/$(whoami)/root/g" /root/.zshrc
 sudo sed -i 's/\/home\/root/\/root/g' /root/.zshrc
+
+sudo chsh -s /bin/zsh
