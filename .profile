@@ -12,7 +12,7 @@ export PATH=$PATH":$HOME/.local/bin"
 export BROWSER=/usr/bin/google-chrome-stable
 export EDITOR="subl3 -nw"
 export SHELL=/bin/zsh
-export TERMINAL=termite
+export TERMINAL=alacritty
 
 # NVIDIA cache
 export __GL_SHADER_DISK_CACHE_PATH="$HOME/.cache/nv/GLCache"
