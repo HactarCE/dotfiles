@@ -180,7 +180,7 @@ for_window [class="SpeedCrunch"]                move right 700
 # for_window [class="Xephyr"]                     floating enable
 # for_window [class="Xephyr"]                     resize set 1080 720
 for_window [window_role="float"]                floating enable
-for_window [class="Alacritty"]                  floating enable
+for_window [instance="Alacritty-Float"]         floating enable
 # for_window [window_role="float"]                border pixel 2
 
 # Steam windows
@@ -237,10 +237,9 @@ bindcode $mod+$-t exec --no-startup-id $scripts/fix-audio.sh; exec --no-startup-
 ## SCRIPTS AND PROGRAMS
 # TODO clean this up
 #region ########################
-# bindsym $mod+Return       exec i3-sensible-terminal
+bindsym $mod+Return       exec i3-sensible-terminal
 # bindsym $mod+shift+Return exec i3-sensible-terminal -r float
-bindsym $mod+Return       exec alacritty -e sh -c 'i3-msg floating toggle >/dev/null && zsh'
-bindsym $mod+shift+Return exec alacritty
+bindsym $mod+shift+Return exec alacritty --class Alacritty-Float
 
 bindsym ctrl+$alt+Delete  exec gnome-system-monitor -r
 bindsym ctrl+shift+Escape exec gnome-system-monitor -p
