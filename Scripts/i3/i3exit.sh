@@ -2,7 +2,7 @@
 
 case "$1" in
     lock)
-        light-locker-command -l
+        lxlock
         ;;
     logout)
         i3-msg exit
