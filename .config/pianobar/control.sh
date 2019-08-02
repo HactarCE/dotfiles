@@ -40,7 +40,8 @@ EOF
             echo "Allowed commands: toggle, play, pause, playpause, toggleplaypause, skip, quit, love, ban, shelf"
     esac
 elif [[ "$1" -eq toggle ]] || [[ "$1" -eq toggleplaypause ]]; then
-    i3-sensible-terminal -e "python3 $HOME/.config/pianobar/polianobar.py" -r pianobar -t Pianobar &
+    #i3-sensible-terminal -e "python3 $HOME/.config/pianobar/polianobar.py" -r pianobar -t Pianobar &
+    alacritty -t Pianobar -e python3 $HOME/.config/pianobar/polianobar.py &
 else
     echo "Pianobar is not running."
 fi
