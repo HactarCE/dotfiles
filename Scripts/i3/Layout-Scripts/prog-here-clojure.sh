@@ -2,7 +2,7 @@
 
 i3 "move container to workspace $(basename $(pwd)); workspace $(basename $(pwd)); layout tabbed; split v; layout stacked"
 xtoolwait subl3 -n .
-xtoolwait alacritty -e "zsh -c 'while true; do clj; clear; done'" -t clj
+xtoolwait alacritty -t clj -e zsh -c 'while true; do clj; clear; done'
 i3 "focus up"
 xtoolwait google-chrome-stable --new-window http://localhost:3000/
 i3 "move container left; focus right"
