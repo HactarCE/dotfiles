@@ -40,5 +40,3 @@ XKB_DEFAULT_OPTIONS=shift:both_capslock
 
 # xmodmap -e "keycode 23 = Control_L NoSymbol Control_L"
 # xcape -e "Super_L=Escape"
-
-dex -a
