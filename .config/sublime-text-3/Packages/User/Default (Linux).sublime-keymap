@@ -24,6 +24,7 @@
 	{ "keys": ["ctrl+shift+tab"], "command": "prev_view" },
 	{ "keys": ["ctrl+shift+v"], "command": "paste_from_history" },
 	{ "keys": ["ctrl+space"], "command": "show_command_palette" },
+	{ "keys": ["ctrl+shift+s"], "command": "prompt_save_in_project" },
 	{ "keys": ["ctrl+k", "ctrl+m"], "command": "toggle_menu" },
 	// { "keys": ["shift+enter"], "command": "chain", "args": {
 	// 	"commands": [
