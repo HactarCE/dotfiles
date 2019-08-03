@@ -284,8 +284,10 @@ bindcode $mod+$-n          exec --no-startup-id $scripts/i3/switch_to_workspace.
 bindcode $mod+shift+$-n    exec --no-startup-id $scripts/i3/switch_to_workspace.py move new
 bindsym $mod+Escape       exec --no-startup-id $scripts/i3/switch_to_workspace.py - ' '
 
-bindsym Print             exec --no-startup-id shot
-bindsym shift+Print       exec --no-startup-id shot-full
+bindsym Print             exec --no-startup-id $scripts/Screenshot/screenshot.sh select copy
+bindsym shift+Print       exec --no-startup-id $scripts/Screenshot/screenshot.sh select save
+bindsym $alt+Print        exec --no-startup-id $scripts/Screenshot/screenshot.sh active copy
+bindsym $alt+shift+Print  exec --no-startup-id $scripts/Screenshot/screenshot.sh active save
 
 # 66 = Caps_Lock, regardless of layout
 exec --no-startup-id xmodmap -e "clear lock" # TODO this isn't enough
