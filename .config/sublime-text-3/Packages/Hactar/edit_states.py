@@ -154,8 +154,8 @@ class ExtendableMotionCommand(sublime_plugin.TextCommand):
         args['extend'] = self.view.settings().get('edit_state') == SELECTION_STATE
         self.view.run_command(args.pop('command'), args)
 
-    def is_visible(self, args):
-        return False
+    # def is_visible(self, args):
+    #     return False
 
 
 class LinewiseCommand(sublime_plugin.TextCommand):
@@ -163,8 +163,8 @@ class LinewiseCommand(sublime_plugin.TextCommand):
         self.view.run_command('expand_selection', {'to': 'line'})
         self.view.run_command(args.pop('command'), args)
 
-    def is_visible(self, args):
-        return False
+    # def is_visible(self, args):
+    #     return False
 
 
 class ModalInsertLineCommand(sublime_plugin.TextCommand):
@@ -195,5 +195,5 @@ class ModalInsertLineCommand(sublime_plugin.TextCommand):
             # TODO adding line below while at EoL causes cursor to move to new line
         self.view.erase_regions('_caret_temp')
 
-    def is_visible(self, args):
-        return False
+    # def is_visible(self, args):
+    #     return False

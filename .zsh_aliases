@@ -79,6 +79,7 @@ alias proi3='~/Scripts/i3/Layout-Scripts/prog-here-i3wm.sh'
 alias prolat='~/Scripts/i3/Layout-Scripts/prog-here-latin.sh'
 alias propy='~/Scripts/i3/Layout-Scripts/prog-here-python.sh'
 alias proscr='cd ~/Scripts; propy'
+alias prosubl='~/Scripts/i3/Layout-Scripts/prog-here-subl.sh'
 alias proya='~/Scripts/i3/Layout-Scripts/prog-here-yay.sh'
 
 
