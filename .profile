@@ -27,6 +27,9 @@ export WINEPREFIX="$HOME/.wine"
 # GTK Theme
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 
+# Fix (disable) font scaling in Alacritty
+export WINIT_HIDPI_FACTOR=1.0
+
 # Keyboard settings for Wayland
 XKB_DEFAULT_VARIANT=colemak
 XKB_DEFAULT_OPTIONS=shift:both_capslock
