@@ -261,18 +261,18 @@ type = internal/network
 # Run `ip a' to get the interface name.
 # TODO may need different interface for different computers
 # use env var when launching?
-interface = wlp3s0
+interface = wlp6s0
 interval = 3.0
 
 label-connected = %essid%
 # TODO wifi-menu ?
-format-connected = %{A1:termite -e "sudo wifi-menu" -r float:}直 <label-connected>%{A}
+format-connected = %{A1:nm-connection-editor:}直 <label-connected>%{A}
 format-connected-underline = ${colors.purple}
 format-connected-background = #304
 format-connected-overline = ${colors.purple}
 
 label-disconnected = NO WIFI
-format-disconnected = %{A1:termite -e "sudo wifi-menu" -r float:}睊 <label-disconnected>%{A}
+format-disconnected = %{A1:nm-connection-editor:}睊 <label-disconnected>%{A}
 format-disconnected-foreground = ${colors.urgent}
 format-disconnected-underline = ${self.format-connected-underline}
 format-disconnected-overline = ${self.format-connected-underline}
@@ -424,7 +424,7 @@ format-muted-foreground = ${colors.dim}
 [module/battery]
 #region ###################################################
 type = internal/battery
-battery = BAT1
+battery = BAT0
 adapter = ADP1
 
 ramp-capacity-0 = 
