@@ -266,13 +266,13 @@ interval = 3.0
 
 label-connected = %essid%
 # TODO wifi-menu ?
-format-connected = %{A1:nm-connection-editor:}直 <label-connected>%{A}
+format-connected = %{A1:nm-connection-editor:}%{A3:alacritty --class Alacritty-Float -e nmtui:}直 <label-connected>%{A}%{A}
 format-connected-underline = ${colors.purple}
 format-connected-background = #304
 format-connected-overline = ${colors.purple}
 
 label-disconnected = NO WIFI
-format-disconnected = %{A1:nm-connection-editor:}睊 <label-disconnected>%{A}
+format-disconnected = %{A1:nm-connection-editor:}%{A3:alacritty --class Alacritty-Float -e nmtui:}睊 <label-disconnected>%{A}%{A}
 format-disconnected-foreground = ${colors.urgent}
 format-disconnected-underline = ${self.format-connected-underline}
 format-disconnected-overline = ${self.format-connected-underline}
