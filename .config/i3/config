@@ -257,7 +257,7 @@ bindcode $mod+shift+$-p    exec --no-startup-id $scripts/i3/rename_workspace.py 
 
 bindcode $mod+$-a          exec --no-startup-id $scripts/i3/simplify_tree.py notify
 bindcode $mod+$-b          exec $BROWSER
-bindcode $mod+$alt+$-b     exec bitwarden-bin
+bindcode $mod+$alt+$-b     exec bitwarden
 bindcode $mod+$alt+$-m     exec $basic_editor
 bindsym $mod+$alt+Return  exec gucharmap
 bindcode $mod+$alt+$semicolon exec gcolor3
