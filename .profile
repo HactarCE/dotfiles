@@ -9,7 +9,7 @@
 
 export PATH=$PATH":$HOME/.local/bin"
 
-export BROWSER=/usr/bin/google-chrome-stable
+export BROWSER=/usr/bin/firefox
 export EDITOR="subl3 -nw"
 export SHELL=/bin/zsh
 export TERMINAL=alacritty
@@ -30,9 +30,12 @@ export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 # Fix (disable) font scaling in Alacritty
 export WINIT_HIDPI_FACTOR=1.0
 
+# Enable pixel-precise touchpad scrolling for Firefox in X
+export MOZ_USE_XINPUT2=1
+
 # Keyboard settings for Wayland
-XKB_DEFAULT_VARIANT=colemak
-XKB_DEFAULT_OPTIONS=shift:both_capslock
+export XKB_DEFAULT_VARIANT=colemak
+export XKB_DEFAULT_OPTIONS=shift:both_capslock
 
 # # Hold CapsLock for Control, or tap for Escape
 # # Hold Tab for Super, or tap for Tab
