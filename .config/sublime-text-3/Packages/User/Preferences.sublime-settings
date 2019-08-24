@@ -25,7 +25,7 @@
 		"CVS"
 	],
 	"font_face": "Iosevka SS04",
-	"font_size": 11,
+	"font_size": 12,
 	"git_diff_target": "head",
 	"highlight_line": false,
 	"highlight_modified_tabs": true,
