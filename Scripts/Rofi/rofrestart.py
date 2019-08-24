@@ -13,6 +13,7 @@ compton
 discord
 dropbox
 dunst
+Libinput Gestures %% libinput-gestures
 nemo
 pulseaudio
 redshift
