@@ -37,6 +37,9 @@ export MOZ_USE_XINPUT2=1
 export XKB_DEFAULT_VARIANT=colemak
 export XKB_DEFAULT_OPTIONS=shift:both_capslock
 
+# DPI
+export GDK_SCALE=1.5
+
 # # Hold CapsLock for Control, or tap for Escape
 # # Hold Tab for Super, or tap for Tab
 # xmodmap -e "keycode 23 = Super_L"
