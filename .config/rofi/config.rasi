@@ -1,7 +1,7 @@
 configuration {
 	modi: "combi";
     theme: "theme";
-    font: "Sans 14";
+    font: "Sans 24";
 /*	width: 50;*/
 /*	lines: 15;*/
 /*	columns: 1;*/

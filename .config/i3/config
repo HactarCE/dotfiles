@@ -62,7 +62,7 @@ set $-m 58
 ###   MISCELLANEOUS
 #region #######################################################################
 
-font pango:Cantarell Bold 9
+font pango:Cantarell Bold 10
 
 floating_modifier $mod
 
@@ -141,6 +141,8 @@ exec $BROWSER
 
 # No focus windows
 no_focus [class="discord"]
+
+# TODO adjust these numbers for WQHD
 
 # Floating windows
 for_window [class="Arandr"]                     floating enable
