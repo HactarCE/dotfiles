@@ -6,7 +6,7 @@ xtoolwait alacritty -d ~/.golly/Rules
 i3 "focus up"
 xtoolwait golly
 i3 "move container left; focus right"
-xtoolwait google-chrome-stable --new-window http://golly.sourceforge.net/Help/index.html
+xtoolwait firefox --new-window http://golly.sourceforge.net/Help/index.html
 i3 "move container right; focus left"
 
 clear

@@ -6,9 +6,9 @@ xtoolwait alacritty -t python -e zsh -c 'while true; do python; clear; done'
 i3 "split h; layout tabbed"
 xtoolwait alacritty -t clj -e zsh -c 'while true; do clj; clear; done'
 i3 "focus left; focus up"
-xtoolwait google-chrome-stable --new-window
+xtoolwait firefox --new-window
 i3 "move container left; focus right"
-xtoolwait google-chrome-stable --new-window https://docs.python.org/3/ https://clojure.org/api/api
+xtoolwait firefox --new-window https://docs.python.org/3/ https://clojure.org/api/api
 i3 "move container right; focus left"
 
 clear
