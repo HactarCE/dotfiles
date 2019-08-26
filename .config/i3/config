@@ -207,6 +207,8 @@ for_window [window_role="pianobar"]             move to scratchpad
 for_window [title="^Pianobar$"]                 move to scratchpad
 
 # TODO move to keybinds
+bindsym $mod+minus exec --no-startup-id pkill speedcrunch || speedcrunch
+bindsym $mod+equal exec --no-startup-id pkill speedcrunch || speedcrunch
 bindsym Num_Lock exec --no-startup-id $scripts/i3/calc.py
 # bindsym Escape [con_id=__focused__ class="SpeedCrunch"] kill
 
@@ -346,9 +348,7 @@ bindsym $mod+shift+backslash move to scratchpad
 
 #region Switch to workspace
 bindcode $mod+$-u workspace prev_on_output
-bindcode $mod+$alt+$-x workspace prev_on_output
 bindcode $mod+$-o workspace next_on_output
-bindcode $mod+$alt+$-c workspace next_on_output
 bindcode $mod+$-y workspace back_and_forth
 #endregion
 
@@ -377,8 +377,8 @@ bindcode $mod+shift+$-c move container to output right
 #endregion
 
 #region Move workspace to monitor
-bindsym $mod+minus move workspace to output left
-bindsym $mod+equal move workspace to output right
+bindcode $mod+$alt+$-x move workspace to output left
+bindcode $mod+$alt+$-c move workspace to output right
 #endregion
 
 #endregion
