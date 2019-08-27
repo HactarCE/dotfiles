@@ -1,17 +1,20 @@
 #!/usr/bin/env python3
 
-SETTINGS = [0.5, 1, 2, 3, 5, 10, 15, 20, 30, 50, 75, 100]
-
 from subprocess import call, check_output
 from time import sleep
-from utils import args
+import sys
+
+
+SETTINGS = [0.5, 1, 2, 3, 5, 10, 15, 20, 30, 50, 75, 100]
+
+args = sys.argv[1:]
 
 output = check_output(['xbacklight', '-get'])
 # output = check_output(['light', '-G'])
 
 try:
     backlight = float(output)
-except:
+except ValueError:
     check_output(['notify-send', output])
     print(output)
     backlight = 50
