@@ -3,11 +3,11 @@
 SETTINGS = [0.5, 1, 2, 3, 5, 10, 15, 20, 30, 50, 75, 100]
 
 from subprocess import call, check_output
-from sys import argv
 from time import sleep
+from utils import args
 
-#output = check_output(['xbacklight', '-get'])
-output = check_output(['light', '-G'])
+output = check_output(['xbacklight', '-get'])
+# output = check_output(['light', '-G'])
 
 try:
     backlight = float(output)
@@ -19,7 +19,7 @@ except:
 i = min(range(len(SETTINGS)), key=lambda x: abs(SETTINGS[x] - backlight))
 print(i, SETTINGS[i])
 
-for arg in argv[1:]:
+for arg in args:
     if arg == '+':
         i += 1
     elif arg == '-':
@@ -28,7 +28,7 @@ for arg in argv[1:]:
 clamp = lambda *args: sorted(args)[1]
 backlight = SETTINGS[clamp(0, i, len(SETTINGS) - 1)]
 
-#call(['xbacklight', '-set', str(backlight)])
-for i in range(2): # because polybar updates too quickly
-    call(['light', '-S', str(backlight)])
-    sleep(0.1)
+call(['xbacklight', '-set', str(backlight), '-fps', '60', '-time', '100'])
+# for i in range(2): # because polybar updates too quickly
+sleep(0.02)
+call(['xbacklight', '-set', str(backlight)])

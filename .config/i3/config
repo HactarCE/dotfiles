@@ -291,6 +291,8 @@ bindsym Print             exec --no-startup-id $scripts/Screenshot/screenshot.sh
 bindsym shift+Print       exec --no-startup-id $scripts/Screenshot/screenshot.sh select save
 bindsym ctrl+Print        exec --no-startup-id $scripts/Screenshot/screenshot.sh active copy
 bindsym ctrl+shift+Print  exec --no-startup-id $scripts/Screenshot/screenshot.sh active save
+bindsym $mod+Print        exec --no-startup-id $scripts/Screenshot/screenshot.sh all copy
+bindsym $mod+shift+Print  exec --no-startup-id $scripts/Screenshot/screenshot.sh all save
 
 # 66 = Caps_Lock, regardless of layout
 exec --no-startup-id xmodmap -e "clear lock" # TODO this isn't enough
@@ -455,8 +457,8 @@ bindcode $mod+$alt+$-j             exec --no-startup-id pamixer -t # mute sound
 #region Sreen brightness controls
 # bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 20 # increase screen brightness
 # bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 20 # decrease screen brightness
-bindsym XF86MonBrightnessUp exec --no-startup-id $scripts/i3/backlight.py + # increase screen brightness
-bindsym XF86MonBrightnessDown exec --no-startup-id $scripts/i3/backlight.py - # decrease screen brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id $scripts/backlight.py + # increase screen brightness
+bindsym XF86MonBrightnessDown exec --no-startup-id $scripts/backlight.py - # decrease screen brightness
 #endregion
 
 #region Touchpad controls
