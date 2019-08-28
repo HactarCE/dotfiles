@@ -1,8 +1,12 @@
 [core]
 	editor = subl3 -w
-	askPass = /home/andrew/Scripts/ask-git-password.sh
+	#askPass = /home/andrew/Scripts/ask-git-password.sh
 [user]
 	name = HactarCE
 	email = 6060305+HactarCE@users.noreply.github.com
 [credential "https://github.com"]
 	username = HactarCE
+[includeIf "gitdir:~/Classes/"]
+    path = ~/Classes/.gitconfig
+[includeIf "gitdir:~/Dropbox/School/3-NCSU/"]
+    path = ~/Classes/.gitconfig
