@@ -24,7 +24,7 @@ LYRICS_FILE = '~/.config/pianobar/lyrics'
 
 CONTROL_SH = '~/.config/pianobar/control.sh'
 
-MAX_SONG_NAME_LENGTH = 150
+MAX_SONG_NAME_LENGTH = 130
 
 # If you've changed any of Pianobar's keybinds, update them in control.sh.
 
