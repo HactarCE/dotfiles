@@ -8,8 +8,10 @@
 [colors]
 #region ###################################################
 
-border = #66000000
-background = #ff000000
+#border = #66000000
+#background = #ff000000
+border = #666666
+background = #cc000000
 foreground = #ddd
 
 active = #36c
@@ -51,7 +53,7 @@ monitor  = ${env:MONITOR:HDMI-0}
 height = 45
 radius = 0
 padding = 0
-border-size = 3
+border-size = 1
 border-left-size = 0
 border-right-size = 0
 fixed-center = false
@@ -67,13 +69,14 @@ module-margin-left = 0
 module-margin-right = 0
 
 font-0 = Input Mono:pixelsize=14;4
-font-1 = Roboto Mono Nerd Font:pixelsize=14;3
+font-1 = Roboto Mono Nerd Font:pixelsize=14;5
 font-2 = Iosevka SS04:pixelsize=16;5
 
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-border-color = ${colors.dark}
+#border-color = ${colors.dark}
+border-color = ${colors.border}
 
 #endregion
 
@@ -210,7 +213,7 @@ type = internal/backlight
 card = intel_backlight
 
 label = %percentage:3%%
-format = %{A4:~/Scripts/i3/backlight.py +:}%{A5:~/Scripts/i3/backlight.py -:} <label>%{A}%{A}
+format = %{A4:~/Scripts/backlight.py +:}%{A5:~/Scripts/backlight.py -:} <label>%{A}%{A}
 format-underline = ${colors.dark-yellow}
 format-background = #330
 format-overline = ${colors.dark-yellow}
@@ -223,7 +226,7 @@ type = internal/xbacklight
 enable-scroll = false
 
 label = %percentage:3%%
-format = %{A4:~/Scripts/i3/backlight.py +:}%{A5:~/Scripts/i3/backlight.py -: <label>%{A}%{A}
+format = %{A4:~/Scripts/backlight.py +:}%{A5:~/Scripts/backlight.py -: <label>%{A}%{A}
 format-underline = ${colors.dark-yellow}
 format-background = #330
 format-overline = ${colors.dark-yellow}
