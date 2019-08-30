@@ -162,6 +162,7 @@ for_window [class="Gnome-system-monitor"]       floating enable
 for_window [class="Gnome-system-monitor"]       resize set 1620 1080
 for_window [class="Gnome-system-monitor"]       move position center
 for_window [class="Gucharmap"]                  floating enable
+for_window [class="kalzium"]                    floating enable
 for_window [class="Lxappearance"]               floating enable
 for_window [class="Mousepad"]                   floating enable
 for_window [class="Mousepad"]                   resize set 1080 720
