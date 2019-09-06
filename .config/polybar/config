@@ -405,8 +405,8 @@ bar-volume-foreground-20 = ${colors.urgent}
 
 bar-volume-gradient = false
 bar-volume-indicator = |
-bar-volume-fill = ─
-bar-volume-empty = ─
+bar-volume-fill = —
+bar-volume-empty = —
 
 bar-volume-empty-foreground = ${colors.inactive}
 
