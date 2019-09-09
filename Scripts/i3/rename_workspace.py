@@ -18,8 +18,6 @@ else:
 new_name = utils.dmenu([], prompt=prompt).strip()
 print(new_name)
 if new_name is not None:
-    # if new_name in ('CSP', 'CSB'):
-        # new_name = 'CS🅱️'
     if 'all' not in utils.args:
         new_name = num + delim + new_name
     # TODO handle quotes in workspace names
