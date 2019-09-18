@@ -1,0 +1,15 @@
+#!/usr/bin/bash
+
+IMAGE=/tmp/i3lock.png
+
+sleep 0.5
+
+rm $IMAGE
+scrot $IMAGE
+# Pixelate by a factor of 15 and darken by 50%
+convert $IMAGE -scale 6.67% -fill black -colorize 50% -scale 1500% $IMAGE
+# convert $IMAGE -fill black -colorize 75% $IMAGE
+
+i3lock -c ~/.config/i3/i3lock.ini
+
+rm $IMAGE

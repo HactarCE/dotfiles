@@ -2,7 +2,7 @@
 
 case "$1" in
     lock)
-        lxlock
+        lock
         ;;
     logout)
         i3-msg exit
