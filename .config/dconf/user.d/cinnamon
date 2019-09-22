@@ -2,4 +2,4 @@
 exec = 'speedcrunch'
 
 [org/cinnamon/desktop/applications/terminal]
-exec = 'termite'
+exec = 'alacritty'
