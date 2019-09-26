@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 IMAGE=/tmp/i3lock.png
-COMPTON_FADE_TIME=0.13
+COMPTON_FADE_TIME=0.15
 
 # Wait for Rofi fade out
 sleep $COMPTON_FADE_TIME
