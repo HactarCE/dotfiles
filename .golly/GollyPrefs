@@ -4,7 +4,7 @@
 prefs_version=4
 golly_version=3.2
 wx_version=wxWidgets 3.0.4
-opengl_version=4.6, glMaxTextureSize=16384
+opengl_version=3.0, glMaxTextureSize=16384
 platform=Linux
 debug_level=0
 
@@ -32,10 +32,10 @@ key_action=.+ctrl Show All States
 key_action=/ Show Edit Bar
 key_action=/+ctrl Show Edit Bar
 key_action=0 Change Origin
-key_action=1 Set Scale 1:1
-key_action=2 Set Scale 1:2
-key_action=3 Set Scale 1:32
-key_action=4 Set Scale 1:4
+key_action=1 Cursor Mode: Draw
+key_action=2 Cursor Mode: Pick
+key_action=3 Cursor Mode: Select
+key_action=4 Cursor Mode: Move
 key_action=5+ctrl Random Fill
 key_action=6 Set Scale 1:16
 key_action=8 Set Scale 1:8
@@ -140,6 +140,10 @@ key_action=| Set Rule...
 # key_action=key+mods Set File Folder...
 # key_action=key+mods Set Generation...
 # key_action=key+mods Set Layer Colors...
+# key_action=key+mods Set Scale 1:1
+# key_action=key+mods Set Scale 1:2
+# key_action=key+mods Set Scale 1:4
+# key_action=key+mods Set Scale 1:32
 # key_action=key+mods Show Cell Icons
 # key_action=key+mods Show Files
 # key_action=key+mods Show Hash Info
@@ -155,12 +159,12 @@ key_action=| Set Rule...
 # key_action=key+mods Synchronize Views
 # key_action=key+mods Tile Layers
 
-main_window=-1,-1,-1,-1
+main_window=0,74,2560,1320
 maximize=0
-help_window=-1,-1,-1,-1
+help_window=1920,74,2560,1320
 help_font_size=10 (6..30)
-info_window=-1,-1,700,500
-rule_dialog=-1,-1,500,200
+info_window=0,74,2560,1320
+rule_dialog=1060,538,500,200
 show_algo_help=0
 allow_undo=1
 allow_beep=0
