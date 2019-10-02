@@ -106,6 +106,7 @@ antigen theme https://github.com/denysdovhan/spaceship-zsh-theme spaceship
 
 ### Completions
 # antigen bundle autopep8
+antigen bundle cargo
 antigen bundle gitfast
 # antigen bundle pep8
 antigen bundle pip
