@@ -10,14 +10,16 @@ from .modal__config import (
 
 
 VISUAL_DIR = path.join(path.dirname(__file__), VISUAL_DIRNAME)
+TMP_DIR = r'/tmp/ST3-edit-states'
 
 try:
-    os.makedirs(r'/tmp/ST3-edit-states')
+    os.makedirs(TMP_DIR)
 except OSError:
     pass
 
 try:
-    os.symlink(r'/tmp/ST3-edit-states', VISUAL_DIR)
+    os.unlink(VISUAL_DIR)
+    os.symlink(TMP_DIR, VISUAL_DIR)
 except OSError:
     pass
 
