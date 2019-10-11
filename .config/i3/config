@@ -454,6 +454,7 @@ bindsym XF86AudioLowerVolume    exec --no-startup-id pamixer -d 5 # decrease sou
 bindcode $mod+$alt+$-k             exec --no-startup-id pamixer -d 5 # decrease sound volume
 bindsym XF86AudioMute           exec --no-startup-id pamixer -t # mute sound
 bindcode $mod+$alt+$-j             exec --no-startup-id pamixer -t # mute sound
+bindsym XF86AudioMicMute        exec --no-startup-id amixer set Capture toggle
 #endregion
 
 #region Sreen brightness controls
