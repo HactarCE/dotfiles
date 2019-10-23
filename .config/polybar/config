@@ -11,7 +11,7 @@
 #border = #66000000
 #background = #ff000000
 border = #666666
-background = #cc000000
+background = #000000
 foreground = #ddd
 
 active = #36c
