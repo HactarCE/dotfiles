@@ -75,7 +75,6 @@ focus_wrapping no
 # hide_edge_borders both
 # hide_edge_borders smart
 hide_edge_borders smart
-new_window pixel
 default_border pixel 1
 default_floating_border pixel 1
 #gaps inner 10
