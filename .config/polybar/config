@@ -116,7 +116,7 @@ modules-left = i3
 # ; modules-right = filesystem xbacklight volume xkeyboard memory cpu wlan eth battery temperature date powermenu
 # modules-right = xkeyboard
 # modules-right = capslock keylayout temperature
-modules-right = capslock keylayout bbswitch compton redshift dropbox wlan wlan-ip eth-ip temperature cpu memory battery
+modules-right = capslock keylayout bbswitch compton redshift pcloud wlan wlan-ip eth-ip temperature cpu memory battery
 ; # separator = │
 
 ; tray-position = ${env:TRAY_POS:}
@@ -542,6 +542,22 @@ click-right = i3-sensible-terminal -d ~/Dropbox
 
 label = %output%
 format =  <label>
+# format-underline = ${colors.blue}
+# format-overline = ${colors.blue}
+
+#endregion
+
+[module/pcloud]
+#region ###################################################
+type = custom/script
+exec = ~/Scripts/Polybar/get-pcloud-status.py
+interval = 1
+
+click-left = xdg-open ~/pCloudDrive
+click-right = i3-sensible-terminal -d ~/pCloudDrive
+
+label = %output%
+format = <label>
 # format-underline = ${colors.blue}
 # format-overline = ${colors.blue}
 
