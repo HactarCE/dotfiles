@@ -241,3 +241,11 @@ alias stodoz='stodo; z'
 alias stodz='stod; z'
 alias swip='s ~/Dropbox/wip.txt'
 alias swipz='swip; z'
+
+
+# New Ithkuilic Language
+alias nil-morphophono='xtoolwait mupdf ~/Documents/Linguistics/New-Ithklang/PDFs/Latest/Morphophono.pdf && exit'
+alias nil-phonotaxis='xtoolwait mupdf ~/Documents/Linguistics/New-Ithklang/PDFs/Latest/Phonotaxis.pdf && exit'
+alias nil-roots='xtoolwait mupdf ~/Documents/Linguistics/New-Ithklang/PDFs/Latest/Roots.pdf && exit'
+alias nil-script='xtoolwait mupdf ~/Documents/Linguistics/New-Ithklang/PDFs/Latest/Script.pdf && exit'
+alias nil-vxcs='xtoolwait mupdf ~/Documents/Linguistics/New-Ithklang/PDFs/Latest/VxCs.pdf && exit'
