@@ -4,7 +4,7 @@ These are my [dotfiles](https://askubuntu.com/questions/94780/what-are-dot-files
 
 I am currently dual-booting Windows 10 with i3wm on Arch Linux, using Linux as my primary driver.
 
-![i3wm on Arch, 2019-08-29](Pictures/GitHub_Screenshot_2019-08-29.png)
+![i3wm on Arch, 2019-08-29](.readme_content/screenshot_2019-08-29.png)
 
 ## Software
 
