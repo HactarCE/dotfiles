@@ -116,7 +116,7 @@ modules-left = i3
 # ; modules-right = filesystem xbacklight volume xkeyboard memory cpu wlan eth battery temperature date powermenu
 # modules-right = xkeyboard
 # modules-right = capslock keylayout temperature
-modules-right = capslock keylayout bbswitch compton redshift pcloud wlan wlan-ip eth-ip temperature cpu memory battery
+modules-right = capslock keylayout compton redshift pcloud wlan wlan-ip eth-ip temperature cpu memory battery
 ; # separator = │
 
 ; tray-position = ${env:TRAY_POS:}
