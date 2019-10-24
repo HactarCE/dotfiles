@@ -309,13 +309,13 @@ open_remove_sel=1
 open_cursor=Zoom In
 save_xrle=1
 
-open_save_dir=/home/andy/Dropbox/Cellular-Automata/
-overlay_dir=/home/andy/.golly/
-run_dir=/home/andy/.golly/Scripts/
+open_save_dir=/home/andrew/Dropbox/Cellular-Automata/
+overlay_dir=/home/andrew/.golly/
+run_dir=/home/andrew/.golly/Scripts/
 choose_dir=
 file_dir=
-user_rules=/home/andy/.golly/Rules/
-download_dir=/home/andy/.golly/Downloads/
+user_rules=/home/andrew/.golly/Rules/
+download_dir=/home/andrew/.golly/Downloads/
 
 text_editor=/usr/bin/subl3
 perl_lib=/usr/lib/perl5/core_perl/CORE/libperl.so
