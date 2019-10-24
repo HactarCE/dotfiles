@@ -183,19 +183,6 @@ alias ySs='yay -Ss'
 alias yYc='yay -Yc'
 
 
-# DROPBOX-CLI
-alias dro='dropbox-cli'
-alias droe='dropbox-cli exclude'
-alias droea='dropbox-cli exclude add'
-alias droel='dropbox-cli exclude list'
-alias droer='dropbox-cli exclude remove'
-alias drofs='dropbox-cli filestatus'
-alias drols='dropbox-cli ls'
-alias drost='dropbox-cli status'
-alias drostart='dropbox-cli start'
-alias drostop='dropbox-cli stop'
-
-
 # CD LOCATIONS
 alias dr='cd ~/Dropbox'
 alias dl='cd ~/Downloads'
