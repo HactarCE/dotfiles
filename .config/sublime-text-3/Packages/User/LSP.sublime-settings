@@ -1,0 +1,35 @@
+{
+	"clients":
+	{
+		"ra-lsp":
+		{
+			"enabled": false
+		},
+		"rls":
+		{
+			"command":
+			[
+				"rustup",
+				"run",
+				"stable",
+				"rls"
+			],
+			"enabled": true,
+			"languageId": "rust",
+			"scopes":
+			[
+				"source.rust"
+			],
+			"syntaxes":
+			[
+				"Packages/Rust/Rust.sublime-syntax",
+				"Packages/Rust Enhanced/RustEnhanced.sublime-syntax"
+			]
+		}
+	},
+	"diagnostics_gutter_marker": "circle",
+	"diagnostics_highlight_style": "box",
+	"resolve_completion_for_snippets": false,
+	"show_status_messages": true,
+	"show_view_status": true
+}
