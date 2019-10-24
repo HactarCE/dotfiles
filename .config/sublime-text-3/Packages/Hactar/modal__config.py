@@ -1,6 +1,6 @@
 VISUAL_DIRNAME = '.CaretColor'
 
-DEFAULT_STATE = 'normal'
+DEFAULT_STATE = 'insert'
 
 INSERT_STATES = ('insert', 'replace')
 MOTION_STATES = ('normal', 'select')
