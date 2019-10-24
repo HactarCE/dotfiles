@@ -92,6 +92,7 @@ alias awe='if awesome -k; then Xephyr :5 -dpi 144 -screen 2560x1316 > /dev/null 
 alias bat='upower -i /org/freedesktop/UPower/devices/battery_BAT1 | grep percentage'
 alias bbsw='~/Scripts/Polybar/bbswitch.sh'
 alias bbswt='sudo ~/Scripts/Polybar/bbswitch.sh --toggle'
+alias colortest='msgcat --color=test'
 alias df='df -h' # human-readable sizes
 alias diff='colordiff'
 alias wdiff="wdiff -n -w $'\033[30;41m' -x $'\033[0m' -y $'\033[30;42m' -z $'\033[0m'"
