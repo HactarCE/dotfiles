@@ -3,6 +3,6 @@ Type=Application
 Version=1.0
 Name=pcloud
 Comment=pcloudstartup script
-Exec=/opt/pcloud/pcloud
+Exec=/home/andrew/Scripts/Polybar/run-pcloud.sh
 StartupNotify=false
 Terminal=false

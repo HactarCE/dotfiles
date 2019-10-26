@@ -550,7 +550,7 @@ format =  <label>
 [module/pcloud]
 #region ###################################################
 type = custom/script
-exec = ~/Scripts/Polybar/get-pcloud-status.py
+exec = cat /tmp/pcloud_polybar_status
 interval = 1
 
 click-left = xdg-open ~/pCloudDrive
