@@ -156,6 +156,16 @@ alias u='unp -U'
 alias z='exit'
 
 
+# RFKILL
+alias rfk='rfkill'
+alias rfkl='rfkill list'
+alias rfkb='rfkill block'
+alias rfku='rfkill unblock'
+alias rfkbw='rfkill block wlan'
+alias rfkuw='rfkill unblock wlan'
+alias rfkrw='rfkill block wlan && rfkill unblock wlan'
+
+
 # YAY
 alias yD-deps='yay -D --asdeps'
 alias yD-explicit='yay -D --asexplicit'
