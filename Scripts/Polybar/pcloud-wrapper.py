@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import signal
 import sys
 import re
 
@@ -16,6 +17,16 @@ def display_status(status=None, size=''):
         }.get(status, f'unknown status: {status}'))
         if size:
             f.write(f' {size}')
+
+
+# Set status when killed
+
+def sigterm_handler(signal, frame):
+    display_status(None)
+    sys.exit(0)
+
+
+signal.signal(signal.SIGTERM, sigterm_handler)
 
 
 display_status(None)
