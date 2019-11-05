@@ -159,11 +159,11 @@ alias z='exit'
 # RFKILL
 alias rfk='rfkill'
 alias rfkl='rfkill list'
-alias rfkb='rfkill block'
-alias rfku='rfkill unblock'
-alias rfkbw='rfkill block wlan'
-alias rfkuw='rfkill unblock wlan'
-alias rfkrw='rfkill block wlan && rfkill unblock wlan'
+alias rfkb='sudo rfkill block'
+alias rfku='sudo rfkill unblock'
+alias rfkbw='sudo rfkill block wlan'
+alias rfkuw='sudo rfkill unblock wlan'
+alias rfkrw='sudo rfkill block wlan && sudo rfkill unblock wlan'
 
 
 # YAY
