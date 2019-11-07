@@ -8,5 +8,5 @@
 	username = HactarCE
 [includeIf "gitdir:~/Classes/"]
     path = ~/Classes/.gitconfig
-[includeIf "gitdir:~/Dropbox/School/3-NCSU/"]
+[includeIf "gitdir:~/Documents/School/3-NCSU/"]
     path = ~/Classes/.gitconfig
