@@ -146,6 +146,12 @@
 	{ "keys": ["P"], "command": "goto_symbol_in_project", "context":
 		[{ "key": "edit_state", "operand": "motion" }]
 	},
+	{ "keys": ["ú"], "command": "select_lines", "args": {"forward": false}, "context":
+		[{ "key": "edit_state", "operand": "motion" }]
+	},
+	{ "keys": ["é"], "command": "select_lines", "args": {"forward": true}, "context":
+		[{ "key": "edit_state", "operand": "motion" }]
+	},
 	{ "keys": ["z"], "command": "undo", "context":
 		[{ "key": "edit_state", "operand": "motion" }]
 	},
