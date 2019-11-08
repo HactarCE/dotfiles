@@ -131,7 +131,19 @@
 	{ "keys": ["s"], "command": "normalize_region_ends", "context":
 		[{ "key": "edit_state", "operand": "select" }]
 	},
-	{ "keys": ["O"], "command": "show_overlay", "args": {"overlay": "command_palette"}, "context":
+	{ "keys": [";"], "command": "show_overlay", "args": {"overlay": "goto", "show_files": true}, "context":
+		[{ "key": "edit_state", "operand": "motion" }]
+	},
+	{ "keys": [":"], "command": "show_overlay", "args": {"overlay": "command_palette"}, "context":
+		[{ "key": "edit_state", "operand": "motion" }]
+	},
+	{ "keys": ["O"], "command": "show_overlay", "args": {"overlay": "goto", "text": ":"}, "context":
+		[{ "key": "edit_state", "operand": "motion" }]
+	},
+	{ "keys": ["p"], "command": "show_overlay", "args": {"overlay": "goto", "text": "@"}, "context":
+		[{ "key": "edit_state", "operand": "motion" }]
+	},
+	{ "keys": ["P"], "command": "goto_symbol_in_project", "context":
 		[{ "key": "edit_state", "operand": "motion" }]
 	},
 	{ "keys": ["z"], "command": "undo", "context":
