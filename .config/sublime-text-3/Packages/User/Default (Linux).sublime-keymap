@@ -102,10 +102,10 @@
 	{ "keys": ["m"], "command": "set_setting", "args": {"setting": "edit_state", "value": "normal"}, "context":
 		[{ "key": "edit_state", "operand": "select" }]
 	},
-	{ "keys": ["'", "u"], "command": "modal_insert_line", "args": {"place": "above"}, "context":
+	{ "keys": ["o", "u"], "command": "modal_insert_line", "args": {"place": "above"}, "context":
 		[{ "key": "edit_state", "operand": "motion" }]
 	},
-	{ "keys": ["'", "e"], "command": "modal_insert_line", "args": {"place": "below"}, "context":
+	{ "keys": ["o", "e"], "command": "modal_insert_line", "args": {"place": "below"}, "context":
 		[{ "key": "edit_state", "operand": "motion" }]
 	},
 	{ "keys": ["ctrl+enter"], "command": "modal_insert_line", "args": {"place": "below", "insert": "true"} },
@@ -347,7 +347,7 @@
 
 
 	// HOROLINE ("HOME ROW LINE")
-	{ "keys": ["o"], "command": "horoline_start",                            "context": [{ "key": "edit_state", "operand": "motion" }] },
+	{ "keys": ["'"], "command": "horoline_start",                            "context": [{ "key": "edit_state", "operand": "motion" }] },
 	{ "keys": ["a"], "command": "horoline_feed_key", "args": { "digit": 1 }, "context": [{ "key": "edit_state", "operand": "horoline" }] },
 	{ "keys": ["r"], "command": "horoline_feed_key", "args": { "digit": 2 }, "context": [{ "key": "edit_state", "operand": "horoline" }] },
 	{ "keys": ["s"], "command": "horoline_feed_key", "args": { "digit": 3 }, "context": [{ "key": "edit_state", "operand": "horoline" }] },
@@ -363,6 +363,7 @@
 	{ "keys": ["'"],           "command": "horoline_confirm",                "context": [{ "key": "edit_state", "operand": "horoline" }] },
 	{ "keys": ["escape"],      "command": "horoline_cancel",                 "context": [{ "key": "edit_state", "operand": "horoline" }] },
 	{ "keys": ["O"],           "command": "horoline_cancel",                 "context": [{ "key": "edit_state", "operand": "horoline" }] },
+	{ "keys": ["\""],          "command": "horoline_cancel",                 "context": [{ "key": "edit_state", "operand": "horoline" }] },
 	{ "keys": ["ctrl+e"],      "command": "horoline_cancel",                 "context": [{ "key": "edit_state", "operand": "horoline" }] },
 
 
