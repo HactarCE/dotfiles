@@ -328,4 +328,24 @@
 
 
 
+	// HOROLINE ("HOME ROW LINE")
+	{ "keys": ["o"], "command": "horoline_start",                            "context": [{ "key": "edit_state", "operand": "motion" }] },
+	{ "keys": ["a"], "command": "horoline_feed_key", "args": { "digit": 1 }, "context": [{ "key": "edit_state", "operand": "horoline" }] },
+	{ "keys": ["r"], "command": "horoline_feed_key", "args": { "digit": 2 }, "context": [{ "key": "edit_state", "operand": "horoline" }] },
+	{ "keys": ["s"], "command": "horoline_feed_key", "args": { "digit": 3 }, "context": [{ "key": "edit_state", "operand": "horoline" }] },
+	{ "keys": ["t"], "command": "horoline_feed_key", "args": { "digit": 4 }, "context": [{ "key": "edit_state", "operand": "horoline" }] },
+	{ "keys": ["d"], "command": "horoline_feed_key", "args": { "digit": 5 }, "context": [{ "key": "edit_state", "operand": "horoline" }] },
+	{ "keys": ["h"], "command": "horoline_feed_key", "args": { "digit": 6 }, "context": [{ "key": "edit_state", "operand": "horoline" }] },
+	{ "keys": ["n"], "command": "horoline_feed_key", "args": { "digit": 7 }, "context": [{ "key": "edit_state", "operand": "horoline" }] },
+	{ "keys": ["e"], "command": "horoline_feed_key", "args": { "digit": 8 }, "context": [{ "key": "edit_state", "operand": "horoline" }] },
+	{ "keys": ["i"], "command": "horoline_feed_key", "args": { "digit": 9 }, "context": [{ "key": "edit_state", "operand": "horoline" }] },
+	{ "keys": ["o"], "command": "horoline_feed_key", "args": { "digit": 0 }, "context": [{ "key": "edit_state", "operand": "horoline" }] },
+	{ "keys": ["backspace"],   "command": "horoline_backspace",              "context": [{ "key": "edit_state", "operand": "horoline" }] },
+	{ "keys": ["enter"],       "command": "horoline_confirm",                "context": [{ "key": "edit_state", "operand": "horoline" }] },
+	{ "keys": ["'"],           "command": "horoline_confirm",                "context": [{ "key": "edit_state", "operand": "horoline" }] },
+	{ "keys": ["escape"],      "command": "horoline_cancel",                 "context": [{ "key": "edit_state", "operand": "horoline" }] },
+	{ "keys": ["O"],           "command": "horoline_cancel",                 "context": [{ "key": "edit_state", "operand": "horoline" }] },
+
+
+
 ]

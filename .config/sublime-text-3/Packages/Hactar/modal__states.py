@@ -85,7 +85,7 @@ class EditStateListener(sublime_plugin.EventListener):
 
     def on_selection_modified(self, view):
         state = get_state(view)
-        if state not in INSERT_STATES:
+        if state in ('normal', 'select'):
             if nonblank_selection(view):
                 if state != SELECTION_STATE:
                     # print('to sel')

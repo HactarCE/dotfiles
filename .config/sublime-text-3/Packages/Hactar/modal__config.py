@@ -26,5 +26,9 @@ STATE_SETTINGS = {
     'select': {
         'caret_color': '#00FFFF',
         'caret_style': 'solid',
+    },
+    'horoline': {
+        'caret_color': '#FF00FF',
+        'caret_style': 'solid',
     }
 }
