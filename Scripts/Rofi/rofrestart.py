@@ -33,7 +33,7 @@ def check(progname):
 def kill(progname):
     """Attempt to kill the program using pkill. Returns True if the program was found."""
     print("Killing", progname)
-    return not call(['pkill', '-xi', progname])
+    return not call(['pkill', '-SIGTERM', '-xi', progname])
 
 
 commands = [s.split('%%')[-1].strip() for s in PROGRAMS]
