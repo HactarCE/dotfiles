@@ -64,6 +64,9 @@
 	{ "keys": ["ctrl+e"], "command": "single_selection", "context":
 		[{ "key": "num_selections", "operator": "not_equal", "operand": 1 }]
 	},
+	{ "keys": ["shift+backspace"], "command": "single_selection", "context":
+		[{ "key": "num_selections", "operator": "not_equal", "operand": 1 }]
+	},
 	// { "keys": ["ctrl+e"], "command": "clear_fields", "context":
 	// 	[{ "key": "has_next_field", "operator": "equal", "operand": true }]
 	// },
@@ -81,15 +84,25 @@
 	{ "keys": ["ctrl+e"], "command": "hide_overlay", "context":
 		[{ "key": "overlay_visible", "operator": "equal", "operand": true }]
 	},
+	{ "keys": ["shift+backspace"], "command": "hide_overlay", "context":
+		[{ "key": "overlay_visible", "operator": "equal", "operand": true }]
+	},
 	{ "keys": ["ctrl+e"], "command": "hide_popup", "context":
+		[{ "key": "popup_visible", "operator": "equal", "operand": true }]
+	},
+	{ "keys": ["shift+backspace"], "command": "hide_popup", "context":
 		[{ "key": "popup_visible", "operator": "equal", "operand": true }]
 	},
 	{ "keys": ["ctrl+e"], "command": "hide_auto_complete", "context":
 		[{ "key": "auto_complete_visible", "operator": "equal", "operand": true }]
 	},
+	{ "keys": ["shift+backspace"], "command": "hide_auto_complete", "context":
+		[{ "key": "auto_complete_visible", "operator": "equal", "operand": true }]
+	},
 	{ "keys": ["ctrl+e"], "command": "set_setting", "args": {"setting": "edit_state", "value": "normal"}, "context":
 		[{ "key": "edit_state", "operand": "insert, select" }]
 	},
+	{ "keys": ["shift+backspace"], "command": "set_setting", "args": {"setting": "edit_state", "value": "normal"} },
 	{ "keys": ["t"], "command": "set_setting", "args": {"setting": "edit_state", "value": "insert"}, "context":
 		[{ "key": "edit_state", "operand": "motion" }]
 	},
@@ -365,6 +378,7 @@
 	{ "keys": ["O"],           "command": "horoline_cancel",                 "context": [{ "key": "edit_state", "operand": "horoline" }] },
 	{ "keys": ["\""],          "command": "horoline_cancel",                 "context": [{ "key": "edit_state", "operand": "horoline" }] },
 	{ "keys": ["ctrl+e"],      "command": "horoline_cancel",                 "context": [{ "key": "edit_state", "operand": "horoline" }] },
+	{ "keys": ["shift+backspace"],      "command": "horoline_cancel",                 "context": [{ "key": "edit_state", "operand": "horoline" }] },
 
 
 
