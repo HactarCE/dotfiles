@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+
+(/home/andrew/Scripts/Polybar/run-pcloud.sh &)&
