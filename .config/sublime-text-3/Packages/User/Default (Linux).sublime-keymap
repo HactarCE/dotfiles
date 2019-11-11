@@ -360,7 +360,7 @@
 
 
 	// HOROLINE ("HOME ROW LINE")
-	{ "keys": ["'"], "command": "horoline_start",                            "context": [{ "key": "edit_state", "operand": "motion" }] },
+	{ "keys": ["'"], "command": "horoline_start",                            "context": [{ "key": "edit_state", "operand": "normal" }] },
 	{ "keys": ["a"], "command": "horoline_feed_key", "args": { "digit": 1 }, "context": [{ "key": "edit_state", "operand": "horoline" }] },
 	{ "keys": ["r"], "command": "horoline_feed_key", "args": { "digit": 2 }, "context": [{ "key": "edit_state", "operand": "horoline" }] },
 	{ "keys": ["s"], "command": "horoline_feed_key", "args": { "digit": 3 }, "context": [{ "key": "edit_state", "operand": "horoline" }] },
