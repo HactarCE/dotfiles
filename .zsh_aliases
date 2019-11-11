@@ -128,6 +128,7 @@ alias words='rlwrap words'
 # SHORT
 alias c='cd'
 alias cl='cd -P'
+alias cls='clear'
 alias cx='chmod +x'
 alias c-x='chmod -x'
 alias ff='firefox'

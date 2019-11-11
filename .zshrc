@@ -198,7 +198,8 @@ function _zle_clear() {
 }
 
 zle -N _zle_clear
-bindkey '^l' _zle_clear
+# bindkey '^l' _zle_clear
+bindkey -s '^l' '^ccls\n'
 bindkey '^ ' autosuggest-accept
 bindkey -s '^x' '^l^p^j'
 
