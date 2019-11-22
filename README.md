@@ -56,13 +56,14 @@ I am currently dual-booting Windows 10 with i3wm on Arch Linux, using Linux as m
 * **Gesture daemon:** [Libinput-gestures][libinput-gestures]
 * **Sound daemon:** [PulseAudio][pulseaudio]
     * **Mixer UI:** [PAVUControl][pavucontrol]
-* **Compositor:** [Compton][compton]
+* **Compositor:** ~~[Compton][compton]~~ [Picom][picom]
 * **Notification daemon:** [Dunst][dunst]
 
 [libinput-gestures]: https://github.com/bulletmark/libinput-gestures
 [pulseaudio]: https://www.freedesktop.org/wiki/Software/PulseAudio/
 [pavucontrol]: https://freedesktop.org/software/pulseaudio/pavucontrol/
 [compton]: https://github.com/yshui/compton
+[picom]: https://github.com/yshui/picom
 [dunst]: https://dunst-project.org/
 
 ### Editors

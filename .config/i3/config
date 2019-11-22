@@ -90,8 +90,8 @@ set $scripts                $HOME/Scripts
 # Programs
 #region ########################
 set $basic_editor           mousepad
-set $compton                dbus-launch compton
-set $kill_compton           pkill -x compton
+set $picom                  dbus-launch picom
+set $kill_picom             pkill -x picom
 set $dunst                  $HOME/Scripts/i3/restart-dunst.sh
 set $polybar                $HOME/.config/polybar/launch.py
 set $pulseaudio             $HOME/Scripts/i3/restart-pulseaudio.sh
@@ -109,7 +109,7 @@ set $darker #003366
 #region ########################
 
 # Background (exec)
-exec --no-startup-id $compton
+exec --no-startup-id $picom
 exec --no-startup-id onedrive -m
 exec --no-startup-id lxpolkit
 exec --no-startup-id lxsession -s i3wm -e I3WM -n
@@ -514,7 +514,7 @@ mode "$mode_resize" {
         bindsym $mod+Return mode "default"; restart
         bindcode $mod+$-a exec --no-startup-id $pulseaudio; mode "default"
         bindcode $mod+$-p exec --no-startup-id $polybar; mode "default"
-        bindcode $mod+$-c exec --no-startup-id $kill_compton || $compton; mode "default"
+        bindcode $mod+$-c exec --no-startup-id $kill_picom || $picom; mode "default"
         bindcode $mod+$-d exec --no-startup-id $dunst; mode "default"
         bindsym $mod+space exec --no-startup-id $scripts/Rofi/rofrestart.py; mode "default"
         bindsym space exec --no-startup-id $scripts/Rofi/rofrestart.py; mode "default"

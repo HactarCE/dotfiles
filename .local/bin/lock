@@ -1,10 +1,10 @@
 #!/usr/bin/bash
 
 IMAGE=/tmp/i3lock.png
-COMPTON_FADE_TIME=0.15
+PICOM_FADE_TIME=0.15
 
 # Wait for Rofi fade out
-sleep $COMPTON_FADE_TIME
+sleep $PICOM_FADE_TIME
 
 rm $IMAGE
 scrot $IMAGE
@@ -17,4 +17,4 @@ i3lock -c ~/.config/i3/i3lock.ini
 rm $IMAGE
 
 # Wait for the i3lock to fade in
-sleep $COMPTON_FADE_TIME
+sleep $PICOM_FADE_TIME

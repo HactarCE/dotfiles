@@ -9,13 +9,13 @@ KILL_LIMIT = 4
 KILL_WAIT = 0.1
 
 PROGRAMS = '''\
-compton
 discord
 dropbox
 dunst
 Libinput Gestures %% libinput-gestures
 nemo
 pCloud %% /home/andrew/Scripts/Polybar/run-pcloud.sh
+picom
 pulseaudio
 redshift
 steam
