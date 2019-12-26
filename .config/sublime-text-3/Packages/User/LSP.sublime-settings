@@ -1,10 +1,6 @@
 {
 	"clients":
 	{
-		"ra-lsp":
-		{
-			"enabled": false
-		},
 		"rls":
 		{
 			"command":
@@ -14,7 +10,7 @@
 				"stable",
 				"rls"
 			],
-			"enabled": true,
+			"enabled": false,
 			"languageId": "rust",
 			"scopes":
 			[
