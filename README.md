@@ -125,12 +125,13 @@ I am currently dual-booting Windows 10 with i3wm on Arch Linux, using Linux as m
 
 ### Other
 
-* **BIOS logo:** [Custom][bios-logo]
+* **BIOS logo:** [Thönkpad][bios-logo]
 * **Keyboard layout:** [Colemak][colemak]
-* **Wallpaper:** [Sunset wallpaper][wallpaper-sunset]
+* **Wallpaper:** [Factorio background][wallpaper-factorio] (previously [sunset wallpaper][wallpaper-sunset])
 
-[bios-logo]: https://github.com/HactarCE/dotfiles/blob/master/Pictures/bios-logo.gif
+[bios-logo]: .readme_content/logo.gif
 [colemak]: https://colemak.com/
+[wallpaper-factorio]: https://images5.alphacoders.com/778/thumb-1920-778421.jpg
 [wallpaper-sunset]: https://whvn.cc/j5v28q
 
 ## Hardware
