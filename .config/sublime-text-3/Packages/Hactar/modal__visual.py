@@ -19,9 +19,10 @@ except OSError:
 
 try:
     os.unlink(VISUAL_DIR)
-    os.symlink(TMP_DIR, VISUAL_DIR)
 except OSError:
     pass
+
+os.symlink(TMP_DIR, VISUAL_DIR)
 
 
 def update_state(view):
