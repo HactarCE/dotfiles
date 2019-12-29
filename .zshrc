@@ -141,9 +141,7 @@ antigen bundle zsh-users/zsh-autosuggestions
 antigen apply
 
 # Workaround https://github.com/robbyrussell/oh-my-zsh/issues/5765
-spaceship_prompt_first_line() { print -rP "$(spaceship_prompt | head -n -1)" }
-add-zsh-hook precmd spaceship_prompt_first_line
-export PROMPT='$(spaceship_prompt | tail -n 1)'
+export PROMPT='$(spaceship_prompt)'
 
 if [ -f ~/.zsh_aliases ]; then
     . ~/.zsh_aliases
