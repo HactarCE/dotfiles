@@ -14,6 +14,7 @@ def display_status(status=None, size=''):
             'UPLOADING': f'',
             'DOWNLOADING': f'',
             'DOWNLOADINGANDUPLOADING': f'痢',
+            'OFFLINE': '',
         }.get(status, f'unknown status: {status}'))
         if size:
             f.write(f' {size}')
