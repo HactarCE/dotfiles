@@ -15,8 +15,14 @@ from .modal__states import (
 
 class ExtendableMotionCommand(sublime_plugin.TextCommand):
     def run(self, edit, **args):
+        if 'n' in args:
+            n = args.pop('n')
+        else:
+            n = 1
         args['extend'] = self.view.settings().get('edit_state') == SELECTION_STATE
-        self.view.run_command(args.pop('command'), args)
+        command = args.pop('command')
+        for _ in range(n):
+            self.view.run_command(command, args)
 
 
 class LinewiseCommand(sublime_plugin.TextCommand):
