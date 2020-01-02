@@ -42,6 +42,7 @@ alias yd='yadm diff'
 alias ydca='yadm diff --cached'
 alias yp='yadm push'
 alias yl='yadm pull'
+alias ylo='yadm log --oneline --decorate'
 alias yru='yadm reset --'
 alias yst='yadm status'
 
