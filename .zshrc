@@ -205,3 +205,18 @@ bindkey -s '^[[1;2A' '^[OA'
 bindkey -s '^[[1;2B' '^[OB'
 bindkey -s '^[[1;2C' '^[OC'
 bindkey -s '^[[1;2D' '^[OD'
+
+function gcc() {
+  if [[ -f "$1" ]]; then
+    INFILE=$1
+    OUTFILE=$1
+    shift
+    gcc -Wall -std=c99 "$INFILE" -o "${OUTFILE%.*}" "$@"
+  else
+    =gcc "$@"
+  fi
+}
+
+function gccf() {
+  gcc "$@" -Ofast
+}
