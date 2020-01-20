@@ -1,5 +1,6 @@
 {
 	"color_scheme": "Packages/Theme - Spaceblack/Color Schemes/Spaceblack.tmTheme",
+    "line_numbers": true,
 	"extensions":
 	[
 		"md",
