@@ -37,11 +37,11 @@
 
 inputbar {
   border-color: @blue-dim;
-  border: 2px;
-  border-radius: 8px;
+  border: 3px;
+  border-radius: 12px;
   background-color: @bg-dim;
-  padding: 5px 15px;
-  margin: 0px 0px 50px 0px;
+  padding: 9px 24px;
+  margin: 0px 0px 25px 0px;
   children: [prompt, textbox-prompt-colon, entry, case-indicator];
 }
 
@@ -61,26 +61,26 @@ entry {
 
 listview {
   border-color: @blue-dim;
-  border: 2px;
-  border-radius: 8px;
+  border: 3px;
+  border-radius: 12px;
   background-color: @bg-dim;
-  padding: 5px;
-  spacing: 2px;
+  padding: 9px;
+  spacing: 3px;
   dynamic: true;
   scrollbar: true;
 }
 
 scrollbar {
   handle-color: @blue-dim;
-  handle-width: 2px;
+  handle-width: 3px;
   padding: 0px;
-  margin: 0px 0px 0px 5px;
+  margin: 0px 0px 0px 9px;
 }
 
 element {
-  padding: 3px 15px;
+  padding: 3px 24px;
   text-color: @text-dim;
-  border-radius: 4px;
+  border-radius: 6px;
 }
 
 element selected {
@@ -96,29 +96,29 @@ message {
   transparency: "real";
   fullscreen: true;
   padding: 10px 20px;
-  border-radius: 8px;
+  border-radius: 12px;
   background-color: @bg-dim;
-  border: 2px;
+  border: 3px;
   border-color: @blue-dim;
 }
 
 error-message {
     background-color: @bg-dim;
-    padding: 8px;
-    border-radius: 8px;
-    border: 2px;
+    padding: 12px;
+    border-radius: 12px;
+    border: 3px;
     border-color: @red-dim;
 }
 
 button selected {
-  padding: 5px;
+  padding: 9px;
   border-radius: 3px;
   background-color: @blue-med;
 }
 
 sidebar {
-  border-radius: 4px;
+  border-radius: 6px;
   background-color: @bg-dim;
-  padding: 5px;
+  padding: 9px;
   margin: 10px 0px 0px 0px;
 }
