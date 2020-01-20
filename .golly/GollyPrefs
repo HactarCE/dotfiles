@@ -196,8 +196,8 @@ use_gradient=0
 colors=
 
 algorithm=HashLife
-max_mem=500
-base_step=8
+max_mem=6144
+base_step=4
 status_rgb=226,250,248
 from_rgb=255,255,255
 to_rgb=255,255,255
@@ -205,8 +205,8 @@ use_gradient=0
 colors=
 
 algorithm=Generations
-max_mem=500
-base_step=8
+max_mem=6144
+base_step=4
 status_rgb=255,233,233
 from_rgb=255,0,0
 to_rgb=255,255,0
@@ -215,7 +215,7 @@ colors=
 
 algorithm=Larger than Life
 max_mem=0
-base_step=10
+base_step=4
 status_rgb=255,227,178
 from_rgb=255,255,0
 to_rgb=255,0,0
@@ -223,8 +223,8 @@ use_gradient=1
 colors=
 
 algorithm=JvN
-max_mem=500
-base_step=8
+max_mem=6144
+base_step=4
 status_rgb=225,255,225
 from_rgb=255,255,255
 to_rgb=128,128,128
