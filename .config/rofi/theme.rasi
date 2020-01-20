@@ -20,6 +20,8 @@
   green-dim:    #0c0;
   green-bright: #0f0;
 
+  red-dim:      #c00;
+
   text-dim:     @white-dim;
   text-bright:  @white;
 
@@ -98,6 +100,14 @@ message {
   background-color: @bg-dim;
   border: 2px;
   border-color: @blue-dim;
+}
+
+error-message {
+    background-color: @bg-dim;
+    padding: 8px;
+    border-radius: 8px;
+    border: 2px;
+    border-color: @red-dim;
 }
 
 button selected {
