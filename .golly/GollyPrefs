@@ -2,7 +2,7 @@
 # otherwise all your changes will be clobbered when Golly quits.
 
 prefs_version=4
-golly_version=3.2
+golly_version=3.3
 wx_version=wxWidgets 3.0.4
 opengl_version=3.0, glMaxTextureSize=16384
 platform=Linux
@@ -174,7 +174,7 @@ paste_mode=Or
 scroll_pencil=1
 scroll_cross=1
 scroll_hand=1
-controls_pos=1 (0..4)
+controls_pos=0 (0..4)
 can_change_rule=1 (0..2)
 random_fill=50 (1..100)
 min_delay=25 (0..5000 millisecs)
@@ -188,7 +188,7 @@ init_algo=QuickLife
 
 algorithm=QuickLife
 max_mem=0
-base_step=10
+base_step=4
 status_rgb=255,255,206
 from_rgb=255,255,255
 to_rgb=255,255,255
@@ -240,7 +240,7 @@ to_rgb=255,255,0
 use_gradient=1
 colors=
 
-rule=B/S012345678
+rule=B3/S23
 named_rule=LifeHistory|LifeHistory
 named_rule=3-4 Life|B34/S34
 named_rule=HighLife|B36/S23
@@ -277,7 +277,7 @@ overlay=1
 min_grid_mag=2 (2..5)
 bold_spacing=4 (2..1000)
 show_bold_lines=0
-math_coords=0
+math_coords=1
 cell_borders=1
 
 sync_views=0
