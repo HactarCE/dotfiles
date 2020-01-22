@@ -41,7 +41,7 @@ inputbar {
   border-radius: 12px;
   background-color: @bg-dim;
   padding: 9px 24px;
-  margin: 0px 0px 25px 0px;
+  margin: 0px 0px 35px 0px;
   children: [prompt, textbox-prompt-colon, entry, case-indicator];
 }
 
