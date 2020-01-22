@@ -1,9 +1,12 @@
 #!/usr/bin/bash
 
-onedrive_output=$(onedrive --display-sync-status)
+onedrive_output=$(onedrive --display-sync-status 2>&1)
 
 if ps aux | grep -v "$0" | grep -v grep | grep -q onedrive; then
-    if echo "$onedrive_output" | grep -q 'in sync'; then
+    if echo "$onedrive_output" | grep -qi 'cannot connect'; then
+        # no connection
+        echo 
+    elif echo "$onedrive_output" | grep -q 'in sync'; then
         # in sync
         echo 
     else
