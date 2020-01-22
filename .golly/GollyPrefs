@@ -232,8 +232,8 @@ use_gradient=0
 colors=
 
 algorithm=RuleLoader
-max_mem=2048
-base_step=2
+max_mem=6144
+base_step=4
 status_rgb=243,225,255
 from_rgb=255,0,0
 to_rgb=255,255,0
