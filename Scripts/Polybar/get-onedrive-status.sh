@@ -1,8 +1,11 @@
 #!/usr/bin/bash
 
-onedrive_output=$(onedrive --display-sync-status 2>&1)
+onedrive_output=$(timeout 5 onedrive --display-sync-status 2>&1 || echo TIMEOUT)
 
-if ps aux | grep -v "$0" | grep -v grep | grep -q onedrive; then
+if [[ "$onedrive_output" == "TIMEOUT" ]]; then
+    # command timed out
+    echo '?'
+elif ps aux | grep -v "$0" | grep -v grep | grep -q onedrive; then
     if echo "$onedrive_output" | grep -qi 'cannot connect'; then
         # no connection
         echo 
