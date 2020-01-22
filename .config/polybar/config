@@ -116,7 +116,7 @@ modules-left = i3
 # ; modules-right = filesystem xbacklight volume xkeyboard memory cpu wlan eth battery temperature date powermenu
 # modules-right = xkeyboard
 # modules-right = capslock keylayout temperature
-modules-right = capslock keylayout picom redshift pcloud wlan wlan-ip eth-ip temperature cpu memory battery
+modules-right = capslock keylayout picom redshift onedrive wlan wlan-ip eth-ip temperature cpu memory battery
 ; # separator = │
 
 ; tray-position = ${env:TRAY_POS:}
@@ -547,14 +547,14 @@ format =  <label>
 
 #endregion
 
-[module/pcloud]
+[module/onedrive]
 #region ###################################################
 type = custom/script
-exec = cat /tmp/pcloud_polybar_status
-interval = 1
+exec = ~/Scripts/Polybar/get-onedrive-status.sh
+interval = 5
 
-click-left = xdg-open ~/pCloudDrive
-click-right = i3-sensible-terminal -d ~/pCloudDrive
+click-left = xdg-open ~/Documents
+click-right = i3-sensible-terminal -d ~/Documents
 
 label = %output%
 format = <label>

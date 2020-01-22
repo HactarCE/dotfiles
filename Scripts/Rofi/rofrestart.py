@@ -14,7 +14,6 @@ dropbox
 dunst
 Libinput Gestures %% libinput-gestures
 nemo
-pCloud %% /home/andrew/Scripts/Polybar/run-pcloud.sh
 picom
 pulseaudio
 redshift
