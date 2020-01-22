@@ -211,7 +211,7 @@ function gcc() {
     INFILE=$1
     OUTFILE=$1
     shift
-    gcc -Wall -std=c99 "$INFILE" -o "${OUTFILE%.*}" "$@"
+    gcc -D_GNU_SOURCE -lm -Wall -std=c99 "$INFILE" -o "${OUTFILE%.*}" "$@"
   else
     =gcc "$@"
   fi
