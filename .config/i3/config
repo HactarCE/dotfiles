@@ -237,7 +237,8 @@ bindsym --release button2 exec --no-startup-id $scripts/i3/kill.sh
 # Reload the configuration file
 bindcode $mod+shift+$-r exec --no-startup-id $scripts/i3/reload-i3.sh
 
-bindcode $mod+$-t exec --no-startup-id $scripts/fix-audio.sh; exec --no-startup-id $scripts/fix-usbs.sh
+# Toggle touchpad
+bindcode $mod+$-t exec --no-startup-id $scripts/toggle-touchpad.sh
 
 #endregion
 
