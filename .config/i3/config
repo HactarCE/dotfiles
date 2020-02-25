@@ -343,6 +343,13 @@ bindsym $mod+shift+slash floating toggle
 # Change focus between tiling / floating windows
 bindsym $mod+slash focus mode_toggle
 
+bindcode $mod+ctrl+$-j       exec --no-startup-id jumpapp -rmw alacritty
+bindcode $mod+ctrl+shift+$-j exec --no-startup-id jumpapp -rmw alacritty
+bindcode $mod+ctrl+$-k       exec --no-startup-id jumpapp -rmw subl3 -n
+bindcode $mod+ctrl+shift+$-k exec --no-startup-id jumpapp -rmw subl3 -n
+bindcode $mod+ctrl+$-l       exec --no-startup-id jumpapp -rmw firefox --new-window
+bindcode $mod+ctrl+shift+$-l exec --no-startup-id jumpapp -rmw firefox --new-window
+
 #endregion
 
 
