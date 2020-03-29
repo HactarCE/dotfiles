@@ -1,0 +1,149 @@
+{
+    name: Hitchhiker's Color Scheme
+    globals: {
+        background: "#090909"
+        foreground: "#eee"
+        line_highlight: "#292929"
+        selection: "#30353a"
+        selection_border: "#90a0b0"
+        inactive_selection: "#303030"
+        inactive_selection_border: "#909090"
+        selection_corner_style: square
+        gutter: "#191919"
+        gutter_foreground: "#aaa"
+    }
+    rules: [
+        {
+            name: Comment
+            scope: comment
+            # font_style: bold
+            foreground: "#777"
+        }
+        {
+            name: Documentation comment
+            scope: comment.block.documentation, comment.line.documentation
+            font_style: bold
+            foreground: "#999"
+        }
+        # {
+        #     name:
+        # }
+        {
+            name: Numbers and language constants
+            scope: constant.numeric, constant.language
+            foreground: "#49d"
+        }
+        {
+            name: Language constants
+            scope: constant.language
+            font_style: bold
+        }
+        {
+            name: Function/macro
+            scope: variable.function, support.function, support.macro
+            # font_style: bold
+            foreground: "#6c3"
+        }
+        {
+            name: Function definition
+            scope: entity.name.function, entity.name.macro
+            font_style: bold
+            foreground: "#8f4"
+        }
+        {
+            name: Macro / macro definition
+            scope: support.macro, entity.name.macro
+            font_style: italic
+        }
+        # {
+        #     name: Macro internals
+        #     scope: meta.macro.transcribers
+        #     font_style: bold italic
+        # }
+
+        # {
+        #     name: Function definition
+        #     scope: meta.function.parameters, meta.function.return-type
+        #     # font_style: italic
+        #     # background: "#222"
+        # }
+        {
+            name: Keyword
+            scope: keyword.control, keyword.other, storage.modifier, storage.type
+            # font_style: italic
+            foreground: "#f6f"
+        }
+        {
+            name: Keyword other
+            scope: keyword.other
+            font_style: italic
+        }
+        {
+            name: Operator
+            scope: keyword.operator
+            font_style: bold
+            foreground: "#fc6"
+        }
+        {
+            name: Label and Rust lifetime
+            scope: storage.modifier.lifetime.rust, entity.name.label
+            foreground: "#fc0"
+        }
+        {
+            name: Rust lifetime
+            scope: storage.modifier.lifetime.rust
+            font_style: italic
+        }
+        {
+            name: Type
+            scope: storage.type.source, support.type, entity.name.tag
+            foreground: "#f55"
+        }
+        {
+            name: Type definition
+            scope: entity.name.type
+            font_style: bold
+            foreground: "#f55"
+        }
+        {
+            name: Path
+            scope: meta.path
+            foreground: "#933"
+        }
+        {
+            name: String
+            scope: string
+            foreground: "#d94"
+        }
+        {
+            name: Escape sequence / character constant
+            scope: constant.character
+            font_style: bold
+            foreground: "#fb5"
+        }
+        {
+            name: Constant
+            scope: constant
+            foreground: "#0cc"
+        }
+        {
+            name: Constant definition
+            scope: entity.name.constant
+            font_style: bold
+            foreground: "#0cc"
+        }
+        # {
+        #     name:
+        # }
+        {
+            name: Diff added
+            scope: markup.inserted
+            background: "#242"
+        }
+        {
+            name: Diff removed
+            scope: markup.deleted
+            background: "#422"
+        }
+    ]
+}

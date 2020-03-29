@@ -1,0 +1,128 @@
+{
+  "globals": {
+    "background": "#090909",
+    "foreground": "#eee",
+    "gutter": "#191919",
+    "gutter_foreground": "#aaa",
+    "inactive_selection": "#303030",
+    "inactive_selection_border": "#909090",
+    "line_highlight": "#292929",
+    "selection": "#30353a",
+    "selection_border": "#90a0b0",
+    "selection_corner_style": "square"
+  },
+  "name": "Hitchhiker's Color Scheme",
+  "rules": [
+    {
+      "foreground": "#777",
+      "name": "Comment",
+      "scope": "comment"
+    },
+    {
+      "font_style": "bold",
+      "foreground": "#999",
+      "name": "Documentation comment",
+      "scope": "comment.block.documentation, comment.line.documentation"
+    },
+    {
+      "foreground": "#49d",
+      "name": "Numbers and language constants",
+      "scope": "constant.numeric, constant.language"
+    },
+    {
+      "font_style": "bold",
+      "name": "Language constants",
+      "scope": "constant.language"
+    },
+    {
+      "foreground": "#6c3",
+      "name": "Function/macro",
+      "scope": "variable.function, support.function, support.macro"
+    },
+    {
+      "font_style": "bold",
+      "foreground": "#8f4",
+      "name": "Function definition",
+      "scope": "entity.name.function, entity.name.macro"
+    },
+    {
+      "font_style": "italic",
+      "name": "Macro / macro definition",
+      "scope": "support.macro, entity.name.macro"
+    },
+    {
+      "foreground": "#f6f",
+      "name": "Keyword",
+      "scope": "keyword.control, keyword.other, storage.modifier, storage.type"
+    },
+    {
+      "font_style": "italic",
+      "name": "Keyword other",
+      "scope": "keyword.other"
+    },
+    {
+      "font_style": "bold",
+      "foreground": "#fc6",
+      "name": "Operator",
+      "scope": "keyword.operator"
+    },
+    {
+      "foreground": "#fc0",
+      "name": "Label and Rust lifetime",
+      "scope": "storage.modifier.lifetime.rust, entity.name.label"
+    },
+    {
+      "font_style": "italic",
+      "name": "Rust lifetime",
+      "scope": "storage.modifier.lifetime.rust"
+    },
+    {
+      "foreground": "#f55",
+      "name": "Type",
+      "scope": "storage.type.source, support.type, entity.name.tag"
+    },
+    {
+      "font_style": "bold",
+      "foreground": "#f55",
+      "name": "Type definition",
+      "scope": "entity.name.type"
+    },
+    {
+      "foreground": "#933",
+      "name": "Path",
+      "scope": "meta.path"
+    },
+    {
+      "foreground": "#d94",
+      "name": "String",
+      "scope": "string"
+    },
+    {
+      "font_style": "bold",
+      "foreground": "#fb5",
+      "name": "Escape sequence / character constant",
+      "scope": "constant.character"
+    },
+    {
+      "foreground": "#0cc",
+      "name": "Constant",
+      "scope": "constant"
+    },
+    {
+      "font_style": "bold",
+      "foreground": "#0cc",
+      "name": "Constant definition",
+      "scope": "entity.name.constant"
+    },
+    {
+      "background": "#242",
+      "name": "Diff added",
+      "scope": "markup.inserted"
+    },
+    {
+      "background": "#422",
+      "name": "Diff removed",
+      "scope": "markup.deleted"
+    }
+  ]
+}
