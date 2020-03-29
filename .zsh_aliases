@@ -122,6 +122,7 @@ alias susys='sudo systemctl'
 alias sutee='sudo tee'
 alias sys='systemctl'
 alias t='xtoolwait alacritty'
+alias vg='valgrind --tool=memcheck --leak-check=full --track-origins=yes --track-fds=yes --show-leak-kinds=all -v'
 alias xpgc='xprop | grep WM_CLASS'
 alias words='rlwrap words'
 
