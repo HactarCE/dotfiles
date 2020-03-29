@@ -110,7 +110,7 @@ set $darker #003366
 # Background (exec)
 exec --no-startup-id dunst
 exec --no-startup-id $picom
-# exec --no-startup-id onedrive -m
+exec --no-startup-id onedrive -m
 exec --no-startup-id lxpolkit
 exec --no-startup-id lxsession -s i3wm -e I3WM -n
 exec --no-startup-id udiskie
