@@ -220,3 +220,9 @@ function gcc() {
 function gccf() {
   gcc "$@" -Ofast
 }
+
+function hjson-watch() {
+  while inotifywait -e close_write "$1"; do
+    hjson -j "$1" > /tmp/hjson_out && =mv /tmp/hjson_out "$2"
+  done
+}
