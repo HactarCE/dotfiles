@@ -1,0 +1,6 @@
+#!/usr/bin/bash
+
+# Pass a website name (e.g. 'pandora.com') as the first argument.
+# Password will be copied to clipboard.
+
+bwpass "$1" | xsel -bi
