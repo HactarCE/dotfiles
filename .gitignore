@@ -3,9 +3,29 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# Sublime Text
-*.last-run
-*.merged-ca-bundle
-*.user-ca-bundle
-*.cache
-.CaretColor
+# Exclude large folders as a workaround for
+# https://github.com/TheLocehiliosan/yadm/issues/359
+.cache/
+.cargo/
+.local/share/fish/
+.local/share/karabiner/
+.local/share/yadm/
+.local/state/
+.npm/
+.rustup/
+.Trash/
+.vscode/
+.wine/
+.zsh_sessions/
+Applications/
+Desktop/
+Documents/
+Downloads/
+Git/
+Library/
+!Library/KeyBindings/
+Movies/
+Music/
+Notebook/
+Pictures/
+Public/
