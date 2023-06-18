@@ -6,7 +6,7 @@ I am currently using macOS on an M2 Macbook Pro.
 
 ## History
 
-Before April 2020, I was dual-booting Windows 10 with i3wm on Arch Linux, using Linux as my primary driver. Those dotfiles can be found on the [linux-2020 tag](https://github.com/HactarCE/dotfiles/tree/linux-2020) of this repo.
+Before April 2020, I was dual-booting Windows 10 with i3wm on Arch Linux, using Linux as my primary driver. Those dotfiles can be found on the [`linux-2020` branch](https://github.com/HactarCE/dotfiles/tree/linux-2020) of this repo.
 
 Unfortunately, the lack of support for eGPU hotplug and mixed DPI drove me to run Windows as my main OS. From April 2020 to June 2023, I was using Windows.
 
