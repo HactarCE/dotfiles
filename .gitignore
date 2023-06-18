@@ -1,0 +1,11 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Sublime Text
+*.last-run
+*.merged-ca-bundle
+*.user-ca-bundle
+*.cache
+.CaretColor
