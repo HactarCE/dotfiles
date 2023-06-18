@@ -92,20 +92,26 @@
                 },
                 { // T -> launch Wezterm
                     "conditions": [{ "name": "caps_lock pressed", "type": "variable_if", "value": 1 }],
-                    "from": { "key_code": "t", "modifiers": { "optional": ["any"] } },
+                    "from": { "key_code": "f", "modifiers": { "optional": ["any"] } },
                     "to": [{ "shell_command": "open -a 'WezTerm'" }],
-                    "type": "basic"
-                },
-                { // P -> launch Notes ("notePad")
-                    "conditions": [{ "name": "caps_lock pressed", "type": "variable_if", "value": 1 }],
-                    "from": { "key_code": "r", "modifiers": { "optional": ["any"] } },
-                    "to": [{ "shell_command": "open -a 'Notes'" }],
                     "type": "basic"
                 },
                 { // B -> launch Obsidian
                     "conditions": [{ "name": "caps_lock pressed", "type": "variable_if", "value": 1 }],
                     "from": { "key_code": "b", "modifiers": { "optional": ["any"] } },
                     "to": [{ "shell_command": "open -a 'Obsidian'" }],
+                    "type": "basic"
+                },
+                { // P -> screenshot to clipboard ("printscreen")
+                    "conditions": [{ "name": "caps_lock pressed", "type": "variable_if", "value": 1 }],
+                    "from": { "key_code": "r", "modifiers": { "optional": ["caps_lock"] } },
+                    "to": [{ "key_code": "4", "modifiers": ["left_control", "left_command", "left_shift"] }],
+                    "type": "basic"
+                },
+                { // shift-P -> screenshot to file ("printscreen")
+                    "conditions": [{ "name": "caps_lock pressed", "type": "variable_if", "value": 1 }],
+                    "from": { "key_code": "r", "modifiers": { "optional": ["caps_lock"], "mandatory": ["shift"] } },
+                    "to": [{ "key_code": "4", "modifiers": ["left_command", "left_shift"] }],
                     "type": "basic"
                 },
 
