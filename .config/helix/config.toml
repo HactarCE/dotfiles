@@ -1,0 +1,116 @@
+theme = "catppuccin_mocha"
+ 
+[editor]
+line-number = "relative"
+cursorline = true
+bufferline = "always"
+color-modes = true
+ 
+[editor.cursor-shape]
+insert = "bar"
+# normal = "bar"
+ 
+[editor.whitespace.render]
+# space = "all"
+tab = "all"
+# nbsp = "none"
+# newline = "none"
+ 
+ 
+[keys.insert]
+C-ret = "open_below"
+C-S-ret = "open_above"
+ 
+[keys.normal]
+"`" = "hover"
+u = "move_visual_line_up"
+e = "move_visual_line_down"
+n = "move_char_left"
+i = "move_char_right"
+U = "expand_selection"
+E = "shrink_selection"
+N = "select_prev_sibling"
+I = "select_next_sibling"
+z = "undo"
+Z = "redo"
+ret = "open_below"
+S-ret = "open_above"
+l = "move_prev_word_start"
+y = "move_next_word_end"
+L = "move_prev_long_word_start"
+Y = "move_next_long_word_end"
+# a = "insert_mode"
+# o = "append_mode"
+H = "goto_line_start"
+# O = "insert_at_line_end"
+X = "extend_line_above"
+h = "goto_first_nonwhitespace"
+o = "goto_line_end_newline"
+j = "yank"
+C-s = ":write" # TODO: bring back the "save to jumplist" thing!!! looks super cool
+C-r = ":config-reload"
+ 
+[keys.normal.space]
+n = "insert_mode"
+i = "append_mode"
+h = ["split_selection_on_newline", "insert_at_line_start"]
+H = ["split_selection_on_newline", "goto_line_start", "insert_mode"]
+o = ["split_selection_on_newline", "insert_at_line_end"]
+u = "open_above"
+e = "open_below"
+l = ["move_prev_word_start", "insert_mode"]
+# y = ["move_next_word_end", "append_mode"]
+L = ["move_prev_long_word_start", "insert_mode"]
+Y = ["move_next_long_word_end", "append_mode"]
+ 
+[keys.normal.f]
+n = "find_prev_char"
+i = "find_next_char"
+l = "till_prev_char"
+y = "find_till_char"
+ 
+ 
+ 
+[keys.select]
+u = "extend_visual_line_up"
+e = "extend_visual_line_down"
+n = "extend_char_left"
+i = "extend_char_right"
+U = "expand_selection"
+E = "shrink_selection"
+N = "select_prev_sibling"
+I = "select_next_sibling"
+z = "undo"
+Z = "redo"
+C-ret = "open_below"
+C-S-ret = "open_above"
+w = "extend_next_word_end"
+W = "extend_prev_word_start"
+a = "insert_mode"
+o = "append_mode"
+A = "insert_at_line_start"
+O = "insert_at_line_end"
+X = "extend_line_above"
+ 
+# View mode
+[keys.normal.k]
+c = "align_view_center"
+t = "align_view_top"
+b = "align_view_bottom"
+m = "align_view_middle"
+u = "scroll_up"
+up = "scroll_up"
+e = "scroll_down"
+down = "scroll_down"
+C-b = "page_up"
+pageup = "page_up"
+C-f = "page_down"
+pagedown = "page_down"
+U = "half_page_up"
+backspace = "half_page_up"
+D = "half_page_down"
+space = "half_page_down"
+"/" = "search"
+"?" = "rsearch"
+n = "search_next"
+N = "search_prev"
