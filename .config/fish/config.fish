@@ -29,7 +29,7 @@ abbr .........  'cd ../../../../../../../..'
 
 # BREW
 abbr b          brew
-abbr 'b?        ' 'brew info'
+abbr 'b?'       'brew info'
 abbr bc         'brew cleanup'
 abbr bi         'brew install'
 abbr bl         'brew list'
@@ -55,7 +55,7 @@ abbr ghr        'gh repo'
 abbr ghrc       'gh repo clone'
 
 # LS / EXA
-alias ls='eza --git'
+alias ls 'eza --git'
 abbr ll         'ls -l'
 abbr l          'ls -l'
 abbr la         'ls -la'
@@ -128,7 +128,7 @@ abbr tb         'nc termbin.com 9999'
 abbr unp        'unp -U'
 abbr zx         zoxide
 
-alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dot '/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 function echo-dots --description "Draw dots with some colors"
     for i in $argv
