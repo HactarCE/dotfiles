@@ -1,6 +1,6 @@
 # Dotfiles
 
-These are my [dotfiles](https://askubuntu.com/questions/94780/what-are-dot-files). Use them however you see fit.
+These are my [dotfiles](https://askubuntu.com/questions/94780/what-are-dot-files). Use them however you see fit. I use a [bare git repository](https://www.atlassian.com/git/tutorials/dotfiles) with the alias `dot` (abbreviated `d`) to manage them.
 
 I am currently using macOS on an M2 Macbook Pro.
 
