@@ -38,4 +38,21 @@ config.enable_tab_bar = true
 config.hide_tab_bar_if_only_one_tab = true
 config.use_fancy_tab_bar = true
 
+config.keys = {
+  {
+    key = 'LeftArrow',
+    mods = 'CMD',
+    action = wezterm.action.SendKey {
+      key = 'Home',
+    },
+  },
+  {
+    key = 'RightArrow',
+    mods = 'CMD',
+    action = wezterm.action.SendKey {
+      key = 'End',
+    },
+  },
+}
+
 return config
