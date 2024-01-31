@@ -8,7 +8,7 @@ set -g __dot_abbr_version 0.2.1
 
 abbr d 'dot'
 
-abbr da 'dot add'
+abbr da 'dot add -f'
 abbr daa 'dot add --all'
 abbr dapa 'dot add --patch'
 abbr dau 'dot add --update'
