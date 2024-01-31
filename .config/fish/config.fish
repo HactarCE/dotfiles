@@ -12,7 +12,7 @@ set -gx PF_COL1 4
 set -gx PF_COL2 3
 set -gx PF_COL3 1
 
-set fzf_preview_dir_cmd exa --all --color=always
+set fzf_preview_dir_cmd eza --all --color=always
 fzf_configure_bindings --directory=\cf
 starship init fish | source
 zoxide init fish --cmd c | source
@@ -28,8 +28,8 @@ abbr ........   'cd ../../../../../../..'
 abbr .........  'cd ../../../../../../../..'
 
 # BREW
-abbr b          'brew'
-abbr 'b?'       'brew info'
+abbr b          brew
+abbr 'b?        ' 'brew info'
 abbr bc         'brew cleanup'
 abbr bi         'brew install'
 abbr bl         'brew list'
@@ -40,7 +40,7 @@ abbr bup        'brew upgrade'
 abbr bo         'brew outdated'
 
 # CARGO
-abbr co         'cargo'
+abbr co         cargo
 abbr cb         'cargo build'
 abbr cbr        'cargo build --release'
 abbr cr         'cargo run'
@@ -55,7 +55,7 @@ abbr ghr        'gh repo'
 abbr ghrc       'gh repo clone'
 
 # LS / EXA
-alias ls='exa --git'
+alias ls='eza --git'
 abbr ll         'ls -l'
 abbr l          'ls -l'
 abbr la         'ls -la'
@@ -66,9 +66,9 @@ abbr ltl        'ls -lTL'
 abbr ltal       'ls -lTaL'
 
 # PYTHON
-abbr py2        'python2'
-abbr py3        'python3'
-abbr py         'python3'
+abbr py2        python2
+abbr py3        python3
+abbr py         python3
 abbr supy2      'sudo python2'
 abbr supy3      'sudo python3'
 abbr supy       'sudo python'
@@ -80,64 +80,8 @@ abbr pie3       'pi3 -e'
 abbr pie        'pi -e'
 abbr venv       'python -m venv'
 
-# YADM
-abbr y          'yadm'
-abbr ya         'yadm add'
-abbr yaa        'yadm add --all'
-abbr yapa       'yadm add --patch'
-abbr yau        'yadm add --update'
-abbr yav        'yadm add --verbose'
-abbr ybl        'yadm blame -b -w'
-abbr yc         'yadm commit -v'
-abbr yc!        'yadm commit -v --amend'
-abbr ycn        'yadm commit -v --no-edit'
-abbr ycn!       'yadm commit -v --amend --no-edit'
-abbr yca        'yadm commit -a -v'
-abbr yca!       'yadm commit -a -v --amend'
-abbr ycan!      'yadm commit -a -v --no-edit --amend'
-abbr ycans!     'yadm commit -a -v -s --no-edit --amend'
-abbr ycam       'yadm commit -a -m'
-abbr ycas       'yadm commit -a -s'
-abbr ycasm      'yadm commit -a -s -m'
-abbr ycsm       'yadm commit -s -m'
-abbr ycm        'yadm commit -m'
-abbr ycs        'yadm commit -S'
-abbr yco        'yadm checkout'
-abbr yd         'yadm diff'
-abbr ydca       'yadm diff --cached'
-abbr ydcw       'yadm diff --cached --word-diff'
-abbr ydct       'yadm diff --staged'
-abbr ydt        'yadm diff-tree --no-commit-id --name-only -r'
-abbr ydup       'yadm diff @{upstream}'
-abbr yl         'yadm log'
-abbr yls        'yadm log --stat'
-abbr ylsp       'yadm log --stat -p'
-abbr ylg        'yadm log --graph'
-abbr ylgda      'yadm log --graph --decorate --all'
-abbr ylgm       'yadm log --graph --max-count=10'
-abbr ylo        'yadm log --oneline --decorate'
-abbr ylog       'yadm log --oneline --decorate --graph'
-abbr yloga      'yadm log --oneline --decorate --graph --all'
-abbr yp         'yadm push'
-abbr ypd        'yadm push --dry-run'
-abbr ypf        'yadm push --force-with-lease'
-abbr ypf!       'yadm push --force'
-abbr ypsu       'yadm push --set-upstream origin (git_current_branch)'
-abbr ypt        'yadm push --tags'
-abbr yptf       'yadm push --tags --force-with-lease'
-abbr yptf!      'yadm push --tags --force'
-abbr ypoat      'yadm push origin --all && git push origin --tags'
-abbr ypoatf!    'yadm push origin --all --force-with-lease && git push origin --tags --force-with-lease'
-abbr ypoatf!    'yadm push origin --all --force && git push origin --tags --force'
-abbr ypv        'yadm push -v'
-abbr ypl        'yadm pull'
-abbr yplo       'yadm pull origin'
-abbr yplom      'yadm pull origin (git_main_branch)'
-abbr yplu       'yadm pull upstream'
-abbr yplum      'yadm pull upstream (git_main_branch)'
-
 # ZELLIJ
-abbr z          'zellij'
+abbr z          zellij
 abbr za         'zellij attach'
 abbr ze         'zellij edit'
 abbr zef        'zellij edit --floating'
@@ -147,11 +91,11 @@ abbr zl         'zellij list-sessions'
 
 # GUI APPS
 abbr a          'open -a'
-abbr ff         'firefox'
+abbr ff         firefox
 abbr ffnt       'firefox --new-tab'
 abbr ffnw       'firefox --new-window'
 abbr f          'open -a Finder .'
-abbr o          'open'
+abbr o          open
 
 # SAFETY
 abbr cp         'cp -iR'
@@ -160,28 +104,31 @@ abbr mv         'mv -i'
 abbr sumv       'sudo mv -i'
 abbr rmm        '/bin/rm -i'
 alias rm "echo \"Use either del='trash' or rmm='rm -i'\"; :"
-abbr del        'trash'
+abbr del        trash
 abbr surmm      'sudo rm -i'
 abbr sudel      'sudo trash'
 
 # MISC
-abbr cat        'bat'
-abbr cl         'clear'
-abbr cls        'clear'
+abbr cat        bat
+abbr cl         clear
+abbr cls        clear
 abbr cx         'chmod +x'
-abbr c-x        'chmod -x'
+abbr c-         x 'chmod -x'
 abbr du         'dust -s'
-abbr fn         'functions'
+abbr fn         functions
+abbr i          insect
 abbr jj         'java -jar'
 abbr ln         'ln -s' # symbolic link
 abbr md         'mkdir -p'
-abbr q          'exit'
+abbr q          exit
 abbr rg         'rg -S' # smart case
 abbr suno       'sudo nano'
 abbr sus        'sudo -s'
 abbr tb         'nc termbin.com 9999'
-abbr u          'unp -U'
-abbr zx         'zoxide'
+abbr unp        'unp -U'
+abbr zx         zoxide
+
+alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 function echo-dots --description "Draw dots with some colors"
     for i in $argv
