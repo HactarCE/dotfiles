@@ -7,7 +7,7 @@ set -gx EDITOR code -w
 set -gx HOSTNAME eigenvoid
 
 # PFETCH CONFIG
-set -gx PF_INFO title os kernel pkgs memory shell editor
+set -gx PF_INFO title os kernel shell
 set -gx PF_COL1 4
 set -gx PF_COL2 3
 set -gx PF_COL3 1
