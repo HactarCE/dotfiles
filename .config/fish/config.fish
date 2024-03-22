@@ -109,6 +109,7 @@ abbr surmm      'sudo rm -i'
 abbr sudel      'sudo trash'
 
 # MISC
+abbr btm        btm --battery
 abbr cat        bat
 abbr cl         clear
 abbr cls        clear
