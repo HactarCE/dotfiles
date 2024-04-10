@@ -33,7 +33,7 @@ abbr dbsg 'dot bisect good'
 abbr dbsr 'dot bisect reset'
 abbr dbss 'dot bisect start'
 
-# abbr dc 'dot commit -v'
+abbr dc 'dot commit -v'
 abbr dci 'dot commit --allow-empty -v -m\'chore: initial commit\''
 abbr dc! 'dot commit -v --amend'
 abbr dcn 'dot commit -v --no-edit'

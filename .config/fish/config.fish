@@ -69,6 +69,7 @@ abbr ltal       'ls -lTaL'
 abbr py2        python2
 abbr py3        python3
 abbr py         python3
+abbr pym        'python -m'
 abbr supy2      'sudo python2'
 abbr supy3      'sudo python3'
 abbr supy       'sudo python'
@@ -78,7 +79,7 @@ abbr pi         'pip install --user'
 abbr pie2       'pi2 -e'
 abbr pie3       'pi3 -e'
 abbr pie        'pi -e'
-abbr venv       'python -m venv'
+abbr venv       'python3 -m venv'
 
 # ZELLIJ
 abbr z          zellij
