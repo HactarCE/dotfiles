@@ -1,14 +1,11 @@
 set -p PATH /opt/homebrew/bin
-set -p PATH /Users/andrew/.cargo/bin
-set -p PATH /Users/andrew/.local/bin
+set -p PATH ~/.cargo/bin
+set -p PATH ~/.local/bin
+set -p PATH ~/bin
 
 set -gx TERMINAL wezterm
 set -gx EDITOR code -w
-if test -f /etc/hostname
-    set -gx HOSTNAME (cat /etc/hostname)
-else
-    set -gx HOSTNAME eigenvoid
-end
+set -gx HOSTNAME (prompt_hostname)
 
 # PFETCH CONFIG
 set -gx PF_INFO title os kernel shell
