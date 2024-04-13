@@ -4,7 +4,11 @@ set -p PATH /Users/andrew/.local/bin
 
 set -gx TERMINAL wezterm
 set -gx EDITOR code -w
-set -gx HOSTNAME eigenvoid
+if test -f /etc/hostname
+    set -gx HOSTNAME (cat /etc/hostname)
+else
+    set -gx HOSTNAME eigenvoid
+end
 
 # PFETCH CONFIG
 set -gx PF_INFO title os kernel shell
