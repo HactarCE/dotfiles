@@ -1,6 +1,8 @@
 local wezterm = require 'wezterm'
 local config = {}
 
+config.font_size = 14.0
+
 -- Colors
 config.colors = {
   ansi = {
@@ -30,7 +32,8 @@ config.window_background_opacity = 0.8
 config.macos_window_background_blur = 10
 
 -- Font
-config.font = wezterm.font { family = 'FiraCode Nerd Font Mono', weight = 'Regular' }
+-- config.font = wezterm.font { family = 'FiraCode Nerd Font Mono', weight = 'Regular' }
+config.font = wezterm.font { family = 'Iosevka SS04', weight = 'Regular' }
 config.warn_about_missing_glyphs = true
 
 -- Tabs
