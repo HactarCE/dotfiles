@@ -1,26 +1,28 @@
-theme = "catppuccin_mocha"
- 
+theme = "dark_plus"
+# theme = "onedark"
+
 [editor]
 line-number = "relative"
 cursorline = true
 bufferline = "always"
 color-modes = true
- 
+
 [editor.cursor-shape]
 insert = "bar"
-# normal = "bar"
- 
+normal = "bar"
+select = "bar"
+
 [editor.whitespace.render]
 # space = "all"
-tab = "all"
+# tab = "all"
 # nbsp = "none"
-# newline = "none"
- 
- 
+newline = "none"
+
+
 [keys.insert]
 C-ret = "open_below"
 C-S-ret = "open_above"
- 
+
 [keys.normal]
 "`" = "hover"
 u = "move_visual_line_up"
