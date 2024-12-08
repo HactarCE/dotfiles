@@ -2,7 +2,7 @@
     "title": "Eigenvoid",
     "rules": [
         {
-            "description": "CAPS › ESC, CAPS+I/J/K/L › ↑←↓→, etc.",
+            "description": "CAPS -> ESC, arrow keys, etc.",
             "manipulators": [
                 { // I -> up
                     "conditions": [{ "name": "caps_lock pressed", "type": "variable_if", "value": 1 }],
@@ -50,19 +50,6 @@
                     "conditions": [{ "name": "caps_lock pressed", "type": "variable_if", "value": 1 }],
                     "from": { "key_code": "semicolon", "modifiers": { "optional": ["any"] } },
                     "to": [{ "key_code": "end" }],
-                    "type": "basic"
-                },
-
-                { // quote -> launch terminal
-                    "conditions": [{ "name": "caps_lock pressed", "type": "variable_if", "value": 1 }],
-                    "from": { "key_code": "quote", "modifiers": { "optional": ["any"] } },
-                    "to": [{ "shell_command": "open -a 'WezTerm'" }],
-                    "type": "basic"
-                },
-                { // return -> launch new terminal
-                    "conditions": [{ "name": "caps_lock pressed", "type": "variable_if", "value": 1 }],
-                    "from": { "key_code": "return_or_enter", "modifiers": { "optional": ["any"] } },
-                    "to": [{ "shell_command": "open -na 'WezTerm'" }],
                     "type": "basic"
                 },
 
@@ -115,6 +102,32 @@
                     "type": "basic"
                 },
 
+                { // quote -> launch terminal
+                    "conditions": [{ "name": "caps_lock pressed", "type": "variable_if", "value": 1 }],
+                    "from": { "key_code": "quote", "modifiers": { "optional": ["any"] } },
+                    "to": [{ "shell_command": "open -a 'WezTerm'" }],
+                    "type": "basic"
+                },
+                { // return -> launch new terminal
+                    "conditions": [{ "name": "caps_lock pressed", "type": "variable_if", "value": 1 }],
+                    "from": { "key_code": "return_or_enter", "modifiers": { "optional": ["any"] } },
+                    "to": [{ "shell_command": "open -na 'WezTerm'" }],
+                    "type": "basic"
+                },
+
+                { // P -> screenshot to clipboard ("printscreen")
+                    "conditions": [{ "name": "caps_lock pressed", "type": "variable_if", "value": 1 }],
+                    "from": { "key_code": "r", "modifiers": { "optional": ["caps_lock"] } },
+                    "to": [{ "key_code": "4", "modifiers": ["left_control", "left_command", "left_shift"] }],
+                    "type": "basic"
+                },
+                { // shift-P -> screenshot to file ("printscreen")
+                    "conditions": [{ "name": "caps_lock pressed", "type": "variable_if", "value": 1 }],
+                    "from": { "key_code": "r", "modifiers": { "optional": ["caps_lock"], "mandatory": ["shift"] } },
+                    "to": [{ "key_code": "4", "modifiers": ["left_command", "left_shift"] }],
+                    "type": "basic"
+                },
+
                 { // CAPS -> ESC
                     "from": { "key_code": "caps_lock", "modifiers": { "optional": ["any"] } },
                     "to": [{ "set_variable": { "name": "caps_lock pressed", "value": 1 } }],
@@ -123,47 +136,11 @@
                     "type": "basic"
                 },
 
-                { // F18 -> CAPS
-                    "from": { "key_code": "f18", "modifiers": { "optional": ["any"] } },
-                    "to": [{ "key_code": "caps_lock" }],
-                    "type": "basic"
-                }
-            ]
-        },
-        { // grave/tilde -> capslock
-            "description": "CAPS+` › CAPS",
-            "manipulators": [
-                {
+                { // CAPS + ESC -> CAPS
                     "conditions": [{ "name": "caps_lock pressed", "type": "variable_if", "value": 1 }],
-                    "from": { "key_code": "grave_accent_and_tilde", "modifiers": { "optional": ["any"] } },
+                    "from": { "key_code": "escape", "modifiers": { "optional": ["any"] } },
                     "to": [{ "key_code": "caps_lock" }],
                     "type": "basic"
-                }
-            ]
-        },
-        { // = + delete -> forward delete
-            "description": "= + delete › forward delete",
-            "manipulators": [
-                {
-                    "type": "basic",
-                    "from": {
-                        "simultaneous": [
-                            {
-                                "key_code": "equal_sign"
-                            },
-                            {
-                                "key_code": "delete_or_backspace"
-                            }
-                        ],
-                        "modifiers": {
-                            "optional": ["any"]
-                        }
-                    },
-                    "to": [
-                        {
-                            "key_code": "delete_forward"
-                        }
-                    ]
                 }
             ]
         }
