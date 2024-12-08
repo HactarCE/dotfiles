@@ -33,7 +33,8 @@ config.macos_window_background_blur = 10
 
 -- Font
 -- config.font = wezterm.font { family = 'FiraCode Nerd Font Mono', weight = 'Regular' }
-config.font = wezterm.font { family = 'Iosevka SS04', weight = 'Regular' }
+-- config.font = wezterm.font { family = 'Iosevka Term SS04', weight = 'Regular' }
+config.font = wezterm.font { family = 'IosevkaTerm Nerd Font', weight = 'Regular' }
 config.warn_about_missing_glyphs = true
 
 -- Tabs
