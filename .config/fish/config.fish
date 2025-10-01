@@ -13,11 +13,15 @@ set -gx PF_COL1 4
 set -gx PF_COL2 3
 set -gx PF_COL3 1
 
+# ZOXIDE CONFIG
+set -gx _ZO_EXCLUDE_DIRS "$HOME/.priv*"
+
 set fzf_preview_dir_cmd eza --all --color=always
 fzf_configure_bindings --directory=\cf
-starship init fish | source
+starship init fish | source; enable_transience
 zoxide init fish --cmd c | source
 zellij setup --generate-completion fish | source
+direnv hook fish | source
 
 # DOT DOT DOT
 abbr ...        'cd ../..'
@@ -49,7 +53,11 @@ abbr crr        'cargo run --release'
 abbr ct         'cargo test'
 abbr ctr        'cargo test --release'
 abbr cch        'cargo check'
+abbr cf         'CARGO_PROFILE_RELEASE_DEBUG=true cargo flamegraph'
 abbr --set-cursor cmx 'cargo expand % | bat -l rust'
+
+# GIT
+abbr grbia      'git rebase -i --autosquash'
 
 # GITHUB
 abbr ghr        'gh repo'
@@ -122,9 +130,11 @@ abbr fn         functions
 abbr i          insect
 abbr jj         'java -jar'
 abbr ln         'ln -s' # symbolic link
+abbr logout     'sudo killall -9 -u' # takes a user
 abbr md         'mkdir -p'
 abbr q          exit
 abbr rg         'rg -S' # smart case
+abbr rsync      'rsync --progress'
 abbr suno       'sudo nano'
 abbr sus        'sudo -s'
 abbr tb         'nc termbin.com 9999'
@@ -149,4 +159,16 @@ end
 
 function fish_greeting
     pf
+end
+
+function ymdmod --description "ymdmod <filename>"
+    for arg in $argv
+        date -jf "%s" (stat -f %m "$arg") +"%Y-%m-%d"
+    end
+end
+
+function ymdmv --description "ymdmv <filename>"
+    for arg in $argv
+        mv "$arg" (ymdmod "$arg")_"$arg"
+    end
 end
