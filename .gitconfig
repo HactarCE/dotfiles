@@ -1,0 +1,16 @@
+[user]
+	name = HactarCE
+	email = 6060305+HactarCE@users.noreply.github.com
+[credential "https://github.com"]
+	username = HactarCE
+[pull]
+	rebase = true
+[core]
+	excludesfile = /Users/andrew/.gitignore_global
+[init]
+	defaultBranch = main
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
