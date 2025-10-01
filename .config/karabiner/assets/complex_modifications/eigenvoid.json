@@ -4,37 +4,52 @@
         {
             "description": "CAPS -> ESC, arrow keys, etc.",
             "manipulators": [
-                { // I -> up
+                { // CAPS -> ESC
+                    "from": { "key_code": "caps_lock", "modifiers": { "optional": ["any"] } },
+                    "to": [{ "set_variable": { "name": "caps_lock pressed", "value": 1 } }],
+                    "to_after_key_up": [{ "set_variable": { "name": "caps_lock pressed", "value": 0 } }],
+                    "to_if_alone": [{ "key_code": "escape" }],
+                    "type": "basic"
+                },
+
+                { // CAPS + ESC -> CAPS
+                    "conditions": [{ "name": "caps_lock pressed", "type": "variable_if", "value": 1 }],
+                    "from": { "key_code": "escape", "modifiers": { "optional": ["any"] } },
+                    "to": [{ "key_code": "caps_lock" }],
+                    "type": "basic"
+                },
+
+                { // I -> up (U in colemak)
                     "conditions": [{ "name": "caps_lock pressed", "type": "variable_if", "value": 1 }],
                     "from": { "key_code": "i", "modifiers": { "optional": ["any"] } },
                     "to": [{ "key_code": "up_arrow" }],
                     "type": "basic"
                 },
-                { // K -> down
+                { // K -> down (E in colemak)
                     "conditions": [{ "name": "caps_lock pressed", "type": "variable_if", "value": 1 }],
                     "from": { "key_code": "k", "modifiers": { "optional": ["any"] } },
                     "to": [{ "key_code": "down_arrow" }],
                     "type": "basic"
                 },
-                { // J -> left
+                { // J -> left (N in colemak)
                     "conditions": [{ "name": "caps_lock pressed", "type": "variable_if", "value": 1 }],
                     "from": { "key_code": "j", "modifiers": { "optional": ["any"] } },
                     "to": [{ "key_code": "left_arrow" }],
                     "type": "basic"
                 },
-                { // L -> right
+                { // L -> right (I in colemak)
                     "conditions": [{ "name": "caps_lock pressed", "type": "variable_if", "value": 1 }],
                     "from": { "key_code": "l", "modifiers": { "optional": ["any"] } },
                     "to": [{ "key_code": "right_arrow" }],
                     "type": "basic"
                 },
-                { // U -> left by word
+                { // U -> left by word (L in colemak)
                     "conditions": [{ "name": "caps_lock pressed", "type": "variable_if", "value": 1 }],
                     "from": { "key_code": "u", "modifiers": { "optional": ["any"] } },
                     "to": [{ "key_code": "left_arrow", "modifiers": ["left_option"] }],
                     "type": "basic"
                 },
-                { // O -> right by word
+                { // O -> right by word (Y in colemak)
                     "conditions": [{ "name": "caps_lock pressed", "type": "variable_if", "value": 1 }],
                     "from": { "key_code": "o", "modifiers": { "optional": ["any"] } },
                     "to": [{ "key_code": "right_arrow", "modifiers": ["left_option"] }],
@@ -46,29 +61,17 @@
                     "to": [{ "key_code": "home" }],
                     "type": "basic"
                 },
-                { // ; -> end
+                { // ; -> end (O in colemak)
                     "conditions": [{ "name": "caps_lock pressed", "type": "variable_if", "value": 1 }],
                     "from": { "key_code": "semicolon", "modifiers": { "optional": ["any"] } },
                     "to": [{ "key_code": "end" }],
                     "type": "basic"
                 },
 
-                { // D -> launch Discord
+                { // W -> launch Bitwarden
                     "conditions": [{ "name": "caps_lock pressed", "type": "variable_if", "value": 1 }],
-                    "from": { "key_code": "g", "modifiers": { "optional": ["any"] } },
-                    "to": [{ "shell_command": "open -a 'Discord'" }],
-                    "type": "basic"
-                },
-                { // S -> launch Slack
-                    "conditions": [{ "name": "caps_lock pressed", "type": "variable_if", "value": 1 }],
-                    "from": { "key_code": "d", "modifiers": { "optional": ["any"] } },
-                    "to": [{ "shell_command": "open -a 'Slack'" }],
-                    "type": "basic"
-                },
-                { // C -> launch VSCode
-                    "conditions": [{ "name": "caps_lock pressed", "type": "variable_if", "value": 1 }],
-                    "from": { "key_code": "c", "modifiers": { "optional": ["any"] } },
-                    "to": [{ "shell_command": "open -a 'Visual Studio Code'" }],
+                    "from": { "key_code": "w", "modifiers": { "optional": ["any"] } },
+                    "to": [{ "shell_command": "open -a 'Bitwarden'" }],
                     "type": "basic"
                 },
                 { // F -> launch Firefox
@@ -77,10 +80,28 @@
                     "to": [{ "shell_command": "open -a 'Firefox'" }],
                     "type": "basic"
                 },
-                { // T -> launch Wezterm
+                { // R -> launch recording software
                     "conditions": [{ "name": "caps_lock pressed", "type": "variable_if", "value": 1 }],
-                    "from": { "key_code": "f", "modifiers": { "optional": ["any"] } },
-                    "to": [{ "shell_command": "open -a 'WezTerm'" }],
+                    "from": { "key_code": "s", "modifiers": { "optional": ["any"] } },
+                    "to": [{ "shell_command": "open -a 'OBS'" }],
+                    "type": "basic"
+                },
+                { // S -> launch Slack
+                    "conditions": [{ "name": "caps_lock pressed", "type": "variable_if", "value": 1 }],
+                    "from": { "key_code": "d", "modifiers": { "optional": ["any"] } },
+                    "to": [{ "shell_command": "open -a 'Slack'" }],
+                    "type": "basic"
+                },
+                { // D -> launch Discord (if personal account)
+                    "conditions": [{ "name": "caps_lock pressed", "type": "variable_if", "value": 1 }],
+                    "from": { "key_code": "g", "modifiers": { "optional": ["any"] } },
+                    "to": [{ "shell_command": "[ \"$USER\" = \"andrew\" ] && open -a 'Discord'" }],
+                    "type": "basic"
+                },
+                { // C -> launch VSCode
+                    "conditions": [{ "name": "caps_lock pressed", "type": "variable_if", "value": 1 }],
+                    "from": { "key_code": "c", "modifiers": { "optional": ["any"] } },
+                    "to": [{ "shell_command": "open -a 'Visual Studio Code'" }],
                     "type": "basic"
                 },
                 { // B -> launch Obsidian
@@ -89,16 +110,17 @@
                     "to": [{ "shell_command": "open -a 'Obsidian'" }],
                     "type": "basic"
                 },
-                { // P -> screenshot to clipboard ("printscreen")
+                { // M -> launch music
                     "conditions": [{ "name": "caps_lock pressed", "type": "variable_if", "value": 1 }],
-                    "from": { "key_code": "r", "modifiers": { "optional": ["caps_lock"] } },
-                    "to": [{ "key_code": "4", "modifiers": ["left_control", "left_command", "left_shift"] }],
+                    "from": { "key_code": "m", "modifiers": { "optional": ["any"] } },
+                    "to": [{ "shell_command": "open -a 'Spotify'" }],
                     "type": "basic"
                 },
-                { // shift-P -> screenshot to file ("printscreen")
+
+                { // equals -> launch calculator
                     "conditions": [{ "name": "caps_lock pressed", "type": "variable_if", "value": 1 }],
-                    "from": { "key_code": "r", "modifiers": { "optional": ["caps_lock"], "mandatory": ["shift"] } },
-                    "to": [{ "key_code": "4", "modifiers": ["left_command", "left_shift"] }],
+                    "from": { "key_code": "equal_sign", "modifiers": { "optional": ["any"] } },
+                    "to": [{ "shell_command": "open -a 'Parsify'" }],
                     "type": "basic"
                 },
 
@@ -125,21 +147,6 @@
                     "conditions": [{ "name": "caps_lock pressed", "type": "variable_if", "value": 1 }],
                     "from": { "key_code": "r", "modifiers": { "optional": ["caps_lock"], "mandatory": ["shift"] } },
                     "to": [{ "key_code": "4", "modifiers": ["left_command", "left_shift"] }],
-                    "type": "basic"
-                },
-
-                { // CAPS -> ESC
-                    "from": { "key_code": "caps_lock", "modifiers": { "optional": ["any"] } },
-                    "to": [{ "set_variable": { "name": "caps_lock pressed", "value": 1 } }],
-                    "to_after_key_up": [{ "set_variable": { "name": "caps_lock pressed", "value": 0 } }],
-                    "to_if_alone": [{ "key_code": "escape" }],
-                    "type": "basic"
-                },
-
-                { // CAPS + ESC -> CAPS
-                    "conditions": [{ "name": "caps_lock pressed", "type": "variable_if", "value": 1 }],
-                    "from": { "key_code": "escape", "modifiers": { "optional": ["any"] } },
-                    "to": [{ "key_code": "caps_lock" }],
                     "type": "basic"
                 }
             ]
