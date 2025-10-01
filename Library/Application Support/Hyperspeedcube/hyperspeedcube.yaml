@@ -1,13 +1,13 @@
 ---
 version: 1
-log_file: /Users/andrew/Downloads/attempt1.hsc
+log_file: /Users/andrew/Library/CloudStorage/OneDrive-Personal/Documents/Puzzles/Hyperspeedcube/Solves/3x3x3x3/2025-09-30_1m58.946s_stm359.hsc
 show_welcome_at_startup: false
 info:
   metric: STM
   keybinds_reference:
-    function: false
-    navigation: false
-    numpad: false
+    function: true
+    navigation: true
+    numpad: true
     opacity: 1.0
     max_font_size: 1.5
   modifier_toggles: false
@@ -25,13 +25,13 @@ interaction:
   other_anim_duration: 0.0
 opacity:
   base: 1.0
-  ungripped: 0.3
+  ungripped: 0.14
   hidden: 0.2
   selected: 1.0
   unhide_grip: false
   save_opacity_in_piece_filter_preset: false
 outlines:
-  default_size: 1.0
+  default_size: 0.0
   hidden_size: 0.0
   hovered_size: 3.0
   selected_size: 2.0
@@ -41,39 +41,39 @@ outlines:
   selected_sticker_color: "#ff7700"
   selected_piece_color: "#bbbb00"
 view_3d:
-  pitch: 35.0
-  yaw: -20.0
+  pitch: 0.0
+  yaw: 0.0
   roll: 0.0
-  scale: 1.25
-  fov_3d: 30.0
+  scale: 3.0
+  fov_3d: 120.0
   fov_4d: 30.0
   align_h: 0.0
   align_v: 0.0
-  show_frontfaces: true
-  show_backfaces: false
+  show_frontfaces: false
+  show_backfaces: true
   clip_4d: true
-  face_spacing: 0.03
-  sticker_spacing: 0.05
+  face_spacing: 0.4
+  sticker_spacing: 0.2
   outline_thickness: 1.0
   light_ambient: 1.0
   light_directional: 0.0
   light_pitch: 0.0
   light_yaw: 0.0
   active_preset:
-    preset_name: Default
-    pitch: 35.0
-    yaw: -20.0
+    preset_name: Unfolded (back)
+    pitch: 0.0
+    yaw: 0.0
     roll: 0.0
-    scale: 1.25
-    fov_3d: 30.0
+    scale: 3.0
+    fov_3d: 120.0
     fov_4d: 30.0
     align_h: 0.0
     align_v: 0.0
-    show_frontfaces: true
-    show_backfaces: false
+    show_frontfaces: false
+    show_backfaces: true
     clip_4d: true
-    face_spacing: 0.03
-    sticker_spacing: 0.05
+    face_spacing: 0.4
+    sticker_spacing: 0.2
     outline_thickness: 1.0
     light_ambient: 1.0
     light_directional: 0.0
@@ -291,8 +291,27 @@ view_4d:
       light_directional: 1.0
       light_pitch: 65.0
       light_yaw: -55.0
+    - preset_name: Server Icon
+      pitch: 20.0
+      yaw: -45.0
+      roll: 0.0
+      scale: 0.1
+      fov_3d: 0.0
+      fov_4d: 40.0
+      align_h: 0.0
+      align_v: 0.0
+      show_frontfaces: true
+      show_backfaces: true
+      clip_4d: true
+      face_spacing: 0.5
+      sticker_spacing: 0.3
+      outline_thickness: 1.0
+      light_ambient: 0.0
+      light_directional: 1.0
+      light_pitch: 65.0
+      light_yaw: -55.0
 colors:
-  background: "#292929"
+  background: "#191919"
   blind_face: "#cccccc"
   blindfold: false
   faces:
@@ -314,38 +333,27 @@ colors:
       U: "#33aaff"
 piece_filters:
   2x2x2x2:
-    - preset_name: Green
-      visible_pieces: "3333"
-    - preset_name: Blue
-      visible_pieces: cccc
-    - preset_name: ^ Green 2
-      visible_pieces: "3333"
-    - preset_name: Red
-      visible_pieces: aaaa
-    - preset_name: Orange
-      visible_pieces: "5555"
-    - preset_name: ^ Red 2
-      visible_pieces: aaaa
-    - preset_name: White
-      visible_pieces: 0f0f
-    - preset_name: Yellow
-      visible_pieces: f0f0
-    - preset_name: ^ White 2
-      visible_pieces: 0f0f
-    - preset_name: Purple
-      visible_pieces: ff00
-    - preset_name: Pink
-      visible_pieces: 00ff
-    - preset_name: ^ Purple 2
-      visible_pieces: ff00
-    - preset_name: "---"
-      visible_pieces: 00ff
-    - preset_name: Left
+    - preset_name: Back left
+      visible_pieces: "0044"
+    - preset_name: Front left
       visible_pieces: "0055"
-    - preset_name: Right
+    - preset_name: Back right
+      visible_pieces: 00dd
+    - preset_name: Front right
       visible_pieces: 00ff
-    - preset_name: LL
+    - preset_name: OLC
       visible_pieces: ff00
+    - preset_name: RKT first layer
+      visible_pieces: 0f00
+    - preset_name: RKT last layer
+      visible_pieces: ff00
+    - preset_name: Full puzzle
+      visible_pieces: ffff
+  3x3x3:
+    - preset_name: a
+      visible_pieces: 8f1f1f3
+    - preset_name: b
+      visible_pieces: 8f1f100
   3x3x3x3:
     - preset_name: 4-cross
       visible_pieces: 000200080a5010284280
@@ -395,15 +403,99 @@ piece_filters:
       visible_pieces: ffffff70000000000000
     - preset_name: End
       visible_pieces: ffffffffffffffffffff
+    - preset_name: "---"
+      visible_pieces: ffffffffffffffffffff
+    - preset_name: 2x2x2x1
+      visible_pieces: 000200084a5010214200
+    - preset_name: 2x2x2x1+2x1x1x1
+      visible_pieces: 0002000c4a5010316200
+    - preset_name: 2x2x2x2
+      visible_pieces: 0002000c6a7010b16300
+    - preset_name: 2x2x2x2+2x2x2x1
+      visible_pieces: 0002000c6a7810b163c0
+    - preset_name: 3x2x2x2
+      visible_pieces: 0002000c6a78d0b163c6
+    - preset_name: 3x2x2x2+2x2x1x1
+      visible_pieces: 0002000c6b78d0bd63c6
+    - preset_name: 3x2x2x2+2x2x2x1
+      visible_pieces: 0002008d6b78d6bd63c6
+    - preset_name: 3x3x2x2
+      visible_pieces: 0002008d6b7bd6bd6bd6
+    - preset_name: 3x3x2x2+2x2x1x1
+      visible_pieces: 0002008d6bfbd6bdefd6
+    - preset_name: 3x3x2x2+2x2x2x1
+      visible_pieces: 0002008dfbfbd6ffefd6
+    - preset_name: 3x3x2x2+3x2x2x1
+      visible_pieces: 0002008dfbfbf7ffefdf
+    - preset_name: 3x3x3x2
+      visible_pieces: 0002008fffffffffffff
   4x4x4x4:
-    - preset_name: O center
-      visible_pieces: "000000000000000000000000000000000000000000000000066006600000"
+    - preset_name: 4-cross
+      visible_pieces: "000000000000000006606066060660066060660606600660666666660660"
+    - preset_name: Belt 2/4
+      visible_pieces: "000000000000000006666066060666066660660606660666666666660666"
+    - preset_name: Belt
+      visible_pieces: "000000000000000066666066066666666660660666666666666666666666"
+    - preset_name: L 1/3
+      visible_pieces: "000000000000000066666566566666666665665666666666677667766666"
+    - preset_name: L 2/3
+      visible_pieces: "000000000000000067766566566666677665665666666776677667766666"
+    - preset_name: L 3/3
+      visible_pieces: "000000000000000067766566566776677665665667766776677667766776"
+    - preset_name: BL 1/3
+      visible_pieces: "000000000000000067766576576776677665765767766776677767776776"
+    - preset_name: BL 2/3
+      visible_pieces: "000000000000000067776576576776677765765767766777677767776776"
+    - preset_name: BL 3/3
+      visible_pieces: "000000000000000067776576576777677765765767776777677767776777"
+    - preset_name: FL 1/3
+      visible_pieces: "000000000000000067777577576777677775775767776777777777776777"
+    - preset_name: FL 2/3
+      visible_pieces: "000000000000000077777577576777777775775767777777777777776777"
+    - preset_name: FL 3/3
+      visible_pieces: "000000000000000077777577577777777775775777777777777777777777"
+    - preset_name: R 1/3
+      visible_pieces: 000000000000000077777f77f7777777777f77f7777777777ff77ff77777
+    - preset_name: R 2/3
+      visible_pieces: 00000000000000007ff77f77f777777ff77f77f777777ff77ff77ff77777
+    - preset_name: R 3/3
+      visible_pieces: 00000000000000007ff77f77f77ff77ff77f77f77ff77ff77ff77ff77ff7
+    - preset_name: BR 1/3
+      visible_pieces: 00000000000000007ff77ff7ff7ff77ff77ff7ff7ff77ff77fff7fff7ff7
+    - preset_name: BR 2/3
+      visible_pieces: 00000000000000007fff7ff7ff7ff77fff7ff7ff7ff77fff7fff7fff7ff7
+    - preset_name: BR 3/3
+      visible_pieces: 00000000000000007fff7ff7ff7fff7fff7ff7ff7fff7fff7fff7fff7fff
+    - preset_name: FR 1/3
+      visible_pieces: 00000000000000007fffffffff7fff7fffffffff7fff7fffffffffff7fff
+    - preset_name: FR 2/3
+      visible_pieces: 0000000000000000ffffffffff7fffffffffffff7fffffffffffffff7fff
+    - preset_name: FR 3/3
+      visible_pieces: 0000000000000000ffffffffffffffffffffffffffffffffffffffffffff
+    - preset_name: RLC 6/6
+      visible_pieces: 06606ff66ff6066000000000000000000000000000000000000000000000
+    - preset_name: ELC 12/12
+      visible_pieces: "699690099009699600000000000000000000000000000000000000000000"
+    - preset_name: OLC
+      visible_pieces: ffffffffffffffff00000000000000000000000000000000000000000000
+    - preset_name: PLC 2c
+      visible_pieces: 06606ff66ff6066006606f66f6066006606f66f606600000066006600000
+    - preset_name: PLC cross
+      visible_pieces: 06606ff66ff66ff600000000000000000000000000000000000000000000
+    - preset_name: PLC F2L
+      visible_pieces: 0660ffffffffffff00000000000000000000000000000000000000000000
+    - preset_name: PLC
+      visible_pieces: ffffffffffffffff00000000000000000000000000000000000000000000
+    - preset_name: Done
+      visible_pieces: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
     - preset_name: U center
-      visible_pieces: "000000000000000000000000000660000000000006600000066006600000"
+      visible_pieces: "000000000000000000000000000660000000000006600000000000000000"
     - preset_name: D center
-      visible_pieces: "000000000000000006600000000660066000000006600000066006600000"
+      visible_pieces: "000000000000000006600000000660066000000006600000000000000000"
     - preset_name: B center
-      visible_pieces: "000000000000000006600060060660066000600606600000066006600000"
+      visible_pieces: "000000000000000006600060060660066000600606600000000000000000"
+    - preset_name: F center
+      visible_pieces: "000000000000000006606066060660066060660606600000000000000000"
     - preset_name: First 5 centers
       visible_pieces: "000000000000000006606066060660066060660606600000066006600000"
     - preset_name: D cross ridge
@@ -465,11 +557,11 @@ piece_filters:
     - preset_name: RLC 1/6
       visible_pieces: "000006600660066000000000000000000000000000000000000000000000"
     - preset_name: RLC 2/6
-      visible_pieces: "066006600660066000000000000000000000000000000000000000000000"
+      visible_pieces: "000006660666066000000000000000000000000000000000000000000000"
     - preset_name: RLC 3/6
       visible_pieces: "066006660666066000000000000000000000000000000000000000000000"
     - preset_name: RLC 4/6
-      visible_pieces: "066066666666066000000000000000000000000000000000000000000000"
+      visible_pieces: "066007760776066000000000000000000000000000000000000000000000"
     - preset_name: RLC 6/6
       visible_pieces: 06606ff66ff6066000000000000000000000000000000000000000000000
     - preset_name: ELC 2/12
@@ -497,15 +589,15 @@ piece_filters:
     - preset_name: Done
       visible_pieces: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
   5x5x5x5:
-    - preset_name: O center
-      visible_pieces: 0000000000000004000000000000000000000000000000000000000000800000004812000000010000000000000000000000000000000000c93700837e0007ec10000000
     - preset_name: U center
-      visible_pieces: 0000000000000004000000000000000000000000000000000007ec100080000000481200000c9370000000000000000000007ec100000000c93700837e0007ec10000000
+      visible_pieces: 0000000000000004000000000000000000000000000000000007ec100080000000481200000c9370000000000000000000007ec100000000000000002000000000000000
     - preset_name: D center
-      visible_pieces: 00000000000000040000000000000000837e0000000000000007ec100ec9300000481200000c93700837e0000000000000007ec100000000c93700837e0007ec10000000
+      visible_pieces: 00000000000000040000000000000000837e0000000000000007ec100ec9300000481200000c93700837e0000000000000007ec100000000000000002000000000000000
     - preset_name: B center
-      visible_pieces: 00000000000000040000000000000000837e0000c100c100c107ec100ec9300007481700070c93700837e0000c100c100c107ec100000000c93700837e0007ec10000000
+      visible_pieces: 00000000000000040000000000000000837e0000c100c100c107ec100ec9300007481700070c93700837e0000c100c100c107ec100000000000000002000000000000000
     - preset_name: F center
+      visible_pieces: 00000000000000040000000000000000837e0830c930c930c107ec100ec930e007e817e0070c93700837e0830c930c930c107ec100000000000000002000000000000000
+    - preset_name: O center
       visible_pieces: 00000000000000040000000000000000837e0830c930c930c107ec100ec930e007e817e0070c93700837e0830c930c930c107ec100000000c93700837e0007ec10000000
     - preset_name: 4-cross D center
       visible_pieces: 00000000000000040000000000000000837e0830c930c930c107ec100ec930e007e817e0070c93700837e0830c930c930c107ec100080000c93700837e0007ec10000000
@@ -523,12 +615,28 @@ piece_filters:
       visible_pieces: 00000000000000040000000000000000837e0830c930c930c107ec100ec930e007e817e0070c93700837e0830c930c930c107ec100ec9300c937e8837ec107ec930ec930
     - preset_name: 4-cross F
       visible_pieces: 00000000000000040000000000000000837e0830c930c930c107ec100ec930e007e817e0070c93700837e0830c930c930c107ec100ec930ec937ec937ec937ec930ec930
+    - preset_name: Mid DB ridge center
+      visible_pieces: 00000000000000040000000000000000837e0830c930c930c107ec100ec932e007e817e0070c93700837e0830c930c930c107ec100ec930ec937ec937ec937ec930ec930
+    - preset_name: Mid DB ridge
+      visible_pieces: 00000000000000040000000000000000837ec930c930c930c107ec100ec937e007e817e0070c93700837ec930c930c930c107ec100ec930ec937ec937ec937ec930ec930
     - preset_name: Mid DB
       visible_pieces: 00000000000000040000000000000000837ec930c930c930c107ec100ec937e007e817e0070c93700837ec930c930c930c107ec100ec937ec937ec937ec937ec930ec930
+    - preset_name: Mid UB ridge center
+      visible_pieces: 00000000000000040000000000000000837ec930c930c930c107ec100ec937e007e817e0070c93740837ec930c930c930c107ec100ec937ec937ec937ec937ec930ec930
+    - preset_name: Mid UB ridge
+      visible_pieces: 00000000000000040000000000000000837ec930c930c930c107ec930ec937e007e817e0070c937e0837ec930c930c930c107ec930ec937ec937ec937ec937ec930ec930
     - preset_name: Mid UB
       visible_pieces: 00000000000000040000000000000000837ec930c930c930c107ec930ec937e007e817e0070c937e0837ec930c930c930c107ec930ec937ec937ec937ec937ec930ec937
+    - preset_name: Mid DF ridge center
+      visible_pieces: 00000000000000040000000000000000837ec930c930c930c107ec932ec937e007e817e0070c937e0837ec930c930c930c107ec930ec937ec937ec937ec937ec930ec937
+    - preset_name: Mid DF ridge
+      visible_pieces: 0000000000000004000000000000000c937ec930c930c930c107ec937ec937e007e817e0070c937ec937ec930c930c930c107ec930ec937ec937ec937ec937ec930ec937
     - preset_name: Mid DF
       visible_pieces: 0000000000000004000000000000000c937ec930c930c930c107ec937ec937e007e817e0070c937ec937ec930c930c930c107ec937ec937ec937ec937ec937ec930ec937
+    - preset_name: Mid UF ridge center
+      visible_pieces: 0000000000000004000000000000000c937ec930c930c930c107ec937ec937e007e817e0074c937ec937ec930c930c930c107ec937ec937ec937ec937ec937ec930ec937
+    - preset_name: Mid UF ridge
+      visible_pieces: 0000000000000004000000000000000c937ec930c930c930c937ec937ec937e007e817e007ec937ec937ec930c930c930c937ec937ec937ec937ec937ec937ec930ec937
     - preset_name: Mid UF
       visible_pieces: 0000000000000004000000000000000c937ec930c930c930c937ec937ec937e007e817e007ec937ec937ec930c930c930c937ec937ec937ec937ec937ec937ec937ec937
     - preset_name: L center
@@ -537,16 +645,32 @@ piece_filters:
       visible_pieces: 0000000000000000000000000000000c937ec9bac9bac9bac937ec937ec937ea27ea27ea27ec937ec937ec9bac9bac9bac937ec937ec937ec937ec9b7ec937ec937ec937
     - preset_name: L cross ridge
       visible_pieces: 0000000000000000000000000000000c937ec9bac9bac9bac937ec937ec937ea27ea27ea27ec937ec937ec9bac9bac9bac937ec937ec937eedb7ecdb7fc9b7fe937ec937
+    - preset_name: L D ridge center
+      visible_pieces: 0000000000000000000000000000000c937ec9bac9bac9bac937ec937ee937ea27ea27ea27ec937ec937ec9bac9bac9bac937ec937ec937eedb7ecdb7fc9b7fe937ec937
+    - preset_name: L D ridge
+      visible_pieces: 0000000000000000000000000000000cdb7fc9bac9bac9bac937ec937fed37ea27ea27ea27ec937ecdb7fc9bac9bac9bac937ec937ec937eedb7ecdb7fc9b7fe937ec937
     - preset_name: L D
       visible_pieces: 0000000000000000000000000000000cdb7fc9bac9bac9bac937ec937fed37ea27ea27ea27ec937ecdb7fc9bac9bac9bac937ec937fed37eedb7ecdb7fc9b7fe937ec937
+    - preset_name: L U ridge center
+      visible_pieces: 0000000000000000000000000000000cdb7fc9bac9bac9bac937ec937fed37ea27ea27ea27ecd37ecdb7fc9bac9bac9bac937ec937fed37eedb7ecdb7fc9b7fe937ec937
+    - preset_name: L U ridge
+      visible_pieces: 0000000000000000000000000000000cdb7fc9bac9bac9bac9b7fe937fed37ea27ea27ea27eedb7ecdb7fc9bac9bac9bac9b7fe937fed37eedb7ecdb7fc9b7fe937ec937
     - preset_name: L U
       visible_pieces: 0000000000000000000000000000000cdb7fc9bac9bac9bac9b7fe937fed37ea27ea27ea27eedb7ecdb7fc9bac9bac9bac9b7fe937fed37eedb7ecdb7fc9b7fe937fed37
+    - preset_name: L B ridge center
+      visible_pieces: 0000000000000000000000000000000cdb7fc9bac9bac9bac9b7fe937fed37ea27eaa7ea27eedb7ecdb7fc9bac9bac9bac9b7fe937fed37eedb7ecdb7fc9b7fe937fed37
+    - preset_name: L B ridge
+      visible_pieces: 0000000000000000000000000000000cdb7fc9bae9bae9bae9b7fe937fed37eaa7eaa7eaa7eedb7ecdb7fc9bae9bae9bae9b7fe937fed37eedb7ecdb7fc9b7fe937fed37
     - preset_name: L B
       visible_pieces: 0000000000000000000000000000000cdb7fc9bae9bae9bae9b7fe937fed37eaa7eaa7eaa7eedb7ecdb7fc9bae9bae9bae9b7fe937fed37eedb7fcdb7fe9b7fed37fed37
     - preset_name: L DB
       visible_pieces: 0000000000000000000000000000000cdb7fe9bae9bae9bae9b7fe937fedb7eaa7eaa7eaa7eedb7ecdb7fe9bae9bae9bae9b7fe937fedb7eedb7fcdb7fe9b7fed37fed37
     - preset_name: L UB
       visible_pieces: 0000000000000000000000000000000cdb7fe9bae9bae9bae9b7fed37fedb7eaa7eaa7eaa7eedb7fcdb7fe9bae9bae9bae9b7fed37fedb7eedb7fcdb7fe9b7fed37fedb7
+    - preset_name: L F ridge center
+      visible_pieces: 0000000000000000000000000000000cdb7fe9bae9bae9bae9b7fed37fedb7eaa7faa7eaa7eedb7fcdb7fe9bae9bae9bae9b7fed37fedb7eedb7fcdb7fe9b7fed37fedb7
+    - preset_name: L F ridge
+      visible_pieces: 0000000000000000000000000000000cdb7fedbaedbaedbae9b7fed37fedb7faa7faa7faa7eedb7fcdb7fedbaedbaedbae9b7fed37fedb7eedb7fcdb7fe9b7fed37fedb7
     - preset_name: L F
       visible_pieces: 0000000000000000000000000000000cdb7fedbaedbaedbae9b7fed37fedb7faa7faa7faa7eedb7fcdb7fedbaedbaedbae9b7fed37fedb7fedb7fedb7fedb7fed37fedb7
     - preset_name: L DF
@@ -559,16 +683,32 @@ piece_filters:
       visible_pieces: 0000000000000000000000000000000edb7fedbffdbffdbffdb7fedb7fedb7fef7fef7fef7fedb7fedb7fedbffdbffdbffdb7fedb7fedb7fedb7fedbffedb7fedb7fedb7
     - preset_name: R cross ridge
       visible_pieces: 0000000000000000000000000000000edb7fedbffdbffdbffdb7fedb7fedb7fef7fef7fef7fedb7fedb7fedbffdbffdbffdb7fedb7fedb7feffffedffffdbffffb7fedb7
+    - preset_name: R D ridge center
+      visible_pieces: 0000000000000000000000000000000edb7fedbffdbffdbffdb7fedb7fefb7fef7fef7fef7fedb7fedb7fedbffdbffdbffdb7fedb7fedb7feffffedffffdbffffb7fedb7
+    - preset_name: R D ridge
+      visible_pieces: 0000000000000000000000000000000edffffdbffdbffdbffdb7fedb7ffff7fef7fef7fef7fedb7fedffffdbffdbffdbffdb7fedb7fedb7feffffedffffdbffffb7fedb7
     - preset_name: R D
       visible_pieces: 0000000000000000000000000000000edffffdbffdbffdbffdb7fedb7ffff7fef7fef7fef7fedb7fedffffdbffdbffdbffdb7fedb7ffff7feffffedffffdbffffb7fedb7
+    - preset_name: R U ridge center
+      visible_pieces: 0000000000000000000000000000000edffffdbffdbffdbffdb7fedb7ffff7fef7fef7fef7fedf7fedffffdbffdbffdbffdb7fedb7ffff7feffffedffffdbffffb7fedb7
+    - preset_name: R U ridge
+      visible_pieces: 0000000000000000000000000000000edffffdbffdbffdbffdbffffb7ffff7fef7fef7fef7feffffedffffdbffdbffdbffdbffffb7ffff7feffffedffffdbffffb7fedb7
     - preset_name: R U
       visible_pieces: 0000000000000000000000000000000edffffdbffdbffdbffdbffffb7ffff7fef7fef7fef7feffffedffffdbffdbffdbffdbffffb7ffff7feffffedffffdbffffb7ffff7
+    - preset_name: R B ridge center
+      visible_pieces: 0000000000000000000000000000000edffffdbffdbffdbffdbffffb7ffff7fef7fefffef7feffffedffffdbffdbffdbffdbffffb7ffff7feffffedffffdbffffb7ffff7
+    - preset_name: R B ridge
+      visible_pieces: 0000000000000000000000000000000edffffdbfffbfffbfffbffffb7ffff7fefffefffefffeffffedffffdbfffbfffbfffbffffb7ffff7feffffedffffdbffffb7ffff7
     - preset_name: R B
       visible_pieces: 0000000000000000000000000000000edffffdbfffbfffbfffbffffb7ffff7fefffefffefffeffffedffffdbfffbfffbfffbffffb7ffff7fefffffdfffffbfffff7ffff7
     - preset_name: R DB
       visible_pieces: 0000000000000000000000000000000edfffffbfffbfffbfffbffffb7ffffffefffefffefffeffffedfffffbfffbfffbfffbffffb7ffffffefffffdfffffbfffff7ffff7
     - preset_name: R UB
       visible_pieces: 0000000000000000000000000000000edfffffbfffbfffbfffbfffff7ffffffefffefffefffefffffdfffffbfffbfffbfffbfffff7ffffffefffffdfffffbfffff7fffff
+    - preset_name: R F ridge center
+      visible_pieces: 0000000000000000000000000000000edfffffbfffbfffbfffbfffff7ffffffefffffffefffefffffdfffffbfffbfffbfffbfffff7ffffffefffffdfffffbfffff7fffff
+    - preset_name: R F ridge
+      visible_pieces: 0000000000000000000000000000000edfffffffffffffffffbfffff7ffffffffffffffffffefffffdfffffffffffffffffbfffff7ffffffefffffdfffffbfffff7fffff
     - preset_name: R F
       visible_pieces: 0000000000000000000000000000000edfffffffffffffffffbfffff7ffffffffffffffffffefffffdfffffffffffffffffbfffff7ffffffffffffffffffffffff7fffff
     - preset_name: R DF
@@ -963,6 +1103,9 @@ piece_filters:
       visible_pieces: fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff70000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
     - preset_name: Done
       visible_pieces: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+  9x9x9x9:
+    - preset_name: Centers only
+      visible_pieces: 00000000000000000000008f3f7efcf9f3f7ef00000f7efcf9f3f7efcf10000efcf9f3f7efcf9f30000cf9f3f7efcf9f3f700008f3f7efcf9f3f7ef00000f7efcf9f3f7efcf10000efcf9f3f7efcf9f30000000000000000000000008f3f7efcf9f3f7ef008fbfffdf9fbfffdf9fbfffdf9fbfffdf9fbfffdf9fbfffdf9fbfffdf100f7efcf9f3f7efcf10000efcf9f3f7efcf9f300efeff7f7efeff7f7efeff7f7efeff7f7efeff7f7efeff7f7efeff7f700cf9f3f7efcf9f3f700008f3f7efcf9f3f7ef008fbfffdf9fbfffdf9fbfffdf9fbfffdf9fbfffdf9fbfffdf9fbfffdf100f7efcf9f3f7efcf10000efcf9f3f7efcf9f300efeff7f7efeff7f7efeff7f7efeff7f7efeff7f7efeff7f7efeff7f700cf9f3f7efcf9f3f700008f3f7efcf9f3f7ef008fbfffdf9fbfffdf9fbfffdf9fbfffdf9fbfffdf9fbfffdf9fbfffdf100f7efcf9f3f7efcf10000efcf9f3f7efcf9f300efeff7f7efeff7f7efeff7f7efeff7f7efeff7f7efeff7f7efeff7f700cf9f3f7efcf9f3f700008f3f7efcf9f3f7ef008fbfffdf9fbfffdf9fbfffdf9fbfffdf9fbfffdf9fbfffdf9fbfffdf100f7efcf9f3f7efcf1000000000000000000000000cf9f3f7efcf9f3f700008f3f7efcf9f3f7ef00000f7efcf9f3f7efcf10000efcf9f3f7efcf9f30000cf9f3f7efcf9f3f700008f3f7efcf9f3f7ef00000f7efcf9f3f7efcf10000000000000000000000
 global_keybinds:
   - vk: O
     ctrl: true
@@ -979,11 +1122,15 @@ global_keybinds:
     command: exit
   - vk: Z
     ctrl: true
-    command: undo
+    shift: true
+    command: redo
   - vk: Z
     ctrl: true
     shift: true
-    command: redo
+    command: none
+  - vk: Z
+    ctrl: true
+    command: undo
   - vk: Y
     ctrl: true
     command: redo
@@ -1007,12 +1154,16 @@ global_keybinds:
         Rubiks4D:
           layer_count: 3
   - vk: Z
-    logo: true
-    command: undo
-  - vk: Z
     shift: true
     logo: true
     command: redo
+  - vk: Z
+    shift: true
+    logo: true
+    command: none
+  - vk: Z
+    logo: true
+    command: undo
   - vk: Y
     logo: true
     command: redo
@@ -1022,6 +1173,16 @@ global_keybinds:
   - vk: R
     logo: true
     command: reset
+  - vk: Minus
+    shift: true
+    command: redo
+  - vk: Minus
+    shift: true
+    command: none
+  - vk: Minus
+    command: undo
+  - vk: Return
+    command: redo
 puzzle_keybinds:
   Rubiks3D:
     active: Default
@@ -1285,12 +1446,16 @@ puzzle_keybinds:
               twist:
                 direction: x2
                 layers: "1"
+          - sc: KeyY
+            command:
+              twist:
+                direction: z2
+                layers: "1"
       - preset_name: Default
         includes:
           - ^Basic twists
           - ^Common
           - ^Filters
-          - ^Layers
           - ^Rotations
           - ^Switching
         keybinds:
@@ -1322,6 +1487,11 @@ puzzle_keybinds:
             command:
               grip:
                 axis: R
+          - sc: KeyX
+            command:
+              grip:
+                axis: I
+                layers: 1..-1
           - sc: KeyC
             command:
               grip:
@@ -1333,15 +1503,6 @@ puzzle_keybinds:
           - sc: Space
             command:
               recenter: {}
-          - sc: KeyZ
-            command:
-              grip:
-                layers: "2"
-          - sc: Space
-            command:
-              grip:
-                axis: O
-                layers: 1..-2
           - sc: Slash
             command:
               keybind_set:
@@ -1349,17 +1510,44 @@ puzzle_keybinds:
           - sc: KeyX
             command:
               grip:
-                layers: "3"
-          - sc: KeyG
+                axis: I
+                layers: 1..-1
+          - sc: KeyI
             command:
               twist:
-                axis: F
-                direction: xz2
+                axis: I
+                direction: x
                 layers: 1..-1
-          - sc: KeyG
+          - sc: KeyK
             command:
-              keybind_set:
-                keybind_set_name: RKT
+              twist:
+                axis: I
+                direction: "x'"
+                layers: 1..-1
+          - sc: KeyJ
+            command:
+              twist:
+                axis: I
+                direction: y
+                layers: 1..-1
+          - sc: KeyL
+            command:
+              twist:
+                axis: I
+                direction: "y'"
+                layers: 1..-1
+          - sc: KeyU
+            command:
+              twist:
+                axis: I
+                direction: "z'"
+                layers: 1..-1
+          - sc: KeyO
+            command:
+              twist:
+                axis: I
+                direction: z
+                layers: 1..-1
           - sc: KeyA
             command:
               twist:
@@ -1396,6 +1584,11 @@ puzzle_keybinds:
                 axis: I
                 direction: "x'"
                 layers: 1..-1
+          - sc: Space
+            command:
+              grip:
+                axis: O
+                layers: 1..-2
       - preset_name: 2-gen
         includes:
           - ^Basic twists
@@ -1523,20 +1716,28 @@ puzzle_keybinds:
                 layers: "1"
           - sc: KeyZ
             command:
-              grip:
-                axis: L
+              twist:
+                axis: B
+                direction: y
+                layers: "1"
           - sc: KeyX
             command:
-              grip:
-                layers: "4"
+              twist:
+                axis: F
+                direction: y
+                layers: "1"
           - sc: KeyC
             command:
-              grip:
-                layers: "3"
+              twist:
+                axis: F
+                direction: "y'"
+                layers: "1"
           - sc: KeyV
             command:
-              grip:
-                layers: "2"
+              twist:
+                axis: B
+                direction: "y'"
+                layers: "1"
           - sc: KeyA
             command:
               twist:
@@ -1598,8 +1799,7 @@ puzzle_keybinds:
           - sc: Space
             command:
               grip:
-                axis: R
-                layers: 1..-1
+                axis: L
       - preset_name: RKT
         includes:
           - ^Basic twists
@@ -1812,38 +2012,15 @@ puzzle_keybinds:
                 direction: "x'"
                 layers: 2..-2
           - sc: KeyB
-            command:
-              grip:
-                layers: "2"
+            command: none
           - sc: Digit7
-            command:
-              twist:
-                axis: U
-                direction: y
-                layers: "2"
+            command: none
           - sc: Digit0
-            command:
-              twist:
-                axis: D
-                direction: y
-                layers: "2"
+            command: none
           - sc: Digit4
-            command:
-              twist:
-                axis: U
-                direction: "y'"
-                layers: "2"
+            command: none
           - sc: Digit1
-            command:
-              twist:
-                axis: D
-                direction: "y'"
-                layers: "2"
-          - sc: Enter
-            command:
-              grip:
-                axis: R
-                layers: "2"
+            command: none
       - preset_name: ^Common
         keybinds:
           - sc: Backquote
@@ -1867,6 +2044,14 @@ puzzle_keybinds:
               filter:
                 mode: show_exactly
                 filter_name: Previous
+          - sc: Numpad2
+            command:
+              grip:
+                layers: "2"
+          - sc: Numpad3
+            command:
+              grip:
+                layers: "3"
       - preset_name: ^Switching
         keybinds:
           - sc: Escape
@@ -2031,6 +2216,58 @@ puzzle_keybinds:
               filter:
                 mode: show_exactly
                 filter_name: LL 4c
+      - preset_name: grip only
+        includes:
+          - ^Common
+          - ^Layers
+        keybinds:
+          - sc: KeyW
+            command:
+              grip:
+                axis: L
+          - sc: KeyE
+            command:
+              grip:
+                axis: U
+          - sc: KeyR
+            command:
+              grip:
+                axis: B
+          - sc: KeyS
+            command:
+              grip:
+                axis: F
+          - sc: KeyD
+            command:
+              grip:
+                axis: I
+          - sc: KeyF
+            command:
+              grip:
+                axis: R
+          - sc: KeyC
+            command:
+              grip:
+                axis: D
+          - sc: KeyV
+            command:
+              grip:
+                axis: O
+      - preset_name: Real Defaults
+        includes:
+          - ^Basic twists
+          - ^Common
+          - ^Layers
+          - grip only
+        keybinds:
+          - sc: Space
+            command:
+              recenter: {}
+          - sc: KeyX
+            command:
+              grip:
+                axis: I
+                layers: 1..-1
 mousebinds:
   - button: left
     ctrl: true
