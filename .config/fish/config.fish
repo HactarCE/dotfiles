@@ -18,128 +18,137 @@ set -gx _ZO_EXCLUDE_DIRS "$HOME/.priv*"
 
 set fzf_preview_dir_cmd eza --all --color=always
 fzf_configure_bindings --directory=\cf
-starship init fish | source; enable_transience
+starship init fish | source
 zoxide init fish --cmd c | source
 zellij setup --generate-completion fish | source
 direnv hook fish | source
 
 # DOT DOT DOT
-abbr ...        'cd ../..'
-abbr ....       'cd ../../..'
-abbr .....      'cd ../../../..'
-abbr ......     'cd ../../../../..'
-abbr .......    'cd ../../../../../..'
-abbr ........   'cd ../../../../../../..'
-abbr .........  'cd ../../../../../../../..'
+abbr ... 'cd ../..'
+abbr .... 'cd ../../..'
+abbr ..... 'cd ../../../..'
+abbr ...... 'cd ../../../../..'
+abbr ....... 'cd ../../../../../..'
+abbr ........ 'cd ../../../../../../..'
+abbr ......... 'cd ../../../../../../../..'
 
 # BREW
-abbr b          brew
-abbr 'b?'       'brew info'
-abbr bc         'brew cleanup'
-abbr bi         'brew install'
-abbr bl         'brew list'
-abbr bre        'brew reinstall'
-abbr bs         'brew search'
-abbr bu         'brew uninstall'
-abbr bup        'brew upgrade'
-abbr bo         'brew outdated'
+abbr b brew
+abbr 'b?' 'brew info'
+abbr bc 'brew cleanup'
+abbr bi 'brew install'
+abbr bl 'brew list'
+abbr bre 'brew reinstall'
+abbr bs 'brew search'
+abbr bu 'brew uninstall'
+abbr bup 'brew upgrade'
+abbr bo 'brew outdated'
 
 # CARGO
-abbr co         cargo
-abbr cb         'cargo build'
-abbr cbr        'cargo build --release'
-abbr cr         'cargo run'
-abbr crr        'cargo run --release'
-abbr ct         'cargo test'
-abbr ctr        'cargo test --release'
-abbr cch        'cargo check'
-abbr cf         'CARGO_PROFILE_RELEASE_DEBUG=true cargo flamegraph'
+abbr co cargo
+abbr cb 'cargo build'
+abbr cbr 'cargo build --release'
+abbr cr 'cargo run'
+abbr crr 'cargo run --release'
+abbr ct 'cargo test'
+abbr ctr 'cargo test --release'
+abbr cch 'cargo check'
+abbr cf 'CARGO_PROFILE_RELEASE_DEBUG=true cargo flamegraph'
 abbr --set-cursor cmx 'cargo expand % | bat -l rust'
 
+# RUST
+abbr ru rustup
+abbr rb 'set -x RUST_BACKTRACE'
+abbr rl 'set -x RUST_LOG'
+
 # GIT
-abbr grbia      'git rebase -i --autosquash'
+abbr grbia 'git rebase -i --autosquash'
+abbr gfu 'git commit -v --fixup'
+abbr gu 'git reset --soft HEAD~1'
 
 # GITHUB
-abbr ghr        'gh repo'
-abbr ghrc       'gh repo clone'
+abbr ghr 'gh repo'
+abbr ghrc 'gh repo clone'
 
 # LS / EXA
 alias ls 'eza --git'
-abbr ll         'ls -l'
-abbr l          'ls -l'
-abbr la         'ls -la'
-abbr tree       'ls -T'
-abbr lt         'ls -lT'
-abbr lta        'ls -lTa'
-abbr ltl        'ls -lTL'
-abbr ltal       'ls -lTaL'
+abbr ll 'ls -l'
+abbr l 'ls -l'
+abbr la 'ls -la'
+abbr tree 'ls -T'
+abbr lt 'ls -lT'
+abbr lta 'ls -lTa'
+abbr ltl 'ls -lTL'
+abbr ltal 'ls -lTaL'
 
 # PYTHON
-abbr py2        python2
-abbr py3        python3
-abbr py         python3
-abbr pym        'python -m'
-abbr supy2      'sudo python2'
-abbr supy3      'sudo python3'
-abbr supy       'sudo python'
-abbr pi2        'pip2 install --user'
-abbr pi3        'pip3 install --user'
-abbr pi         'pip install --user'
-abbr pie2       'pi2 -e'
-abbr pie3       'pi3 -e'
-abbr pie        'pi -e'
-abbr venv       'python3 -m venv'
+abbr py2 python2
+abbr py3 python3
+abbr py python3
+abbr pym 'python -m'
+abbr supy2 'sudo python2'
+abbr supy3 'sudo python3'
+abbr supy 'sudo python'
+abbr pi2 'pip2 install --user'
+abbr pi3 'pip3 install --user'
+abbr pi 'pip install --user'
+abbr pie2 'pi2 -e'
+abbr pie3 'pi3 -e'
+abbr pie 'pi -e'
+abbr venv 'python3 -m venv'
 
 # ZELLIJ
-abbr z          zellij
-abbr za         'zellij attach'
-abbr ze         'zellij edit'
-abbr zef        'zellij edit --floating'
-abbr zk         'zellij kill-session'
-abbr zka        'zellij kill-all-sessions'
-abbr zl         'zellij list-sessions'
+abbr z zellij
+abbr za 'zellij attach'
+abbr ze 'zellij edit'
+abbr zef 'zellij edit --floating'
+abbr zk 'zellij kill-session'
+abbr zka 'zellij kill-all-sessions'
+abbr zl 'zellij list-sessions'
 
 # GUI APPS
-abbr a          'open -a'
-abbr ff         firefox
-abbr ffnt       'firefox --new-tab'
-abbr ffnw       'firefox --new-window'
-abbr f          'open -a Finder .'
-abbr o          open
+abbr a 'open -a'
+abbr ff firefox
+abbr ffnt 'firefox --new-tab'
+abbr ffnw 'firefox --new-window'
+abbr f 'open -a Finder .'
+abbr o open
 
 # SAFETY
-abbr cp         'cp -iR'
-abbr sucp       'sudo cp -iR'
-abbr mv         'mv -i'
-abbr sumv       'sudo mv -i'
-abbr rmm        '/bin/rm -i'
-alias rm "echo \"Use either del='trash' or rmm='rm -i'\"; :"
-abbr del        trash
-abbr surmm      'sudo rm -i'
-abbr sudel      'sudo trash'
+abbr cp 'cp -iR'
+abbr sucp 'sudo cp -iR'
+abbr mv 'mv -i'
+abbr sumv 'sudo mv -i'
+abbr rmm '/bin/rm -i'
+alias rm "echo \"Use either del='trash -v' or rmm='rm -i'\"; :"
+abbr del 'trash -v'
+abbr surmm 'sudo rm -i'
+abbr sudel 'sudo trash'
 
 # MISC
-abbr btm        btm --battery
-abbr cat        bat
-abbr cl         clear
-abbr cls        clear
-abbr cx         'chmod +x'
-abbr c-         x 'chmod -x'
-abbr du         'dust -s'
-abbr fn         functions
-abbr i          insect
-abbr jj         'java -jar'
-abbr ln         'ln -s' # symbolic link
-abbr logout     'sudo killall -9 -u' # takes a user
-abbr md         'mkdir -p'
-abbr q          exit
-abbr rg         'rg -S' # smart case
-abbr rsync      'rsync --progress'
-abbr suno       'sudo nano'
-abbr sus        'sudo -s'
-abbr tb         'nc termbin.com 9999'
-abbr unp        'unp -U'
-abbr zx         zoxide
+abbr btm btm --battery
+abbr cat bat
+abbr cl clear
+abbr cls clear
+abbr cx 'chmod +x'
+abbr c- x 'chmod -x'
+abbr du 'dust -s'
+abbr fn functions
+abbr i insect
+abbr jaj 'java -jar'
+abbr ln 'ln -s' # symbolic link
+abbr logout 'sudo killall -9 -u' # takes a user
+abbr man batman
+abbr md 'mkdir -p'
+abbr q exit
+abbr rg 'rg -S' # smart case
+abbr rsync 'rsync --progress'
+abbr suno 'sudo nano'
+abbr sus 'sudo -s'
+abbr tb 'nc termbin.com 9999'
+abbr nn jj
+abbr unp 'unp -U'
+abbr zx zoxide
 
 alias dot '/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
