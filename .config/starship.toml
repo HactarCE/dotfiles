@@ -1,5 +1,14 @@
 [directory]
 truncation_length = 0
 
-# [python]
-# disabled = true
+[python]
+disabled = true
+
+[lua]
+disabled = true
+
+[java]
+disabled = true
+
+[rust]
+disabled = true
