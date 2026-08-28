@@ -59,4 +59,16 @@ config.keys = {
   },
 }
 
+config.enable_kitty_keyboard = true
+
+-- -- For recording
+-- config.font_size = 28.0
+-- config.window_background_opacity = 1.0
+-- config.window_padding = {
+--   left = 360,
+--   right = 360,
+--   top = 240,
+--   bottom = 240,
+-- }
+
 return config
